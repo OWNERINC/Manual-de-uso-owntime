@@ -1,0 +1,597 @@
+/* ================================================================
+   OWN TIME HOME CLUB — Diretório Digital
+   CSS Global para Elementor
+   Cola em: Elementor > Site Settings > Custom CSS
+   ================================================================ */
+
+/* ── Variáveis de Design ── */
+:root {
+  --ot-bg:          #0A0A0A;
+  --ot-bg-alt:      #111111;
+  --ot-bg-light:    #F7F5F2;
+  --ot-text:        #FFFFFF;
+  --ot-text-inv:    #0E0E0E;
+  --ot-muted:       #787878;
+  --ot-accent:      #3D5A3E;
+  --ot-accent-lt:   #6B8F6C;
+  --ot-gold:        #C9A96E;
+  --ot-border:      rgba(255,255,255,0.08);
+  --ot-border-lt:   rgba(0,0,0,0.09);
+  --ot-font-d:      'Cormorant Garamond', Georgia, serif;
+  --ot-font-b:      'Inter', system-ui, sans-serif;
+  --ot-ease:        cubic-bezier(0.16, 1, 0.3, 1);
+  --ot-section-pad: clamp(5.5rem, 13vw, 10rem);
+  --ot-cont-pad:    clamp(1.5rem, 5vw, 5.5rem);
+}
+
+/* ================================================================
+   SEÇÃO: HERO
+   Classe CSS a aplicar na Section do Elementor: owntime-hero
+   ================================================================ */
+
+/* Grain texture */
+.owntime-hero .elementor-section-wrap::before,
+.owntime-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px;
+}
+
+/* Gradiente base no rodapé do hero */
+.owntime-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(8,8,8,0.85) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Linha decorativa no topo */
+.owntime-hero .owntime-hero-rule {
+  position: absolute;
+  top: 0;
+  left: var(--ot-cont-pad);
+  right: var(--ot-cont-pad);
+  height: 1px;
+  background: var(--ot-border);
+  z-index: 3;
+}
+
+/* Label do hero */
+.owntime-hero-label .elementor-widget-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--ot-font-b);
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ot-gold) !important;
+}
+
+.owntime-hero-label .elementor-widget-container::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--ot-gold);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* Headline do hero */
+.owntime-hero-headline .elementor-heading-title {
+  font-family: var(--ot-font-d) !important;
+  font-size: clamp(3.8rem, 11vw, 9rem) !important;
+  font-weight: 300 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.02em !important;
+  color: #FFFFFF !important;
+  white-space: pre-line;
+}
+
+.owntime-hero-headline .elementor-heading-title em {
+  font-style: italic;
+  color: var(--ot-gold);
+}
+
+/* Subtítulo do hero */
+.owntime-hero-sub .elementor-widget-container {
+  font-family: var(--ot-font-b);
+  font-size: clamp(0.88rem, 1.4vw, 1rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.48) !important;
+  max-width: 440px;
+}
+
+/* Rodapé do hero (localização + scroll) */
+.owntime-hero-footer .elementor-widget-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28) !important;
+}
+
+/* Linha de scroll (elemento HTML dentro do hero) */
+.owntime-scroll-line-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+
+.owntime-scroll-line {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: rgba(255,255,255,0.18);
+  transform-origin: left;
+}
+
+/* ================================================================
+   TIPOGRAFIA GLOBAL DE SEÇÕES
+   Aplicar nas classes: owntime-section-label / owntime-section-heading / owntime-section-sub
+   ================================================================ */
+
+.owntime-section-label .elementor-widget-container {
+  font-family: var(--ot-font-b) !important;
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  opacity: 0.45;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.owntime-section-heading .elementor-heading-title {
+  font-family: var(--ot-font-d) !important;
+  font-size: clamp(2.4rem, 5.5vw, 4rem) !important;
+  font-weight: 300 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.owntime-section-heading .elementor-heading-title em {
+  font-style: italic;
+  color: var(--ot-accent-lt);
+}
+
+/* Em fundo claro, o em fica no verde escuro */
+.owntime-facilities .owntime-section-heading .elementor-heading-title em,
+.owntime-gastronomy .owntime-section-heading .elementor-heading-title em {
+  color: var(--ot-accent);
+}
+
+.owntime-section-sub .elementor-widget-container {
+  font-size: 0.9rem !important;
+  font-weight: 300 !important;
+  line-height: 1.85 !important;
+  opacity: 0.6;
+  max-width: 500px;
+  margin-top: 1.25rem;
+}
+
+.owntime-divider {
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.18;
+  margin-block: 1.75rem;
+}
+
+/* ================================================================
+   SEÇÃO: FACILITIES e GASTRONOMY (Accordion — fundo claro)
+   Classe na Section: owntime-facilities | owntime-gastronomy
+   ================================================================ */
+
+/* Accordion widget do Elementor */
+.owntime-facilities .elementor-accordion,
+.owntime-gastronomy .elementor-accordion {
+  border-top: 1px solid var(--ot-border-lt);
+}
+
+.owntime-facilities .elementor-accordion-item,
+.owntime-gastronomy .elementor-accordion-item {
+  border-bottom: 1px solid var(--ot-border-lt);
+  border-top: none;
+}
+
+.owntime-facilities .elementor-tab-title,
+.owntime-gastronomy .elementor-tab-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.6rem 0 !important;
+  background: none !important;
+  color: var(--ot-text-inv) !important;
+  font-family: var(--ot-font-d) !important;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+  transition: color 0.3s ease;
+}
+
+.owntime-facilities .elementor-tab-title:hover,
+.owntime-gastronomy .elementor-tab-title:hover {
+  color: var(--ot-accent) !important;
+}
+
+.owntime-facilities .elementor-tab-title .elementor-accordion-icon,
+.owntime-gastronomy .elementor-tab-title .elementor-accordion-icon {
+  order: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 3px;
+  background: rgba(61,90,62,0.1);
+  flex-shrink: 0;
+  color: var(--ot-accent) !important;
+  transition: background 0.3s;
+}
+
+.owntime-facilities .elementor-tab-title:hover .elementor-accordion-icon,
+.owntime-gastronomy .elementor-tab-title:hover .elementor-accordion-icon {
+  background: rgba(61,90,62,0.18);
+}
+
+.owntime-facilities .elementor-tab-content,
+.owntime-gastronomy .elementor-tab-content {
+  padding: 0.25rem 0 2.25rem 3.5rem !important;
+  font-size: 0.92rem !important;
+  font-weight: 300 !important;
+  line-height: 1.9 !important;
+  color: rgba(0,0,0,0.58) !important;
+  max-width: 620px;
+}
+
+/* Linha de horário dentro do accordion de gastronomia */
+.owntime-gastronomy .elementor-tab-content .ot-hours {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ot-accent);
+  margin-bottom: 0.9rem;
+}
+
+.owntime-gastronomy .elementor-tab-content .ot-hours::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--ot-accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .owntime-facilities .elementor-tab-content,
+  .owntime-gastronomy .elementor-tab-content {
+    padding-left: 0 !important;
+  }
+}
+
+/* ================================================================
+   SEÇÃO: AMENITIES (Grid — fundo escuro)
+   Classe na Section: owntime-amenities
+   ================================================================ */
+
+.owntime-amenities .elementor-inner-section {
+  gap: 1px !important;
+  background: var(--ot-border) !important;
+}
+
+.owntime-amenities .elementor-column {
+  background: var(--ot-bg-alt);
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+  transition: background 0.35s ease;
+}
+
+.owntime-amenities .elementor-column:hover {
+  background: #161616;
+}
+
+/* Ícone */
+.owntime-amenities .elementor-icon-box-icon .elementor-icon {
+  width: 40px !important;
+  height: 40px !important;
+  color: var(--ot-accent-lt) !important;
+  margin-bottom: 1.5rem;
+}
+
+/* Título do card */
+.owntime-amenities .elementor-icon-box-title {
+  font-family: var(--ot-font-d) !important;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem) !important;
+  font-weight: 300 !important;
+  color: var(--ot-text) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Horário (class ot-hours no Text widget) */
+.owntime-amenities .ot-hours {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ot-muted);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* Nota descritiva */
+.owntime-amenities .elementor-icon-box-description {
+  font-size: 0.84rem !important;
+  font-weight: 300 !important;
+  line-height: 1.75 !important;
+  color: rgba(255,255,255,0.38) !important;
+}
+
+/* Card de destaque (Spa) — Classe na coluna: owntime-card-spa */
+.owntime-card-spa .ot-hours {
+  color: var(--ot-gold) !important;
+}
+
+.owntime-card-spa .elementor-icon-box-icon .elementor-icon {
+  color: var(--ot-gold) !important;
+}
+
+/* Borda acento no hover (coluna) */
+.owntime-amenities .elementor-column::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: border-color 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.owntime-amenities .elementor-column:hover::before {
+  border-color: var(--ot-accent);
+}
+
+/* ================================================================
+   SEÇÃO: CONCIERGE (Accordion — fundo escuro)
+   Classe na Section: owntime-concierge
+   ================================================================ */
+
+.owntime-concierge .elementor-accordion {
+  border-top: 1px solid var(--ot-border);
+}
+
+.owntime-concierge .elementor-accordion-item {
+  border-bottom: 1px solid var(--ot-border);
+  border-top: none;
+}
+
+.owntime-concierge .elementor-tab-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.6rem 0 !important;
+  background: none !important;
+  color: var(--ot-text) !important;
+  font-family: var(--ot-font-d) !important;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem) !important;
+  font-weight: 400 !important;
+  transition: color 0.3s ease;
+}
+
+.owntime-concierge .elementor-tab-title:hover {
+  color: var(--ot-accent-lt) !important;
+}
+
+.owntime-concierge .elementor-tab-title .elementor-accordion-icon {
+  order: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 3px;
+  background: rgba(107,143,108,0.12);
+  flex-shrink: 0;
+  color: var(--ot-accent-lt) !important;
+  transition: background 0.3s;
+}
+
+.owntime-concierge .elementor-tab-title:hover .elementor-accordion-icon {
+  background: rgba(107,143,108,0.22);
+}
+
+.owntime-concierge .elementor-tab-content {
+  padding: 0.25rem 0 2.25rem 3.5rem !important;
+  font-size: 0.92rem !important;
+  font-weight: 300 !important;
+  line-height: 1.9 !important;
+  color: rgba(255,255,255,0.48) !important;
+  max-width: 620px;
+}
+
+/* Nota informativa do Concierge */
+.owntime-concierge-note .elementor-widget-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.4rem 1.75rem;
+  border: 1px solid var(--ot-border);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+  margin-top: 2.5rem;
+  font-size: 0.83rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ot-muted);
+}
+
+/* ================================================================
+   FLOATING ACTION — Botão WhatsApp
+   Usar HTML Widget com classe: owntime-floating
+   ================================================================ */
+
+.owntime-floating {
+  position: fixed;
+  z-index: 9000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ot-ease), transform 0.4s var(--ot-ease);
+}
+
+.owntime-floating.is-visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Mobile: barra no rodapé */
+.owntime-floating__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: rgba(10,10,10,0.94);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--ot-border);
+  padding-bottom: calc(0.85rem + env(safe-area-inset-bottom, 0px));
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+}
+
+.owntime-floating__checkout {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.owntime-floating__checkout strong { color: rgba(255,255,255,0.7); }
+
+.owntime-floating__wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.25rem;
+  background: #25D366;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff !important;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.owntime-floating__wa-btn:hover { background: #1da851; }
+
+.owntime-floating__wa-btn .wa-icon {
+  width: 17px;
+  height: 17px;
+  fill: #fff;
+  flex-shrink: 0;
+}
+
+/* Desktop: FAB circular */
+.owntime-floating__fab {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+}
+
+.owntime-floating__checkout-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.owntime-floating__checkout-label strong { color: rgba(255,255,255,0.6); }
+
+.owntime-floating__wa-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 0 0 0 rgba(37,211,102,0.4);
+  animation: wa-pulse 3s infinite;
+  transition: transform 0.3s var(--ot-ease), background 0.3s;
+}
+
+.owntime-floating__wa-fab:hover {
+  transform: scale(1.1);
+  background: #1da851;
+}
+
+.owntime-floating__wa-fab .wa-icon {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+}
+
+@keyframes wa-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+  70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+@media (min-width: 769px) {
+  .owntime-floating__bar  { display: none; }
+  .owntime-floating__fab  { display: flex; }
+  body { padding-bottom: 0; }
+}
+
+@media (max-width: 768px) {
+  body { padding-bottom: 80px; }
+}
+
+/* ================================================================
+   ANIMAÇÕES DE REVEAL (via IntersectionObserver — script custom)
+   Aplicar classe owntime-reveal em cada widget via Advanced > CSS Class
+   ================================================================ */
+
+.owntime-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ot-ease), transform 0.7s var(--ot-ease);
+}
+
+.owntime-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .owntime-reveal { opacity: 1 !important; transform: none !important; }
+}

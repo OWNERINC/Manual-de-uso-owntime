@@ -1,0 +1,5 @@
+.firebase/
+node_modules/
+.env
+*.local
+html-puro/assets.zip

@@ -1,0 +1,240 @@
+/* ============================================
+   GUIA.CSS — Own Time Home Club
+   ============================================ */
+
+/* ── Section header ── */
+.guia-section__header {
+  margin-bottom: 2rem;
+}
+
+/* ── Grid (lista vertical) ── */
+.guia-section__grid {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Item (botão de lista) ── */
+.guia-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.2rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.22s var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+  min-height: 64px;
+}
+
+.guia-item:hover,
+.guia-item:focus-visible {
+  background: rgba(255, 255, 255, 0.03);
+  outline: none;
+}
+
+.guia-item:active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hover: arrow fica mais visível */
+.guia-item:hover .guia-item__arrow,
+.guia-item:focus-visible .guia-item__arrow {
+  opacity: 0.65;
+  transform: translateX(3px);
+}
+
+/* ── Ícone container ── */
+.guia-item__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: rgba(61, 90, 62, 0.12);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+/* ── Ícone ── */
+.guia-item__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent-lt);
+  stroke-width: 1.5;
+}
+
+/* ── Label ── */
+.guia-item__label {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+/* ── Seta ── */
+.guia-item__arrow {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  opacity: 0.28;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: opacity 0.22s var(--ease-out),
+              transform 0.22s var(--ease-out);
+  stroke-width: 1.5;
+}
+
+/* ── Variante para fundo claro (section-light) ── */
+.guia-section__grid--light .guia-item {
+  color: var(--color-text-inv);
+  border-bottom-color: var(--color-border-lt);
+}
+
+.guia-section__grid--light .guia-item:hover,
+.guia-section__grid--light .guia-item:focus-visible {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.guia-section__grid--light .guia-item:active {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.guia-section__grid--light .guia-item__label {
+  color: var(--color-text-inv);
+}
+
+.guia-section__grid--light .guia-item__icon-wrap {
+  background: rgba(61, 90, 62, 0.12);
+}
+
+.guia-section__grid--light .guia-item__icon {
+  color: var(--color-accent);
+}
+
+/* ── Topo da grid na variante light ── */
+.guia-section__grid--light {
+  border-top-color: var(--color-border-lt);
+}
+
+/* ================================================
+   ORIENTAÇÕES GERAIS
+   ================================================ */
+
+.orientacoes__header {
+  margin-bottom: 1.75rem;
+}
+
+/* ── Cards em scroll horizontal ── */
+.orientacoes__cards {
+  display: flex;
+  flex-direction: row;
+  gap: 0.875rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+  /* Esconde scrollbar mas mantém funcional */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.orientacoes__cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Card ── */
+.orientacao-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  min-width: 120px;
+  width: 120px;
+  padding: 1.125rem 0.75rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  text-align: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: background 0.22s var(--ease-out),
+              border-color 0.22s var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+  min-height: 108px;
+}
+
+.orientacao-card:hover,
+.orientacao-card:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.13);
+  outline: none;
+}
+
+.orientacao-card:active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Ícone container (gold) ── */
+.orientacao-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  background: rgba(201, 169, 110, 0.1);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  color: var(--color-gold);
+}
+
+.orientacao-card__icon-wrap svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.5;
+}
+
+/* ── Título ── */
+.orientacao-card__title {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  color: var(--color-text);
+  opacity: 0.75;
+}
+
+/* ── Seta (oculta no card vertical — opcional) ── */
+.orientacao-card__arrow {
+  display: none;
+}
+
+/* ── Desktop: cards maiores quando há espaço ── */
+@media (min-width: 768px) {
+  .orientacoes__cards {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .orientacao-card {
+    min-width: 128px;
+    width: 128px;
+    flex-shrink: 1;
+  }
+}

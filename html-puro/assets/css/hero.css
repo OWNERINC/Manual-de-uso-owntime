@@ -21,8 +21,8 @@
     radial-gradient(ellipse 60% 50% at 15% 80%, rgba(30, 45, 31, 0.18) 0%, transparent 60%),
     /* escurecimento geral para legibilidade do texto */
     linear-gradient(to bottom, rgba(8,8,8,0.52) 0%, rgba(8,8,8,0.12) 45%, rgba(8,8,8,0.42) 100%),
-    /* foto do empreendimento */
-    url('../images/@DJI_20260514174422_0126_D (2).jpg.jpeg') center 40% / cover no-repeat;
+    /* foto do empreendimento — sobrescrita por --hero-image via renderHero() */
+    var(--hero-image, url('../images/@DJI_20260514174422_0126_D (2).jpg.jpeg')) center 40% / cover no-repeat;
   z-index: 0;
 }
 

@@ -20,12 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFloatingAction(COMMON);
 
   // 2. Ícones após todo DOM estar pronto
-  lucide.createIcons();
+  try { lucide.createIcons(); } catch (e) { console.warn('Lucide:', e); }
 
   // 3. Interações
   initBottomSheets();
-  initAnimations();
-  initFloatingVisibility();
+  try {
+    initAnimations();
+  } catch (e) {
+    // Fallback: revela hero se GSAP falhar
+    document.querySelectorAll('.hero__label,.hero__headline,.hero__sub,.hero__footer')
+      .forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    console.warn('Animations:', e);
+  }
+  try { initFloatingVisibility(); } catch (e) { console.warn('FloatingVisibility:', e); }
 });
 
 function initFloatingVisibility() {

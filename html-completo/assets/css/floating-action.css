@@ -1,0 +1,160 @@
+/* ============================================
+   FLOATING ACTION — WhatsApp Concierge
+   ============================================ */
+
+.floating-action {
+  position: fixed;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease-out);
+}
+
+.floating-action.is-visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── SVG WhatsApp embutido ── */
+.wa-icon {
+  display: block;
+  fill: currentColor;
+}
+
+/* ==============================
+   MOBILE: barra fixada no rodapé
+   ============================== */
+@media (max-width: 768px) {
+  .floating-action {
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .floating-action__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.5rem;
+    padding-bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
+    background: rgba(8, 8, 8, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .floating-action__fab {
+    display: none;
+  }
+
+  .floating-action__checkout {
+    font-size: 0.72rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+  }
+
+  .floating-action__checkout strong {
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .floating-action__wa-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.7rem 1.2rem;
+    background: #25D366;
+    border-radius: 50px;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .floating-action__wa-btn:hover {
+    background: #1DA851;
+  }
+
+  .floating-action__wa-btn .wa-icon {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+  }
+}
+
+/* ==============================
+   DESKTOP: FAB circular
+   ============================== */
+@media (min-width: 769px) {
+  .floating-action {
+    bottom: 2.25rem;
+    right: 2.25rem;
+  }
+
+  .floating-action__bar {
+    display: none;
+  }
+
+  .floating-action__fab {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.65rem;
+  }
+
+  .floating-action__checkout-label {
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--color-muted);
+    background: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+  }
+
+  .floating-action__checkout-label strong {
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .floating-action__wa-fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background: #25D366;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 6px 28px rgba(37, 211, 102, 0.32);
+    transition:
+      transform 0.35s var(--ease-out),
+      box-shadow 0.35s ease;
+    /* Pulse sutil */
+    animation: wa-pulse 3s ease-in-out infinite;
+  }
+
+  .floating-action__wa-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 38px rgba(37, 211, 102, 0.5);
+    animation: none;
+  }
+
+  .floating-action__wa-fab .wa-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 6px 28px rgba(37, 211, 102, 0.32); }
+  50%        { box-shadow: 0 6px 38px rgba(37, 211, 102, 0.52); }
+}

@@ -134,6 +134,25 @@
   transform: translateY(16px);
 }
 
+/* ── Intro paragraphs (v2) ── */
+.hero__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 520px;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.hero__intro-p {
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 1.3vw, 0.78rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.38);
+}
+
 .hero__footer {
   display: flex;
   align-items: center;
@@ -167,6 +186,20 @@
   background: rgba(255, 255, 255, 0.18);
   transform-origin: left;
   flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  /* No mobile o conteúdo cresce além de 100svh — deixa o hero crescer
+     e ancora o conteúdo no topo para o headline sempre aparecer */
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    align-items: flex-start;
+  }
+  .hero__content {
+    padding-top: clamp(3.5rem, 12vw, 5.5rem);
+    padding-bottom: clamp(2rem, 6vw, 3rem);
+  }
 }
 
 @media (max-width: 640px) {

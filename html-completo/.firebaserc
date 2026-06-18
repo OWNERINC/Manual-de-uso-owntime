@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "owntime-diretorio-lp"
+  },
+  "targets": {
+    "owntime-diretorio-lp": {
+      "hosting": {
+        "v2": ["owntime-diretorio-v2"]
+      }
+    }
+  }
+}

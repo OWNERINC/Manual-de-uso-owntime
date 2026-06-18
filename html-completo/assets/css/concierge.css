@@ -1,0 +1,68 @@
+/* ============================================
+   CONCIERGE SERVICES — Pay Per Use
+   ============================================ */
+
+.concierge__header {
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.concierge__header .section-sub {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Variante dark do accordion ── */
+.accordion--dark {
+  border-top-color: var(--color-border);
+}
+
+.accordion--dark .accordion__item {
+  border-bottom-color: var(--color-border);
+}
+
+.accordion--dark .accordion__trigger {
+  color: var(--color-text);
+}
+
+.accordion--dark .accordion__trigger:hover {
+  color: var(--color-accent-lt);
+}
+
+.accordion--dark .accordion__icon-wrap {
+  background: rgba(107, 143, 108, 0.12);
+}
+
+.accordion--dark .accordion__trigger:hover .accordion__icon-wrap {
+  background: rgba(107, 143, 108, 0.22);
+}
+
+.accordion--dark .accordion__body-inner {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+/* ── Nota informativa ── */
+.concierge__note {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.4rem 1.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.concierge__note-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--color-gold);
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+.concierge__note-text {
+  font-size: 0.83rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-muted);
+}

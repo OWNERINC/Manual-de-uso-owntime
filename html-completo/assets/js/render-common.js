@@ -59,6 +59,10 @@ function _guiaItemBtn(sheetId, icon, title) {
    renderHero
    ═══════════════════════════════════════════ */
 function renderHero(tipologia) {
+  const introParagraphs = (COMMON.heroIntro || [])
+    .map(p => `<p class="hero__intro-p">${p}</p>`)
+    .join('');
+
   document.getElementById('hero').innerHTML = `
     <div class="hero__bg-img" style="background-image: url('${tipologia.hero.image}')"></div>
     <div class="hero__bg"></div>
@@ -67,6 +71,7 @@ function renderHero(tipologia) {
       <p class="hero__label">${tipologia.hero.label}</p>
       <h1 class="hero__headline">${tipologia.hero.headline}</h1>
       <p class="hero__sub">${tipologia.hero.subheadline}</p>
+      <div class="hero__intro">${introParagraphs}</div>
       <div class="hero__footer">
         <span class="hero__location">${tipologia.hero.location}</span>
         <div class="hero__scroll" aria-hidden="true">
@@ -273,36 +278,6 @@ function renderConcierge(common) {
 }
 
 /* ═══════════════════════════════════════════
-   renderSegurancaAcesso
-   ═══════════════════════════════════════════ */
-function renderSegurancaAcesso(common) {
-  const items = common.segurancaAcesso;
-  const btns = items.map(item =>
-    _guiaItemBtn(`sheet-seg-${item.id}`, item.icon, item.title)
-  ).join('');
-
-  const section = document.getElementById('seguranca-acesso');
-  section.innerHTML = `
-    <div class="container section-pad">
-      <header class="seguranca__header">
-        <span class="section-label">Segurança & Acesso</span>
-        <h2 class="section-heading">Tranquilidade<br><em>em cada detalhe.</em></h2>
-        <span class="divider" style="background:var(--color-text);opacity:0.15"></span>
-        <p class="section-sub" style="color:rgba(255,255,255,0.45);max-width:520px">Monitoramento e controle de acesso 24 horas para que você aproveite sua estadia com total segurança.</p>
-      </header>
-      <div class="guia-section__grid">${btns}</div>
-    </div>
-  `;
-
-  items.forEach(item => {
-    const body = item.body
-      ? `<p>${item.body}</p>`
-      : '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
-    _appendSheet(`sheet-seg-${item.id}`, item.icon, item.title, body);
-  });
-}
-
-/* ═══════════════════════════════════════════
    renderFloatingAction
    ═══════════════════════════════════════════ */
 function renderFloatingAction(common) {
@@ -331,4 +306,34 @@ function renderFloatingAction(common) {
       </a>
     </div>
   `;
+}
+
+/* ═══════════════════════════════════════════
+   renderSegurancaAcesso
+   ═══════════════════════════════════════════ */
+function renderSegurancaAcesso(common) {
+  const items = common.segurancaAcesso;
+  const btns = items.map(item =>
+    _guiaItemBtn(`sheet-seg-${item.id}`, item.icon, item.title)
+  ).join('');
+
+  const section = document.getElementById('seguranca-acesso');
+  section.innerHTML = `
+    <div class="container section-pad">
+      <header class="seguranca__header">
+        <span class="section-label">Segurança & Acesso</span>
+        <h2 class="section-heading">Tranquilidade<br><em>em cada detalhe.</em></h2>
+        <span class="divider" style="background:var(--color-text);opacity:0.15"></span>
+        <p class="section-sub" style="color:rgba(255,255,255,0.45);max-width:520px">Monitoramento e controle de acesso 24 horas para que você aproveite sua estadia com total segurança.</p>
+      </header>
+      <div class="guia-section__grid">${btns}</div>
+    </div>
+  `;
+
+  items.forEach(item => {
+    const body = item.body
+      ? `<p>${item.body}</p>`
+      : '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
+    _appendSheet(`sheet-seg-${item.id}`, item.icon, item.title, body);
+  });
 }

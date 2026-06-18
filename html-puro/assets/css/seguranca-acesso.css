@@ -1,0 +1,7 @@
+.seguranca-acesso {
+  background: var(--color-bg-alt);
+}
+
+.seguranca__header {
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}

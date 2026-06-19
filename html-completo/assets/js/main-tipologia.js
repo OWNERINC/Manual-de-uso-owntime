@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderGuia(TIPOLOGIA);
   renderClube(COMMON);
   renderFacilities(COMMON);
-  renderAmenities(COMMON);
   renderGastronomy(COMMON);
   renderConcierge(COMMON);
   renderSegurancaAcesso(COMMON);

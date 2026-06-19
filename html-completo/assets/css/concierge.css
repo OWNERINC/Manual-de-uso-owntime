@@ -6,10 +6,6 @@
   margin-bottom: clamp(3rem, 7vw, 5rem);
 }
 
-.concierge__header .section-sub {
-  color: rgba(255, 255, 255, 0.45);
-}
-
 /* ── Variante dark do accordion ── */
 .accordion--dark {
   border-top-color: var(--color-border);
@@ -46,9 +42,9 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1.4rem 1.75rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-lt);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .concierge__note-icon {

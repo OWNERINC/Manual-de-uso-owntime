@@ -6,7 +6,8 @@ function renderGuia(tipologia) {
   if (!guia || !Array.isArray(guia) || guia.length === 0) return;
 
   guia.forEach((section, sectionIndex) => {
-    const sectionClass = sectionIndex % 2 === 0 ? 'section-dark' : 'section-dark-alt';
+    const isLight = sectionIndex % 2 !== 0;
+    const sectionClass = isLight ? 'section-light' : 'section-dark';
     const sectionEl = document.createElement('section');
     sectionEl.id = 'guia-' + section.id;
     sectionEl.className = 'guia-section ' + sectionClass;
@@ -25,7 +26,7 @@ function renderGuia(tipologia) {
     containerEl.appendChild(headerEl);
 
     const gridEl = document.createElement('div');
-    gridEl.className = 'guia-section__grid';
+    gridEl.className = isLight ? 'guia-section__grid guia-section__grid--light' : 'guia-section__grid';
 
     if (section.items && Array.isArray(section.items)) {
       section.items.forEach(item => {
@@ -42,10 +43,7 @@ function renderGuia(tipologia) {
   guia.forEach(section => {
     if (!section.items) return;
     section.items.forEach(item => {
-      const body = item.body
-        ? `<p>${item.body}</p>`
-        : '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
-      _appendSheet('sheet-guia-' + item.id, item.icon, item.title, body);
+      _appendSheet('sheet-guia-' + item.id, item.icon, item.title, item.body || null);
     });
   });
 }

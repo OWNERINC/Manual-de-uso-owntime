@@ -1,205 +1,307 @@
-# Own Time Home Club · Gramado — Estrutura de Páginas
+# Own Time Home Club · Guia Digital v2
+## Estrutura Completa das Páginas — Verificação de Dependências
 
-**URL:** https://owntime-diretorio-lp.web.app  
-**Stack:** HTML + CSS + JS (vanilla) · Firebase Hosting · GSAP ScrollTrigger
-
----
-
-## Fluxo de Navegação
-
-```
-index.html  (Hub de Seleção)
-  ├── fall-house.html    — Casa 4 Suítes · 448 m²
-  ├── winter-house.html  — Casa 3 Suítes · 325 m²
-  ├── garden.html        — Apartamento Garden · ≈ 60 m²
-  └── terraco.html       — Apartamento Cobertura · ≈ 60 m²
-```
+> Documento gerado em 2026-06-19.
+> Use para validação com a equipe de incorporação.
+> Itens marcados como `[conteúdo pendente]` têm `body: ''` no data file — instruções operacionais a serem preenchidas.
 
 ---
 
-## 1. index.html — Hub de Seleção de Tipologias
+## SEÇÕES COMPARTILHADAS (todas as unidades)
 
-> Grid 2×2 no mobile, 4 colunas no desktop. Dados em `data-hub.js`.
-
-- **Título da página** — "Onde você *está*?"
-- **Grid de Cards de Tipologia** `hub__grid`
-  - **Card: Fall House**
-    - Imagem de fundo (foto da casa)
-    - Subtitle: "Casa 4 Suítes"
-    - Nome: "Fall House"
-    - Link → `fall-house.html`
-  - **Card: Winter House**
-    - Imagem de fundo
-    - Subtitle: "Casa 3 Suítes"
-    - Nome: "Winter House"
-    - Link → `winter-house.html`
-  - **Card: Garden**
-    - Imagem de fundo
-    - Subtitle: "Apartamento"
-    - Nome: "Garden"
-    - Link → `garden.html`
-  - **Card: Cobertura**
-    - Imagem de fundo
-    - Subtitle: "Apartamento"
-    - Nome: "Cobertura"
-    - Link → `terraco.html`
+As seções abaixo aparecem em **todas as 4 páginas** na mesma ordem e com o mesmo conteúdo.
 
 ---
 
-## 2–5. Páginas de Tipologia
+### Orientações Gerais
 
-> Todas as 4 tipologias compartilham a mesma estrutura de seções e componentes.  
-> O que varia é o arquivo de dados (`data-[tipologia].js`) e o conteúdo do **Guia da Casa**.
-
-### Elemento Global
-
-- **Link "← Início"** `page-back` — fixo no topo, retorna ao `index.html`
-- **Barra Flutuante** `floating-action` — fixa no rodapé
-  - Horário de check-out: **12h00**
-  - Botão WhatsApp → Concierge (link `wa.me`)
+| Ícone | Título | Status |
+|---|---|---|
+| `key` | Check-in & Segurança | Conteúdo preenchido |
+| `alert-triangle` | Em Caso de Emergência | Conteúdo preenchido |
+| `clock` | Check-out · Horário Padrão: 12h00 | Conteúdo preenchido |
+| `paw-print` | Espaço Pet | Conteúdo preenchido |
 
 ---
 
-### Seção 1 — Hero `#hero`
+### Conforto & Tecnologia (Facilities)
 
-> Fundo: foto da tipologia. Animação de entrada com GSAP.
-
-- Label da tipologia *(ex: "Fall House · Casa 4 Suítes · Diretório Digital")*
-- Headline em destaque *(ex: "Fall House.")*
-- Subtítulo descritivo
-- Localização: "Gramado · Serra Gaúcha · Brasil"
-- Indicador de scroll "Explorar ↓"
-
----
-
-### Seção 2 — Features da Tipologia `#tipologia-features`
-
-- **Stats** em linha horizontal
-  - Área total *(ex: 448 m²)*
-  - Número de suítes *(ex: 4)*
-  - Capacidade de hóspedes *(ex: 10)*
-  - Vagas de garagem *(ex: 2)*
-- Descrição resumida da tipologia
+| Ícone | Título | Status |
+|---|---|---|
+| `thermometer` | Climatização | Conteúdo pendente (instruções do fabricante) |
+| `flame` | Lareira | Conteúdo preenchido (passos de acendimento a completar) |
+| `droplets` | Hidromassagem | Conteúdo preenchido |
+| `wifi` | Conectividade | Conteúdo pendente (credenciais da rede Wi-Fi) |
 
 ---
 
-### Seção 3 — Orientações Gerais `#orientacoes-gerais`
+### Gastronomia
 
-> Lista de botões que abrem Bottom Sheets. Dados em `data-common.js`.
-
-- **Consumos** — Energia, Água e Gás
-- **Café da Manhã**
-- **Carrinho de Bebidas**
-
----
-
-### Seção 4 — Guia da Casa `#guia-container`
-
-> Gerado dinamicamente por `render-guia.js`. Cada tipologia tem seu próprio conjunto de abas e itens (`data-[tipologia].js`). Cada item abre um **Bottom Sheet** com instruções.
-
-#### Fall House — abas e itens:
-
-- **Geral**
-  - Acesso às Unidades · Iluminação · TV · Ventilação/Exaustão · Climatização · Conectividade · Piso Aquecido · Telefone · Fogo de Chão · Inverter
-- **Cozinha**
-  - Forno de Pizza · Churrasqueira
-- **Sala**
-  - Lareira
-- **Segundo Andar**
-  - Sala de Banho · SPA Jacuzzi · Iluminação · Climatização · Piso Aquecido
-- **Eletros**
-  - Adega Climatizada · Geladeira · Micro-ondas · Forno Elétrico · Máquina de Café · Lava-louças · Lava e Seca · Fogão + Depurador · Filtro de Água
-
-> *Winter House, Garden e Cobertura têm abas e itens próprios conforme a planta de cada tipologia.*
+| Ícone | Título | Horário | Status |
+|---|---|---|---|
+| `utensils` | Restaurante | 12h00 às 22h00 · Último pedido 21h30 | Conteúdo preenchido |
+| `coffee` | Coffee Shop | 08h00 às 20h00 | Conteúdo preenchido |
+| `wine` | Bar | 17h00 às 23h00 | Conteúdo preenchido |
+| `chef-hat` | Chef em Casa | Agendamento com 48h de antecedência | Conteúdo preenchido |
+| `salad` | Café da Manhã | — | Conteúdo preenchido |
 
 ---
 
-### Seção 5 — Club House `#clube`
+### Concierge · Comodidades Pay Per Use
 
-> Diretório do clube. Dados em `data-common.js`. Cada item abre um Bottom Sheet.
-
-- Empório · Kids · Teens · Piscina · Sauna Seca · Sauna Húmida · Spa · Academia · Playground Externo · Acesso via Pulseira · Carrinhos de Golf · Carregadores Elétricos
-
----
-
-### Seção 6 — Conforto & Tecnologia `#facilities`
-
-> Sistemas da casa. Dados em `data-common.js`. Cada item abre um Bottom Sheet com instruções de uso.
-
-- **Climatização** — Ar-condicionado split inverter
-- **Lareira** — Regras de uso e reposição de lenha
-- **Hidromassagem** — Horários (08h–22h) e orientações
-- **Conectividade** — Wi-Fi e credenciais de acesso
+| Ícone | Título | Status |
+|---|---|---|
+| `users` | Time de Anfitriões | Conteúdo preenchido |
+| `brush-cleaning` | Housekeeping Adicional | Conteúdo preenchido |
+| `heart` | Babysitter | Conteúdo preenchido |
+| `activity` | Personal Trainer | Conteúdo preenchido |
+| `scissors` | Pet Care | Conteúdo preenchido |
+| `droplets` | Car Wash | Conteúdo preenchido |
+| `shopping-bag` | Private Shopper | Conteúdo preenchido |
 
 ---
 
-### Seção 7 — Club House & Bem-Estar `#amenities`
+### Club House
 
-> Cards informativos (sem bottom sheet). Dados em `data-common.js`.
-
-- **Piscinas** — 07h–22h · piscina aquecida coberta + ao ar livre
-- **Sauna** — 08h–21h · finlandesa e a vapor
-- **Fitness Center** — 24 horas · equipamentos Technogym
-- **Spa** *(destaque)* — Sob agendamento · 24h de antecedência
-
----
-
-### Seção 8 — Gastronomia `#gastronomy`
-
-> Botões que abrem Bottom Sheets com horários e descrição. Dados em `data-common.js`.
-
-- **Restaurante** — Café 07h–10h · Jantar 19h–22h
-- **Coffee Shop** — 08h–18h
-- **Bar** — 12h–00h
-- **Chef em Casa** — Agendamento com 48h de antecedência via concierge
+| Ícone | Título | Status |
+|---|---|---|
+| `store` | Empório | Conteúdo pendente |
+| `baby` | Kids | Conteúdo preenchido (funcionamento 09h–21h) |
+| `users` | Teens | Conteúdo preenchido (funcionamento 09h–21h) |
+| `trees` | Playground Externo | Conteúdo pendente |
+| `watch` | Acesso via Pulseira | Conteúdo pendente |
+| `car-front` | Carrinhos de Golf | Conteúdo pendente |
+| `plug` | Carregadores Elétricos | Conteúdo pendente |
 
 ---
 
-### Seção 9 — Comodidades Pay Per Use `#concierge`
+### Segurança & Acesso
 
-> Serviços sob demanda. Dados em `data-common.js`. Cada item abre um Bottom Sheet.
-
-- **Time de Anfitriões** — Disponível 24h
-- **Personal Trainer** — Sessões individuais ou em grupo
-- **Pet Care** — Pet Walker e Banho & Tosa (24h de antecedência)
-- **Car Wash** — Lavagem completa durante a estadia
-- **Private Shopper** — Curadoria de compras e presentes locais
-
-> Nota informativa: *"Todos os serviços pay per use são cobrados à parte."*
+| Ícone | Título | Status |
+|---|---|---|
+| `shield` | Monitoramento 24 Horas | Conteúdo preenchido |
+| `scan-line` | Controle Eletrônico de Acesso | Conteúdo preenchido |
+| `shield-check` | Sistema de Segurança Perimetral | Conteúdo preenchido |
 
 ---
 
-## Componente: Bottom Sheet
+---
 
-> Drawer que desliza de baixo para cima ao clicar em qualquer item do guia, clube, facilities, gastronomia ou concierge.
+## FALL HOUSE · Casa 4 Suítes
 
-- **Header**
-  - Ícone Lucide
-  - Título do item
-- **Body**
-  - Conteúdo em texto *(ou placeholder "Instruções em breve.")*
-  - Horário de funcionamento *(quando aplicável)*
-- **Footer**
-  - Botão "← Voltar" (fecha o sheet)
+**Stats:** 448 m² · 4 Suítes · 10 Hóspedes · 2 Vagas
 
 ---
 
-## Arquitetura de Dados
+### Guia da Casa — Geral
 
-| Arquivo | Conteúdo |
-|---------|----------|
-| `data-hub.js` | Cards do index (nome, subtitle, imagem, link) |
-| `data-common.js` | Orientações gerais, clube, facilities, amenities, gastronomia, concierge, brand |
-| `data-fall-house.js` | Hero, stats, descrição e guia da Fall House |
-| `data-winter-house.js` | Hero, stats, descrição e guia da Winter House |
-| `data-garden.js` | Hero, stats, descrição e guia do Garden |
-| `data-terraco.js` | Hero, stats, descrição e guia da Cobertura |
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `key` | acesso | Acesso às Unidades | Conteúdo pendente |
+| `lightbulb` | iluminacao | Iluminação | Conteúdo pendente |
+| `tv` | tv | TV | Conteúdo pendente |
+| `wind` | ventilacao | Ventilação / Exaustão | Conteúdo pendente |
+| `flame` | piso-aquecido | Piso Aquecido | Conteúdo pendente |
+| `phone` | telefone | Telefone | Conteúdo pendente |
+| `flame-kindling` | fogo-chao | Fogo de Chão | Conteúdo pendente |
+| `thermometer` | inverter | Inverter | Conteúdo pendente |
 
-## Arquitetura de Render
+### Guia da Casa — Cozinha
 
-| Arquivo | O que renderiza |
-|---------|-----------------|
-| `render-common.js` | Hero, Features, Orientações, Clube, Facilities, Amenities, Gastronomia, Concierge, Floating Action |
-| `render-guia.js` | Guia da Casa (seções e itens por tipologia) |
-| `main-hub.js` | Grid de cards do index |
-| `main-tipologia.js` | Orquestra o render de todas as seções de cada tipologia |
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `pizza` | forno-pizza | Forno de Pizza | Conteúdo pendente |
+| `beef` | churrasqueira | Churrasqueira | Conteúdo pendente |
+
+### Guia da Casa — Segundo Andar
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `droplets` | sala-banho | Sala de Banho · SPA Jacuzzi | Conteúdo pendente |
+| `thermometer` | climatizacao-2a | Climatização | Conteúdo pendente |
+
+### Guia da Casa — Eletros
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `wine` | adega | Adega Climatizada | Conteúdo pendente |
+| `refrigerator` | geladeira | Geladeira | Conteúdo pendente |
+| `microwave` | microondas | Micro-ondas | Conteúdo pendente |
+| `microwave` | forno-eletrico | Forno Elétrico | Conteúdo pendente |
+| `coffee` | cafeteira | Máquina de Café | Conteúdo pendente |
+| `sparkles` | lava-loucas | Lava-louças | Conteúdo pendente |
+| `washing-machine` | lava-seca | Lava e Seca | Conteúdo pendente |
+| `cooking-pot` | fogao | Fogão + Depurador | Conteúdo pendente |
+| `filter` | filtro-agua | Filtro de Água | Conteúdo pendente |
+
+---
+
+---
+
+## WINTER HOUSE · Casa 3 Suítes
+
+**Stats:** 325 m² · 3 Suítes · 8 Hóspedes · 2 Vagas
+
+---
+
+### Guia da Casa — Geral
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `key` | acesso | Acesso às Unidades | Conteúdo pendente |
+| `lightbulb` | iluminacao | Iluminação | Conteúdo pendente |
+| `tv` | tv | TV | Conteúdo pendente |
+| `wind` | ventilacao | Ventilação / Exaustão | Conteúdo pendente |
+| `flame` | piso-aquecido | Piso Aquecido | Conteúdo pendente |
+| `phone` | telefone | Telefone | Conteúdo pendente |
+
+### Guia da Casa — Cozinha
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `beef` | churrasqueira | Churrasqueira | Conteúdo pendente |
+
+### Guia da Casa — Segundo Andar
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `thermometer` | climatizacao-2a | Climatização | Conteúdo pendente |
+
+### Guia da Casa — Eletros
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `wine` | adega | Adega Climatizada | Conteúdo pendente |
+| `refrigerator` | geladeira | Geladeira | Conteúdo pendente |
+| `microwave` | microondas | Micro-ondas | Conteúdo pendente |
+| `microwave` | forno-eletrico | Forno Elétrico | Conteúdo pendente |
+| `coffee` | cafeteira | Máquina de Café | Conteúdo pendente |
+| `utensils` | lava-loucas | Lava-louças | Conteúdo pendente |
+| `washing-machine` | lava-seca | Lava e Seca | Conteúdo pendente |
+| `cooking-pot` | fogao | Fogão + Depurador | Conteúdo pendente |
+| `filter` | filtro-agua | Filtro de Água | Conteúdo pendente |
+
+---
+
+---
+
+## GARDEN · Apartamento Garden
+
+**Stats:** ≈ 60 m² · 1 Quarto · 1 Vaga
+
+---
+
+### Guia da Casa — Geral
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `key` | acesso | Acesso às Unidades | Conteúdo pendente |
+| `lightbulb` | iluminacao | Iluminação | Conteúdo pendente |
+| `tv` | tv | TV | Conteúdo pendente |
+| `fan` | ventilacao | Ventilação / Exaustão | Conteúdo pendente |
+| `thermometer` | ar-central | AR Central | Conteúdo pendente |
+| `flame` | piso-aquecido | Piso Aquecido | Conteúdo pendente |
+| `phone` | telefone | Telefone | Conteúdo pendente |
+
+### Guia da Casa — Cozinha
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `zap` | fogao-inducao | Fogão Indução | Conteúdo pendente |
+
+### Guia da Casa — Eletros
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `wine` | adega | Adega Climatizada | Conteúdo pendente |
+| `refrigerator` | geladeira | Geladeira | Conteúdo pendente |
+| `microwave` | microondas | Micro-ondas | Conteúdo pendente |
+| `microwave` | forno-eletrico | Forno Elétrico | Conteúdo pendente |
+| `coffee` | cafeteira | Máquina de Café | Conteúdo pendente |
+| `utensils` | lava-loucas | Lava-louças | Conteúdo pendente |
+| `air-vent` | depurador | Depurador de Ar | Conteúdo pendente |
+
+### Guia da Casa — Quartos
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `droplets` | hidro-jacuzzi | Banheira Hidro Jacuzzi | Conteúdo pendente |
+
+---
+
+---
+
+## TERRAÇO · Apartamento Cobertura
+
+**Stats:** ≈ 60 m² · 1 Quarto · 1 Vaga
+
+---
+
+### Guia da Casa — Geral
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `key` | acesso | Acesso às Unidades | Conteúdo pendente |
+| `lightbulb` | iluminacao | Iluminação | Conteúdo pendente |
+| `tv` | tv | TV | Conteúdo pendente |
+| `fan` | ventilacao | Ventilação / Exaustão | Conteúdo pendente |
+| `thermometer` | ar-central | AR Central | Conteúdo pendente |
+| `flame` | piso-aquecido | Piso Aquecido | Conteúdo pendente |
+| `phone` | telefone | Telefone | Conteúdo pendente |
+
+### Guia da Casa — Cozinha
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `zap` | fogao-inducao | Fogão Indução | Conteúdo pendente |
+
+### Guia da Casa — Eletros
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `wine` | adega | Adega Climatizada | Conteúdo pendente |
+| `refrigerator` | geladeira | Geladeira | Conteúdo pendente |
+| `microwave` | microondas | Micro-ondas | Conteúdo pendente |
+| `microwave` | forno-eletrico | Forno Elétrico | Conteúdo pendente |
+| `coffee` | cafeteira | Máquina de Café | Conteúdo pendente |
+| `utensils` | lava-loucas | Lava-louças | Conteúdo pendente |
+| `air-vent` | depurador | Depurador de Ar | Conteúdo pendente |
+
+### Guia da Casa — Mini Spa Terrace
+
+| Ícone | ID | Título | Status |
+|---|---|---|---|
+| `sparkles` | spa-jacuzzi | Mini Spa Terrace Jacuzzi | Conteúdo pendente |
+
+---
+
+---
+
+## Resumo de Dependências
+
+### Conteúdo operacional pendente (body vazio)
+
+Todos os itens do **Guia da Casa** estão com conteúdo pendente aguardando instruções do fabricante / operação.
+
+Também pendentes no COMMON:
+- **Climatização** — instruções do sistema por ambiente
+- **Lareira** — passos de acendimento do fabricante (4 etapas)
+- **Conectividade** — nome da rede, login e senha do Wi-Fi
+- **Empório** — catálogo e funcionamento
+- **Playground Externo** — regras e horário
+- **Acesso via Pulseira** — instruções de uso
+- **Carrinhos de Golf** — regras e disponibilidade
+- **Carregadores Elétricos** — localização e instrução de uso
+
+### Dados operacionais a confirmar com a operação
+
+| Campo | Valor atual | Ação necessária |
+|---|---|---|
+| Ramal de emergência | `[xx]` | Confirmar número do ramal |
+| WhatsApp emergência | `[xxxxxxxx]` | Confirmar número |
+| WhatsApp concierge | `+5554999999999` | Substituir pelo número real |
+| Horário Sauna | 16h00 às 21h00 | Confirmar se é definitivo |
+| Horário Restaurante | 12h00 às 22h00 | Confirmar se é definitivo |
+| Horário Coffee Shop | 08h00 às 20h00 | Confirmar se é definitivo |
+| Horário Bar | 17h00 às 23h00 | Confirmar se é definitivo |
+| Horário Check-out | 12h00 | Confirmar se é definitivo |

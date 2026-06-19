@@ -1,7 +1,7 @@
 const TIPOLOGIA = {
 
   hero: {
-    label:       'Garden · Apartamento Garden · Diretório Digital',
+    label:       'Garden · Apartamento Garden · Guia Digital',
     headline:    'Garden.',
     subheadline: 'Seu apartamento garden em Gramado. Use este guia para encontrar tudo que você precisa durante a estadia.',
     location:    'Gramado · Serra Gaúcha · Brasil',
@@ -34,7 +34,7 @@ const TIPOLOGIA = {
       id: 'cozinha',
       label: 'Cozinha',
       items: [
-        { id: 'fogao-inducao', icon: 'zap',   title: 'Fogão Indução', body: '' }
+        { id: 'fogao-inducao', icon: 'cooking-pot', title: 'Fogão Indução', body: '' }
       ]
     },
     {
@@ -42,12 +42,12 @@ const TIPOLOGIA = {
       label: 'Eletros',
       items: [
         { id: 'adega',          icon: 'wine',            title: 'Adega Climatizada', body: '' },
-        { id: 'geladeira',      icon: 'refrigerator',    title: 'Geladeira',         body: '' },
-        { id: 'microondas',     icon: 'microwave',       title: 'Micro-ondas',       body: '' },
-        { id: 'forno-eletrico', icon: 'square',          title: 'Forno Elétrico',    body: '' },
+        { id: 'geladeira',      icon: 'refrigerator',    title: 'Geladeira',         body: '<span class="bs-model-tag">Duplex Inverse 435L · Tramontina</span><ul class="bs-steps"><li><strong>Ligar:</strong> Pressione o interruptor geral (botão com luz verde).</li><li><strong>Temperatura:</strong> Ajuste o frio pelas setas no painel de controle.</li><li><strong>Dica:</strong> Evite deixar a porta aberta — acelera a perda de frio e aumenta o consumo de energia.</li></ul>' },
+        { id: 'microondas',     icon: 'microwave',       title: 'Micro-ondas',       body: '<span class="bs-model-tag">Glass Cook 25L · Tramontina</span><ul class="bs-steps"><li><strong>+30s:</strong> Aperte <em>Início</em> para ligar 30s em potência máxima. Repita para somar mais tempo.</li><li><strong>Descongelar:</strong> Gire o seletor para "Descongelar", ajuste o tempo e pressione <em>Início</em>.</li><li><strong>Atenção:</strong> Nunca insira metais, papel alumínio ou talheres no interior.</li></ul>' },
+        { id: 'forno-eletrico', icon: 'microwave',        title: 'Forno Elétrico',    body: '<span class="bs-model-tag">Epic T Smart 60 · Tramontina</span><ul class="bs-steps"><li><strong>Painel Touch:</strong> Use o visor para ligar e acessar todas as funções.</li><li><strong>Programação:</strong> No ícone "Definições", defina horário para o forno ligar sozinho.</li><li><strong>Air Fry:</strong> Função embutida para preparos saudáveis sem uso de óleo.</li></ul>' },
         { id: 'cafeteira',      icon: 'coffee',          title: 'Máquina de Café',   body: '' },
         { id: 'lava-loucas',    icon: 'utensils',        title: 'Lava-louças',       body: '' },
-        { id: 'depurador',      icon: 'air-vent',        title: 'Depurador de Ar',   body: '' }
+        { id: 'depurador',      icon: 'air-vent',        title: 'Depurador de Ar',   body: '<span class="bs-model-tag">Coifa Square Isla 40 · Tramontina</span><ul class="bs-steps"><li><strong>Velocidade:</strong> Pressione os botões de 1 a 4 para escolher a força do exaustor. O botão da lâmpada aciona a luz de forma independente.</li><li><strong>Timer:</strong> Segure o botão da velocidade ativa por 3 segundos — a luz piscará e a coifa desligará automaticamente após 5 min.</li><li><strong>Dica:</strong> Ligue 5 minutos antes de cozinhar para melhor sucção do ar.</li></ul>' }
       ]
     },
     {

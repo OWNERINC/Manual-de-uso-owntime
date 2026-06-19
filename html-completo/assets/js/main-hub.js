@@ -9,12 +9,14 @@ function renderTipologiaGrid() {
   const hero  = HUB.hero;
 
   const btns = HUB.tipologias.map(t => {
-    const bg = t.image ? `style="background-image:url('${t.image}')"` : '';
+    const bgStyle = t.image ? `style="background-image:url('${t.image}')"` : '';
     return `
-      <a href="${t.href}" class="hub__btn" id="btn-${t.id}" aria-label="${t.name} — ${t.subtitle}" ${bg}>
+      <a href="${t.href}" class="hub__btn" id="btn-${t.id}" aria-label="${t.name} — ${t.subtitle}">
+        <span class="hub__btn-bg" ${bgStyle} aria-hidden="true"></span>
         <span class="hub__btn-text">
           <span class="hub__btn-subtitle">${t.subtitle}</span>
           <span class="hub__btn-name">${t.name}</span>
+          <span class="hub__btn-stats">${t.area} · ${t.capacidade}</span>
         </span>
       </a>
     `;
@@ -23,11 +25,14 @@ function renderTipologiaGrid() {
   document.getElementById('tipologia-grid').innerHTML = `
     <div class="hub__page">
       <div class="hub__content">
-        <p class="hub__brand-label">${hero.label} · ${hero.location}</p>
-        <h1 class="hub__intro-title">${intro.heading}</h1>
+        <p class="hub__brand-label">${hero.label} · ${hero.location.split(' · ')[0]}</p>
+        <h1 class="hub__intro-title">
+          <span class="hub__intro-title__pre">${intro.preHeading}</span>
+          <img src="assets/logo.png" class="hub__intro-logo" alt="Own Time Home Club" draggable="false">
+        </h1>
         <p class="hub__intro-p">${intro.summary}</p>
         <div class="hub__intro-ctas">
-          <button class="hub__intro-cta hub__intro-cta--ghost bs-trigger" data-bs-target="sheet-sobre-owntime">
+          <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-sobre-owntime">
             Ler mais
           </button>
         </div>
@@ -65,8 +70,16 @@ function renderTipologiaGrid() {
   document.body.appendChild(sheet);
 }
 
+function animateHub() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (typeof gsap === 'undefined') return;
+
+  gsap.from('.hub__intro-title', { opacity: 0, y: 20, duration: 0.9, ease: 'power3.out', delay: 0.15 });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTipologiaGrid();
   lucide.createIcons();
   initBottomSheets();
+  animateHub();
 });

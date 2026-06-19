@@ -60,7 +60,7 @@
   --color-border-lt: rgba(0, 0, 0, 0.09);
 
   /* ── Tipografia ── */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Raleway', 'Cormorant Garamond', Georgia, sans-serif;
   --font-body:    'Roobert', system-ui, sans-serif;
 
   /* ── Espaço ── */
@@ -184,15 +184,6 @@ a { color: inherit; text-decoration: none; }
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  /* Garante visibilidade dos elementos que GSAP anima via opacity/transform */
-  .hero__label,
-  .hero__headline,
-  .hero__sub,
-  .hero__footer {
-    opacity: 1 !important;
-    transform: none !important;
   }
 
   /* Fallback: se js-reveal foi adicionado mas IO não disparou, força visível */

@@ -68,15 +68,23 @@ function renderHero(tipologia) {
     <div class="hero__bg"></div>
     <div class="hero__rule"></div>
     <div class="hero__content container">
-      <p class="hero__label">${tipologia.hero.label}</p>
-      <h1 class="hero__headline">${tipologia.hero.headline}</h1>
-      <p class="hero__sub">${tipologia.hero.subheadline}</p>
-      <div class="hero__intro">${introParagraphs}</div>
-      <div class="hero__footer">
-        <span class="hero__location">${tipologia.hero.location}</span>
-        <div class="hero__scroll" aria-hidden="true">
-          <span>Explorar</span>
-          <span class="hero__scroll-line"></span>
+      <div class="hero__top">
+        <p class="hero__label">${tipologia.hero.label.split(' · ').map(s => `<span class="hero__label-seg">${s}</span>`).join('<span class="hero__label-dot" aria-hidden="true">·</span>')}</p>
+        <h1 class="hero__headline">${tipologia.hero.headline}</h1>
+      </div>
+      <div class="hero__bottom">
+        <div class="hero__scroll-cta" aria-hidden="true">
+          <span class="hero__scroll-cta__line"></span>
+          <i data-lucide="chevron-down" class="hero__scroll-cta__arrow"></i>
+          <i data-lucide="chevron-down" class="hero__scroll-cta__arrow hero__scroll-cta__arrow--2"></i>
+        </div>
+        <p class="hero__sub">${tipologia.hero.subheadline}</p>
+        <div class="hero__footer">
+          <span class="hero__location">${tipologia.hero.location}</span>
+          <div class="hero__scroll" aria-hidden="true">
+            <span>Explorar</span>
+            <span class="hero__scroll-line"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -115,7 +123,7 @@ function renderOrientacoesGerais(common) {
       <header class="orientacoes__header">
         <span class="section-label">Orientações Gerais</span>
       </header>
-      <div class="guia-section__grid">${btns}</div>
+      <div class="guia-section__grid guia-section__grid--light">${btns}</div>
     </div>
   `;
 
@@ -136,7 +144,7 @@ function renderClube(common) {
   const btns = items.map(item => _guiaItemBtn(`sheet-clube-${item.id}`, item.icon, item.title)).join('');
 
   const section = document.getElementById('clube');
-  section.classList.add('section-dark-alt');
+  section.classList.add('section-dark');
   section.innerHTML = `
     <div class="container section-pad">
       <header class="guia-section__header">
@@ -190,14 +198,20 @@ function renderFacilities(common) {
    renderAmenities
    ═══════════════════════════════════════════ */
 function renderAmenities(common) {
-  const cards = common.amenities.map(a => `
+  const cards = common.amenities.map(a => {
+    const noteHtml = a.note
+      .split('\n\n')
+      .map(p => `<p class="amenity-card__note">${p.replace(/\n/g, '<br>')}</p>`)
+      .join('');
+    return `
     <article class="amenity-card${a.id === 'spa' ? ' amenity-card--highlight' : ''}">
       <i data-lucide="${a.icon}" class="amenity-card__icon" aria-hidden="true"></i>
       <h3 class="amenity-card__title">${a.title}</h3>
       <span class="amenity-card__hours">${a.hours}</span>
-      <p class="amenity-card__note">${a.note}</p>
+      ${noteHtml}
     </article>
-  `).join('');
+  `;
+  }).join('');
 
   document.getElementById('amenities').innerHTML = `
     <div class="container section-pad">
@@ -221,7 +235,7 @@ function renderGastronomy(common) {
   const btns = items.map(item => _guiaItemBtn(`sheet-gastro-${item.id}`, item.icon, item.title)).join('');
 
   const section = document.getElementById('gastronomy');
-  section.classList.add('section-light');
+  section.classList.add('section-dark');
   section.innerHTML = `
     <div class="container section-pad">
       <header class="gastronomy__header">
@@ -230,7 +244,7 @@ function renderGastronomy(common) {
         <span class="divider"></span>
         <p class="section-sub">Sabores da Serra, do café da manhã à experiência privativa de um chef em casa.</p>
       </header>
-      <div class="guia-section__grid guia-section__grid--light">${btns}</div>
+      <div class="guia-section__grid">${btns}</div>
     </div>
   `;
 
@@ -252,16 +266,16 @@ function renderConcierge(common) {
   const btns = items.map(item => _guiaItemBtn(`sheet-concierge-${item.id}`, item.icon, item.title)).join('');
 
   const section = document.getElementById('concierge');
-  section.classList.add('section-dark');
+  section.classList.add('section-light');
   section.innerHTML = `
     <div class="container section-pad">
       <header class="concierge__header">
         <span class="section-label">Comodidades Pay Per Use</span>
         <h2 class="section-heading">Curadoria<br><em>a seu serviço.</em></h2>
-        <span class="divider" style="background:var(--color-text);opacity:0.15"></span>
+        <span class="divider"></span>
         <p class="section-sub">Serviços personalizados disponíveis sob demanda. Solicite ao seu time de anfitriões com antecedência.</p>
       </header>
-      <div class="guia-section__grid">${btns}</div>
+      <div class="guia-section__grid guia-section__grid--light">${btns}</div>
       <div class="concierge__note">
         <i data-lucide="info" class="concierge__note-icon" aria-hidden="true"></i>
         <p class="concierge__note-text">Todos os serviços pay per use são cobrados à parte e sujeitos à disponibilidade. Para agendamentos e valores, entre em contato com o seu time de anfitriões.</p>

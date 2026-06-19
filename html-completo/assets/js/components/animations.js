@@ -16,16 +16,26 @@ function initAnimations() {
   /* ─────────────────────────────────────────
      HERO — GSAP timeline (sem ScrollTrigger)
      ───────────────────────────────────────── */
+
+  // Se GSAP não carregou (CDN offline, cache corrompido), força visibilidade imediata
+  if (typeof gsap === 'undefined') {
+    document.querySelectorAll('.hero__label,.hero__headline,.hero__sub,.hero__intro,.hero__footer').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+    return;
+  }
+
   if (!reducedMotion) {
     gsap.registerPlugin(ScrollTrigger);
 
     const heroTl = gsap.timeline({ delay: 0.1 });
     heroTl
-      .to('.hero__label',    { opacity: 1, y: 0, duration: 0.9,  ease: 'power3.out' })
-      .to('.hero__headline', { opacity: 1, y: 0, duration: 1.1,  ease: 'power3.out' }, '-=0.5')
-      .to('.hero__sub',      { opacity: 1, y: 0, duration: 0.9,  ease: 'power3.out' }, '-=0.55')
-      .to('.hero__intro',    { opacity: 1, y: 0, duration: 0.85, ease: 'power3.out' }, '-=0.45')
-      .to('.hero__footer',   { opacity: 1, y: 0, duration: 0.75, ease: 'power3.out' }, '-=0.5');
+      .from('.hero__label',    { opacity: 0, y: 12, duration: 0.9,  ease: 'power3.out', clearProps: 'all' })
+      .from('.hero__headline', { opacity: 0, y: 40, duration: 1.1,  ease: 'power3.out', clearProps: 'all' }, '-=0.5')
+      .from('.hero__sub',      { opacity: 0, y: 16, duration: 0.9,  ease: 'power3.out', clearProps: 'all' }, '-=0.55')
+      .from('.hero__intro',    { opacity: 0, y: 14, duration: 0.85, ease: 'power3.out', clearProps: 'all' }, '-=0.45')
+      .from('.hero__footer',   { opacity: 0, y: 12, duration: 0.75, ease: 'power3.out', clearProps: 'all' }, '-=0.5');
 
     // Linha de scroll shrink (scrub puro — sem estado inicial oculto)
     gsap.to('.hero__scroll-line', {

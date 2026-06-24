@@ -1,0 +1,341 @@
+/* ============================================
+   SEARCH — Guia Digital Keyword Search
+   Mobile-first: fixed top bar unificado
+   Desktop: FAB bottom-left
+   ============================================ */
+
+/* ════════════════════════════════════════════
+   MOBILE — barra fixa no topo (base/default)
+   ════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  body {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 58px);
+  }
+}
+
+.search-fab {
+  position: fixed;
+  z-index: 210;
+
+  /* Mobile: barra full-width no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: calc(env(safe-area-inset-top, 0px) + 0.6rem) 0.6rem 0.6rem;
+
+  background: rgba(8, 8, 8, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ── page-back movido para dentro do search-fab ── */
+.search-fab__back {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  z-index: auto !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+
+  /* Mesmo visual do search-fab__row */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0 0.65rem;
+  height: 40px;
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  /* Colapsa lateralmente ao some no scroll */
+  max-width: 140px;
+  transition:
+    max-width 0.3s var(--ease-out),
+    opacity 0.22s ease,
+    padding 0.3s ease,
+    border-width 0.25s ease;
+}
+
+.search-fab__back:hover,
+.search-fab__back:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--color-text);
+  outline: none;
+}
+
+.search-fab__back.is-hidden {
+  max-width: 0;
+  opacity: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-width: 0;
+  pointer-events: none;
+}
+
+/* ── Wrapper do input + botão ── */
+.search-fab__row {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.search-fab.is-open .search-fab__row {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ── Botão (lupa / ×) ── */
+.search-fab__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.search-fab.is-open .search-fab__btn {
+  color: var(--color-text);
+}
+
+.search-fab__btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* ── Input — sempre visível no mobile ── */
+.search-fab__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem; /* ≥ 16px previne zoom iOS */
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  outline: none;
+  padding: 0 0.75rem 0 0;
+  -webkit-appearance: none;
+}
+
+.search-fab__input::placeholder {
+  color: var(--color-muted);
+}
+
+/* ── Dropdown — full-width fixo abaixo da barra ── */
+.search-fab__dropdown {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 58px);
+  left: 0;
+  right: 0;
+  z-index: 209;
+  background: rgba(8, 8, 8, 0.98);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border);
+  overflow-y: auto;
+  max-height: 50vh;
+  width: 100%;
+}
+
+.search-fab.has-results .search-fab__dropdown,
+.search-fab.has-empty .search-fab__dropdown {
+  display: flex;
+}
+
+/* ── Item de resultado ── */
+.search-fab__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+  width: 100%;
+}
+
+.search-fab__item:last-child {
+  border-bottom: none;
+}
+
+.search-fab__item:active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.search-fab__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  color: var(--color-muted);
+}
+
+.search-fab__item-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.search-fab__item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.search-fab__item-title {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.search-fab__item-section {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+/* ── Estado vazio ── */
+.search-fab__empty {
+  padding: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ════════════════════════════════════════════
+   DESKTOP — FAB bottom-left
+   ════════════════════════════════════════════ */
+@media (min-width: 769px) {
+  body {
+    padding-top: 0;
+  }
+
+  .search-fab {
+    top: auto;
+    left: 2.25rem;
+    right: auto;
+    bottom: 2.25rem;
+    z-index: 190;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+  }
+
+  /* page-back nunca é movido no desktop */
+  .search-fab__back {
+    display: none;
+  }
+
+  .search-fab__row {
+    background: rgba(8, 8, 8, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+    flex: none;
+  }
+
+  .search-fab.is-open .search-fab__row {
+    border-radius: var(--radius);
+  }
+
+  .search-fab__btn {
+    width: 48px;
+    height: 48px;
+    color: var(--color-text);
+    border-radius: 50px;
+  }
+
+  .search-fab__btn:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Input oculto até abrir no desktop */
+  .search-fab__input {
+    width: 0;
+    max-width: 0;
+    opacity: 0;
+    padding: 0;
+    font-size: 0.82rem;
+    transition:
+      width 0.28s var(--ease-out),
+      max-width 0.28s var(--ease-out),
+      opacity 0.2s ease,
+      padding 0.28s ease;
+    white-space: nowrap;
+  }
+
+  .search-fab.is-open .search-fab__input {
+    width: 210px;
+    max-width: 210px;
+    opacity: 1;
+    padding: 0 0.75rem 0 0;
+  }
+
+  /* Dropdown desktop: flui abaixo do row */
+  .search-fab__dropdown {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    min-width: 260px;
+    max-height: 300px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  .search-fab__item:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}

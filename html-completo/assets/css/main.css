@@ -60,7 +60,7 @@
   --color-border-lt: rgba(0, 0, 0, 0.09);
 
   /* ── Tipografia ── */
-  --font-display: 'Raleway', 'Cormorant Garamond', Georgia, sans-serif;
+  --font-display: 'Cormorant Garamond', 'Raleway', Georgia, serif;
   --font-body:    'Roobert', system-ui, sans-serif;
 
   /* ── Espaço ── */

@@ -132,3 +132,66 @@
 .orientacoes__header {
   margin-bottom: 1.75rem;
 }
+
+/* ════════════════════════════════════════════════
+   SECTION NAV — Barra de navegação por seções
+   ════════════════════════════════════════════════ */
+
+.section-nav {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background: rgba(8, 8, 8, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (max-width: 768px) {
+  .section-nav {
+    top: calc(env(safe-area-inset-top, 0px) + 58px);
+  }
+}
+
+.section-nav__track {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-inline: var(--space-cont);
+  gap: 0;
+}
+
+.section-nav__track::-webkit-scrollbar {
+  display: none;
+}
+
+.section-nav__pill {
+  flex-shrink: 0;
+  padding: 0.75rem 0.85rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.section-nav__pill:hover {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.section-nav__pill.is-active {
+  color: var(--color-gold);
+  border-bottom-color: var(--color-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-nav__pill { transition: none; }
+}

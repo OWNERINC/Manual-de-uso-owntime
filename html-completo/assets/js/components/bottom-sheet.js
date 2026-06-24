@@ -110,4 +110,40 @@ function initBottomSheets() {
       closeSheet();
     }
   });
+
+  /**
+   * Swipe para fechar (touch drag a partir do header)
+   */
+  let touchStartY = 0;
+  let touchCurrentY = 0;
+  let isSwiping = false;
+
+  document.addEventListener('touchstart', (e) => {
+    if (!currentOpenSheet) return;
+    if (e.target.closest('.bottom-sheet__body')) return;
+    touchStartY = e.touches[0].clientY;
+    touchCurrentY = touchStartY;
+    isSwiping = true;
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (e) => {
+    if (!isSwiping || !currentOpenSheet) return;
+    touchCurrentY = e.touches[0].clientY;
+    const dy = touchCurrentY - touchStartY;
+    if (dy > 0) {
+      currentOpenSheet.style.transition = 'none';
+      currentOpenSheet.style.transform = `translateY(${dy}px)`;
+    }
+  }, { passive: true });
+
+  document.addEventListener('touchend', () => {
+    if (!isSwiping || !currentOpenSheet) return;
+    isSwiping = false;
+    const dy = touchCurrentY - touchStartY;
+    currentOpenSheet.style.transition = '';
+    currentOpenSheet.style.transform = '';
+    if (dy > 80) closeSheet();
+    touchStartY = 0;
+    touchCurrentY = 0;
+  });
 }

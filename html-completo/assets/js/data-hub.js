@@ -26,6 +26,28 @@ const HUB = {
     ctaWhatsapp: 'https://wa.me/5554999999999?text=Olá%2C%20preciso%20de%20ajuda.'
   },
 
+  horarios: [
+    {
+      section: 'Gastronomia',
+      items: [
+        { title: 'Bar',           hours: '17h00 às 23h00' },
+        { title: 'Café da Manhã', hours: '07h00 às 11h00' },
+        { title: 'Coffee Shop',   hours: '08h00 às 20h00' },
+        { title: 'Restaurante',   hours: '12h00 às 22h00 · Último pedido 21h30' },
+      ]
+    },
+    {
+      section: 'Club House',
+      items: [
+        { title: 'Academia',     hours: '24 horas' },
+        { title: 'Kids & Teens', hours: '09h00 às 21h00' },
+        { title: 'Piscinas',     hours: '08h00 às 22h00' },
+        { title: 'Saunas',       hours: '16h00 às 21h00' },
+        { title: 'Spa',          hours: '10h00 às 20h00 · Último atendimento: 19h00' },
+      ]
+    }
+  ],
+
   tipologias: [
     {
       id:        'fall-house',
@@ -35,7 +57,7 @@ const HUB = {
       area:      '448 m²',
       capacidade:'Até 10 hóspedes',
       vagas:     '2 vagas',
-      image:     'assets/images/casa 4 suites.png'
+      image:     'assets/images/casa-4-suites.webp'
     },
     {
       id:        'winter-house',
@@ -45,7 +67,7 @@ const HUB = {
       area:      '325 m²',
       capacidade:'Até 8 hóspedes',
       vagas:     '2 vagas',
-      image:     'assets/images/casa 3 suites.png'
+      image:     'assets/images/casa-3-suites.webp'
     },
     {
       id:        'garden',
@@ -55,7 +77,7 @@ const HUB = {
       area:      '≈ 60 m²',
       capacidade:'Para pequenos núcleos',
       vagas:     '1 vaga',
-      image:     'assets/images/apto garden.jpeg'
+      image:     'assets/images/apto-garden.webp'
     },
     {
       id:        'terraco',
@@ -65,7 +87,7 @@ const HUB = {
       area:      '≈ 60 m²',
       capacidade:'Para pequenos núcleos',
       vagas:     '1 vaga',
-      image:     'assets/images/apto cobertura.png'
+      image:     'assets/images/apto-cobertura.webp'
     }
   ]
 

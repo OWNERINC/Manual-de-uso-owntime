@@ -35,6 +35,10 @@ function renderTipologiaGrid() {
           <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-sobre-owntime">
             Ler mais
           </button>
+          <button class="hub__intro-cta hub__intro-cta--hours bs-trigger" data-bs-target="sheet-horarios">
+            <i data-lucide="clock"></i>
+            Horários
+          </button>
         </div>
       </div>
       <nav class="hub__nav" aria-label="Selecione sua tipologia">${btns}</nav>
@@ -60,6 +64,9 @@ function renderTipologiaGrid() {
           <i data-lucide="book-open"></i>
         </div>
         <h3 class="bottom-sheet__title" id="sheet-sobre-title">Own Time Home Club</h3>
+        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
+          <i data-lucide="x"></i>
+        </button>
       </header>
       <div class="bottom-sheet__body">${detailsHtml}</div>
       <div class="bottom-sheet__footer">
@@ -70,15 +77,61 @@ function renderTipologiaGrid() {
   document.body.appendChild(sheet);
 }
 
+function renderHorariosSheet(horarios) {
+  const groups = horarios.map(group => {
+    const rows = group.items.map(item => `
+      <li class="hours-row">
+        <span class="hours-row__title">${item.title}</span>
+        <span class="hours-row__time">${item.hours}</span>
+      </li>
+    `).join('');
+    return `
+      <div class="hours-group">
+        <span class="hours-group__label">${group.section}</span>
+        <ul class="hours-group__list">${rows}</ul>
+      </div>
+    `;
+  }).join('');
+
+  const sheet = document.createElement('div');
+  sheet.className = 'bottom-sheet';
+  sheet.id = 'sheet-horarios';
+  sheet.setAttribute('role', 'dialog');
+  sheet.setAttribute('aria-modal', 'true');
+  sheet.setAttribute('aria-hidden', 'true');
+  sheet.setAttribute('aria-labelledby', 'sheet-horarios-title');
+  sheet.innerHTML = `
+    <div class="bottom-sheet__inner">
+      <header class="bottom-sheet__header">
+        <div class="bottom-sheet__header-icon" aria-hidden="true">
+          <i data-lucide="clock"></i>
+        </div>
+        <h3 class="bottom-sheet__title" id="sheet-horarios-title">Horários de Funcionamento</h3>
+        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+      <div class="bottom-sheet__body">
+        <div class="hours-list">${groups}</div>
+      </div>
+      <div class="bottom-sheet__footer">
+        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(sheet);
+}
+
 function animateHub() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (typeof gsap === 'undefined') return;
-
-  gsap.from('.hub__intro-title', { opacity: 0, y: 20, duration: 0.9, ease: 'power3.out', delay: 0.15 });
+  const el = document.querySelector('.hub__intro-title');
+  if (!el) return;
+  el.classList.add('hub__intro-title--animate');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   renderTipologiaGrid();
+  renderHorariosSheet(HUB.horarios);
   lucide.createIcons();
   initBottomSheets();
   animateHub();

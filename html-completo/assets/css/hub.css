@@ -382,10 +382,92 @@ body {
   }
 }
 
+/* ─── CTA variante Horários ────────────── */
+.hub__intro-cta--hours {
+  background: transparent;
+  border: 1px solid rgba(14, 14, 14, 0.35);
+  color: var(--color-text-inv);
+  opacity: 0.85;
+}
+
+.hub__intro-cta--hours:hover,
+.hub__intro-cta--hours:focus-visible {
+  background: rgba(14, 14, 14, 0.07);
+  border-color: rgba(14, 14, 14, 0.6);
+  opacity: 1;
+  outline: none;
+}
+
+.hub__intro-cta--hours svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* ─── Sheet: lista de horários ──────────── */
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.hours-group__label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent-lt);
+  margin-bottom: 0.85rem;
+}
+
+.hours-group__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hours-row__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-text);
+}
+
+.hours-row__time {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--color-gold);
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* ─── Animação de entrada (CSS, sem GSAP) ── */
+@keyframes hubFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hub__intro-title--animate {
+  animation: hubFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
 /* ─── Fallback: reduced-motion ─────────── */
 @media (prefers-reduced-motion: reduce) {
-  .hub__intro-title {
-    opacity: 1 !important;
-    transform: none !important;
+  .hub__intro-title--animate {
+    animation: none;
   }
 }

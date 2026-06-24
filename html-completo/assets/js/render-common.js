@@ -32,6 +32,9 @@ function _appendSheet(id, icon, title, bodyHtml) {
           <i data-lucide="${icon}"></i>
         </div>
         <h3 class="bottom-sheet__title" id="${titleId}">${title}</h3>
+        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
+          <i data-lucide="x"></i>
+        </button>
       </header>
       <div class="bottom-sheet__body">${body}</div>
       <div class="bottom-sheet__footer">
@@ -55,14 +58,16 @@ function _guiaItemBtn(sheetId, icon, title) {
   `;
 }
 
+/* ── Helper: body HTML wrapper ── */
+function _bodyHtml(body) {
+  if (!body) return '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
+  return body.startsWith('<') ? body : `<p>${body}</p>`;
+}
+
 /* ═══════════════════════════════════════════
    renderHero
    ═══════════════════════════════════════════ */
 function renderHero(tipologia) {
-  const introParagraphs = (COMMON.heroIntro || [])
-    .map(p => `<p class="hero__intro-p">${p}</p>`)
-    .join('');
-
   document.getElementById('hero').innerHTML = `
     <div class="hero__bg-img" style="background-image: url('${tipologia.hero.image}')"></div>
     <div class="hero__bg"></div>
@@ -128,10 +133,7 @@ function renderOrientacoesGerais(common) {
   `;
 
   items.forEach(item => {
-    const body = item.body
-      ? `<p>${item.body}</p>`
-      : '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
-    _appendSheet(`sheet-orientacao-${item.id}`, item.icon, item.title, body);
+    _appendSheet(`sheet-orientacao-${item.id}`, item.icon, item.title, _bodyHtml(item.body));
   });
 }
 
@@ -157,10 +159,11 @@ function renderClube(common) {
   `;
 
   items.forEach(item => {
-    const body = item.body
-      ? `<p>${item.body}</p>`
-      : '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
-    _appendSheet(`sheet-clube-${item.id}`, item.icon, item.title, body);
+    const bodyHtml = `
+      ${item.hours ? `<span class="bottom-sheet__hours">${item.hours}</span>` : ''}
+      ${_bodyHtml(item.body)}
+    `;
+    _appendSheet(`sheet-clube-${item.id}`, item.icon, item.title, bodyHtml);
   });
 }
 
@@ -187,10 +190,7 @@ function renderFacilities(common) {
   `;
 
   items.forEach(item => {
-    const body = item.body
-      ? `<p>${item.body}</p>`
-      : '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
-    _appendSheet(`sheet-facility-${item.id}`, item.icon, item.title, body);
+    _appendSheet(`sheet-facility-${item.id}`, item.icon, item.title, _bodyHtml(item.body));
   });
 }
 
@@ -251,7 +251,7 @@ function renderGastronomy(common) {
   items.forEach(item => {
     const bodyHtml = `
       ${item.hours ? `<span class="bottom-sheet__hours">${item.hours}</span>` : ''}
-      ${item.body ? `<p>${item.body}</p>` : '<p class="bottom-sheet__placeholder">Instruções em breve.</p>'}
+      ${_bodyHtml(item.body)}
     `;
     _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, bodyHtml);
   });
@@ -284,10 +284,7 @@ function renderConcierge(common) {
   `;
 
   items.forEach(item => {
-    const body = item.body
-      ? `<p>${item.body}</p>`
-      : '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
-    _appendSheet(`sheet-concierge-${item.id}`, item.icon, item.title, body);
+    _appendSheet(`sheet-concierge-${item.id}`, item.icon, item.title, _bodyHtml(item.body));
   });
 }
 
@@ -345,9 +342,6 @@ function renderSegurancaAcesso(common) {
   `;
 
   items.forEach(item => {
-    const body = item.body
-      ? `<p>${item.body}</p>`
-      : '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
-    _appendSheet(`sheet-seg-${item.id}`, item.icon, item.title, body);
+    _appendSheet(`sheet-seg-${item.id}`, item.icon, item.title, _bodyHtml(item.body));
   });
 }

@@ -43,7 +43,7 @@ function renderGuia(tipologia) {
   guia.forEach(section => {
     if (!section.items) return;
     section.items.forEach(item => {
-      _appendSheet('sheet-guia-' + item.id, item.icon, item.title, item.body || null);
+      _appendSheet('sheet-guia-' + item.id, item.icon, item.title, item.body ? _bodyHtml(item.body) : null);
     });
   });
 }

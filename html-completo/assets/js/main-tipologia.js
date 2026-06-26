@@ -7,13 +7,19 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const hk = (COMMON.concierge || []).find(c => c.id === 'housekeeping');
+  if (hk && TIPOLOGIA.housekeepingDay) hk.hours = TIPOLOGIA.housekeepingDay;
+
+  if (Array.isArray(TIPOLOGIA.extraOrientacoes)) {
+    COMMON.orientacoesGerais = [...COMMON.orientacoesGerais, ...TIPOLOGIA.extraOrientacoes];
+  }
+
   // 1. Render — ordem importa (top → bottom da página)
   renderHero(TIPOLOGIA);
   renderTipologiaFeatures(TIPOLOGIA);
   renderOrientacoesGerais(COMMON);
   renderGuia(TIPOLOGIA);
-  renderClube(COMMON);
-  renderFacilities(COMMON);
+  renderFacilities(COMMON, TIPOLOGIA);
   renderGastronomy(COMMON);
   renderConcierge(COMMON);
   renderSegurancaAcesso(COMMON);
@@ -41,10 +47,9 @@ function initSectionNav() {
   const SECTIONS = [
     { id: 'orientacoes-gerais', label: 'Orientações' },
     { id: 'guia-container',     label: 'Guia da Casa' },
-    { id: 'clube',              label: 'Club House' },
     { id: 'facilities',         label: 'Conforto' },
     { id: 'gastronomy',         label: 'Gastronomia' },
-    { id: 'concierge',          label: 'Concierge' },
+    { id: 'concierge',          label: 'Anfitriões' },
     { id: 'seguranca-acesso',   label: 'Segurança' },
   ].filter(s => document.getElementById(s.id));
 
@@ -100,13 +105,13 @@ function initSectionNav() {
 }
 
 function initFloatingVisibility() {
-  const el = document.getElementById('floating-action');
-  const hero = document.getElementById('hero');
-  if (!el || !hero) return;
+  const el      = document.getElementById('floating-action');
+  const trigger = document.getElementById('seguranca-acesso');
+  if (!el || !trigger) return;
 
   ScrollTrigger.create({
-    trigger:     hero,
-    start:       'bottom top',
+    trigger,
+    start:       'top 80%',
     onEnter:     () => el.classList.add('is-visible'),
     onLeaveBack: () => el.classList.remove('is-visible'),
   });

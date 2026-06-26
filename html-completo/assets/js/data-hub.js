@@ -6,6 +6,11 @@
 
 const HUB = {
 
+  softOpening: {
+    active: true,
+    label:  'Soft Opening'
+  },
+
   hero: {
     label:       'Own Time Home Club',
     headline:    'Onde você está?',
@@ -19,9 +24,11 @@ const HUB = {
     summary: 'Descubra o equilíbrio perfeito entre o conforto de casa, a beleza da natureza e a exclusividade de um clube com serviços de hotelaria de alto padrão.',
     details: [
       'Aqui, casa e natureza se encontram com a estrutura de um clube pensado para oferecer conforto, liberdade e tranquilidade em cada detalhe.',
-      'O Own Time Home Club Gramado é uma nova geração de hospitalidade residencial que une casas compartilhadas de alto padrão com serviços de hotelaria, uma comunidade cuidadosamente cultivada e experiências que conectam profundamente com o destino. Cada chegada é um reencontro. Você não visita e sim retorna, porque encontra familiaridade. Você pertence.',
-      'Este guia reúne as principais informações para que você aproveite cada momento com leveza e praticidade. Desde a operação da sua unidade até os serviços do clube, gastronomia, spa e demais conveniências. Tudo o que você precisa saber está aqui, organizado de forma simples e direta.',
-      'Sempre que precisar, nossa equipe estará à disposição pelo ramal [xx] ou WhatsApp [xxxxxxxx]. Estamos aqui para garantir que o seu tempo seja, de fato, o melhor tempo.'
+      'O Own Time Home Club Gramado é uma nova geração de hospitalidade residencial que une casas compartilhadas de alto padrão com serviços de hotelaria, uma comunidade cuidadosamente cultivada e experiências que conectam profundamente com o destino.',
+      'Cada chegada é um reencontro. Você não visita e sim retorna, porque encontra familiaridade. Você pertence.',
+      'Este guia reúne as principais informações para que você aproveite cada momento com leveza e praticidade. Tudo o que você precisa saber está aqui, organizado de forma simples e direta:<ul class="bs-steps"><li>A operação da sua unidade</li><li>Os serviços do clube</li><li>Gastronomia, spa e demais conveniências</li></ul>',
+      'Sempre que precisar, nossa equipe estará à disposição pelo ramal [xx] ou WhatsApp [xxxxxxxx].',
+      'Estamos aqui para garantir que o seu tempo seja, de fato, o melhor tempo.'
     ],
     ctaWhatsapp: 'https://wa.me/5554999999999?text=Olá%2C%20preciso%20de%20ajuda.'
   },
@@ -75,7 +82,7 @@ const HUB = {
       name:      'Garden',
       subtitle:  'Apartamento',
       area:      '≈ 60 m²',
-      capacidade:'Para pequenos núcleos',
+      capacidade:'Até 4 hóspedes',
       vagas:     '1 vaga',
       image:     'assets/images/apto-garden.webp'
     },
@@ -85,7 +92,7 @@ const HUB = {
       name:      'Cobertura',
       subtitle:  'Apartamento',
       area:      '≈ 60 m²',
-      capacidade:'Para pequenos núcleos',
+      capacidade:'Até 4 hóspedes',
       vagas:     '1 vaga',
       image:     'assets/images/apto-cobertura.webp'
     }

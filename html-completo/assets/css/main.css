@@ -48,7 +48,7 @@
   /* ── Texto ── */
   --color-text:      #FFFFFF;
   --color-text-inv:  #0E0E0E;
-  --color-muted:     #787878;
+  --color-muted:     #8A8A8A;
 
   /* ── Acentos ── */
   --color-accent:    #3D5A3E;   /* pinheiro escuro */
@@ -64,7 +64,7 @@
   --font-body:    'Roobert', system-ui, sans-serif;
 
   /* ── Espaço ── */
-  --space-section: clamp(5.5rem, 13vw, 10rem);
+  --space-section: clamp(2.75rem, 6.5vw, 5rem);
   --space-cont:    clamp(1.5rem, 5vw, 5.5rem);
   --radius-sm: 3px;
   --radius:    6px;

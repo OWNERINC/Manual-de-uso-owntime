@@ -138,14 +138,11 @@
     transition:
       transform 0.35s var(--ease-out),
       box-shadow 0.35s ease;
-    /* Pulse sutil */
-    animation: wa-pulse 3s ease-in-out infinite;
   }
 
   .floating-action__wa-fab:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 38px rgba(37, 211, 102, 0.5);
-    animation: none;
   }
 
   .floating-action__wa-fab .wa-icon {
@@ -154,7 +151,18 @@
   }
 }
 
+/* Pulse apenas para quem não desativou animações — 4 ciclos e para */
+@media (prefers-reduced-motion: no-preference) {
+  .floating-action__wa-fab {
+    animation: wa-pulse 2.8s ease-in-out 4;
+  }
+
+  .floating-action__wa-fab:hover {
+    animation: none;
+  }
+}
+
 @keyframes wa-pulse {
   0%, 100% { box-shadow: 0 6px 28px rgba(37, 211, 102, 0.32); }
-  50%        { box-shadow: 0 6px 38px rgba(37, 211, 102, 0.52); }
+  50%       { box-shadow: 0 6px 38px rgba(37, 211, 102, 0.52); }
 }

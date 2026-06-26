@@ -22,19 +22,33 @@ function renderTipologiaGrid() {
     `;
   }).join('');
 
+  const softOpeningHtml = (HUB.softOpening?.active)
+    ? `<div class="hub__soft-opening">
+         <button class="hub__soft-opening-badge bs-trigger" data-bs-target="sheet-soft-opening" aria-label="Saiba mais sobre o Soft Opening">
+           <i data-lucide="sparkles"></i>
+           ${HUB.softOpening.label}
+         </button>
+       </div>`
+    : '';
+
   document.getElementById('tipologia-grid').innerHTML = `
     <div class="hub__page">
       <div class="hub__content">
-        <p class="hub__brand-label">${hero.label} · ${hero.location.split(' · ')[0]}</p>
         <h1 class="hub__intro-title">
           <span class="hub__intro-title__pre">${intro.preHeading}</span>
           <img src="assets/logo.png" class="hub__intro-logo" alt="Own Time Home Club" draggable="false">
         </h1>
         <p class="hub__intro-p">${intro.summary}</p>
+        ${softOpeningHtml}
         <div class="hub__intro-ctas">
           <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-sobre-owntime">
+            <i data-lucide="book-open"></i>
             Ler mais
           </button>
+          <a href="clube.html" class="hub__intro-cta hub__intro-cta--outline">
+            <i data-lucide="building-2"></i>
+            Club House
+          </a>
           <button class="hub__intro-cta hub__intro-cta--hours bs-trigger" data-bs-target="sheet-horarios">
             <i data-lucide="clock"></i>
             Horários
@@ -122,6 +136,38 @@ function renderHorariosSheet(horarios) {
   document.body.appendChild(sheet);
 }
 
+function renderSoftOpeningSheet() {
+  const sheet = document.createElement('div');
+  sheet.className = 'bottom-sheet';
+  sheet.id = 'sheet-soft-opening';
+  sheet.setAttribute('role', 'dialog');
+  sheet.setAttribute('aria-modal', 'true');
+  sheet.setAttribute('aria-hidden', 'true');
+  sheet.setAttribute('aria-labelledby', 'sheet-soft-opening-title');
+  sheet.innerHTML = `
+    <div class="bottom-sheet__inner">
+      <header class="bottom-sheet__header">
+        <div class="bottom-sheet__header-icon" aria-hidden="true">
+          <i data-lucide="sparkles"></i>
+        </div>
+        <h3 class="bottom-sheet__title" id="sheet-soft-opening-title">Bem-vindo ao nosso soft opening.</h3>
+        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+      <div class="bottom-sheet__body">
+        <p>Liberamos seu acesso antecipado ao diretório do Owntime para que você conheça o ambiente em primeira mão.</p>
+        <p>Ainda estamos ajustando os bastidores para garantir a melhor experiência possível. Durante esta fase, algumas ferramentas estão em finalização e podem passar por adaptações.</p>
+        <p>Explore o espaço e acompanhe nossa evolução.</p>
+      </div>
+      <div class="bottom-sheet__footer">
+        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(sheet);
+}
+
 function animateHub() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const el = document.querySelector('.hub__intro-title');
@@ -132,6 +178,7 @@ function animateHub() {
 document.addEventListener('DOMContentLoaded', () => {
   renderTipologiaGrid();
   renderHorariosSheet(HUB.horarios);
+  renderSoftOpeningSheet();
   lucide.createIcons();
   initBottomSheets();
   animateHub();

@@ -11,7 +11,7 @@ const WA_SVG = `<svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.or
 
 function waUrl(number) {
   const digits = number.replace(/\D/g, '');
-  return `https://wa.me/${digits}?text=Olá!%20Gostaria%20de%20falar%20com%20o%20Concierge.`;
+  return `https://wa.me/${digits}?text=Olá!%20Gostaria%20de%20falar%20com%20os%20Anfitriões.`;
 }
 
 /* ── Helper: cria e appenda um bottom sheet ao body ── */
@@ -127,6 +127,8 @@ function renderOrientacoesGerais(common) {
     <div class="container section-pad">
       <header class="orientacoes__header">
         <span class="section-label">Orientações Gerais</span>
+        <h2 class="section-heading">O essencial,<br><em>ao seu alcance.</em></h2>
+        <span class="divider"></span>
       </header>
       <div class="guia-section__grid guia-section__grid--light">${btns}</div>
     </div>
@@ -170,10 +172,16 @@ function renderClube(common) {
 /* ═══════════════════════════════════════════
    renderFacilities
    ═══════════════════════════════════════════ */
-function renderFacilities(common) {
-  const items = common.facilities;
+function renderFacilities(common, tipologia) {
+  const facilityItems = common.facilities;
+  const cozinhaItems  = (tipologia && Array.isArray(tipologia.cozinha)) ? tipologia.cozinha : [];
 
-  const btns = items.map(item => _guiaItemBtn(`sheet-facility-${item.id}`, item.icon, item.title)).join('');
+  const facilityBtns = facilityItems.map(item =>
+    _guiaItemBtn(`sheet-facility-${item.id}`, item.icon, item.title)
+  ).join('');
+  const cozinhaBtns = cozinhaItems.map(item =>
+    _guiaItemBtn(`sheet-cozinha-${item.id}`, item.icon, item.title)
+  ).join('');
 
   const section = document.getElementById('facilities');
   section.classList.add('section-light');
@@ -185,12 +193,38 @@ function renderFacilities(common) {
         <span class="divider"></span>
         <p class="section-sub">Cada detalhe foi pensado para que você chegue e simplesmente viva. Consulte abaixo as informações de uso dos sistemas da casa.</p>
       </header>
-      <div class="guia-section__grid guia-section__grid--light">${btns}</div>
+      <div class="guia-section__grid guia-section__grid--light">${facilityBtns}${cozinhaBtns}</div>
     </div>
   `;
 
-  items.forEach(item => {
-    _appendSheet(`sheet-facility-${item.id}`, item.icon, item.title, _bodyHtml(item.body));
+  facilityItems.forEach(item => {
+    let sheetBody;
+    if (item.tabs) {
+      const btnsHtml = item.tabs.map((t, i) =>
+        `<button class="bs-tab-btn${i === 0 ? ' is-active' : ''}" data-tab="fac-${item.id}-${t.id}">${t.title}</button>`
+      ).join('');
+      const panelsHtml = item.tabs.map((t, i) =>
+        `<div class="bs-tab-panel${i === 0 ? ' is-active' : ''}" id="fac-${item.id}-${t.id}">${t.body}</div>`
+      ).join('');
+      sheetBody = `<div class="bs-tab-group"><div class="bs-tab-btns">${btnsHtml}</div>${panelsHtml}</div>`;
+    } else {
+      sheetBody = _bodyHtml(item.body);
+    }
+    _appendSheet(`sheet-facility-${item.id}`, item.icon, item.title, sheetBody);
+
+    if (item.tabs) {
+      const sheet = document.getElementById(`sheet-facility-${item.id}`);
+      sheet.addEventListener('click', e => {
+        const btn = e.target.closest('.bs-tab-btn');
+        if (!btn) return;
+        const targetId = btn.dataset.tab;
+        sheet.querySelectorAll('.bs-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+        sheet.querySelectorAll('.bs-tab-panel').forEach(p => p.classList.toggle('is-active', p.id === targetId));
+      });
+    }
+  });
+  cozinhaItems.forEach(item => {
+    _appendSheet(`sheet-cozinha-${item.id}`, item.icon, item.title, _bodyHtml(item.body));
   });
 }
 
@@ -200,9 +234,10 @@ function renderFacilities(common) {
 function renderAmenities(common) {
   const cards = common.amenities.map(a => {
     const noteHtml = a.note
-      .split('\n\n')
-      .map(p => `<p class="amenity-card__note">${p.replace(/\n/g, '<br>')}</p>`)
-      .join('');
+      ? (a.note.startsWith('<')
+          ? a.note
+          : a.note.split('\n\n').map(p => `<p class="amenity-card__note">${p.replace(/\n/g, '<br>')}</p>`).join(''))
+      : '';
     return `
     <article class="amenity-card${a.id === 'spa' ? ' amenity-card--highlight' : ''}">
       <i data-lucide="${a.icon}" class="amenity-card__icon" aria-hidden="true"></i>
@@ -218,7 +253,7 @@ function renderAmenities(common) {
       <header class="amenities__header">
         <span class="section-label">Club House &amp; Bem-Estar</span>
         <h2 class="section-heading">O coração<br><em>do clube.</em></h2>
-        <span class="divider" style="background:var(--color-text);opacity:0.15"></span>
+        <span class="divider"></span>
         <p class="section-sub">Estrutura de resort com o aconchego de um clube privativo. Espaços desenhados para você recuperar a energia e encontrar o ritmo certo.</p>
       </header>
       <div class="amenities__grid">${cards}</div>
@@ -302,7 +337,7 @@ function renderFloatingAction(common) {
       </p>
       <a href="${href}" target="_blank" rel="noopener noreferrer" class="floating-action__wa-btn">
         ${WA_SVG}
-        <span>Concierge</span>
+        <span>Anfitriões</span>
       </a>
     </div>
     <div class="floating-action__fab">
@@ -311,8 +346,8 @@ function renderFloatingAction(common) {
       </p>
       <a href="${href}" target="_blank" rel="noopener noreferrer"
          class="floating-action__wa-fab"
-         title="Falar com o Concierge via WhatsApp"
-         aria-label="Falar com o Concierge via WhatsApp">
+         title="Falar com os Anfitriões via WhatsApp"
+         aria-label="Falar com os Anfitriões via WhatsApp">
         ${WA_SVG}
       </a>
     </div>
@@ -334,8 +369,8 @@ function renderSegurancaAcesso(common) {
       <header class="seguranca__header">
         <span class="section-label">Segurança & Acesso</span>
         <h2 class="section-heading">Tranquilidade<br><em>em cada detalhe.</em></h2>
-        <span class="divider" style="background:var(--color-text);opacity:0.15"></span>
-        <p class="section-sub" style="color:rgba(255,255,255,0.45);max-width:520px">Monitoramento e controle de acesso 24 horas para que você aproveite sua estadia com total segurança.</p>
+        <span class="divider"></span>
+        <p class="section-sub">Monitoramento e controle de acesso 24 horas para que você aproveite sua estadia com total segurança.</p>
       </header>
       <div class="guia-section__grid">${btns}</div>
     </div>

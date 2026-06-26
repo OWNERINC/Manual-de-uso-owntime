@@ -85,6 +85,12 @@
   color: rgba(255, 255, 255, 0.45);
 }
 
+.amenity-card .bs-steps,
+.amenity-card .bs-steps li {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
 /* ── Destaque SPA (agendamento) ── */
 .amenity-card--highlight .amenity-card__hours {
   color: var(--color-gold);

@@ -10,13 +10,15 @@
   z-index: 900;
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--duration) var(--ease-out),
-              visibility var(--duration) var(--ease-out);
+  pointer-events: none;
+  transition: opacity 0.32s var(--ease-out),
+              visibility 0.32s var(--ease-out);
 }
 
 .bs-overlay.is-active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 /* ── Sheet ── */
@@ -30,7 +32,7 @@
   background: var(--color-bg-alt);
   border-radius: 14px 14px 0 0;
   transform: translateY(100%);
-  transition: transform var(--duration) var(--ease-out);
+  transition: transform 0.35s var(--ease-out);
   will-change: transform;
   display: flex;
   flex-direction: column;
@@ -104,6 +106,10 @@
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
   padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 /* ── Horário (ex: Gastronomia) ── */
@@ -179,9 +185,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
   background: transparent;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -264,8 +270,8 @@ html.sheet-open {
     border-radius: 12px;
     transform: translate(-50%, -48%) scale(0.97);
     opacity: 0;
-    transition: transform var(--duration) var(--ease-out),
-                opacity var(--duration) var(--ease-out);
+    transition: transform 0.35s var(--ease-out),
+                opacity 0.28s var(--ease-out);
   }
 
   .bottom-sheet.is-open {
@@ -290,4 +296,51 @@ html.sheet-open {
   .bottom-sheet {
     transition: none;
   }
+}
+
+/* ─── Tabs dentro de bottom sheet ─────────── */
+.bs-tab-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.bs-tab-btns {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bs-tab-btn {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bs-tab-btn.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.bs-tab-btn:not(.is-active):hover {
+  border-color: var(--color-accent-lt);
+  color: var(--color-text);
+}
+
+.bs-tab-panel {
+  display: none;
+}
+
+.bs-tab-panel.is-active {
+  display: block;
 }

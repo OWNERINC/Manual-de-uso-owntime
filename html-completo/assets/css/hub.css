@@ -30,7 +30,7 @@ body {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1.25rem, 5vw, 2.5rem) 1rem;
+  padding: 50px clamp(1.25rem, 5vw, 2.5rem) 1rem;
 }
 
 .hub__content::-webkit-scrollbar {
@@ -149,10 +149,11 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.44rem 0.85rem;
+  min-height: 44px;
+  padding: 0.6rem 1.1rem;
   border-radius: 100px;
   font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -258,9 +259,9 @@ body {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(6, 6, 6, 0.80) 0%,
-    rgba(6, 6, 6, 0.30) 55%,
-    rgba(6, 6, 6, 0.08) 100%
+    rgba(6, 6, 6, 0.95) 0%,
+    rgba(6, 6, 6, 0.62) 45%,
+    rgba(6, 6, 6, 0.18) 100%
   );
   z-index: 1;
   transition: opacity 0.3s ease;
@@ -318,11 +319,11 @@ body {
 .hub__btn-subtitle {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.52rem;
+  font-size: 0.68rem;
   font-weight: 400;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.52);
   margin-bottom: 0.28rem;
 }
 
@@ -338,11 +339,11 @@ body {
 .hub__btn-stats {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.48rem;
+  font-size: 0.62rem;
   font-weight: 400;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.38);
   margin-top: 0.3rem;
   line-height: 1;
 }
@@ -387,14 +388,12 @@ body {
   background: transparent;
   border: 1px solid rgba(14, 14, 14, 0.35);
   color: var(--color-text-inv);
-  opacity: 0.85;
 }
 
 .hub__intro-cta--hours:hover,
 .hub__intro-cta--hours:focus-visible {
   background: rgba(14, 14, 14, 0.07);
   border-color: rgba(14, 14, 14, 0.6);
-  opacity: 1;
   outline: none;
 }
 
@@ -455,6 +454,48 @@ body {
   text-align: right;
 }
 
+/* ─── Soft Opening badge ────────────────── */
+.hub__soft-opening {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.hub__soft-opening-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 1rem;
+  border: 1px solid rgba(14, 14, 14, 0.2);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.54rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-text-inv);
+  background: rgba(14, 14, 14, 0.04);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hub__soft-opening-badge:hover,
+.hub__soft-opening-badge:focus-visible {
+  background: rgba(14, 14, 14, 0.09);
+  border-color: rgba(14, 14, 14, 0.4);
+  outline: none;
+}
+
+.hub__soft-opening-badge [data-lucide] {
+  width: 10px;
+  height: 10px;
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
 /* ─── Animação de entrada (CSS, sem GSAP) ── */
 @keyframes hubFadeUp {
   from { opacity: 0; transform: translateY(18px); }
@@ -471,3 +512,4 @@ body {
     animation: none;
   }
 }
+

@@ -8,7 +8,7 @@ function renderTipologiaGrid() {
   const intro = HUB.intro;
   const hero  = HUB.hero;
 
-  const btns = HUB.tipologias.map(t => {
+  const tipologiaBtns = HUB.tipologias.map(t => {
     const bgStyle = t.image ? `style="background-image:url('${t.image}')"` : '';
     return `
       <a href="${t.href}" class="hub__btn" id="btn-${t.id}" aria-label="${t.name} — ${t.subtitle}">
@@ -22,40 +22,53 @@ function renderTipologiaGrid() {
     `;
   }).join('');
 
-  const softOpeningHtml = (HUB.softOpening?.active)
-    ? `<div class="hub__soft-opening">
-         <button class="hub__soft-opening-badge bs-trigger" data-bs-target="sheet-soft-opening" aria-label="Saiba mais sobre o Soft Opening">
-           <i data-lucide="sparkles"></i>
-           ${HUB.softOpening.label}
-         </button>
-       </div>`
-    : '';
+  const clube = HUB.clube;
+  const clubeBg = clube.image ? `style="background-image:url('${clube.image}')"` : '';
+  const clubeBtn = `
+    <a href="${clube.href}" class="hub__btn hub__btn--clube" aria-label="${clube.name}">
+      <span class="hub__btn-bg" ${clubeBg} aria-hidden="true"></span>
+      <span class="hub__btn-text">
+        <span class="hub__btn-subtitle">${clube.subtitle}</span>
+        <span class="hub__btn-name">${clube.name}</span>
+        <span class="hub__btn-stats">${clube.amenities}</span>
+      </span>
+    </a>
+  `;
+
+
 
   document.getElementById('tipologia-grid').innerHTML = `
     <div class="hub__page">
-      <div class="hub__content">
-        <h1 class="hub__intro-title">
-          <span class="hub__intro-title__pre">${intro.preHeading}</span>
-          <img src="assets/logo.png" class="hub__intro-logo" alt="Own Time Home Club" draggable="false">
-        </h1>
-        <p class="hub__intro-p">${intro.summary}</p>
-        ${softOpeningHtml}
-        <div class="hub__intro-ctas">
-          <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-sobre-owntime">
-            <i data-lucide="book-open"></i>
-            Ler mais
-          </button>
-          <a href="clube.html" class="hub__intro-cta hub__intro-cta--outline">
-            <i data-lucide="building-2"></i>
-            Club House
-          </a>
-          <button class="hub__intro-cta hub__intro-cta--hours bs-trigger" data-bs-target="sheet-horarios">
-            <i data-lucide="clock"></i>
-            Horários
-          </button>
+      <div class="hub__main">
+        <div class="hub__content">
+          <h1 class="hub__intro-title">
+            <span class="hub__intro-title__pre">${intro.preHeading}</span>
+            <img src="assets/images/logo owntime branco.webp" class="hub__intro-logo" alt="Own Time Home Club" draggable="false">
+          </h1>
+          <p class="hub__intro-p">${intro.summary}</p>
+          <div class="hub__intro-ctas">
+            <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-wifi">
+              <i data-lucide="wifi"></i>
+              Conectar a rede
+            </button>
+            <button class="hub__intro-cta hub__intro-cta--hours bs-trigger" data-bs-target="sheet-horarios">
+              <i data-lucide="clock"></i>
+              Horários
+            </button>
+          </div>
         </div>
+        ${HUB.softOpening?.active ? `
+        <div class="hub__soft-opening">
+          <button class="hub__soft-opening-badge bs-trigger" data-bs-target="sheet-soft-opening" aria-label="Saiba mais sobre o Soft Opening">
+            <i data-lucide="sparkles"></i>
+            ${HUB.softOpening.label}
+          </button>
+        </div>` : ''}
       </div>
-      <nav class="hub__nav" aria-label="Selecione sua tipologia">${btns}</nav>
+      <nav class="hub__nav" aria-label="Selecione sua tipologia ou explore o clube">
+        ${clubeBtn}
+        <div class="hub__tipologias-grid">${tipologiaBtns}</div>
+      </nav>
     </div>
   `;
 
@@ -156,9 +169,52 @@ function renderSoftOpeningSheet() {
         </button>
       </header>
       <div class="bottom-sheet__body">
-        <p>Liberamos seu acesso antecipado ao diretório do Owntime para que você conheça o ambiente em primeira mão.</p>
-        <p>Ainda estamos ajustando os bastidores para garantir a melhor experiência possível. Durante esta fase, algumas ferramentas estão em finalização e podem passar por adaptações.</p>
-        <p>Explore o espaço e acompanhe nossa evolução.</p>
+        <p>O Guia de Uso Digital do Owntime foi pensado para que você conheça sua nova casa.</p>
+        <p>Estamos ajustando os bastidores para garantir a melhor experiência possível. Durante esta fase, algumas ferramentas estão em finalização e podem passar por adaptações.</p>
+        <p>Contamos com suas avaliações para melhorar a qualidade da sua experiência em Gramado.</p>
+      </div>
+      <div class="bottom-sheet__footer">
+        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(sheet);
+}
+
+function renderWifiSheet() {
+  const { ssid, password } = HUB.wifi;
+  const qrData = `WIFI:T:WPA2;S:${ssid};P:${password};;`;
+
+  const sheet = document.createElement('div');
+  sheet.className = 'bottom-sheet';
+  sheet.id = 'sheet-wifi';
+  sheet.setAttribute('role', 'dialog');
+  sheet.setAttribute('aria-modal', 'true');
+  sheet.setAttribute('aria-hidden', 'true');
+  sheet.setAttribute('aria-labelledby', 'sheet-wifi-title');
+  sheet.innerHTML = `
+    <div class="bottom-sheet__inner">
+      <header class="bottom-sheet__header">
+        <div class="bottom-sheet__header-icon" aria-hidden="true">
+          <i data-lucide="wifi"></i>
+        </div>
+        <h3 class="bottom-sheet__title" id="sheet-wifi-title">Wi-Fi</h3>
+        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+      <div class="bottom-sheet__body">
+        <p style="font-size:0.9rem;line-height:1.6;opacity:0.75;margin-bottom:1.5rem">A cobertura de rede se estende a todo empreendimento, garantindo que você nunca fique sem acesso.</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem">
+          <button onclick="navigator.clipboard.writeText('${password}').then(()=>{this.querySelector('b').textContent='Copiado ✓';setTimeout(()=>{this.querySelector('b').textContent='Copiar'},2000)})"
+            style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;width:100%;-webkit-tap-highlight-color:transparent;text-align:left">
+            <span>
+              <span style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-lt);display:block;margin-bottom:0.15rem">Senha</span>
+              <span style="font-family:var(--font-body);font-size:0.9rem">${password}</span>
+            </span>
+            <b style="font-size:0.62rem;letter-spacing:0.1em;color:var(--color-accent-lt);text-transform:uppercase;font-weight:400;flex-shrink:0;margin-left:1rem">Copiar</b>
+          </button>
+        </div>
       </div>
       <div class="bottom-sheet__footer">
         <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
@@ -179,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTipologiaGrid();
   renderHorariosSheet(HUB.horarios);
   renderSoftOpeningSheet();
+  renderWifiSheet();
   lucide.createIcons();
   initBottomSheets();
   animateHub();

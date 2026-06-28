@@ -75,7 +75,7 @@ function initSectionNav() {
       const navH    = nav.offsetHeight;
       const searchH = window.matchMedia('(max-width: 768px)').matches ? 58 : 0;
       const top     = el.getBoundingClientRect().top + window.scrollY - navH - searchH - 1;
-      window.scrollTo({ top, behavior: 'smooth' });
+      window.scrollTo({ top, behavior: 'instant' });
     });
     track.appendChild(btn);
     return btn;
@@ -85,6 +85,7 @@ function initSectionNav() {
 
   // Scroll-spy via rAF
   let rafId = null;
+  let lastActiveIdx = -1;
   function updateActive() {
     const scrollMid = window.scrollY + window.innerHeight * 0.35;
     let activeIdx = 0;
@@ -92,8 +93,11 @@ function initSectionNav() {
       const el = document.getElementById(s.id);
       if (el && el.offsetTop <= scrollMid) activeIdx = i;
     });
-    pills.forEach((p, i) => p.classList.toggle('is-active', i === activeIdx));
-    pills[activeIdx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    if (activeIdx !== lastActiveIdx) {
+      pills.forEach((p, i) => p.classList.toggle('is-active', i === activeIdx));
+      pills[activeIdx]?.scrollIntoView({ behavior: 'instant', block: 'nearest', inline: 'center' });
+      lastActiveIdx = activeIdx;
+    }
   }
 
   window.addEventListener('scroll', () => {
@@ -109,10 +113,8 @@ function initFloatingVisibility() {
   const trigger = document.getElementById('seguranca-acesso');
   if (!el || !trigger) return;
 
-  ScrollTrigger.create({
-    trigger,
-    start:       'top 80%',
-    onEnter:     () => el.classList.add('is-visible'),
-    onLeaveBack: () => el.classList.remove('is-visible'),
-  });
+  const io = new IntersectionObserver(([entry]) => {
+    el.classList.toggle('is-visible', entry.isIntersecting);
+  }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
+  io.observe(trigger);
 }

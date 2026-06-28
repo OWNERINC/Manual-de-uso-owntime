@@ -11,6 +11,11 @@ const HUB = {
     label:  'Soft Opening'
   },
 
+  wifi: {
+    ssid:     '[nome da rede]',
+    password: '[senha]'
+  },
+
   hero: {
     label:       'Own Time Home Club',
     headline:    'Onde você está?',
@@ -21,7 +26,7 @@ const HUB = {
   intro: {
     preHeading: 'Bem-vindo ao',
     heading:    'Own Time.',
-    summary: 'Descubra o equilíbrio perfeito entre o conforto de casa, a beleza da natureza e a exclusividade de um clube com serviços de hotelaria de alto padrão.',
+    summary: 'Este é o Guia de Uso digital do empreendimento, tudo o que você precisa na palma da mão.',
     details: [
       'Aqui, casa e natureza se encontram com a estrutura de um clube pensado para oferecer conforto, liberdade e tranquilidade em cada detalhe.',
       'O Own Time Home Club Gramado é uma nova geração de hospitalidade residencial que une casas compartilhadas de alto padrão com serviços de hotelaria, uma comunidade cuidadosamente cultivada e experiências que conectam profundamente com o destino.',
@@ -35,25 +40,48 @@ const HUB = {
 
   horarios: [
     {
-      section: 'Gastronomia',
+      section: 'Acesso',
       items: [
-        { title: 'Bar',           hours: '17h00 às 23h00' },
-        { title: 'Café da Manhã', hours: '07h00 às 11h00' },
-        { title: 'Coffee Shop',   hours: '08h00 às 20h00' },
-        { title: 'Restaurante',   hours: '12h00 às 22h00 · Último pedido 21h30' },
+        { title: 'Check-in',  hours: 'a partir das 16h' },
+        { title: 'Check-out', hours: 'até as 10h' },
       ]
     },
     {
-      section: 'Club House',
+      section: 'Gastronomia',
       items: [
-        { title: 'Academia',     hours: '24 horas' },
-        { title: 'Kids & Teens', hours: '09h00 às 21h00' },
-        { title: 'Piscinas',     hours: '08h00 às 22h00' },
-        { title: 'Saunas',       hours: '16h00 às 21h00' },
-        { title: 'Spa',          hours: '10h00 às 20h00 · Último atendimento: 19h00' },
+        { title: 'Café da Manhã', hours: '7h às 11h' },
+        { title: 'Coffee Shop',   hours: 'Indisponível no soft opening' },
+        { title: 'Restaurante',   hours: 'Indisponível no soft opening' },
+        { title: 'Bar',           hours: 'Indisponível no soft opening' },
+      ]
+    },
+    {
+      section: 'Club House & Bem-Estar',
+      items: [
+        { title: 'Fitness Center', hours: '24 horas' },
+        { title: 'Piscinas',       hours: '8h às 22h' },
+        { title: 'Saunas',         hours: '8h às 22h' },
+        { title: 'Spa',            hours: '10h às 20h · Último atendimento: 19h' },
+      ]
+    },
+    {
+      section: 'Serviços',
+      items: [
+        { title: 'Kids & Teens',       hours: '9h às 21h' },
+        { title: 'Playground',         hours: '9h às 21h' },
+        { title: 'Transporte Interno', hours: '7h às 23h' },
       ]
     }
   ],
+
+  clube: {
+    id:       'club-house',
+    href:     './clube.html',
+    name:     'Club House',
+    subtitle: 'Área compartilhada',
+    amenities:'Piscina · Sauna · Spa · Academia',
+    image:    'assets/images/clubhouse.png'
+  },
 
   tipologias: [
     {

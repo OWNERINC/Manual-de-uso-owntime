@@ -19,16 +19,35 @@ const TIPOLOGIA = {
 
   housekeepingDay: 'Segunda-feira',
 
+  facilityOverrides: {
+    climatizacao: {
+      tabs: [
+        {
+          id: 'ac',
+          title: 'Ar Condicionado',
+          body: '<ul class="bs-steps"><li><strong>Sistema:</strong> Sua unidade conta com ar condicionado split individual por ambiente, com controle independente em cada cômodo.</li><li><strong>Como usar:</strong> Pressione o botão Power no controle remoto. Use as teclas ▲/▼ para ajustar a temperatura desejada.</li><li><strong>Temperatura de Conforto:</strong> Recomendamos entre 20°C e 23°C para um ambiente agradável.</li></ul>'
+        },
+        {
+          id: 'piso',
+          title: 'Piso Aquecido',
+          body: '<ul class="bs-steps"><li><strong>Tecnologia:</strong> O ambiente conta com piso radiante, aquecido por água a gás natural. A temperatura é predeterminada de forma automática e inteligente.</li><li><strong>Consumo (Pay per Use):</strong> O uso do piso aquecido opera na modalidade pay per use, com medição realizada proporcionalmente ao período da sua estadia.</li><li><strong>Aviso de Soft Open:</strong> Durante esta fase inicial, o sistema de piso aquecido poderá estar temporariamente inoperante.</li></ul>'
+        }
+      ]
+    }
+  },
+
   guia: [
     {
       id: 'geral',
       label: 'Geral',
       items: [
         { id: 'acesso',     icon: 'key',       title: 'Acesso às Unidades',   body: '<ul class="bs-steps"><li><strong>Abertura:</strong> Aproxime seu cartão da fechadura eletrônica para destravar a porta.</li><li><strong>Comunicação:</strong> Utilize o videofone integrado para falar instantaneamente com a portaria ou recepção.</li></ul>' },
-        { id: 'iluminacao', icon: 'lightbulb', title: 'Iluminação',            body: '<ul class="bs-steps"><li><strong>Projeto Eficiente:</strong> Sua casa possui um projeto luminotécnico planejado exclusivamente com equipamentos de baixo consumo.</li><li><strong>Uso Consciente:</strong> Desfrute do conforto dos seus ambientes mantendo o compromisso com a sustentabilidade e a responsabilidade energética.</li></ul>' },
+        { id: 'iluminacao', icon: 'lightbulb', title: 'Iluminação',            body: '<ul class="bs-steps"><li><strong>Projeto Eficiente:</strong> Sua casa possui um projeto luminotécnico planejado exclusivamente com equipamentos de baixo consumo.</li><li><strong>Uso Consciente:</strong> Desfrute do conforto dos seus ambientes mantendo o compromisso com a sustentabilidade e a responsabilidade ambiental.</li></ul>' },
         { id: 'tv',         icon: 'tv',        title: 'TV',                    body: '' },
-        { id: 'ventilacao', icon: 'wind',      title: 'Ventilação / Exaustão', body: '<ul class="bs-steps"><li><strong>Operação 100% Automática:</strong> O acionamento e o desligamento são inteligentes e autônomos. Nenhuma ação ou ajuste manual é necessário da sua parte.</li><li><strong>Renovação Contínua:</strong> O ar circula e se renova de forma constante, assegurando um ambiente sempre fresco e agradável durante toda a sua estadia.</li></ul>' },
-        { id: 'telefone',   icon: 'phone',     title: 'Telefone',              body: '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O serviço de telefonia estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>' }
+        { id: 'ventilacao', icon: 'wind',      title: 'Ventilação / Exaustão', body: '<ul class="bs-steps"><li><strong>Operação 100% Automática:</strong> O acionamento e desligamento são inteligentes e autônomos. Nenhuma ação ou ajuste manual é necessário da sua parte.</li><li><strong>Renovação Contínua:</strong> O sistema de ventilação assegura um ambiente fresco e agradável durante toda sua estadia.</li></ul>' },
+        { id: 'telefone',   icon: 'phone',     title: 'Telefone',              body: '<ul class="bs-steps"><li>Para ligar para a recepção, disque <strong>"9"</strong>.</li><li><strong>Soft Opening:</strong> O serviço de telefonia interno está disponível.</li></ul>' },
+        { id: 'fogo-chao',  icon: 'flame-kindling', title: 'Fogo de Chão',     body: '<ul class="bs-steps"><li><strong>Localização da Lenha:</strong> [Inserir onde encontrar a lenha]</li><li><strong>Custo:</strong> [Inserir valor por uso]</li><li><strong>Como Acender:</strong><ol style="margin-top:0.5rem;padding-left:1.25rem;line-height:1.6"><li>Insira o acendedor ecológico no centro do espaço.</li><li>Posicione a lenha sobre o acendedor em formato de pirâmide.</li><li>Utilize o fósforo longo para acender a base com segurança.</li><li>Aguarde a formação da brasa antes de adicionar mais lenha.</li></ol></li><li><strong>Aviso de Segurança:</strong> Utilize apenas a lenha fornecida pelo time de anfitriões. Mantenha crianças sob supervisão contínua.</li><li>Nunca utilize líquidos inflamáveis, plásticos ou qualquer outro combustível não autorizado para forçar o acendimento. Para solicitar os insumos adequados ou auxílio, acesse o [contato].</li></ul>' },
+        { id: 'carregadores', icon: 'plug', title: 'Carregador Elétrico', body: '<ul class="bs-steps"><li>Sua casa conta com <strong>1 carregador elétrico dedicado</strong>.</li><li><strong>Conexão:</strong> Estacione na vaga exclusiva de recarga e conecte o cabo ao seu veículo para iniciar a sessão.</li><li><strong>Cobrança:</strong> A liberação é mediante a tag de acesso do empreendimento, gerando fatura junto com os pagamentos de pay-per-use da unidade.</li></ul>' }
       ]
     }
   ],

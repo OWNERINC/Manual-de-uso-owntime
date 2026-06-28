@@ -37,18 +37,6 @@ function initAnimations() {
       .from('.hero__intro',    { opacity: 0, y: 14, duration: 0.85, ease: 'power3.out', clearProps: 'all' }, '-=0.45')
       .from('.hero__footer',   { opacity: 0, y: 12, duration: 0.75, ease: 'power3.out', clearProps: 'all' }, '-=0.5');
 
-    // Linha de scroll shrink (scrub puro — sem estado inicial oculto)
-    gsap.to('.hero__scroll-line', {
-      scaleX: 0,
-      transformOrigin: 'right center',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-      }
-    });
   }
 
   /* ─────────────────────────────────────────

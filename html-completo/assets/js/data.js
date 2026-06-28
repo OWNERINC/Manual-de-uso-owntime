@@ -17,7 +17,7 @@ const OWNTIME = {
   },
 
   hero: {
-    label:       'Diretório Digital',
+    label:       'Guia de Uso Digital',
     headline:    'Bem-vindo\na casa.',
     subheadline: 'Um clube de alto padrão onde cada retorno é uma experiência única entre a natureza da Serra e o conforto de um lar.',
     location:    'Gramado · Serra Gaúcha · Brasil'

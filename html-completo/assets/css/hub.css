@@ -7,7 +7,7 @@ body {
   padding-bottom: 0;
   overflow: hidden;
   height: 100dvh;
-  background-color: var(--color-bg-light);
+  background-color: var(--color-bg);
 }
 
 #tipologia-grid {
@@ -22,26 +22,29 @@ body {
   height: 100dvh;
 }
 
-/* ─── Área de texto (topo) ──────────────── */
-.hub__content {
+/* ─── Wrapper centralizado (entre topo e nav) */
+.hub__main {
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 50px clamp(1.25rem, 5vw, 2.5rem) 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding-top: max(1rem, env(safe-area-inset-top, 1rem));
 }
 
-.hub__content::-webkit-scrollbar {
-  display: none;
-}
-
+/* ─── Bloco de texto e botões ───────────── */
 .hub__content {
+  flex: 0 0 auto;
+  overflow-x: hidden;
+  padding: 0 clamp(1.25rem, 5vw, 2.5rem) 1rem;
+}
+
+.hub__main {
   position: relative;
 }
 
-.hub__content::before {
+.hub__main::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -55,7 +58,8 @@ body {
 .hub__brand-label,
 .hub__intro-title,
 .hub__intro-p,
-.hub__intro-ctas {
+.hub__intro-ctas,
+.hub__soft-opening {
   position: relative;
   z-index: 1;
 }
@@ -65,7 +69,7 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   text-transform: uppercase;
-  color: var(--color-text-inv);
+  color: var(--color-text);
   margin-bottom: 1.25rem;
   white-space: nowrap;
   overflow: hidden;
@@ -94,7 +98,7 @@ body {
   font-size: clamp(0.7rem, 2vw, 0.9rem);
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-text-inv);
+  color: var(--color-text);
   line-height: 1;
 }
 
@@ -130,7 +134,7 @@ body {
   font-weight: 300;
   line-height: 1.92;
   letter-spacing: 0.012em;
-  color: var(--color-text-inv);
+  color: var(--color-text);
   text-align: center;
 }
 
@@ -148,9 +152,12 @@ body {
 .hub__intro-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
+  flex: 1 1 0;
+  min-width: 0;
   min-height: 44px;
-  padding: 0.6rem 1.1rem;
+  padding: 0.6rem 0.75rem;
   border-radius: 100px;
   font-family: var(--font-body);
   font-size: 0.62rem;
@@ -172,28 +179,28 @@ body {
 /* ghost — "Continuar lendo" */
 .hub__intro-cta--ghost {
   background: transparent;
-  border: 1px solid rgba(14, 14, 14, 0.25);
-  color: var(--color-text-inv);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--color-text);
 }
 
 .hub__intro-cta--ghost:hover,
 .hub__intro-cta--ghost:focus-visible {
-  border-color: rgba(14, 14, 14, 0.5);
-  color: var(--color-text-inv);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text);
   outline: none;
 }
 
-/* outline green — "Ler mais" */
+/* outline — "Wi-Fi / Horários" */
 .hub__intro-cta--outline {
   background: transparent;
-  border: 1px solid rgba(14, 14, 14, 0.35);
-  color: var(--color-text-inv);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--color-text);
 }
 
 .hub__intro-cta--outline:hover,
 .hub__intro-cta--outline:focus-visible {
-  background: rgba(14, 14, 14, 0.07);
-  border-color: rgba(14, 14, 14, 0.6);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.5);
   outline: none;
 }
 
@@ -205,14 +212,27 @@ body {
   margin-top: clamp(0.6rem, 1.5vw, 0.85rem);
 }
 
-/* ─── Nav — botões de tipologia (rodapé) ── */
+/* ─── Nav — container (rodapé) ─────────── */
 .hub__nav {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ─── Card Club House (faixa full-width) ── */
+.hub__btn.hub__btn--clube {
+  height: clamp(68px, 13dvh, 96px);
+  border-right: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ─── Grid das tipologias (2×2) ─────────── */
+.hub__tipologias-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  height: clamp(240px, 48dvh, 320px);
-  border-top: 1px solid var(--color-border);
+  height: clamp(170px, 34dvh, 230px);
 }
 
 /* ─── Botão individual ──────────────────── */
@@ -350,10 +370,14 @@ body {
 
 /* ─── Desktop: 4 colunas em linha ──────── */
 @media (min-width: 1024px) {
-  .hub__nav {
+  .hub__tipologias-grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    height: clamp(130px, 22dvh, 190px);
+    height: clamp(98px, 16dvh, 150px);
+  }
+
+  .hub__btn.hub__btn--clube {
+    height: clamp(66px, 11dvh, 86px);
   }
 
   .hub__btn {
@@ -386,14 +410,14 @@ body {
 /* ─── CTA variante Horários ────────────── */
 .hub__intro-cta--hours {
   background: transparent;
-  border: 1px solid rgba(14, 14, 14, 0.35);
-  color: var(--color-text-inv);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--color-text);
 }
 
 .hub__intro-cta--hours:hover,
 .hub__intro-cta--hours:focus-visible {
-  background: rgba(14, 14, 14, 0.07);
-  border-color: rgba(14, 14, 14, 0.6);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.5);
   outline: none;
 }
 
@@ -456,10 +480,11 @@ body {
 
 /* ─── Soft Opening badge ────────────────── */
 .hub__soft-opening {
+  flex: 0 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.5rem clamp(1.25rem, 5vw, 2.5rem) 0;
   position: relative;
   z-index: 1;
 }
@@ -467,32 +492,40 @@ body {
 .hub__soft-opening-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.32rem 1rem;
-  border: 1px solid rgba(14, 14, 14, 0.2);
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(201, 169, 110, 0.55);
   border-radius: 100px;
   font-family: var(--font-body);
-  font-size: 0.54rem;
+  font-size: 0.56rem;
   font-weight: 400;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-text-inv);
-  background: rgba(14, 14, 14, 0.04);
+  color: var(--color-gold);
+  background: linear-gradient(
+    105deg,
+    rgba(201, 169, 110, 0.05) 0%,
+    rgba(201, 169, 110, 0.18) 50%,
+    rgba(201, 169, 110, 0.05) 100%
+  );
+  background-size: 200% auto;
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  animation: hubSoftGlow 2.8s ease-in-out infinite, hubGoldShimmer 3.5s linear infinite;
 }
 
 .hub__soft-opening-badge:hover,
 .hub__soft-opening-badge:focus-visible {
-  background: rgba(14, 14, 14, 0.09);
-  border-color: rgba(14, 14, 14, 0.4);
+  border-color: rgba(201, 169, 110, 0.85);
   outline: none;
 }
 
 .hub__soft-opening-badge [data-lucide] {
-  width: 10px;
-  height: 10px;
-  opacity: 0.55;
+  width: 11px;
+  height: 11px;
+  color: var(--color-gold);
+  opacity: 0.85;
   flex-shrink: 0;
 }
 
@@ -506,9 +539,21 @@ body {
   animation: hubFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
+/* ─── Animações do badge dourado ─────────── */
+@keyframes hubSoftGlow {
+  0%, 100% { box-shadow: 0 0 5px 0 rgba(201, 169, 110, 0.28); }
+  50%       { box-shadow: 0 0 18px 4px rgba(201, 169, 110, 0.55); }
+}
+
+@keyframes hubGoldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
 /* ─── Fallback: reduced-motion ─────────── */
 @media (prefers-reduced-motion: reduce) {
-  .hub__intro-title--animate {
+  .hub__intro-title--animate,
+  .hub__soft-opening-badge {
     animation: none;
   }
 }

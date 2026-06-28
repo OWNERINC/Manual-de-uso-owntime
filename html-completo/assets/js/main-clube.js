@@ -28,7 +28,7 @@ function renderClubeHero() {
           <i data-lucide="chevron-down" class="hero__scroll-cta__arrow"></i>
           <i data-lucide="chevron-down" class="hero__scroll-cta__arrow hero__scroll-cta__arrow--2"></i>
         </div>
-        <p class="hero__sub">Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços com a chancela Casa Hotéis, desenhados para que o seu único compromisso na Serra Gaúcha seja o seu bem-estar.</p>
+        <p class="hero__sub">Desfrute da piscina aquecida, spa, fitness center e uma curadoria de serviços com a chancela Casa Hotéis, desenhados para que o seu único compromisso na Serra Gaúcha seja o seu bem-estar.</p>
         <footer class="hero__footer">
           <span class="hero__location">Gramado · Serra Gaúcha</span>
           <div class="hero__scroll" aria-hidden="true">
@@ -52,6 +52,7 @@ function renderClubeAmenities() {
       <header class="guia-section__header">
         <span class="section-label">Club House &amp; Bem-Estar</span>
         <h2 class="section-heading">O coração<br><em>do clube.</em></h2>
+        <p style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.5;margin-top:0.5rem">Para acesso às áreas utilize o cartão-chave.</p>
         <span class="divider"></span>
       </header>
       <div class="guia-section__grid">
@@ -71,6 +72,48 @@ function renderClubeAmenities() {
       noteHtml
     ].filter(Boolean).join('');
     _appendSheet(`sheet-amenity-${a.id}`, a.icon, a.title, bodyHtml);
+  });
+}
+
+function renderClubeGastronomy() {
+  const container = document.getElementById('guia-container');
+  if (!container) return;
+
+  const items = COMMON.gastronomiaClube;
+
+  const sectionEl = document.createElement('section');
+  sectionEl.className = 'guia-section section-dark';
+  sectionEl.id = 'clube-gastronomy';
+
+  const containerEl = document.createElement('div');
+  containerEl.className = 'container section-pad';
+
+  const headerEl = document.createElement('header');
+  headerEl.className = 'guia-section__header';
+  headerEl.innerHTML = `
+    <span class="section-label">Gastronomia</span>
+    <h2 class="section-heading">À mesa,<br><em>no clube.</em></h2>
+    <span class="divider"></span>
+  `;
+  containerEl.appendChild(headerEl);
+
+  const gridEl = document.createElement('div');
+  gridEl.className = 'guia-section__grid';
+
+  items.forEach(item => {
+    gridEl.insertAdjacentHTML('beforeend', _guiaItemBtn(`sheet-gastro-${item.id}`, item.icon, item.title));
+  });
+
+  containerEl.appendChild(gridEl);
+  sectionEl.appendChild(containerEl);
+  container.appendChild(sectionEl);
+
+  items.forEach(item => {
+    const bodyHtml = [
+      item.hours ? `<span class="bottom-sheet__hours">${item.hours}</span>` : '',
+      _bodyHtml(item.body)
+    ].filter(Boolean).join('');
+    _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, bodyHtml, item.logo || null);
   });
 }
 
@@ -119,6 +162,7 @@ function renderClubeServicos() {
 document.addEventListener('DOMContentLoaded', () => {
   renderClubeHero();
   renderClubeAmenities();
+  renderClubeGastronomy();
   renderClubeServicos();
 
   try { lucide.createIcons(); } catch (e) { console.warn('Lucide:', e); }

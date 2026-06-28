@@ -1,8 +1,8 @@
 const TIPOLOGIA = {
 
   hero: {
-    label:       'Terraço · Cobertura · Guia Digital',
-    headline:    'Terraço.',
+    label:       'Cobertura · Guia Digital',
+    headline:    'Cobertura.',
     subheadline: 'Seu apartamento cobertura em Gramado. Use este guia para encontrar tudo que você precisa durante a estadia.',
     location:    'Gramado · Serra Gaúcha · Brasil',
     image:       'assets/images/apto-cobertura.webp'
@@ -14,9 +14,26 @@ const TIPOLOGIA = {
     { value: '1',        label: 'Vaga' }
   ],
 
-  description: 'Apartamento cobertura de alto padrão com mini spa terrace jacuzzi exclusivo no terraço privativo.',
+  description: 'Apartamento Cobertura de alto padrão com mini spa terrace jacuzzi exclusivo na cobertura privativa.',
 
   housekeepingDay: 'Terça-feira',
+
+  facilityOverrides: {
+    climatizacao: {
+      tabs: [
+        {
+          id: 'ac',
+          title: 'Ar Condicionado',
+          body: '<ul class="bs-steps"><li><strong>Sistema:</strong> Sua unidade é climatizada por ar central. O controle é feito pelo painel instalado na entrada da unidade.</li><li><strong>Como usar:</strong> Toque em Power para ligar ou desligar. Use as teclas ▲/▼ para ajustar a temperatura.</li><li><strong>Temperatura de Conforto:</strong> Recomendamos entre 20°C e 23°C para um ambiente agradável.</li></ul>'
+        },
+        {
+          id: 'piso',
+          title: 'Piso Aquecido',
+          body: '<ul class="bs-steps"><li><strong>Tecnologia:</strong> O ambiente conta com piso radiante, aquecido por água a gás natural. A temperatura é predeterminada de forma automática e inteligente.</li><li><strong>Consumo (Pay per Use):</strong> O uso do piso aquecido opera na modalidade pay per use, com medição realizada proporcionalmente ao período da sua estadia.</li><li><strong>Aviso de Soft Open:</strong> Durante esta fase inicial, o sistema de piso aquecido poderá estar temporariamente inoperante.</li></ul>'
+        }
+      ]
+    }
+  },
 
   extraOrientacoes: [
     {
@@ -37,7 +54,8 @@ const TIPOLOGIA = {
         { id: 'tv',         icon: 'tv',          title: 'TV',                    body: '' },
         { id: 'ventilacao', icon: 'fan',         title: 'Ventilação / Exaustão', body: '<ul class="bs-steps"><li><strong>Operação 100% Automática:</strong> O acionamento e o desligamento são inteligentes e autônomos. Nenhuma ação ou ajuste manual é necessário da sua parte.</li><li><strong>Renovação Contínua:</strong> O ar circula e se renova de forma constante, assegurando um ambiente sempre fresco e agradável durante toda a sua estadia.</li></ul>' },
         { id: 'ar-central', icon: 'thermometer', title: 'AR Central',            body: '' },
-        { id: 'telefone',   icon: 'phone',       title: 'Telefone',              body: '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O serviço de telefonia estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>' }
+        { id: 'telefone',   icon: 'phone',       title: 'Telefone',              body: '<ul class="bs-steps"><li>Para ligar para a recepção, disque <strong>"9"</strong>.</li><li><strong>Soft Opening:</strong> O serviço de telefonia interno está disponível.</li></ul>' },
+        { id: 'carregadores', icon: 'plug', title: 'Carregadores Elétricos', body: '<ul class="bs-steps"><li>A garagem do complexo possui <strong>4 vagas de carregamento elétrico compartilhadas</strong>.</li><li><strong>Conexão:</strong> Estacione na vaga de recarga e conecte o cabo ao seu veículo para iniciar a sessão.</li><li><strong>Cobrança:</strong> A liberação é mediante a tag de acesso do empreendimento, gerando fatura junto com os pagamentos de pay-per-use da unidade.</li></ul>' }
       ]
     },
     {

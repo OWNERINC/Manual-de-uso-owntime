@@ -37,10 +37,10 @@ As páginas de tipologia (fall-house, winter-house, garden, terraco) seguem semp
 ```
 1. Hero               → imagem da unidade + nome da tipologia
 2. Stats              → área, suítes/quartos, hóspedes, vagas + descrição
-3. Orientações Gerais → check-in, emergência, check-out, pet  [compartilhado]
+3. Orientações Gerais → check-in, checkout, emergência, pet  [compartilhado]
 4. Guia da Casa       → equipamentos da unidade (tabs por cômodo) [específico]
 5. Conforto & Tec.    → climatização, lareira, piso aquecido, Wi-Fi [compartilhado]
-6. Gastronomia        → restaurante, coffee shop, bar, chef, café [compartilhado]
+6. Gastronomia        → chef em casa, café da manhã [compartilhado — restaurante/bar/coffee no Club House]
 7. Concierge          → housekeeping, babysitter, personal, car wash etc. [compartilhado]
 8. Segurança & Acesso → monitoramento, controle eletrônico, perimetral [compartilhado]
 9. Barra flutuante    → check-out 12:00 + botão WhatsApp concierge
@@ -140,10 +140,11 @@ O site usa uma **separação clara entre dados e renderização**. Nenhum texto 
 ### Dois tipos de data files
 
 **`data-common.js`** — exporta o objeto `COMMON` com todo conteúdo que aparece igual em todas as tipologias:
-- `orientacoesGerais` — check-in, emergência, check-out, pet
+- `orientacoesGerais` — check-in, checkout, emergência, pet (nesta ordem)
 - `facilities` — climatização, lareira, piso aquecido, Wi-Fi
-- `amenities` — piscinas, saunas, fitness center, spa
-- `gastronomy` — restaurante, coffee shop, bar, chef em casa, café da manhã
+- `amenities` — piscinas, saunas, fitness center, spa (seção do Club House)
+- `gastronomy` — **somente** chef em casa e café da manhã (exclusivo das tipologias)
+- `gastronomiaClube` — restaurante, coffee shop, bar (exclusivo do Club House — renderizado por `main-clube.js`)
 - `concierge` — time de anfitriões, housekeeping, babysitter, personal trainer, pet care, car wash, private shopper
 - `clube` — empório, kids, teens, playground, pulseira, golf carts, carregadores, sauna-clube, spa-clube
 - `segurancaAcesso` — monitoramento, controle eletrônico, segurança perimetral
@@ -190,18 +191,25 @@ Antes dos renders, `main-tipologia.js` injeta esse valor no campo `hours` do ite
 ### Pipeline de renderização
 
 ```
-DOMContentLoaded
+DOMContentLoaded (tipologias)
   └── main-tipologia.js
         ├── [injeta housekeepingDay em COMMON.concierge.housekeeping.hours]
         ├── renderHero(TIPOLOGIA)
         ├── renderTipologiaFeatures(TIPOLOGIA)
         ├── renderOrientacoesGerais(COMMON)
-        ├── renderGuia(TIPOLOGIA)          ← tabs específicas da unidade
-        ├── renderFacilities(COMMON, TIPOLOGIA)  ← facilities + cozinha da tipologia
-        ├── renderGastronomy(COMMON)
+        ├── renderGuia(TIPOLOGIA)               ← tabs específicas da unidade
+        ├── renderFacilities(COMMON, TIPOLOGIA) ← facilities + cozinha da tipologia
+        ├── renderGastronomy(COMMON)            ← chef em casa + café da manhã
         ├── renderConcierge(COMMON)
         ├── renderSegurancaAcesso(COMMON)
         └── renderFloatingAction(COMMON)
+
+DOMContentLoaded (clube.html)
+  └── main-clube.js
+        ├── renderClubeHero()
+        ├── renderClubeAmenities()    ← piscinas, sauna, spa, fitness
+        ├── renderClubeGastronomy()   ← restaurante, coffee shop, bar (COMMON.gastronomiaClube)
+        └── renderClubeServicos()     ← kids, teens, transporte etc. (COMMON.clube)
 ```
 
 Cada função de render:
@@ -340,17 +348,22 @@ Para forçar atualização de JS ou CSS sem limpar o cache dos usuários, increm
 ### Versões atuais dos arquivos (referência)
 | Arquivo | Versão |
 |---|---|
-| `main.css` | v7 |
-| `hub.css` | v27 |
-| `bottom-sheet.css` | v4 |
-| `data-hub.js` | v13 |
-| `data-common.js` | v4 |
-| `data-fall-house.js` | v6 |
-| `data-winter-house.js` | v6 |
-| `data-garden.js` | v6 |
-| `data-terraco.js` | v6 |
-| `main-hub.js` | v22 |
-| `main-tipologia.js` | v8 |
+| `main.css` | v8 |
+| `hub.css` | v9 |
+| `bottom-sheet.css` (index) | v5 |
+| `bottom-sheet.css` (tipologias/clube) | v7 |
+| `guia.css` | v5 |
+| `hero.css` | v5 |
+| `data-hub.js` | v21 |
+| `data-common.js` | v35 |
+| `data-fall-house.js` | v13 |
+| `data-winter-house.js` | v11 |
+| `data-garden.js` | v10 |
+| `data-terraco.js` | v11 |
+| `main-hub.js` | v35 |
+| `main-tipologia.js` | v12 |
+| `main-clube.js` | v7 |
+| `render-common.js` | v16 |
 
 ---
 

@@ -155,7 +155,7 @@ function initSearch() {
       try { lucide.createIcons({ nodes: [item] }); } catch (_) {}
       item.addEventListener('click', () => {
         close();
-        entry.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        entry.element.scrollIntoView({ behavior: 'instant', block: 'center' });
         setTimeout(() => entry.element.click(), 400);
       });
       dropdown.appendChild(item);

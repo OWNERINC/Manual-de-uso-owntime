@@ -15,9 +15,13 @@ function waUrl(number) {
 }
 
 /* ── Helper: cria e appenda um bottom sheet ao body ── */
-function _appendSheet(id, icon, title, bodyHtml) {
+function _appendSheet(id, icon, title, bodyHtml, logoSrc) {
   const titleId = id + '-title';
   const body = bodyHtml || '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
+  const titleHtml = logoSrc
+    ? `<span>${title}</span><img src="${logoSrc}" style="height:22px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9;flex-shrink:0" alt="" loading="lazy">`
+    : title;
+  const titleStyle = logoSrc ? ' style="display:flex;align-items:center;gap:0.75rem"' : '';
   const sheet = document.createElement('div');
   sheet.className = 'bottom-sheet';
   sheet.id = id;
@@ -31,7 +35,7 @@ function _appendSheet(id, icon, title, bodyHtml) {
         <div class="bottom-sheet__header-icon" aria-hidden="true">
           <i data-lucide="${icon}"></i>
         </div>
-        <h3 class="bottom-sheet__title" id="${titleId}">${title}</h3>
+        <h3 class="bottom-sheet__title" id="${titleId}"${titleStyle}>${titleHtml}</h3>
         <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
           <i data-lucide="x"></i>
         </button>
@@ -46,11 +50,14 @@ function _appendSheet(id, icon, title, bodyHtml) {
 }
 
 /* ── Helper: botão guia-item trigger ── */
-function _guiaItemBtn(sheetId, icon, title) {
+function _guiaItemBtn(sheetId, icon, title, imageSrc) {
+  const iconContent = imageSrc
+    ? `<img src="${imageSrc}" class="guia-item__logo" alt="" loading="lazy">`
+    : `<i data-lucide="${icon}" class="guia-item__icon"></i>`;
   return `
     <button class="bs-trigger guia-item" data-bs-target="${sheetId}" aria-label="${title}">
       <span class="guia-item__icon-wrap" aria-hidden="true">
-        <i data-lucide="${icon}" class="guia-item__icon"></i>
+        ${iconContent}
       </span>
       <span class="guia-item__label">${title}</span>
       <i data-lucide="chevron-right" class="guia-item__arrow" aria-hidden="true"></i>
@@ -126,7 +133,7 @@ function renderOrientacoesGerais(common) {
   document.getElementById('orientacoes-gerais').innerHTML = `
     <div class="container section-pad">
       <header class="orientacoes__header">
-        <span class="section-label">Orientações Gerais</span>
+        <span class="section-label">IMPORTANTE</span>
         <h2 class="section-heading">O essencial,<br><em>ao seu alcance.</em></h2>
         <span class="divider"></span>
       </header>
@@ -173,7 +180,10 @@ function renderClube(common) {
    renderFacilities
    ═══════════════════════════════════════════ */
 function renderFacilities(common, tipologia) {
-  const facilityItems = common.facilities;
+  const overrides = (tipologia && tipologia.facilityOverrides) || {};
+  const facilityItems = common.facilities.map(item =>
+    overrides[item.id] ? { ...item, ...overrides[item.id] } : item
+  );
   const cozinhaItems  = (tipologia && Array.isArray(tipologia.cozinha)) ? tipologia.cozinha : [];
 
   const facilityBtns = facilityItems.map(item =>
@@ -191,7 +201,7 @@ function renderFacilities(common, tipologia) {
         <span class="section-label">Conforto &amp; Tecnologia</span>
         <h2 class="section-heading">Sua casa,<br><em>com tudo resolvido.</em></h2>
         <span class="divider"></span>
-        <p class="section-sub">Cada detalhe foi pensado para que você chegue e simplesmente viva. Consulte abaixo as informações de uso dos sistemas da casa.</p>
+        <p class="section-sub">Cada detalhe foi pensado para que você chegue e simplesmente viva Gramado.</p>
       </header>
       <div class="guia-section__grid guia-section__grid--light">${facilityBtns}${cozinhaBtns}</div>
     </div>
@@ -288,7 +298,7 @@ function renderGastronomy(common) {
       ${item.hours ? `<span class="bottom-sheet__hours">${item.hours}</span>` : ''}
       ${_bodyHtml(item.body)}
     `;
-    _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, bodyHtml);
+    _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, bodyHtml, item.logo || null);
   });
 }
 
@@ -308,7 +318,7 @@ function renderConcierge(common) {
         <span class="section-label">Comodidades Pay Per Use</span>
         <h2 class="section-heading">Curadoria<br><em>a seu serviço.</em></h2>
         <span class="divider"></span>
-        <p class="section-sub">Serviços personalizados disponíveis sob demanda. Solicite ao seu time de anfitriões com antecedência.</p>
+        <p class="section-sub">Serviços personalizados disponíveis sob demanda. Solicite ao time de anfitriões com antecedência.</p>
       </header>
       <div class="guia-section__grid guia-section__grid--light">${btns}</div>
       <div class="concierge__note">

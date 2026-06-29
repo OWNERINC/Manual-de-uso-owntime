@@ -558,3 +558,306 @@ body {
   }
 }
 
+/* ═══════════════════════════════════════════
+   VARIAÇÃO: hub-netflix
+   Club House estático + catálogo horizontal.
+   Fundo dinâmico muda conforme card em foco.
+   ═══════════════════════════════════════════ */
+
+/* ─── Background full-bleed dinâmico ────── */
+.hub__nf-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hub__nf-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  will-change: opacity;
+}
+
+.hub__nf-bg-layer.is-active {
+  opacity: 1;
+}
+
+.hub__page {
+  position: relative;
+  overflow: hidden;
+}
+
+.hub__page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(4,4,4,0.76) 0%,
+      rgba(4,4,4,0.20) 42%,
+      rgba(4,4,4,0.90) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ─── Suprimir .hub__main e .hub__nav ───── */
+.hub__main,
+.hub__nav {
+  display: none;
+}
+
+/* ─── Header: logo + CTAs ────────────────── */
+.hub__nf-header {
+  position: relative;
+  z-index: 2;
+  padding: clamp(1.5rem, 6vw, 2.5rem);
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hub__nf-header .hub__content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hub__nf-header .hub__intro-p {
+  display: none;
+}
+
+.hub__nf-header .hub__intro-ctas {
+  justify-content: flex-start;
+  margin-top: 0.75rem;
+  gap: 0.5rem;
+}
+
+.hub__nf-header .hub__soft-opening {
+  position: absolute;
+  top: clamp(1.5rem, 6vw, 2.5rem);
+  right: clamp(1.5rem, 6vw, 2.5rem);
+  margin: 0;
+}
+
+/* ─── Club House featured strip ─────────── */
+.hub__nf-clube {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: clamp(1rem, 3dvh, 1.5rem) clamp(1.25rem, 5vw, 2.5rem);
+  padding: clamp(0.9rem, 2.2dvh, 1.15rem) 1.15rem;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  min-height: 64px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hub__nf-clube-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3);
+}
+
+.hub__nf-clube::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  transition: border-color 0.2s ease;
+}
+
+.hub__nf-clube:hover::after,
+.hub__nf-clube:focus-visible::after {
+  border-color: rgba(255,255,255,0.38);
+}
+
+.hub__nf-clube-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.hub__nf-clube-label {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.hub__nf-clube-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.3rem, 5vw, 1.7rem);
+  line-height: 1;
+  color: #fff;
+}
+
+.hub__nf-clube-stats {
+  font-family: var(--font-body);
+  font-size: 0.48rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  margin-top: 0.2rem;
+}
+
+.hub__nf-clube-arrow {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.4);
+}
+
+.hub__nf-clube-arrow svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.5;
+}
+
+/* ─── Seção do catálogo ─────────────────── */
+.hub__nf-catalog-wrap {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  overflow: hidden;
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 1.5rem));
+}
+
+.hub__nf-catalog-label {
+  font-family: var(--font-body);
+  font-size: 0.46rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+}
+
+/* ─── Trilho horizontal ─────────────────── */
+.hub__nf-catalog {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  padding: 0.3rem clamp(1.25rem, 5vw, 2.5rem);
+  padding-right: 3rem;
+  scrollbar-width: none;
+}
+
+.hub__nf-catalog::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Card individual ───────────────────── */
+.hub__nf-card {
+  scroll-snap-align: start;
+  flex: 0 0 clamp(128px, 35vw, 158px);
+  height: clamp(158px, 39vw, 200px);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: border-color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hub__nf-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.hub__nf-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(4,4,4,0.92) 0%, rgba(4,4,4,0.05) 55%);
+  z-index: 1;
+}
+
+.hub__nf-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.65rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.hub__nf-card-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.4rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+}
+
+.hub__nf-card-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  line-height: 1;
+  color: #fff;
+}
+
+.hub__nf-card.is-active {
+  border-color: var(--color-gold);
+}
+
+.hub__nf-card.is-active .hub__nf-card-bg {
+  transform: scale(1.05);
+}
+
+/* ─── Desktop ────────────────────────────── */
+@media (min-width: 1024px) {
+  .hub__nf-card {
+    flex: 0 0 200px;
+    height: 260px;
+  }
+}
+
+/* ─── Reduced motion ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hub__nf-bg-layer,
+  .hub__nf-card-bg { transition: none; }
+}
+

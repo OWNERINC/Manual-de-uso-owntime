@@ -8,44 +8,32 @@ function renderTipologiaGrid() {
   const intro = HUB.intro;
   const hero  = HUB.hero;
 
-  const tipologiaBtns = HUB.tipologias.map(t => {
-    const bgStyle = t.image ? `style="background-image:url('${t.image}')"` : '';
-    return `
-      <a href="${t.href}" class="hub__btn" id="btn-${t.id}" aria-label="${t.name} — ${t.subtitle}">
-        <span class="hub__btn-bg" ${bgStyle} aria-hidden="true"></span>
-        <span class="hub__btn-text">
-          <span class="hub__btn-subtitle">${t.subtitle}</span>
-          <span class="hub__btn-name">${t.name}</span>
-          <span class="hub__btn-stats">${t.area} · ${t.capacidade}</span>
-        </span>
-      </a>
-    `;
-  }).join('');
-
   const clube = HUB.clube;
-  const clubeBg = clube.image ? `style="background-image:url('${clube.image}')"` : '';
-  const clubeBtn = `
-    <a href="${clube.href}" class="hub__btn hub__btn--clube" aria-label="${clube.name}">
-      <span class="hub__btn-bg" ${clubeBg} aria-hidden="true"></span>
-      <span class="hub__btn-text">
-        <span class="hub__btn-subtitle">${clube.subtitle}</span>
-        <span class="hub__btn-name">${clube.name}</span>
-        <span class="hub__btn-stats">${clube.amenities}</span>
-      </span>
+
+  const bgLayers = HUB.tipologias.map((t, i) =>
+    `<div class="hub__nf-bg-layer${i === 0 ? ' is-active' : ''}" style="background-image:url('${t.image}')"></div>`
+  ).join('');
+
+  const cards = HUB.tipologias.map((t, i) => `
+    <a href="${t.href}" class="hub__nf-card${i === 0 ? ' is-active' : ''}" data-idx="${i}" aria-label="${t.name} — ${t.subtitle}">
+      <span class="hub__nf-card-bg" style="background-image:url('${t.image}')"></span>
+      <div class="hub__nf-card-body">
+        <span class="hub__nf-card-subtitle">${t.subtitle}</span>
+        <span class="hub__nf-card-name">${t.name}</span>
+      </div>
     </a>
-  `;
-
-
+  `).join('');
 
   document.getElementById('tipologia-grid').innerHTML = `
     <div class="hub__page">
-      <div class="hub__main">
+      <div class="hub__nf-bg">${bgLayers}</div>
+
+      <header class="hub__nf-header">
         <div class="hub__content">
           <h1 class="hub__intro-title">
             <span class="hub__intro-title__pre">${intro.preHeading}</span>
             <img src="assets/images/logo owntime branco.webp" class="hub__intro-logo" alt="Own Time Home Club" draggable="false">
           </h1>
-          <p class="hub__intro-p">${intro.summary}</p>
           <div class="hub__intro-ctas">
             <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-wifi">
               <i data-lucide="wifi"></i>
@@ -64,11 +52,24 @@ function renderTipologiaGrid() {
             ${HUB.softOpening.label}
           </button>
         </div>` : ''}
-      </div>
-      <nav class="hub__nav" aria-label="Selecione sua tipologia ou explore o clube">
-        ${clubeBtn}
-        <div class="hub__tipologias-grid">${tipologiaBtns}</div>
-      </nav>
+      </header>
+
+      <a href="${clube.href}" class="hub__nf-clube" aria-label="${clube.name}">
+        <span class="hub__nf-clube-bg" style="background-image:url('${clube.image}')"></span>
+        <div class="hub__nf-clube-content">
+          <span class="hub__nf-clube-label">${clube.subtitle}</span>
+          <span class="hub__nf-clube-name">${clube.name}</span>
+          <span class="hub__nf-clube-stats">${clube.amenities}</span>
+        </div>
+        <i data-lucide="arrow-right" class="hub__nf-clube-arrow"></i>
+      </a>
+
+      <section class="hub__nf-catalog-wrap" aria-label="Selecione sua unidade">
+        <span class="hub__nf-catalog-label" aria-hidden="true">Selecione sua unidade</span>
+        <div class="hub__nf-catalog" id="hub-nf-catalog">
+          ${cards}
+        </div>
+      </section>
     </div>
   `;
 
@@ -239,4 +240,21 @@ document.addEventListener('DOMContentLoaded', () => {
   lucide.createIcons();
   initBottomSheets();
   animateHub();
+
+  const catalog = document.getElementById('hub-nf-catalog');
+  if (catalog) {
+    const cardEls = catalog.querySelectorAll('.hub__nf-card');
+    const bgEls   = document.querySelectorAll('.hub__nf-bg-layer');
+    const activate = idx => {
+      bgEls.forEach((el, i)   => el.classList.toggle('is-active', i === idx));
+      cardEls.forEach((el, i) => el.classList.toggle('is-active', i === idx));
+    };
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting)
+          activate(parseInt(entry.target.dataset.idx, 10));
+      });
+    }, { root: catalog, threshold: 0.55 });
+    cardEls.forEach(c => obs.observe(c));
+  }
 });

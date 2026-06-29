@@ -512,7 +512,7 @@ body {
   );
   background-size: 200% auto;
   cursor: pointer;
-  animation: hubSoftGlow 2.8s ease-in-out infinite, hubGoldShimmer 3.5s linear infinite;
+  animation: hubGoldShimmer 3.5s linear infinite;
 }
 
 .hub__soft-opening-badge:hover,

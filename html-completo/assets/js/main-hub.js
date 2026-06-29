@@ -273,15 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let autoTimer  = null;
     let userTook   = false;
 
-    // Pré-calcula posições com scroll em repouso (scrollLeft = 0)
-    const snapPositions = Array.from(cardEls).map(card => {
-      const rect    = card.getBoundingClientRect();
-      const catRect = catalog.getBoundingClientRect();
-      return rect.left - catRect.left; // offset absoluto a partir de scrollLeft=0
-    });
-
     const goTo = (idx) => {
-      catalog.scrollTo({ left: snapPositions[idx] ?? 0, behavior: 'smooth' });
+      cardEls[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     };
 
     const tick = () => {

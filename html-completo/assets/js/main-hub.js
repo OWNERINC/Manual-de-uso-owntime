@@ -10,12 +10,8 @@ function renderTipologiaGrid() {
 
   const clube = HUB.clube;
 
-  const bgLayers = HUB.tipologias.map((t, i) =>
-    `<div class="hub__nf-bg-layer${i === 0 ? ' is-active' : ''}" style="background-image:url('${t.image}')"></div>`
-  ).join('');
-
-  const cards = HUB.tipologias.map((t, i) => `
-    <a href="${t.href}" class="hub__nf-card${i === 0 ? ' is-active' : ''}" data-idx="${i}" aria-label="${t.name} — ${t.subtitle}">
+  const cards = HUB.tipologias.map(t => `
+    <a href="${t.href}" class="hub__nf-card" aria-label="${t.name} — ${t.subtitle}">
       <span class="hub__nf-card-bg" style="background-image:url('${t.image}')"></span>
       <div class="hub__nf-card-body">
         <span class="hub__nf-card-subtitle">${t.subtitle}</span>
@@ -26,7 +22,7 @@ function renderTipologiaGrid() {
 
   document.getElementById('tipologia-grid').innerHTML = `
     <div class="hub__page">
-      <div class="hub__nf-bg">${bgLayers}</div>
+      <div class="hub__nf-bg" style="background-image:url('${HUB.tipologias[0].image}')"></div>
 
       <header class="hub__nf-header">
         <div class="hub__content">
@@ -65,15 +61,9 @@ function renderTipologiaGrid() {
       </a>
 
       <section class="hub__nf-catalog-wrap" aria-label="Selecione sua unidade">
-        <div class="hub__nf-catalog" id="hub-nf-catalog">
+        <span class="hub__nf-catalog-label">Escolha sua unidade</span>
+        <div class="hub__nf-catalog">
           ${cards}
-        </div>
-        <div class="hub__nf-catalog-hint">
-          <span class="hub__nf-catalog-label">Escolha sua unidade</span>
-          <span class="hub__nf-scroll-icon" aria-hidden="true">
-            <i data-lucide="chevron-right"></i>
-            <i data-lucide="chevron-right"></i>
-          </span>
         </div>
       </section>
     </div>
@@ -247,58 +237,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initBottomSheets();
   animateHub();
 
-  const catalog = document.getElementById('hub-nf-catalog');
-  if (catalog) {
-    const cardEls  = catalog.querySelectorAll('.hub__nf-card');
-    const bgEls    = document.querySelectorAll('.hub__nf-bg-layer');
-    const scrollIcon = document.querySelector('.hub__nf-scroll-icon');
-
-    const activate = idx => {
-      bgEls.forEach((el, i)   => el.classList.toggle('is-active', i === idx));
-      cardEls.forEach((el, i) => el.classList.toggle('is-active', i === idx));
-    };
-
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting)
-          activate(parseInt(entry.target.dataset.idx, 10));
-      });
-    }, { root: catalog, threshold: 0.55 });
-    cardEls.forEach(c => obs.observe(c));
-
-    // Loop infinito: mostra todos os cards em ciclo
-    // holdTimes = tempo (ms) em cada card antes de avançar
-    const holdTimes = [2200, 950, 950, 1300];
-    let currentIdx = 0;
-    let autoTimer  = null;
-    let userTook   = false;
-
-    const goTo = (idx) => {
-      cardEls[idx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-    };
-
-    const tick = () => {
-      if (userTook) return;
-      currentIdx = (currentIdx + 1) % cardEls.length;
-      goTo(currentIdx);
-      autoTimer = setTimeout(tick, holdTimes[currentIdx]);
-    };
-
-    const cancelAuto = () => {
-      userTook = true;
-      clearTimeout(autoTimer);
-      if (scrollIcon) {
-        scrollIcon.style.opacity = '0';
-        scrollIcon.style.transition = 'opacity 0.4s ease';
-      }
-      catalog.removeEventListener('pointerdown', cancelAuto);
-      catalog.removeEventListener('touchstart', cancelAuto);
-    };
-
-    catalog.addEventListener('pointerdown', cancelAuto, { passive: true });
-    catalog.addEventListener('touchstart', cancelAuto, { passive: true });
-
-    // Inicia o loop após o tempo do card 1
-    autoTimer = setTimeout(tick, holdTimes[0]);
-  }
 });

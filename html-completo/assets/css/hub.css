@@ -605,6 +605,7 @@ body {
 .hub__nf-header .hub__content {
   align-items: center;
   text-align: center;
+  padding-bottom: 0;
 }
 
 .hub__nf-header .hub__intro-p {

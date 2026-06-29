@@ -596,7 +596,7 @@ body {
   position: relative;
   z-index: 2;
   padding: clamp(1.5rem, 6vw, 2.5rem);
-  padding-top: max(clamp(2.5rem, 8dvh, 4.5rem), env(safe-area-inset-top, 0px));
+  padding-top: max(25dvh, env(safe-area-inset-top, 0px));
   padding-bottom: 0;
   display: flex;
   flex-direction: column;

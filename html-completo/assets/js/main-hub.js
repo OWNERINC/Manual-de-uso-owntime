@@ -51,19 +51,15 @@ function renderTipologiaGrid() {
         </div>` : ''}
       </header>
 
-      <a href="${clube.href}" class="hub__nf-clube" aria-label="${clube.name}">
-        <span class="hub__nf-clube-bg" style="background-image:url('${clube.image}')"></span>
-        <div class="hub__nf-clube-content">
-          <span class="hub__nf-clube-label">${clube.subtitle}</span>
-          <span class="hub__nf-clube-name">${clube.name}</span>
-          <span class="hub__nf-clube-stats">${clube.amenities}</span>
-        </div>
-        <i data-lucide="arrow-right" class="hub__nf-clube-arrow"></i>
-      </a>
-
       <section class="hub__nf-catalog-wrap" aria-label="Selecione sua unidade">
-        <span class="hub__nf-catalog-label">Escolha sua unidade</span>
         <div class="hub__nf-catalog">
+          <a href="${clube.href}" class="hub__nf-clube hub__nf-card" aria-label="${clube.name}">
+            <span class="hub__nf-card-bg" style="background-image:url('${clube.image}')"></span>
+            <div class="hub__nf-card-body">
+              <span class="hub__nf-card-subtitle">${clube.subtitle}</span>
+              <span class="hub__nf-card-name">${clube.name}</span>
+            </div>
+          </a>
           ${cards}
         </div>
       </section>

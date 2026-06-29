@@ -28,20 +28,20 @@ const COMMON = {
       icon:     'clock',
       title:    'Check-out',
       subtitle: 'Check-in: 16h · Check-out: 10h',
-      body:     '<ul class="bs-steps"><li>A pontualidade na saída garante o tempo necessário para a nossa governança deixar a unidade impecável para o próximo uso.</li><li><strong>Procedimentos de Partida:</strong> Antes de deixar o club house, solicitamos que dirija-se à recepção para devolver os cartões de acesso e realizar o acerto de eventuais consumos extras.</li><li><strong>Pertences:</strong> Lembre-se de conferir seus pertences. Objetos esquecidos ficam armazenados em segurança por até dois meses.</li></ul>'
+      body:     '<ul class="bs-steps"><li>A pontualidade na saída garante o tempo necessário para a nossa governança deixar a unidade impecável para o próximo uso.</li><li><strong>Procedimentos de Partida:</strong> Antes de deixar o club house, solicitamos que dirija-se à recepção para devolver os cartões de acesso e realizar o acerto de eventuais consumos extras.</li><li><strong>Pertences:</strong> Lembre-se de conferir seus pertences. Objetos esquecidos ficam armazenados em segurança por até seis meses.</li></ul><p style="font-size:0.8rem;opacity:0.55;line-height:1.5;margin-top:1rem">* Caso precise de ajuda com algum item perdido, dirija-se ou entre em contato com a recepção.</p>'
     },
     {
       id:       'emergencia',
       icon:     'alert-triangle',
       title:    'Em Caso de Emergência',
       subtitle: '',
-      body:     '<ul class="bs-steps"><li>Nossa equipe está 24h capacitada e opera sob protocolos de segurança para gerenciar qualquer emergência com máxima eficiência.</li><li>Para suporte imediato ou atendimento ao proprietário, acione a recepção pelo ramal [xx] ou WhatsApp [xxxxxxxx]. Sua tranquilidade é nossa prioridade.</li></ul>'
+      body:     '<ul class="bs-steps"><li>Nossa equipe está 24h capacitada e opera sob protocolos de segurança para gerenciar qualquer emergência com máxima eficiência.</li><li>Para suporte imediato ou atendimento ao proprietário, acione a recepção pelo ramal 9 ou WhatsApp [xxxxxxxx]. Sua tranquilidade é nossa prioridade.</li></ul>'
     },
     {
       id:    'delivery',
       icon:  'package',
       title: 'Delivery',
-      body:  '<ul class="bs-steps"><li>Ao solicitar serviços de delivery utilize como endereço de entrega:</li></ul><div style="display:flex;align-items:center;justify-content:space-between;padding:0.7rem 1rem;border:1px solid var(--color-border);border-radius:8px;margin-top:0.75rem;margin-bottom:0.75rem;cursor:pointer" onclick="navigator.clipboard.writeText(\'Rua João XXIII, [número], Gramado - RS\').then(()=>{this.querySelector(\'span\').textContent=\'Copiado ✓\'})"><span>Rua João XXIII, [número] · Gramado - RS</span><span style="font-size:0.65rem;letter-spacing:0.1em;color:var(--color-accent-lt);text-transform:uppercase">Copiar</span></div><ul class="bs-steps"><li>A retirada da sua entrega é feita na recepção do Club House.</li></ul>'
+      body:  '<ul class="bs-steps"><li>Ao solicitar serviços de delivery utilize como endereço de entrega:</li></ul><div style="display:flex;align-items:center;justify-content:space-between;padding:0.7rem 1rem;border:1px solid var(--color-border);border-radius:8px;margin-top:0.75rem;margin-bottom:0.75rem;cursor:pointer" onclick="navigator.clipboard.writeText(\'Rua João XXIII, 222, Gramado - RS\').then(()=>{this.querySelector(\'span\').textContent=\'Copiado ✓\'})"><span>Rua João XXIII, 222 · Gramado - RS</span><span style="font-size:0.65rem;letter-spacing:0.1em;color:var(--color-accent-lt);text-transform:uppercase">Copiar</span></div><ul class="bs-steps"><li>A retirada da sua entrega é feita na recepção do Club House.</li></ul>'
     },
     {
       id:       'pet',
@@ -74,7 +74,7 @@ const COMMON = {
       id:   'lareira',
       icon: 'flame',
       title: 'Lareira',
-      body:  '<ul class="bs-steps"><li><strong>Acendimento e Uso:</strong> Utilize exclusivamente a lenha fornecida pela nossa operação. Para ligar e ajustar a chama, siga este passo a passo: [Instruções operacionais do fabricante — a serem inseridas].</li><li><strong>Atenção ao Vidro:</strong> O vidro frontal atinge altíssimas temperaturas durante o uso. Evite tocá-lo e mantenha crianças sob rigorosa supervisão.</li><li><strong>Prevenção:</strong> É estritamente proibido o uso de líquidos inflamáveis para forçar o acendimento.</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Acendimento e Uso:</strong> Utilize exclusivamente a lenha fornecida pela nossa operação. Para ligar e ajustar a chama, siga este passo a passo:<ol style="margin-top:0.5rem;padding-left:1.25rem;line-height:1.8"><li>Coloque o papel no fundo da fornalha, seguido pelas aparas, a lenha miúda e, por fim, as toras maiores.</li><li>Acenda o fogo e feche a porta imediatamente após a ignição. A lareira não deve ser usada com a porta aberta.</li><li>Quando a lareira estiver aquecida e o fogo bem estabelecido, utilize o controle de ar para reduzir a entrada de oxigênio e manter a estabilidade da chama.</li><li>Para realizar uma recarga, coloque a nova lenha sobre a brasa, evitando aproximá-la muito do vidro.</li></ol></li><li><strong>Atenção ao Vidro:</strong> O vidro frontal e a estrutura emitem intenso calor durante o funcionamento. Evite tocá-los e mantenha crianças, móveis e roupas a uma distância segura e sob rigorosa supervisão.</li><li><strong>Prevenção:</strong> É estritamente proibido o uso de líquidos inflamáveis, como querosene ou fluidos, para forçar o acendimento. Não utilize esta estufa como incinerador para queimar lixo ou outros resíduos.</li></ul>'
     },
     {
       id:   'conectividade',
@@ -90,14 +90,14 @@ const COMMON = {
       icon:  'waves',
       title: 'Piscina',
       hours: '8h às 22h',
-      note:  '<ul class="bs-steps"><li>Com água mantida entre 30° e 36°C, a piscina conta com três profundidades: · Prainha 0,165m · Infantil 0,435m · Adulto 1,20m</li><li>Utilize exclusivamente roupas de banho.</li><li>Faça uso da ducha antes de entrar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Caixas de som</li><li>Alimentos e bebidas</li><li>Recipientes de vidro</li><li>Abertura ou fechamento das janelas</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Supervisão e Cuidado:</strong> Para garantir o bem-estar e a tranquilidade coletiva, é fundamental que as crianças permaneçam sob a supervisão constante de um adulto responsável.</li><li><strong>Regras de convivência:</strong> É estritamente proibido o consumo de bebidas alcoólicas e fumar nesta área.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
+      note:  '<ul class="bs-steps"><li>Com água mantida entre 30° e 36°C, a piscina conta com três profundidades: · Prainha 0,165m · Infantil 0,435m · Adulto 1,20m</li><li>Utilize exclusivamente roupas de banho.</li><li>Faça uso da ducha antes de entrar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Caixas de som</li><li>Alimentos e bebidas</li><li>Recipientes de vidro</li><li>Abertura ou fechamento das janelas</li><li>Bebidas alcoólicas</li><li>Fumar</li><li>Caixas de música</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Supervisão e Cuidado:</strong> Para garantir o bem-estar e a tranquilidade coletiva, é fundamental que as crianças até 12 anos permaneçam sob a supervisão constante de um adulto responsável.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
     },
     {
       id:    'sauna',
       icon:  'wind',
       title: 'Saunas',
       hours: '8h às 22h',
-      note:  '<ul class="bs-steps"><li>Se desejar utilizá-la fora do período, nossa equipe está à disposição para acioná-la. Solicite via WhatsApp com [Inserir tempo] de antecedência. [link]</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Entrada com bebidas, itens de vidro, ou caixas de som.</li><li>Captação de imagens (Fotos e Vídeos), protegendo a privacidade de todos.</li><li><strong>Regras de convivência:</strong> É estritamente proibido o consumo de bebidas alcoólicas e fumar nesta área.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
+      note:  '<ul class="bs-steps"><li>Caso precise de ajuda dentro deste horário, procure o time de anfitriões na recepção que darão o acesso.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Entrada com bebidas, itens de vidro, ou caixas de som.</li><li>Captação de imagens (Fotos e Vídeos), protegendo a privacidade de todos.</li><li>Bebidas alcoólicas</li><li>Fumar</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
     },
     {
       id:    'fitness',
@@ -110,8 +110,8 @@ const COMMON = {
       id:    'spa',
       icon:  'leaf',
       title: 'Spa Pocahy',
-      hours: '10h às 20h · Último atendimento: 19h',
-      note:  '<ul class="bs-steps"><li>Nosso menu oferece massagens terapêuticas e relaxantes, tratamentos faciais, rituais corporais e terapias holísticas. Acesse a carta completa através deste contato: [link].</li><li><strong>Agendamentos:</strong> Via contato [link]. Recomendamos antecedência, especialmente na alta temporada. Cancelamentos exigem aviso prévio de, no mínimo, 4 horas.</li><li>Uso exclusivo para maiores de 16 anos, exceto em tratamentos infantis específicos com responsável.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul><p style="font-size:0.8rem;opacity:0.55;line-height:1.5;margin-top:1rem">* Chegue com 10 minutos de antecedência para ambientação.</p>'
+      hours: '10h às 19h · Segunda a Sábado',
+      note:  '<ul class="bs-steps"><li>Nosso menu oferece massagens terapêuticas e relaxantes, tratamentos faciais, rituais corporais e terapias holísticas.</li><li>Recomendamos antecedência, especialmente na alta temporada. Cancelamentos exigem aviso prévio de, no mínimo, 4 horas.</li><li>Uso exclusivo para maiores de 16 anos, exceto em tratamentos infantis específicos com responsável.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul><div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1.25rem"><a href="https://wa.me/5554984111140?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20carta%20de%20servi%C3%A7os%20do%20Spa%20do%20Owntime!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver carta completa</a><a href="https://wa.me/5554984111140?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20servi%C3%A7o%20no%20Spa%20do%20Owntime!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1px solid var(--color-accent);border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="calendar-check"></i> Agendar</a></div><p style="font-size:0.8rem;opacity:0.55;line-height:1.5;margin-top:1rem">* Chegue com 10 minutos de antecedência para ambientação.</p>'
     }
   ],
 
@@ -153,7 +153,7 @@ const COMMON = {
       icon:  'salad',
       title: 'Café da Manhã',
       hours: '7h às 11h',
-      body:  '<ul class="bs-steps"><li><strong>Serviço:</strong> Para o seu máximo conforto e privacidade, o café da manhã é entregue diretamente na sua casa em formato de cesta, preparada com uma seleção especial.</li><li><strong>Valor:</strong> R$ 120,00 (serve perfeitamente duas pessoas).</li><li><strong>Como Pedir:</strong> Solicite itens e reserva com nossa equipe na recepção ou via WhatsApp.</li></ul><p style="font-size:0.8rem;opacity:0.55;line-height:1.5;margin-top:1rem">* Horários e formato do café da manhã podem variar conforme temporada. Consulte a recepção para informações atualizadas.</p>'
+      body:  '<ul class="bs-steps"><li><strong>Serviço:</strong> Para o seu máximo conforto e privacidade, o café da manhã é entregue diretamente na sua casa em formato de cesta, preparada com uma seleção especial.</li><li><strong>Valor:</strong> R$ 120,00 (serve perfeitamente duas pessoas).</li><li>Cestas de café da manhã devem ser solicitadas até as 15h para o dia seguinte e poderão ser entregues das 7h às 22h pelo contato da recepção.</li></ul><p style="font-size:0.8rem;opacity:0.55;line-height:1.5;margin-top:1rem">* Horários e formato do café da manhã podem variar conforme temporada. Consulte a recepção para informações atualizadas.</p>'
     }
   ],
 
@@ -215,14 +215,14 @@ const COMMON = {
       icon: 'baby',
       title: 'Kids',
       hours: '9h às 21h',
-      body:  '<ul class="bs-steps"><li><strong>Ambiente:</strong> O espaço foi projetado para que as crianças brinquem com liberdade e segurança, priorizando a diversão longe das telas.</li><li><strong>Supervisão e Cuidado:</strong> Para garantir o bem-estar e a tranquilidade coletiva, é fundamental que as crianças permaneçam sob a supervisão constante de um adulto responsável.</li><li><strong>Programação Especial:</strong> Durante as temporadas e datas comemorativas, o Club oferece um cronograma exclusivo com jogos e atividades dirigidas, pensado para enriquecer a experiência dos pequenos. <em>Indisponível em período de soft opening.</em></li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Ambiente:</strong> O espaço foi projetado para que as crianças brinquem com liberdade e segurança, priorizando a diversão longe das telas.</li><li><strong>Supervisão e Cuidado:</strong> Para garantir o bem-estar e a tranquilidade coletiva, é fundamental que as crianças permaneçam sob a supervisão constante de um adulto responsável.</li><li><strong>Programação Especial:</strong> Durante as temporadas e datas comemorativas, o Club oferece um cronograma exclusivo com jogos e atividades dirigidas, pensado para enriquecer a experiência dos pequenos. <em>Indisponível em período de soft opening.</em></li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Bebidas alcoólicas</li><li>Fumar</li><li>Caixas de música</li></ul>'
     },
     {
       id:   'teens',
       icon: 'users',
       title: 'Teens',
       hours: '9h às 21h',
-      body:  '<ul class="bs-steps"><li><strong>Liberdade e Interação:</strong> Criado para proporcionar liberdade e interação, este ambiente prioriza a diversão dos jovens além das telas.</li><li><strong>Entretenimento:</strong><ul style="margin-top:0.4rem;padding-left:1.25rem;line-height:1.8"><li>Videogame 1</li><li>Videogame 2</li><li>Videogame 3</li></ul></li><li><strong>Acesso e Monitoramento:</strong> O acesso ao espaço é feito de forma independente por qualquer jovem que porte o cartão da unidade. Para a segurança de todos e total tranquilidade dos pais, o ambiente é acompanhado 24 horas pelo nosso sistema de monitoramento via CFTV.</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Liberdade e Interação:</strong> Criado para proporcionar liberdade e interação, este ambiente prioriza a diversão dos jovens além das telas.</li><li><strong>Entretenimento:</strong><ul style="margin-top:0.4rem;padding-left:1.25rem;line-height:1.8"><li>Videogame 1</li><li>Videogame 2</li><li>Videogame 3</li></ul></li><li><strong>Acesso e Monitoramento:</strong> O acesso ao espaço é feito de forma independente por qualquer jovem que porte o cartão da unidade. Para a segurança de todos e total tranquilidade dos pais, o ambiente é acompanhado 24 horas pelo nosso sistema de monitoramento via CFTV.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Bebidas alcoólicas</li><li>Fumar</li><li>Caixas de música</li></ul>'
     },
     {
       id:   'playground',

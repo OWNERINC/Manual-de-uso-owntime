@@ -165,7 +165,7 @@ function renderConcierge() {
   document.getElementById('concierge').innerHTML = `
     <div class="container section-pad">
       <header class="concierge__header">
-        <span class="section-label">Comodidades Pay Per Use</span>
+        <span class="section-label">Serviços por Demanda</span>
         <h2 class="section-heading">Curadoria<br><em>a seu serviço.</em></h2>
         <span class="divider" style="background:var(--color-text);opacity:0.15"></span>
         <p class="section-sub">Serviços personalizados disponíveis sob demanda. Solicite ao seu time de anfitriões com antecedência.</p>
@@ -173,7 +173,7 @@ function renderConcierge() {
       <div class="accordion accordion--dark">${items}</div>
       <div class="concierge__note">
         <i data-lucide="info" class="concierge__note-icon" aria-hidden="true"></i>
-        <p class="concierge__note-text">Todos os serviços pay per use são cobrados à parte e sujeitos à disponibilidade. Para agendamentos e valores, entre em contato com o seu time de anfitriões.</p>
+        <p class="concierge__note-text">Todos os serviços por demanda são cobrados à parte e sujeitos à disponibilidade. Para agendamentos e valores, entre em contato com o seu time de anfitriões.</p>
       </div>
     </div>
   `;

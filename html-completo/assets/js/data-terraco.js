@@ -29,7 +29,7 @@ const TIPOLOGIA = {
         {
           id: 'piso',
           title: 'Piso Aquecido',
-          body: '<ul class="bs-steps"><li><strong>Tecnologia:</strong> O ambiente conta com piso radiante, aquecido por água a gás natural. A temperatura é predeterminada de forma automática e inteligente.</li><li><strong>Consumo (Pay per Use):</strong> O uso do piso aquecido opera na modalidade pay per use, com medição realizada proporcionalmente ao período da sua estadia.</li><li><strong>Aviso de Soft Open:</strong> Durante esta fase inicial, o sistema de piso aquecido poderá estar temporariamente inoperante.</li></ul>'
+          body: '<ul class="bs-steps"><li><strong>Tecnologia:</strong> O ambiente conta com piso radiante, aquecido por água a gás natural. A temperatura é predeterminada de forma automática e inteligente.</li><li><strong>Consumo (Serviço por Demanda):</strong> O uso do piso aquecido opera na modalidade serviço por demanda, com medição realizada proporcionalmente ao período da sua estadia.</li><li><strong>Aviso de Soft Open:</strong> Durante esta fase inicial, o sistema de piso aquecido poderá estar temporariamente inoperante.</li></ul>'
         }
       ]
     }
@@ -55,7 +55,7 @@ const TIPOLOGIA = {
         { id: 'ventilacao', icon: 'fan',         title: 'Ventilação / Exaustão', body: '<ul class="bs-steps"><li><strong>Operação 100% Automática:</strong> O acionamento e o desligamento são inteligentes e autônomos. Nenhuma ação ou ajuste manual é necessário da sua parte.</li><li><strong>Renovação Contínua:</strong> O ar circula e se renova de forma constante, assegurando um ambiente sempre fresco e agradável durante toda a sua estadia.</li></ul>' },
         { id: 'ar-central', icon: 'thermometer', title: 'AR Central',            body: '' },
         { id: 'telefone',   icon: 'phone',       title: 'Telefone',              body: '<ul class="bs-steps"><li>Para ligar para a recepção, disque <strong>"9"</strong>.</li><li><strong>Soft Opening:</strong> O serviço de telefonia interno está disponível.</li></ul>' },
-        { id: 'carregadores', icon: 'plug', title: 'Carregadores Elétricos', body: '<ul class="bs-steps"><li>A garagem do complexo possui <strong>4 vagas de carregamento elétrico compartilhadas</strong>.</li><li><strong>Conexão:</strong> Estacione na vaga de recarga e conecte o cabo ao seu veículo para iniciar a sessão.</li><li><strong>Cobrança:</strong> A liberação é mediante a tag de acesso do empreendimento, gerando fatura junto com os pagamentos de pay-per-use da unidade.</li></ul>' }
+        { id: 'carregadores', icon: 'plug', title: 'Carregadores Elétricos', body: '<ul class="bs-steps"><li>A garagem do complexo possui <strong>4 vagas de carregamento elétrico compartilhadas</strong>.</li><li><strong>Conexão:</strong> Estacione na vaga de recarga e conecte o cabo ao seu veículo para iniciar a sessão.</li><li><strong>Cobrança:</strong> A liberação é mediante a tag de acesso do empreendimento, gerando fatura junto com os serviços por demanda da unidade.</li></ul>' }
       ]
     },
     {

@@ -16,15 +16,17 @@ O hub de entrada tem variações de design em branches Git separadas, todas a pa
 | `design/hub-cinematic` | Scroll-snap vertical — cada unidade ocupa 100dvh (estilo Stories) | Variação A |
 | `design/hub-netflix` | Grid 2×2 estático com fundo escuro 95% overlay — todas as unidades visíveis de uma vez | **Branch atual** |
 
-### `design/hub-netflix` — detalhes
+### `design/hub-netflix` — detalhes (layout atual em produção)
 
 - Fundo: foto da primeira tipologia com `rgba(4,4,4,0.95)` de overlay
-- Header centralizado com logo, texto resumo e CTAs (Wi-Fi · Horários)
-- Badge **Soft Opening** abaixo dos CTAs, no fluxo do header
-- Strip do **Club House** como elemento estático acima do grid
-- Grid 2×2 com as 4 tipologias, sem animação, sem scroll horizontal
+- Header (`hub__nf-header`) com logo, parágrafo resumo e CTAs (Wi-Fi · Horários · badge Soft Opening)
+- Grid CSS com 3 linhas (`grid-template-rows: repeat(3, 0.55fr)`):
+  - Linha 1: **Club House** em largura total (`grid-column: 1 / -1`)
+  - Linhas 2–3: 4 tipologias em 2 colunas (`grid-template-columns: 1fr 1fr`)
 - Sem carrossel — todas as unidades visíveis ao mesmo tempo
-- `padding-top: 17dvh` no header com suporte a `safe-area-inset-top`
+- Layout responsivo via `dvh` — header `flex: 0 0 auto`, grid preenche o restante com `flex: 1`
+- `padding-top: 8dvh` no header com suporte a `safe-area-inset-top`
+- Breakpoints: `max-height: 680px` (reduz padding), `max-height: 540px` (oculta texto e badge), `min-width: 768px` (4 colunas), `min-width: 1024px` (layout 2 painéis lado a lado)
 
 Arquivos modificados nesta branch: `assets/css/hub.css` · `assets/js/main-hub.js`
 
@@ -318,14 +320,19 @@ Todas as animações são desativadas automaticamente quando `prefers-reduced-mo
 ### Editar conteúdo compartilhado (vale para todas as tipologias)
 Abra `assets/js/data-common.js` e edite o array correspondente.
 
-**Dados operacionais a preencher em `data-common.js`:**
-- `brand.concierge.whatsapp` → número real do WhatsApp do concierge
-- `orientacoesGerais[1].body` → ramal `[xx]` e WhatsApp `[xxxxxxxx]` de emergência
-- `facilities[0].body` → passos de instrução do sistema de climatização (substituir placeholder)
-- `facilities[1].body` → passos de acendimento da lareira (substituir placeholder)
-- `facilities[2].body` → rede e senha do Wi-Fi (substituir `[nome da rede]` e `[senha]`)
-- `clube[0].body` → catálogo e horário do empório
-- `segurancaAcesso[1].body` → número de câmeras do CFTV (substituir `[INSERIR NÚMERO]`)
+**Dados operacionais pendentes em `data-common.js` e `data-hub.js`:**
+
+Consulte `PENDENCIAS.md` na raiz do repositório para a lista atualizada de placeholders e itens em soft opening.
+
+Principais pendências ativas:
+- Wi-Fi: `[nome da rede]` e `[senha]` (em `data-hub.js` e `data-common.js → facilities`)
+- WhatsApp da recepção: `[xxxxxxxx]` (ramal já definido: **9**)
+- Link anfitriões: `[link]` em babysitter e transporte interno
+- Taxa de limpeza pet: `[valor]`
+- Link cardápio do bar: `[LINK PARA CARDÁPIO]`
+- Valor housekeeping adicional: `Valor X`
+- Fogo de Chão: localização da lenha, custo e contato
+- TV e AR Central: `body: ''` em todas as tipologias
 
 **Índices dos arrays após refatoração:**
 
@@ -373,21 +380,21 @@ Para forçar atualização de JS ou CSS sem limpar o cache dos usuários, increm
 | Arquivo | Versão |
 |---|---|
 | `main.css` | v8 |
-| `hub.css` | v9 |
+| `hub.css` | v19 |
 | `bottom-sheet.css` (index) | v5 |
 | `bottom-sheet.css` (tipologias/clube) | v7 |
 | `guia.css` | v5 |
 | `hero.css` | v5 |
 | `data-hub.js` | v21 |
 | `data-common.js` | v35 |
-| `data-fall-house.js` | v13 |
-| `data-winter-house.js` | v11 |
-| `data-garden.js` | v10 |
-| `data-terraco.js` | v11 |
-| `main-hub.js` | v35 |
+| `data-fall-house.js` | v14 |
+| `data-winter-house.js` | v12 |
+| `data-garden.js` | v11 |
+| `data-terraco.js` | v12 |
+| `main-hub.js` | v36 |
 | `main-tipologia.js` | v12 |
 | `main-clube.js` | v7 |
-| `render-common.js` | v16 |
+| `render-common.js` | v17 |
 
 ---
 

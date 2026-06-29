@@ -32,7 +32,7 @@ const HUB = {
       'O Own Time Home Club Gramado é uma nova geração de hospitalidade residencial que une casas compartilhadas de alto padrão com serviços de hotelaria, uma comunidade cuidadosamente cultivada e experiências que conectam profundamente com o destino.',
       'Cada chegada é um reencontro. Você não visita e sim retorna, porque encontra familiaridade. Você pertence.',
       'Este guia reúne as principais informações para que você aproveite cada momento com leveza e praticidade. Tudo o que você precisa saber está aqui, organizado de forma simples e direta:<ul class="bs-steps"><li>A operação da sua unidade</li><li>Os serviços do clube</li><li>Gastronomia, spa e demais conveniências</li></ul>',
-      'Sempre que precisar, nossa equipe estará à disposição pelo ramal [xx] ou WhatsApp [xxxxxxxx].',
+      'Sempre que precisar, nossa equipe estará à disposição pelo ramal 9 ou WhatsApp [xxxxxxxx].',
       'Estamos aqui para garantir que o seu tempo seja, de fato, o melhor tempo.'
     ],
     ctaWhatsapp: 'https://wa.me/5554999999999?text=Olá%2C%20preciso%20de%20ajuda.'
@@ -61,7 +61,7 @@ const HUB = {
         { title: 'Fitness Center', hours: '24 horas' },
         { title: 'Piscinas',       hours: '8h às 22h' },
         { title: 'Saunas',         hours: '8h às 22h' },
-        { title: 'Spa',            hours: '10h às 20h · Último atendimento: 19h' },
+        { title: 'Spa',            hours: '10h às 19h · Seg a Sáb' },
       ]
     },
     {

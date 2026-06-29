@@ -30,6 +30,7 @@ function renderTipologiaGrid() {
             <span class="hub__intro-title__pre">${intro.preHeading}</span>
             <img src="assets/images/logo owntime branco.webp" class="hub__intro-logo" alt="Own Time Home Club" draggable="false">
           </h1>
+          <p class="hub__intro-p">${intro.summary}</p>
           <div class="hub__intro-ctas">
             <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-wifi">
               <i data-lucide="wifi"></i>

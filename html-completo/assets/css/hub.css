@@ -608,7 +608,8 @@ body {
 }
 
 .hub__nf-header .hub__intro-p {
-  display: none;
+  text-align: left;
+  margin-top: 0.5rem;
 }
 
 .hub__nf-header .hub__intro-ctas {

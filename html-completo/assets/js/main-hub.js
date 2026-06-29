@@ -65,9 +65,15 @@ function renderTipologiaGrid() {
       </a>
 
       <section class="hub__nf-catalog-wrap" aria-label="Selecione sua unidade">
-        <span class="hub__nf-catalog-label" aria-hidden="true">Selecione sua unidade</span>
         <div class="hub__nf-catalog" id="hub-nf-catalog">
           ${cards}
+        </div>
+        <div class="hub__nf-catalog-hint">
+          <span class="hub__nf-catalog-label">Escolha sua unidade</span>
+          <span class="hub__nf-scroll-icon" aria-hidden="true">
+            <i data-lucide="chevron-right"></i>
+            <i data-lucide="chevron-right"></i>
+          </span>
         </div>
       </section>
     </div>
@@ -243,12 +249,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const catalog = document.getElementById('hub-nf-catalog');
   if (catalog) {
-    const cardEls = catalog.querySelectorAll('.hub__nf-card');
-    const bgEls   = document.querySelectorAll('.hub__nf-bg-layer');
+    const cardEls  = catalog.querySelectorAll('.hub__nf-card');
+    const bgEls    = document.querySelectorAll('.hub__nf-bg-layer');
+    const scrollIcon = document.querySelector('.hub__nf-scroll-icon');
+
     const activate = idx => {
       bgEls.forEach((el, i)   => el.classList.toggle('is-active', i === idx));
       cardEls.forEach((el, i) => el.classList.toggle('is-active', i === idx));
     };
+
     const obs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting)
@@ -256,5 +265,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { root: catalog, threshold: 0.55 });
     cardEls.forEach(c => obs.observe(c));
+
+    if (scrollIcon) {
+      catalog.addEventListener('scroll', () => {
+        if (catalog.scrollLeft > 20) {
+          scrollIcon.style.opacity = '0';
+          scrollIcon.style.transition = 'opacity 0.4s ease';
+        }
+      }, { passive: true });
+    }
   }
 });

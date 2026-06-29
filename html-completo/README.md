@@ -6,6 +6,30 @@ Guia digital interativo para hóspedes do **Own Time Home Club** em Gramado, Ser
 
 ---
 
+## Variações de layout do Hub (`index.html`)
+
+O hub de entrada tem variações de design em branches Git separadas, todas a partir de `master`.
+
+| Branch | Conceito | Status |
+|---|---|---|
+| `master` | Layout original — hero + grid 2×2 na parte inferior | Base / produção |
+| `design/hub-cinematic` | Scroll-snap vertical — cada unidade ocupa 100dvh (estilo Stories) | Variação A |
+| `design/hub-netflix` | Grid 2×2 estático com fundo escuro 95% overlay — todas as unidades visíveis de uma vez | **Branch atual** |
+
+### `design/hub-netflix` — detalhes
+
+- Fundo: foto da primeira tipologia com `rgba(4,4,4,0.95)` de overlay
+- Header centralizado com logo, texto resumo e CTAs (Wi-Fi · Horários)
+- Badge **Soft Opening** abaixo dos CTAs, no fluxo do header
+- Strip do **Club House** como elemento estático acima do grid
+- Grid 2×2 com as 4 tipologias, sem animação, sem scroll horizontal
+- Sem carrossel — todas as unidades visíveis ao mesmo tempo
+- `padding-top: 17dvh` no header com suporte a `safe-area-inset-top`
+
+Arquivos modificados nesta branch: `assets/css/hub.css` · `assets/js/main-hub.js`
+
+---
+
 ## O que o site faz
 
 O hóspede entra na URL, escolhe sua tipologia e navega por um guia completo com dois tipos de conteúdo:

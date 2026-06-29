@@ -266,21 +266,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { root: catalog, threshold: 0.55 });
     cardEls.forEach(c => obs.observe(c));
 
-    // Auto-preview: percorre todos os cards ao carregar, depois volta ao início
+    // Loop infinito: mostra todos os cards em ciclo
+    // holdTimes = tempo (ms) em cada card antes de avançar
+    const holdTimes = [2200, 950, 950, 1300];
+    let currentIdx = 0;
+    let autoTimer  = null;
+    let userTook   = false;
+
     const goTo = (idx) => {
       const card = cardEls[idx];
       if (!card) return;
-      const rect      = card.getBoundingClientRect();
-      const catRect   = catalog.getBoundingClientRect();
+      const rect    = card.getBoundingClientRect();
+      const catRect = catalog.getBoundingClientRect();
       catalog.scrollTo({ left: catalog.scrollLeft + rect.left - catRect.left, behavior: 'smooth' });
     };
 
-    let userTook = false;
-    const timers = [];
+    const tick = () => {
+      if (userTook) return;
+      currentIdx = (currentIdx + 1) % cardEls.length;
+      goTo(currentIdx);
+      autoTimer = setTimeout(tick, holdTimes[currentIdx]);
+    };
 
     const cancelAuto = () => {
       userTook = true;
-      timers.forEach(t => clearTimeout(t));
+      clearTimeout(autoTimer);
+      if (scrollIcon) {
+        scrollIcon.style.opacity = '0';
+        scrollIcon.style.transition = 'opacity 0.4s ease';
+      }
       catalog.removeEventListener('pointerdown', cancelAuto);
       catalog.removeEventListener('touchstart', cancelAuto);
     };
@@ -288,33 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     catalog.addEventListener('pointerdown', cancelAuto, { passive: true });
     catalog.addEventListener('touchstart', cancelAuto, { passive: true });
 
-    // Scroll sequencial: 800ms delay, 750ms por card
-    cardEls.forEach((_, i) => {
-      if (i === 0) return;
-      timers.push(setTimeout(() => { if (!userTook) goTo(i); }, 800 + (i - 1) * 750));
-    });
-
-    // Volta ao início após ver o último card
-    const returnDelay = 800 + (cardEls.length - 1) * 750 + 1100;
-    timers.push(setTimeout(() => {
-      if (!userTook) {
-        catalog.scrollTo({ left: 0, behavior: 'smooth' });
-        if (scrollIcon) {
-          scrollIcon.style.opacity = '0';
-          scrollIcon.style.transition = 'opacity 0.5s ease';
-        }
-      }
-    }, returnDelay));
-
-    // Oculta hint quando usuário scrolla manualmente
-    if (scrollIcon) {
-      catalog.addEventListener('scroll', () => {
-        if (catalog.scrollLeft > 30 && !userTook) return;
-        if (userTook) {
-          scrollIcon.style.opacity = '0';
-          scrollIcon.style.transition = 'opacity 0.4s ease';
-        }
-      }, { passive: true });
-    }
+    // Inicia o loop após o tempo do card 1
+    autoTimer = setTimeout(tick, holdTimes[0]);
   }
 });

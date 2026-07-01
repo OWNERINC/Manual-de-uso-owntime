@@ -349,7 +349,7 @@ function renderConcierge(common) {
   section.innerHTML = `
     <div class="container section-pad">
       <header class="concierge__header">
-        <span class="section-label">Serviços por Demanda</span>
+        <span class="section-label">Serviços sob Demanda</span>
         <h2 class="section-heading">Curadoria<br><em>a seu serviço.</em></h2>
         <span class="divider"></span>
         <p class="section-sub">Serviços personalizados disponíveis sob demanda. Solicite ao time de anfitriões com antecedência.</p>
@@ -357,7 +357,7 @@ function renderConcierge(common) {
       <div class="guia-section__grid guia-section__grid--light">${btns}</div>
       <div class="concierge__note">
         <i data-lucide="info" class="concierge__note-icon" aria-hidden="true"></i>
-        <p class="concierge__note-text">Todos os serviços por demanda são cobrados à parte e sujeitos à disponibilidade. Para agendamentos e valores, entre em contato com o seu time de anfitriões.</p>
+        <p class="concierge__note-text">Todos os serviços sob demanda são cobrados à parte e sujeitos à disponibilidade. Para agendamentos e valores, entre em contato com o seu time de anfitriões.</p>
       </div>
     </div>
   `;
@@ -452,6 +452,12 @@ function renderTelefonesUteis(common) {
 
   function _telRowsHtml(itens) {
     return itens.map(item => {
+      if (item.instagram) {
+        return `<a href="${item.instagram}" target="_blank" rel="noopener" class="tel-row" aria-label="Instagram: ${item.label}">
+          <span class="tel-row__label">${item.label}</span>
+          <span class="tel-row__num" style="color:var(--color-accent-lt)">Instagram ↗</span>
+        </a>`;
+      }
       const raw = item.tel.replace(/[\s\(\)\-]/g, '');
       const isPlaceholder = item.tel.includes('[');
       const href = item.wpp

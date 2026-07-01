@@ -93,7 +93,7 @@
 .bottom-sheet__title {
   font-family: var(--font-display);
   font-size: clamp(1.3rem, 4vw, 1.55rem);
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.15;
   color: var(--color-text);
   flex: 1;

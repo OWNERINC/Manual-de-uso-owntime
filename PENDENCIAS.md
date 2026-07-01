@@ -5,20 +5,15 @@ Atualizado em: 2026-07-01
 
 ## PLACEHOLDERS ATIVOS (precisam ser preenchidos)
 
-### 1. Wi-Fi
-Aparece em dois lugares distintos:
-- **Home → Botão "Conectar a rede"** (`data-hub.js`)
-- **Todas as tipologias → Conectividade** (`data-common.js` → facilities)
-
-→ Nome da rede (SSID): ___________________________
-→ Senha: ___________________________
+*Nenhum placeholder ativo no momento.*
 
 ---
 
-### 2. AR Central (Garden + Cobertura)
-O item "AR Central" está com body vazio nos dois apartamentos (`data-garden.js`, `data-terraco.js`).
+## SEÇÕES OCULTAS (prontas para reativar)
 
-→ Instruções de operação do ar central: ___________________________
+| Seção | Onde | Como reativar |
+|---|---|---|
+| **Orientações do Club** (Acesso de Convidados) | `data-common.js` → `clubeOrientacoes` | Descomentar o objeto no array |
 
 ---
 
@@ -43,6 +38,9 @@ O item "AR Central" está com body vazio nos dois apartamentos (`data-garden.js`
 | Espaço Pet — Taxa de limpeza | Substituído por "consulte a recepção" | Jul/26 |
 | Housekeeping — Valor serviço adicional | Substituído por "consulte a recepção" | Jul/26 |
 | Visitantes Club House (taxa/limite/cortesia) | Substituído por "consulte a recepção" | Jul/26 |
+| Wi-Fi SSID e senha | `hospedes` / `owntime2026` inseridos | Jul/26 |
+| AR Central (Garden + Cobertura) | Instruções completas inseridas | Jul/26 |
+| Mercados & Farmácias — tabs | Mercados / Farmácias separados em abas | Jul/26 |
 | Forno de Pizza (Fall House) | Sinalizado como Soft Opening | Jul/26 |
 | Acesso às Unidades — Comunicação/videofone | Removido (não disponível) | Jul/26 |
 | Bar — Cardápio | Texto descritivo sem link específico | Jun/26 |

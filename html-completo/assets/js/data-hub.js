@@ -12,8 +12,8 @@ const HUB = {
   },
 
   wifi: {
-    ssid:     '[nome da rede]',
-    password: '[senha]'
+    ssid:     'hospedes',
+    password: 'owntime2026'
   },
 
   hero: {
@@ -26,7 +26,7 @@ const HUB = {
   intro: {
     preHeading: 'Bem-vindo ao',
     heading:    'Own Time.',
-    summary: 'Tudo oque você precisa na palma da mão.',
+    summary: 'Tudo que você precisa na palma da mão.',
     details: [
       'Aqui, casa e natureza se encontram com a estrutura de um clube pensado para oferecer conforto, liberdade e tranquilidade em cada detalhe.',
       'O Own Time Home Club Gramado é uma nova geração de hospitalidade residencial que une casas compartilhadas de alto padrão com serviços de hotelaria, uma comunidade cuidadosamente cultivada e experiências que conectam profundamente com o destino.',

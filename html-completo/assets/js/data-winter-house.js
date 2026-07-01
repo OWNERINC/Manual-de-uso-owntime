@@ -41,12 +41,11 @@ const TIPOLOGIA = {
       id: 'geral',
       label: 'Geral',
       items: [
-        { id: 'acesso',     icon: 'key',       title: 'Acesso às Unidades',   body: '<ul class="bs-steps"><li><strong>Abertura:</strong> Aproxime seu cartão da fechadura eletrônica para destravar a porta.</li><li><strong>Comunicação:</strong> Utilize o videofone integrado para falar instantaneamente com a portaria ou recepção.</li></ul>' },
+        { id: 'acesso',     icon: 'key',       title: 'Acesso às Unidades',   body: '<ul class="bs-steps"><li><strong>Abertura:</strong> Aproxime seu cartão da fechadura eletrônica para destravar a porta.</li></ul>' },
         { id: 'iluminacao', icon: 'lightbulb', title: 'Iluminação',            body: '<ul class="bs-steps"><li><strong>Projeto Eficiente:</strong> Sua casa possui um projeto luminotécnico planejado exclusivamente com equipamentos de baixo consumo.</li><li><strong>Uso Consciente:</strong> Desfrute do conforto dos seus ambientes mantendo o compromisso com a sustentabilidade e a responsabilidade ambiental.</li></ul>' },
-        { id: 'tv',         icon: 'tv',        title: 'TV',                    body: '' },
+        { id: 'tv',         icon: 'tv',        title: 'TV',                    body: '<ul class="bs-steps"><li>Queremos que você relaxe e assista ao que mais gosta! Nossa TV permite que você acesse seus próprios serviços de streaming durante a estadia.</li><li><strong>Privacidade Garantida:</strong> Não se preocupe em sair das contas ao ir embora: nosso sistema inteligente garante a sua privacidade realizando a desconexão automática de todos os aplicativos logo após o seu checkout.</li></ul>' },
         { id: 'ventilacao', icon: 'wind',      title: 'Ventilação / Exaustão', body: '<ul class="bs-steps"><li><strong>Operação 100% Automática:</strong> O acionamento e desligamento são inteligentes e autônomos. Nenhuma ação ou ajuste manual é necessário da sua parte.</li><li><strong>Renovação Contínua:</strong> O sistema de ventilação assegura um ambiente fresco e agradável durante toda sua estadia.</li></ul>' },
         { id: 'telefone',   icon: 'phone',     title: 'Telefone',              body: '<ul class="bs-steps"><li>Para ligar para a recepção, disque <strong>"9"</strong>.</li><li><strong>Soft Opening:</strong> O serviço de telefonia interno está disponível.</li></ul>' },
-        { id: 'fogo-chao',  icon: 'flame-kindling', title: 'Fogo de Chão',     body: '<ul class="bs-steps"><li><strong>Localização da Lenha:</strong> [Inserir onde encontrar a lenha]</li><li><strong>Custo:</strong> [Inserir valor por uso]</li><li><strong>Como Acender:</strong><ol style="margin-top:0.5rem;padding-left:1.25rem;line-height:1.6"><li>Insira o acendedor ecológico no centro do espaço.</li><li>Posicione a lenha sobre o acendedor em formato de pirâmide.</li><li>Utilize o fósforo longo para acender a base com segurança.</li><li>Aguarde a formação da brasa antes de adicionar mais lenha.</li></ol></li><li><strong>Aviso de Segurança:</strong> Utilize apenas a lenha fornecida pelo time de anfitriões. Mantenha crianças sob supervisão contínua.</li><li>Nunca utilize líquidos inflamáveis, plásticos ou qualquer outro combustível não autorizado para forçar o acendimento. Para solicitar os insumos adequados ou auxílio, acesse o [contato].</li></ul>' },
         { id: 'carregadores', icon: 'plug', title: 'Carregador Elétrico', body: '<ul class="bs-steps"><li>Sua casa conta com <strong>1 carregador elétrico dedicado</strong>.</li><li><strong>Conexão:</strong> Estacione na vaga exclusiva de recarga e conecte o cabo ao seu veículo para iniciar a sessão.</li><li><strong>Cobrança:</strong> A liberação é mediante a tag de acesso do empreendimento, gerando fatura junto com os serviços por demanda da unidade.</li></ul>' }
       ]
     }
@@ -66,3 +65,4 @@ const TIPOLOGIA = {
   ]
 
 }
+

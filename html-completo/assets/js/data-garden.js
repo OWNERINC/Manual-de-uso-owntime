@@ -40,7 +40,7 @@ const TIPOLOGIA = {
       id:    'manobrista',
       icon:  'car',
       title: 'Serviço de Manobrista',
-      body:  '<ul class="bs-steps"><li><strong>Chegue e Relaxe:</strong> Nosso serviço de manobrista está à sua disposição para garantir conforto e praticidade desde o primeiro momento.</li><li><strong>Como Utilizar:</strong> Ao chegar, entregue as chaves do veículo para a nossa equipe na entrada principal.</li><li><strong>Solicitação de Retirada:</strong> Quando precisar sair, basta solicitar o seu carro na recepção ou pelo [inserir WhatsApp/link] com [inserir tempo, ex: 15 minutos] de antecedência. Nossa equipe deixará o veículo pronto e à sua espera.</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Chegue e Relaxe:</strong> Nosso serviço de manobrista está à sua disposição para garantir conforto e praticidade desde o primeiro momento.</li><li><strong>Como Utilizar:</strong> Ao chegar, entregue as chaves do veículo para a nossa equipe na entrada principal.</li><li><strong>Solicitação de Retirada:</strong> Quando precisar sair, basta solicitar o seu carro na recepção ou pelo <a href="https://wa.me/5554999588947" target="_blank" rel="noopener">WhatsApp da Recepção</a> com 15 minutos de antecedência. Nossa equipe deixará o veículo pronto e à sua espera.</li></ul>'
     }
   ],
 
@@ -49,9 +49,9 @@ const TIPOLOGIA = {
       id: 'geral',
       label: 'Geral',
       items: [
-        { id: 'acesso',     icon: 'key',         title: 'Acesso às Unidades',   body: '<ul class="bs-steps"><li><strong>Abertura:</strong> Aproxime seu cartão da fechadura eletrônica para destravar a porta.</li><li><strong>Comunicação:</strong> Utilize o videofone integrado para falar instantaneamente com a portaria ou recepção.</li></ul>' },
+        { id: 'acesso',     icon: 'key',         title: 'Acesso às Unidades',   body: '<ul class="bs-steps"><li><strong>Abertura:</strong> Aproxime seu cartão da fechadura eletrônica para destravar a porta.</li></ul>' },
         { id: 'iluminacao', icon: 'lightbulb',   title: 'Iluminação',            body: '<ul class="bs-steps"><li><strong>Projeto Eficiente:</strong> Sua casa possui um projeto luminotécnico planejado exclusivamente com equipamentos de baixo consumo.</li><li><strong>Uso Consciente:</strong> Desfrute do conforto dos seus ambientes mantendo o compromisso com a sustentabilidade e a responsabilidade energética.</li></ul>' },
-        { id: 'tv',         icon: 'tv',          title: 'TV',                    body: '' },
+        { id: 'tv',         icon: 'tv',          title: 'TV',                    body: '<ul class="bs-steps"><li>Queremos que você relaxe e assista ao que mais gosta! Nossa TV permite que você acesse seus próprios serviços de streaming durante a estadia.</li><li><strong>Privacidade Garantida:</strong> Não se preocupe em sair das contas ao ir embora: nosso sistema inteligente garante a sua privacidade realizando a desconexão automática de todos os aplicativos logo após o seu checkout.</li></ul>' },
         { id: 'ventilacao', icon: 'fan',         title: 'Ventilação / Exaustão', body: '<ul class="bs-steps"><li><strong>Operação 100% Automática:</strong> O acionamento e o desligamento são inteligentes e autônomos. Nenhuma ação ou ajuste manual é necessário da sua parte.</li><li><strong>Renovação Contínua:</strong> O ar circula e se renova de forma constante, assegurando um ambiente sempre fresco e agradável durante toda a sua estadia.</li></ul>' },
         { id: 'ar-central', icon: 'thermometer', title: 'AR Central',            body: '' },
         { id: 'telefone',   icon: 'phone',       title: 'Telefone',              body: '<ul class="bs-steps"><li>Para ligar para a recepção, disque <strong>"9"</strong>.</li><li><strong>Soft Opening:</strong> O serviço de telefonia interno está disponível.</li></ul>' },
@@ -79,3 +79,4 @@ const TIPOLOGIA = {
   ]
 
 }
+

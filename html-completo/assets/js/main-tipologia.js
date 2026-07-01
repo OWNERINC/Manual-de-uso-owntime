@@ -22,8 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFacilities(COMMON, TIPOLOGIA);
   renderGastronomy(COMMON);
   renderConcierge(COMMON);
+  renderTelefonesUteis(COMMON);
   renderSegurancaAcesso(COMMON);
   renderFloatingAction(COMMON);
+  renderSugestaoSheet(TIPOLOGIA.hero.headline);
   initSearch();
 
   // 2. Ícones após todo DOM estar pronto
@@ -75,7 +77,10 @@ function initSectionNav() {
       const navH    = nav.offsetHeight;
       const searchH = window.matchMedia('(max-width: 768px)').matches ? 58 : 0;
       const top     = el.getBoundingClientRect().top + window.scrollY - navH - searchH - 1;
-      window.scrollTo({ top, behavior: 'instant' });
+      isScrollingProgrammatically = true;
+      window.scrollTo({ top, behavior: 'smooth' });
+      clearTimeout(scrollEndTimer);
+      scrollEndTimer = setTimeout(() => { isScrollingProgrammatically = false; }, 800);
     });
     track.appendChild(btn);
     return btn;
@@ -86,6 +91,8 @@ function initSectionNav() {
   // Scroll-spy via rAF
   let rafId = null;
   let lastActiveIdx = -1;
+  let isScrollingProgrammatically = false;
+  let scrollEndTimer = null;
   function updateActive() {
     const scrollMid = window.scrollY + window.innerHeight * 0.35;
     let activeIdx = 0;
@@ -95,7 +102,9 @@ function initSectionNav() {
     });
     if (activeIdx !== lastActiveIdx) {
       pills.forEach((p, i) => p.classList.toggle('is-active', i === activeIdx));
-      pills[activeIdx]?.scrollIntoView({ behavior: 'instant', block: 'nearest', inline: 'center' });
+      if (!isScrollingProgrammatically) {
+        pills[activeIdx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
       lastActiveIdx = activeIdx;
     }
   }

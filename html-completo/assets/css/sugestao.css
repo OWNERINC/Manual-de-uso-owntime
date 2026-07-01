@@ -1,0 +1,282 @@
+/* ── Sugestões ─────────────────────────────────────────── */
+
+/* Banner de sucesso */
+.sug-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #2d6a4f;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 14px 14px 0 0;
+  transition: height 0.3s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+.sug-banner.is-visible {
+  height: 52px;
+}
+.sug-banner svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.sug-intro {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  opacity: 0.7;
+  margin-bottom: 1.25rem;
+}
+
+.sug-optional {
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
+/* Foto */
+.sug-photo {
+  position: relative;
+  border: 1.5px dashed var(--color-border, rgba(255,255,255,0.15));
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.sug-photo:hover,
+.sug-photo:focus {
+  border-color: var(--color-accent-lt, #6B8F6C);
+  outline: none;
+}
+
+.sug-photo__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+.sug-photo__placeholder svg {
+  width: 22px;
+  height: 22px;
+  opacity: 0.5;
+}
+
+.sug-photo__preview {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 9px;
+}
+
+.sug-photo__remove {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.55);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+.sug-photo__remove svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Textarea */
+.sug-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-alt, rgba(255,255,255,0.04));
+  border: 1px solid var(--color-border, rgba(255,255,255,0.1));
+  border-radius: 8px;
+  color: var(--color-text, #fff);
+  font-family: var(--font-body);
+  font-size: 16px; /* ≥16px evita zoom automático no iOS */
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+.sug-textarea:focus {
+  border-color: var(--color-accent-lt, #6B8F6C);
+}
+.sug-textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.sug-count {
+  text-align: right;
+  font-size: 0.7rem;
+  opacity: 0.35;
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Footer com dois botões lado a lado */
+.sug-footer {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.sug-footer .bottom-sheet__back {
+  flex: 1;
+}
+
+/* Submit */
+.sug-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 2;
+  padding: 0.9rem 1rem;
+  background: var(--color-accent, #3D5A3E);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.sug-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.sug-submit svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Loader spin */
+@keyframes sug-spin {
+  to { transform: rotate(360deg); }
+}
+.sug-spin {
+  animation: sug-spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+/* Feedback */
+.sug-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+}
+.sug-feedback--success {
+  color: var(--color-accent-lt, #6B8F6C);
+}
+.sug-feedback--success svg {
+  width: 36px;
+  height: 36px;
+}
+.sug-feedback--error {
+  color: rgba(255,255,255,0.65);
+}
+.sug-retry-btn {
+  background: none;
+  border: none;
+  color: var(--color-accent-lt, #6B8F6C);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: inherit;
+  padding: 0;
+}
+
+/* ── Botão no Hero ─────────────────────────────────────── */
+.hero__suggest {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.65rem 1.25rem;
+  background: var(--color-accent, #3D5A3E);
+  border: none;
+  border-radius: 100px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+.hero__suggest:hover {
+  opacity: 0.88;
+}
+.hero__suggest:active {
+  transform: scale(0.97);
+}
+.hero__suggest svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+/* ── Seletor de Categoria ── */
+.sug-categoria {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.sug-cat-btn {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font-body);
+  font-size: 0.775rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.sug-cat-btn.is-active {
+  background: rgba(61,90,62,0.25);
+  border-color: var(--color-accent, #3D5A3E);
+  color: #fff;
+}

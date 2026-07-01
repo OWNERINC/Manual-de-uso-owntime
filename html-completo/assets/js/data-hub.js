@@ -26,16 +26,16 @@ const HUB = {
   intro: {
     preHeading: 'Bem-vindo ao',
     heading:    'Own Time.',
-    summary: 'Este é o Guia de Uso digital do empreendimento, tudo o que você precisa na palma da mão.',
+    summary: 'Tudo oque você precisa na palma da mão.',
     details: [
       'Aqui, casa e natureza se encontram com a estrutura de um clube pensado para oferecer conforto, liberdade e tranquilidade em cada detalhe.',
       'O Own Time Home Club Gramado é uma nova geração de hospitalidade residencial que une casas compartilhadas de alto padrão com serviços de hotelaria, uma comunidade cuidadosamente cultivada e experiências que conectam profundamente com o destino.',
       'Cada chegada é um reencontro. Você não visita e sim retorna, porque encontra familiaridade. Você pertence.',
       'Este guia reúne as principais informações para que você aproveite cada momento com leveza e praticidade. Tudo o que você precisa saber está aqui, organizado de forma simples e direta:<ul class="bs-steps"><li>A operação da sua unidade</li><li>Os serviços do clube</li><li>Gastronomia, spa e demais conveniências</li></ul>',
-      'Sempre que precisar, nossa equipe estará à disposição pelo ramal 9 ou WhatsApp [xxxxxxxx].',
+      'Sempre que precisar, nossa equipe estará à disposição pelo ramal 9 ou <a href="https://wa.me/5554999588947" target="_blank" rel="noopener">WhatsApp da Recepção</a>.',
       'Estamos aqui para garantir que o seu tempo seja, de fato, o melhor tempo.'
     ],
-    ctaWhatsapp: 'https://wa.me/5554999999999?text=Olá%2C%20preciso%20de%20ajuda.'
+    ctaWhatsapp: 'https://wa.me/5554999588947?text=Olá%2C%20preciso%20de%20ajuda.'
   },
 
   horarios: [
@@ -43,7 +43,7 @@ const HUB = {
       section: 'Acesso',
       items: [
         { title: 'Check-in',  hours: 'a partir das 16h' },
-        { title: 'Check-out', hours: 'até as 10h' },
+        { title: 'Check-out', hours: 'até às 10h' },
       ]
     },
     {

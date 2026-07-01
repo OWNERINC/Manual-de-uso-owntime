@@ -343,3 +343,44 @@ html.sheet-open {
 .bs-tab-panel.is-active {
   display: block;
 }
+
+/* ─── Variante fundo branco (ex: cardápio café) ─── */
+.bottom-sheet--light {
+  background: #fff;
+}
+.bottom-sheet--light .bottom-sheet__header {
+  border-bottom-color: rgba(0,0,0,0.08);
+}
+.bottom-sheet--light .bottom-sheet__title {
+  color: #1a1a1a;
+}
+.bottom-sheet--light::before {
+  background: rgba(0,0,0,0.18);
+}
+.bottom-sheet--light .bottom-sheet__close-btn {
+  color: #1a1a1a;
+}
+.bottom-sheet--light .bottom-sheet__close-btn svg {
+  stroke: #1a1a1a;
+}
+.bottom-sheet--light .bottom-sheet__footer {
+  border-top-color: rgba(0,0,0,0.08);
+}
+.bottom-sheet--light .bottom-sheet__back {
+  color: #555;
+}
+.bottom-sheet--light .bottom-sheet__body {
+  color: #1a1a1a;
+}
+.bottom-sheet--light .bs-steps li {
+  color: #333;
+  border-left-color: rgba(0,0,0,0.15);
+}
+.bottom-sheet--light .bottom-sheet__header-icon {
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.1);
+  color: #555;
+}
+.bottom-sheet--light .bottom-sheet__header-icon svg {
+  stroke: #555;
+}

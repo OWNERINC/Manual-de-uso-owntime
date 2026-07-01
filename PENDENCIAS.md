@@ -1,5 +1,5 @@
 # Informações Pendentes — Guia Digital Own Time Home Club
-Atualizado em: 2026-06-29
+Atualizado em: 2026-07-01
 
 ---
 
@@ -8,118 +8,69 @@ Atualizado em: 2026-06-29
 ### 1. Wi-Fi
 Aparece em dois lugares distintos:
 - **Home → Botão "Conectar a rede"** (`data-hub.js`)
-- **Club House → Conectividade** (`data-common.js` → facilities)
+- **Todas as tipologias → Conectividade** (`data-common.js` → facilities)
 
 → Nome da rede (SSID): ___________________________
 → Senha: ___________________________
 
 ---
 
-### 2. Ramal e WhatsApp da Recepção
-Texto atual: "acione a recepção pelo ramal [xx] ou WhatsApp [xxxxxxxx]"
-Aparece em:
-- **Emergência** (`data-common.js`)
-- **Sheet "Sobre o Owntime"** — detalhes da home (`data-hub.js`)
-
-→ Ramal interno: 9 ✓
-→ WhatsApp da recepção: ___________________________
-
----
-
-### 3. Link do Time de Anfitriões
-Aparece em:
-- **Babysitter** — "Entre em contato com o time de anfitriões. [link]"
-- **Transporte Interno (Golf Carts)** — "Solicite através do contato com a recepção. [link]"
-
-→ Link / WhatsApp: ___________________________
-
----
-
-### 4. Espaço Pet — Taxa de Limpeza
-Texto atual: "taxa de limpeza de [valor] referente à higienização especial da unidade"
-
-→ Valor: R$ ___________________________
-
----
-
-### 5. Bar — Link do Cardápio
-Texto atual: "perfeitos para brindar a sua estadia. [LINK PARA CARDÁPIO]"
-
-→ Link do cardápio: ___________________________
-
----
-
-### 6. Housekeeping — Valor do Serviço Adicional
-Texto atual: "Serviço Adicional (Valor X): Arrumação completa..."
-
-→ Valor: R$ ___________________________
-
----
-
-### 7. Fogo de Chão (Fall House + Winter House)
-- Onde encontrar a lenha: "Localização da Lenha: [Inserir onde encontrar a lenha]"
-- Custo por uso: "Custo: [Inserir valor por uso]"
-- Contato para solicitar insumos: "acesse o [contato]"
-
-→ Localização da lenha: ___________________________
-→ Custo por uso: R$ ___________________________
-→ Link/WhatsApp de suporte: ___________________________
-
----
-
-### 8. TV (Fall House, Winter House, Garden, Cobertura)
-O item "TV" está sem conteúdo em todas as 4 tipologias.
-
-→ Informações sobre a TV (modelo, funcionamento, canais/streaming): ___________________________
-
----
-
-### 9. AR Central (Garden + Cobertura)
-O item "AR Central" está sem conteúdo nos dois apartamentos.
+### 2. AR Central (Garden + Cobertura)
+O item "AR Central" está com body vazio nos dois apartamentos (`data-garden.js`, `data-terraco.js`).
 
 → Instruções de operação do ar central: ___________________________
 
 ---
 
-### 10. Teens — Equipamentos de Videogame
-O espaço Teens lista "Videogame 1 / Videogame 2 / Videogame 3" como placeholders.
-
-→ Quais consoles estão disponíveis: ___________________________
-
----
-
 ## RESOLVIDOS ✓
 
-| Item | Informação inserida |
-|---|---|
-| Delivery — Endereço | Rua João XXIII, 222, Gramado - RS |
-| Lareira — Instruções de acendimento | Passo a passo inserido (4 etapas + alertas) |
-| Spa Pocahy — Links e horário | wa.me/5554984111140 · 10h–19h · Seg–Sáb |
-| Sauna — Tempo de antecedência | Reescrito sem placeholder |
-| Café da Manhã — Link de contato | "pelo contato da recepção" (sem link ativo) |
+| Item | Informação inserida | Quando |
+|---|---|---|
+| Ramal da Recepção | Ramal 9 | — |
+| WhatsApp da Recepção | +5554999588947 | — |
+| Time de Anfitriões (contato) | WhatsApp +5554999588947 | Jun/26 |
+| Central de Férias Ownerinc | WhatsApp +5551989220209 | Jul/26 |
+| Delivery — Endereço | Rua João XXIII, 222, Gramado - RS | — |
+| Lareira — Instruções de acendimento | Passo a passo inserido (4 etapas + alertas) | Jun/26 |
+| Spa Pocahy — Links e horário | wa.me/5554984111140 · 10h–19h · Seg–Sáb | — |
+| Café da Manhã — Cardápio e preço | Lista completa + R$139 | Jun/26 |
+| Check-in — Links do mapa | R. Ricardo Sturmhoffel 271 + R. João XXIII 222 | Jul/26 |
+| Gastronomia — Restaurantes (Almoço) | Di Pietro · Vale Quanto Pesa · Serra Grill | Jul/26 |
+| Gastronomia — Restaurantes (Jantar) | Pastasciutta · Catherine · Casa Muttoni | Jul/26 |
+| Mercados | Armazém 845 · Berti · Stahl | Jul/26 |
+| Farmácias | Panvel · Droga Raia | Jul/26 |
+| Piscina — Profundidades | 17cm · 44cm · 120cm (prainha/infantil/adulto) | Jul/26 |
+| Espaço Pet — Taxa de limpeza | Substituído por "consulte a recepção" | Jul/26 |
+| Housekeeping — Valor serviço adicional | Substituído por "consulte a recepção" | Jul/26 |
+| Visitantes Club House (taxa/limite/cortesia) | Substituído por "consulte a recepção" | Jul/26 |
+| Forno de Pizza (Fall House) | Sinalizado como Soft Opening | Jul/26 |
+| Acesso às Unidades — Comunicação/videofone | Removido (não disponível) | Jul/26 |
+| Bar — Cardápio | Texto descritivo sem link específico | Jun/26 |
+| TV | Instruções de streaming inseridas | Jun/26 |
+| Teens — Videogame | Texto genérico inserido | Jun/26 |
 
 ---
 
 ## ITENS EM SOFT OPENING
 
-Os itens abaixo estão marcados como temporariamente indisponíveis no guia.
 Confirmar quando cada um estará disponível para atualizar o conteúdo.
 
-| Item | Onde aparece | Status exibido |
-|---|---|---|
-| **Piso Aquecido** | Club House → Climatização | "temporariamente inoperante nesta fase inicial" |
-| **Chef em Casa** | Gastronomia → Serviços | "temporariamente indisponível" |
-| **Personal Trainer** | Concierge | "estará disponível em breve" |
-| **Pet Care** | Concierge | "estará disponível em breve" |
-| **Car Wash** | Concierge | "estará disponível em breve" |
-| **Private Shopper** | Concierge | "estará disponível em breve" |
-| **Empório** | Club House | "estará disponível em breve" |
-| **Programação Especial Kids** | Club House → Kids | "Indisponível em período de soft opening" |
-| **Personal Trainer (Fitness)** | Club House → Fitness Center | mencionado dentro da nota |
-| **Coffee Shop** | Horários da Home | "Indisponível no soft opening" |
-| **Restaurante** | Horários da Home | "Indisponível no soft opening" |
-| **Bar** | Horários da Home | "Indisponível no soft opening" |
-| **Pet Walker / Banho e Tosa** | Espaço Pet → Serviços | "Indisponíveis no período de soft opening" |
+| Item | Onde aparece |
+|---|---|
+| **Forno de Pizza** | Fall House → Guia da Casa |
+| **Fogo de Chão** | Fall House → Guia da Casa |
+| **Piso Aquecido** | Todas as tipologias → Climatização |
+| **Chef em Casa** | Gastronomia → Serviços |
+| **Personal Trainer** | Concierge |
+| **Pet Care** | Concierge |
+| **Car Wash** | Concierge |
+| **Private Shopper** | Concierge |
+| **Empório** | Club House |
+| **Programação Kids** | Club House → Kids |
+| **Coffee Shop** | Horários da Home |
+| **Restaurante** | Horários da Home |
+| **Bar** | Horários da Home |
+| **Pet Walker / Banho e Tosa** | Espaço Pet → Serviços |
 
 ---
 

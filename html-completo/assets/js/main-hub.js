@@ -32,23 +32,18 @@ function renderTipologiaGrid() {
           </h1>
           <p class="hub__intro-p">${intro.summary}</p>
           <div class="hub__intro-ctas">
-            <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-wifi">
+            <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-wifi" aria-label="Conectar à rede Wi-Fi">
               <i data-lucide="wifi"></i>
-              Conectar a rede
             </button>
-            <button class="hub__intro-cta hub__intro-cta--hours bs-trigger" data-bs-target="sheet-horarios">
+            ${HUB.softOpening?.active ? `
+            <button class="hub__soft-opening-badge bs-trigger" data-bs-target="sheet-soft-opening" aria-label="Saiba mais sobre o Soft Opening">
+              ${HUB.softOpening.label}
+            </button>` : ''}
+            <button class="hub__intro-cta hub__intro-cta--hours bs-trigger" data-bs-target="sheet-horarios" aria-label="Horários de funcionamento">
               <i data-lucide="clock"></i>
-              Horários
             </button>
           </div>
         </div>
-        ${HUB.softOpening?.active ? `
-        <div class="hub__soft-opening">
-          <button class="hub__soft-opening-badge bs-trigger" data-bs-target="sheet-soft-opening" aria-label="Saiba mais sobre o Soft Opening">
-            <i data-lucide="sparkles"></i>
-            ${HUB.softOpening.label}
-          </button>
-        </div>` : ''}
       </header>
 
       <section class="hub__nf-catalog-wrap" aria-label="Selecione sua unidade">
@@ -163,9 +158,10 @@ function renderSoftOpeningSheet() {
         </button>
       </header>
       <div class="bottom-sheet__body">
-        <p>O Guia de Uso Digital do Owntime foi pensado para que você conheça sua nova casa.</p>
-        <p>Estamos ajustando os bastidores para garantir a melhor experiência possível. Durante esta fase, algumas ferramentas estão em finalização e podem passar por adaptações.</p>
-        <p>Contamos com suas avaliações para melhorar a qualidade da sua experiência em Gramado.</p>
+        <p><strong>Soft Opening · 01 a 31 de julho de 2026.</strong></p>
+        <p>Liberamos seu acesso ao Guia Digital do Own Time Home Club para que você conheça o ambiente em primeira mão.</p>
+        <p>O Own Time é uma nova geração de hospitalidade residencial: <strong>sua casa com serviços de hotel</strong>. Durante o soft opening, alguns serviços estão em fase de ajuste e podem evoluir. Sua experiência e feedback são fundamentais para essa construção.</p>
+        <p>Qualquer dúvida ou sugestão, fale diretamente com nosso time de anfitriões na recepção do Club House.</p>
       </div>
       <div class="bottom-sheet__footer">
         <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
@@ -225,6 +221,57 @@ function animateHub() {
   el.classList.add('hub__intro-title--animate');
 }
 
+function renderV1Popup() {
+  if (localStorage.getItem('owntime-v1-seen')) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'v1-popup-overlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:9999;display:flex;align-items:flex-end;justify-content:center;padding:0 0 env(safe-area-inset-bottom,0);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)';
+
+  overlay.innerHTML = `
+    <div id="v1-popup" style="width:100%;max-width:520px;background:#141414;border-radius:20px 20px 0 0;padding:2rem 1.5rem calc(2rem + env(safe-area-inset-bottom,0));position:relative;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)">
+      <div style="width:36px;height:3px;background:rgba(255,255,255,0.15);border-radius:2px;margin:0 auto 1.75rem"></div>
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(201,169,110,0.12);border:1px solid rgba(201,169,110,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <i data-lucide="sparkles" style="width:18px;height:18px;color:#c9a96e"></i>
+        </div>
+        <div>
+          <p style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(201,169,110,0.8);margin-bottom:0.2rem;font-family:var(--font-body)">Guia Digital · V1</p>
+          <h3 style="font-family:var(--font-heading);font-size:1.15rem;font-weight:400;color:#fff;line-height:1.2">Em fase de testes.</h3>
+        </div>
+      </div>
+      <p style="font-size:0.875rem;line-height:1.65;color:rgba(255,255,255,0.6);font-family:var(--font-body);margin-bottom:1.5rem">Este é o Guia Digital do Own Time Home Club em sua primeira versão. Alguns conteúdos ainda estão sendo finalizados. Use o botão de <strong style="color:rgba(255,255,255,0.85)">Sugestões e melhorias</strong> em qualquer página para nos contar o que melhorar.</p>
+      <button id="v1-popup-close" style="width:100%;padding:0.9rem;background:rgba(201,169,110,0.15);border:1.5px solid rgba(201,169,110,0.4);border-radius:10px;color:#c9a96e;font-family:var(--font-body);font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent">
+        Entendi
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      overlay.querySelector('#v1-popup').style.transform = 'translateY(0)';
+    });
+  });
+
+  const close = () => {
+    const popup = overlay.querySelector('#v1-popup');
+    popup.style.transform = 'translateY(100%)';
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.3s';
+    setTimeout(() => {
+      overlay.remove();
+      localStorage.setItem('owntime-v1-seen', '1');
+    }, 350);
+  };
+
+  overlay.querySelector('#v1-popup-close').addEventListener('click', close);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+
+  try { lucide.createIcons({ nodes: [overlay] }); } catch(e) {}
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTipologiaGrid();
   renderHorariosSheet(HUB.horarios);
@@ -233,5 +280,5 @@ document.addEventListener('DOMContentLoaded', () => {
   lucide.createIcons();
   initBottomSheets();
   animateHub();
-
+  setTimeout(renderV1Popup, 800);
 });

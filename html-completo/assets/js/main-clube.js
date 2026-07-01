@@ -41,6 +41,31 @@ function renderClubeHero() {
   `;
 }
 
+function renderClubeOrientacoes() {
+  const section = document.getElementById('clube-orientacoes');
+  if (!section) return;
+
+  const items = COMMON.clubeOrientacoes || [];
+  if (!items.length) { section.style.display = 'none'; return; }
+
+  const btns = items.map(item => _guiaItemBtn(`sheet-clube-ori-${item.id}`, item.icon, item.title)).join('');
+
+  section.innerHTML = `
+    <div class="container section-pad">
+      <header class="orientacoes__header">
+        <span class="section-label">Club House</span>
+        <h2 class="section-heading">Orientações<br><em>do clube.</em></h2>
+        <span class="divider"></span>
+      </header>
+      <div class="guia-section__grid guia-section__grid--light">${btns}</div>
+    </div>
+  `;
+
+  items.forEach(item => {
+    _appendSheet(`sheet-clube-ori-${item.id}`, item.icon, item.title, _bodyHtml(item.body));
+  });
+}
+
 function renderClubeAmenities() {
   const section = document.getElementById('amenities');
   if (!section) return;
@@ -161,6 +186,7 @@ function renderClubeServicos() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderClubeHero();
+  renderClubeOrientacoes();
   renderClubeAmenities();
   renderClubeGastronomy();
   renderClubeServicos();

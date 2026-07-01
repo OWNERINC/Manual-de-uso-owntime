@@ -90,6 +90,10 @@ function renderHero(tipologia) {
           <i data-lucide="chevron-down" class="hero__scroll-cta__arrow"></i>
           <i data-lucide="chevron-down" class="hero__scroll-cta__arrow hero__scroll-cta__arrow--2"></i>
         </div>
+        <button class="hero__suggest bs-trigger" data-bs-target="sheet-sugestao" aria-label="Sugestões e melhorias">
+          <i data-lucide="lightbulb"></i>
+          Sugestões e melhorias
+        </button>
         <p class="hero__sub">${tipologia.hero.subheadline}</p>
         <div class="hero__footer">
           <span class="hero__location">${tipologia.hero.location}</span>
@@ -300,6 +304,36 @@ function renderGastronomy(common) {
     `;
     _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, bodyHtml, item.logo || null);
   });
+
+  const cafe = items.find(i => i.id === 'cafe-da-manha');
+  if (cafe && cafe.cardapio) {
+    const itensHtml = cafe.cardapio.map(i => `<li>${i}</li>`).join('');
+    const sheet = document.createElement('div');
+    sheet.className = 'bottom-sheet bottom-sheet--light';
+    sheet.id = 'sheet-cafe-cardapio';
+    sheet.setAttribute('role', 'dialog');
+    sheet.setAttribute('aria-modal', 'true');
+    sheet.setAttribute('aria-hidden', 'true');
+    sheet.innerHTML = `
+      <div class="bottom-sheet__inner">
+        <header class="bottom-sheet__header">
+          <div class="bottom-sheet__header-icon" aria-hidden="true">
+            <i data-lucide="scroll-text"></i>
+          </div>
+          <h3 class="bottom-sheet__title">Itens da Cesta</h3>
+          <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
+        </header>
+        <div class="bottom-sheet__body">
+          <ul class="bs-steps">${itensHtml}</ul>
+          <a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a>
+        </div>
+        <div class="bottom-sheet__footer">
+          <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(sheet);
+  }
 }
 
 /* ═══════════════════════════════════════════
@@ -388,5 +422,80 @@ function renderSegurancaAcesso(common) {
 
   items.forEach(item => {
     _appendSheet(`sheet-seg-${item.id}`, item.icon, item.title, _bodyHtml(item.body));
+  });
+}
+
+/* ═══════════════════════════════════════════
+   renderTelefonesUteis
+   ═══════════════════════════════════════════ */
+function renderTelefonesUteis(common) {
+  const grupos = common.telefonesUteis;
+  if (!grupos || !grupos.length) return;
+
+  const section = document.getElementById('telefones-uteis');
+  if (!section) return;
+
+  const btns = grupos.map(g =>
+    _guiaItemBtn(`sheet-tel-${g.id}`, g.icon, g.categoria)
+  ).join('');
+
+  section.innerHTML = `
+    <div class="container section-pad">
+      <header class="guia-section__header">
+        <span class="section-label">Utilidade</span>
+        <h2 class="section-heading">Telefones<br><em>úteis.</em></h2>
+        <span class="divider"></span>
+      </header>
+      <div class="guia-section__grid guia-section__grid--light">${btns}</div>
+    </div>
+  `;
+
+  function _telRowsHtml(itens) {
+    return itens.map(item => {
+      const raw = item.tel.replace(/[\s\(\)\-]/g, '');
+      const isPlaceholder = item.tel.includes('[');
+      const href = item.wpp
+        ? `https://wa.me/${raw.replace('+', '')}`
+        : `tel:${raw}`;
+      const num = isPlaceholder ? '—' : item.wpp ? 'WhatsApp ↗' : item.tel;
+      if (isPlaceholder) {
+        return `<div class="tel-row tel-row--disabled">
+          <span class="tel-row__label">${item.label}</span>
+          <span class="tel-row__num">—</span>
+        </div>`;
+      }
+      return `<a href="${href}" class="tel-row" aria-label="Contato: ${item.label}">
+        <span class="tel-row__label">${item.label}</span>
+        <span class="tel-row__num">${num}</span>
+      </a>`;
+    }).join('');
+  }
+
+  grupos.forEach(grupo => {
+    let sheetBody;
+    if (grupo.tabs) {
+      const btnsHtml = grupo.tabs.map((t, i) =>
+        `<button class="bs-tab-btn${i === 0 ? ' is-active' : ''}" data-tab="tel-${grupo.id}-${t.id}">${t.title}</button>`
+      ).join('');
+      const panelsHtml = grupo.tabs.map((t, i) =>
+        `<div class="bs-tab-panel${i === 0 ? ' is-active' : ''}" id="tel-${grupo.id}-${t.id}">${_telRowsHtml(t.itens)}</div>`
+      ).join('');
+      sheetBody = `<div class="bs-tab-group"><div class="bs-tab-btns">${btnsHtml}</div>${panelsHtml}</div>`;
+    } else {
+      sheetBody = _telRowsHtml(grupo.itens);
+    }
+
+    _appendSheet(`sheet-tel-${grupo.id}`, grupo.icon, grupo.categoria, sheetBody);
+
+    if (grupo.tabs) {
+      const sheet = document.getElementById(`sheet-tel-${grupo.id}`);
+      sheet.addEventListener('click', e => {
+        const btn = e.target.closest('.bs-tab-btn');
+        if (!btn) return;
+        const targetId = btn.dataset.tab;
+        sheet.querySelectorAll('.bs-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+        sheet.querySelectorAll('.bs-tab-panel').forEach(p => p.classList.toggle('is-active', p.id === targetId));
+      });
+    }
   });
 }

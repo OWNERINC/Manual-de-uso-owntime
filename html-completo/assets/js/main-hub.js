@@ -1,70 +1,70 @@
 /**
  * main-hub.js — Own Time Home Club · Hub Central
- * Design: Clear — logo + tagline + botões + lista de modelos com hero reveal
+ * Design: Clear Full — scroll-snap, slide-index + 1 slide por modelo
  * Depende de: data-hub.js (HUB)
  */
 
 function renderTipologiaGrid() {
   const intro = HUB.intro;
-  const clube = HUB.clube;
+  const tipOrder = ['fall-house', 'winter-house', 'terraco', 'garden'];
+  const tipOrdered = tipOrder.map(id => HUB.tipologias.find(t => t.id === id)).filter(Boolean);
+  const allModels = [{ ...HUB.clube }, ...tipOrdered];
 
-  const allModels = [...HUB.tipologias, { ...clube }];
+  const listNames = {
+    'terraco': 'Apartments',
+    'garden':  'Apartments',
+  };
 
-  const modelRows = allModels.map(t => `
-    <a href="${t.href}" class="hub__cl-row" aria-label="Abrir guia: ${t.name}">
-      <div class="hub__cl-row-label">
-        <span class="hub__cl-row-sub">${t.subtitle}</span>
-        <span class="hub__cl-row-name">${t.name}</span>
+  const tags = {
+    'club-house':   'compartilhado',
+    'fall-house':   '4 suítes',
+    'winter-house': '3 suítes',
+    'terraco':      'cobertura',
+    'garden':       'garden',
+  };
+
+  const listItems = allModels.map(t => {
+    const listName = listNames[t.id] || t.name;
+    const tag = tags[t.id] || '';
+    return `
+    <a class="hub__cl-item" href="${t.href}" aria-label="Ver ${t.name}">
+      <div class="hub__cl-item-title">
+        <span class="hub__cl-item-name">${listName}</span>
+        ${tag ? `<span class="hub__cl-item-tag">${tag}</span>` : ''}
       </div>
-      <div class="hub__cl-hero" role="img" aria-label="${t.name}">
-        <div class="hub__cl-hero-img" style="background-image:url('${t.image}')"></div>
-      </div>
-    </a>
-  `).join('');
+      <i data-lucide="chevron-right" class="hub__cl-item-arrow"></i>
+    </a>`;
+  }).join('');
 
   document.getElementById('tipologia-grid').innerHTML = `
-    <div class="hub__cl-page">
+    <div class="hub__cl-index">
+      <div class="hub__cl-content">
+        <header class="hub__cl-header">
+          <img src="assets/images/logo owntime branco.webp" class="hub__cl-logo" alt="Own Time Home Club" draggable="false">
+          <p class="hub__cl-tagline">${intro.summary}</p>
+          <div class="hub__cl-actions">
+            <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-wifi" aria-label="Wi-Fi">
+              <i data-lucide="wifi"></i>
+            </button>
+            <button class="hub__intro-cta hub__intro-cta--hours bs-trigger" data-bs-target="sheet-horarios" aria-label="Horários">
+              <i data-lucide="clock"></i>
+            </button>
+          </div>
+        </header>
 
-      <header class="hub__cl-header">
-        <img src="assets/images/logo owntime branco.webp" class="hub__cl-logo" alt="Own Time Home Club" draggable="false">
-        <p class="hub__cl-tagline">${intro.summary}</p>
-        <div class="hub__cl-actions">
-          <button class="hub__intro-cta hub__intro-cta--outline bs-trigger" data-bs-target="sheet-wifi" aria-label="Wi-Fi">
-            <i data-lucide="wifi"></i>
-          </button>
-          ${HUB.softOpening?.active ? `
-          <button class="hub__soft-opening-badge bs-trigger" data-bs-target="sheet-soft-opening" aria-label="Soft Opening">
-            <i data-lucide="sparkles"></i>
+        <nav class="hub__cl-list" aria-label="Modelos disponíveis">
+          ${listItems}
+        </nav>
+
+        ${HUB.softOpening?.active ? `
+        <div class="hub__cl-badge-row">
+          <button class="hub__soft-opening-badge bs-trigger" data-bs-target="sheet-soft-opening">
             ${HUB.softOpening.label}
-          </button>` : ''}
-          <button class="hub__intro-cta hub__intro-cta--hours bs-trigger" data-bs-target="sheet-horarios" aria-label="Horários">
-            <i data-lucide="clock"></i>
           </button>
-        </div>
-      </header>
-
-      <section class="hub__cl-models" aria-label="Selecione seu modelo">
-        ${modelRows}
-      </section>
-
+        </div>` : ''}
+      </div>
     </div>
   `;
-
-  // Hero reveal ao entrar na viewport
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
-
-    document.querySelectorAll('.hub__cl-row').forEach(row => observer.observe(row));
-  } else {
-    document.querySelectorAll('.hub__cl-row').forEach(row => row.classList.add('is-visible'));
-  }
 }
 
 function renderHorariosSheet(horarios) {
@@ -93,20 +93,12 @@ function renderHorariosSheet(horarios) {
   sheet.innerHTML = `
     <div class="bottom-sheet__inner">
       <header class="bottom-sheet__header">
-        <div class="bottom-sheet__header-icon" aria-hidden="true">
-          <i data-lucide="clock"></i>
-        </div>
+        <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="clock"></i></div>
         <h3 class="bottom-sheet__title" id="sheet-horarios-title">Horários de Funcionamento</h3>
-        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
-          <i data-lucide="x"></i>
-        </button>
+        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
       </header>
-      <div class="bottom-sheet__body">
-        <div class="hours-list">${groups}</div>
-      </div>
-      <div class="bottom-sheet__footer">
-        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
-      </div>
+      <div class="bottom-sheet__body"><div class="hours-list">${groups}</div></div>
+      <div class="bottom-sheet__footer"><button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button></div>
     </div>
   `;
   document.body.appendChild(sheet);
@@ -123,13 +115,9 @@ function renderSoftOpeningSheet() {
   sheet.innerHTML = `
     <div class="bottom-sheet__inner">
       <header class="bottom-sheet__header">
-        <div class="bottom-sheet__header-icon" aria-hidden="true">
-          <i data-lucide="sparkles"></i>
-        </div>
+        <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="sparkles"></i></div>
         <h3 class="bottom-sheet__title" id="sheet-soft-opening-title">Bem-vindo ao nosso soft opening.</h3>
-        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
-          <i data-lucide="x"></i>
-        </button>
+        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
       </header>
       <div class="bottom-sheet__body">
         <p><strong>Soft Opening · 01 a 31 de julho de 2026.</strong></p>
@@ -137,9 +125,7 @@ function renderSoftOpeningSheet() {
         <p>O Own Time é uma nova geração de hospitalidade residencial: <strong>sua casa com serviços de hotel</strong>. Durante o soft opening, alguns serviços estão em fase de ajuste e podem evoluir. Sua experiência e feedback são fundamentais para essa construção.</p>
         <p>Qualquer dúvida ou sugestão, fale diretamente com nosso time de anfitriões na recepção do Club House.</p>
       </div>
-      <div class="bottom-sheet__footer">
-        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
-      </div>
+      <div class="bottom-sheet__footer"><button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button></div>
     </div>
   `;
   document.body.appendChild(sheet);
@@ -147,7 +133,6 @@ function renderSoftOpeningSheet() {
 
 function renderWifiSheet() {
   const { ssid, password } = HUB.wifi;
-
   const sheet = document.createElement('div');
   sheet.className = 'bottom-sheet';
   sheet.id = 'sheet-wifi';
@@ -158,18 +143,14 @@ function renderWifiSheet() {
   sheet.innerHTML = `
     <div class="bottom-sheet__inner">
       <header class="bottom-sheet__header">
-        <div class="bottom-sheet__header-icon" aria-hidden="true">
-          <i data-lucide="wifi"></i>
-        </div>
+        <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="wifi"></i></div>
         <h3 class="bottom-sheet__title" id="sheet-wifi-title">Wi-Fi</h3>
-        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
-          <i data-lucide="x"></i>
-        </button>
+        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
       </header>
       <div class="bottom-sheet__body">
         <p style="font-size:0.9rem;line-height:1.6;opacity:0.75;margin-bottom:1.5rem">A cobertura de rede se estende a todo empreendimento, garantindo que você nunca fique sem acesso.</p>
         <div style="display:flex;flex-direction:column;gap:0.5rem">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;border:1px solid var(--color-border);border-radius:8px;color:var(--color-text)">
+          <div style="display:flex;align-items:center;padding:0.75rem 1rem;border:1px solid var(--color-border);border-radius:8px;color:var(--color-text)">
             <span>
               <span style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-lt);display:block;margin-bottom:0.15rem">Rede</span>
               <span style="font-family:var(--font-body);font-size:0.9rem">${ssid}</span>
@@ -185,9 +166,7 @@ function renderWifiSheet() {
           </button>
         </div>
       </div>
-      <div class="bottom-sheet__footer">
-        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
-      </div>
+      <div class="bottom-sheet__footer"><button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button></div>
     </div>
   `;
   document.body.appendChild(sheet);

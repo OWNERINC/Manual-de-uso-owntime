@@ -14,13 +14,11 @@ function renderClubeHero() {
     <div class="hero__content container">
       <div class="hero__top">
         <p class="hero__label">
-          <span class="hero__label-seg">Club House</span>
-          <span class="hero__label-dot" aria-hidden="true">·</span>
           <span class="hero__label-seg">Own Time Home Club</span>
           <span class="hero__label-dot" aria-hidden="true">·</span>
-          <span class="hero__label-seg">Gramado</span>
+          <span class="hero__label-seg">Guia Digital</span>
         </p>
-        <h1 class="hero__headline">Club<br><em>House.</em></h1>
+        <h1 class="hero__headline">Club<br><em>House</em></h1>
       </div>
       <div class="hero__bottom">
         <div class="hero__scroll-cta" aria-hidden="true">
@@ -28,9 +26,13 @@ function renderClubeHero() {
           <i data-lucide="chevron-down" class="hero__scroll-cta__arrow"></i>
           <i data-lucide="chevron-down" class="hero__scroll-cta__arrow hero__scroll-cta__arrow--2"></i>
         </div>
+        <button class="hero__suggest bs-trigger" data-bs-target="sheet-sugestao" aria-label="Sugestões e melhorias">
+          <i data-lucide="lightbulb"></i>
+          Sugestões e melhorias
+        </button>
         <p class="hero__sub">Desfrute da piscina aquecida, spa, fitness center e uma curadoria de serviços com a chancela Casa Hotéis, desenhados para que o seu único compromisso na Serra Gaúcha seja o seu bem-estar.</p>
         <footer class="hero__footer">
-          <span class="hero__location">Gramado · Serra Gaúcha</span>
+          <span class="hero__location">Gramado · Serra Gaúcha · Brasil</span>
           <div class="hero__scroll" aria-hidden="true">
             <span>Explorar</span>
             <span class="hero__scroll-line"></span>
@@ -190,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderClubeAmenities();
   renderClubeGastronomy();
   renderClubeServicos();
+  if (typeof renderSugestaoSheet === 'function') renderSugestaoSheet('Club House');
 
   try { lucide.createIcons(); } catch (e) { console.warn('Lucide:', e); }
 

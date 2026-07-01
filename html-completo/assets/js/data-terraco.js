@@ -1,9 +1,9 @@
 const TIPOLOGIA = {
 
   hero: {
-    label:       'Cobertura · Guia Digital',
-    headline:    'Cobertura.',
-    subheadline: 'Seu apartamento cobertura em Gramado. Use este guia para encontrar tudo que você precisa durante a estadia.',
+    label:       'Own Time Home Club · Guia Digital',
+    headline:    'Apartments\nCobertura',
+    subheadline: 'Sua cobertura em Gramado. Use este guia para encontrar tudo que você precisa durante a estadia.',
     location:    'Gramado · Serra Gaúcha · Brasil',
     image:       'assets/images/apto-cobertura.webp'
   },

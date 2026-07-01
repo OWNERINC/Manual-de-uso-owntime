@@ -1,8 +1,8 @@
 const TIPOLOGIA = {
 
   hero: {
-    label:       'Winter House · Casa 3 Suítes · Guia Digital',
-    headline:    'Winter\nHouse.',
+    label:       'Own Time Home Club · Guia Digital',
+    headline:    'Winter\nHouse',
     subheadline: 'Sua casa de 3 suítes em Gramado. Use este guia para encontrar tudo que você precisa durante a estadia.',
     location:    'Gramado · Serra Gaúcha · Brasil',
     image:       'assets/images/casa-3-suites.webp'
@@ -15,7 +15,7 @@ const TIPOLOGIA = {
     { value: '2',      label: 'Vagas' }
   ],
 
-  description: 'Casa de alto padrão com 3 suítes, área gourmet completa e espaços projetados para convívio em meio à Serra Gaúcha.',
+  description: 'Casa de alto padrão com área gourmet completa e espaços projetados para convívio em meio à Serra Gaúcha.',
 
   housekeepingDay: 'Segunda-feira',
 

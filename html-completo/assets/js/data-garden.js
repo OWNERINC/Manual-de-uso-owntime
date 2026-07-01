@@ -1,9 +1,9 @@
 const TIPOLOGIA = {
 
   hero: {
-    label:       'Garden · Apartamento Garden · Guia Digital',
-    headline:    'Garden.',
-    subheadline: 'Seu apartamento garden em Gramado. Use este guia para encontrar tudo que você precisa durante a estadia.',
+    label:       'Own Time Home Club · Guia Digital',
+    headline:    'Apartments\nGarden',
+    subheadline: 'Seu apartamento em Gramado. Use este guia para encontrar tudo que você precisa durante a estadia.',
     location:    'Gramado · Serra Gaúcha · Brasil',
     image:       'assets/images/apto-garden.webp'
   },

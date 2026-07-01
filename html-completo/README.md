@@ -12,21 +12,19 @@ O hub de entrada tem variações de design em branches Git separadas, todas a pa
 
 | Branch | Conceito | Status |
 |---|---|---|
-| `master` | Layout original — hero + grid 2×2 na parte inferior | Base / produção |
-| `design/hub-cinematic` | Scroll-snap vertical — cada unidade ocupa 100dvh (estilo Stories) | Variação A |
-| `design/hub-netflix` | Grid 2×2 estático com fundo escuro 95% overlay — todas as unidades visíveis de uma vez | **Branch atual** |
+| `master` | Layout original — hero + grid 2×2 | Base |
+| `design/hub-netflix` | Grid 2×2 estático com fundo escuro | Variação A |
+| `design/hub-clear` | Tela única — fundo com foto, lista de tipologias com links diretos | **Atual em produção** |
 
-### `design/hub-netflix` — detalhes (layout atual em produção)
+### `design/hub-clear` — layout atual
 
-- Fundo: foto da primeira tipologia com `rgba(4,4,4,0.95)` de overlay
-- Header (`hub__nf-header`) com logo, parágrafo resumo e CTAs (Wi-Fi · Horários · badge Soft Opening)
-- Grid CSS com 3 linhas (`grid-template-rows: repeat(3, 0.55fr)`):
-  - Linha 1: **Club House** em largura total (`grid-column: 1 / -1`)
-  - Linhas 2–3: 4 tipologias em 2 colunas (`grid-template-columns: 1fr 1fr`)
-- Sem carrossel — todas as unidades visíveis ao mesmo tempo
-- Layout responsivo via `dvh` — header `flex: 0 0 auto`, grid preenche o restante com `flex: 1`
-- `padding-top: 8dvh` no header com suporte a `safe-area-inset-top`
-- Breakpoints: `max-height: 680px` (reduz padding), `max-height: 540px` (oculta texto e badge), `min-width: 768px` (4 colunas), `min-width: 1024px` (layout 2 painéis lado a lado)
+- Fundo: `profundidade.webp` com `rgba(0,0,0,0.80)` de overlay
+- Tela única com scroll interno (`overflow-y: auto` no container)
+- Logo + tagline + botões Wi-Fi/Horários no topo
+- Lista vertical de 5 tipologias: nome em Cormorant Garamond italic + descritor em Roboto cinza
+- Clicar em qualquer tipologia navega diretamente para a página correspondente
+- Badge "Soft Opening" abaixo da lista, centralizada
+- Scroll hint removido — a badge incentiva o scroll natural
 
 Arquivos modificados nesta branch: `assets/css/hub.css` · `assets/js/main-hub.js`
 
@@ -39,7 +37,7 @@ O hóspede entra na URL, escolhe sua tipologia e navega por um guia completo com
 1. **Conteúdo compartilhado** — igual para todos os hóspedes: orientações de check-in/check-out, gastronomia, clube, concierge, segurança
 2. **Conteúdo da unidade** — específico do imóvel alugado: guia de operação dos equipamentos (geladeira, forno, lava-louças, spa jacuzzi etc.)
 
-Ao clicar em qualquer item, abre um **bottom sheet** (painel deslizante) com as instruções detalhadas. Não há navegação entre sub-páginas — tudo está em uma única rolagem vertical por página.
+Ao clicar em qualquer item, abre um **bottom sheet** (painel deslizante) com as instruções detalhadas.
 
 ---
 
@@ -51,7 +49,7 @@ Ao clicar em qualquer item, abre um **bottom sheet** (painel deslizante) com as 
 | `fall-house.html` | Guia da Fall House · Casa 4 Suítes · 448 m² · 10 hóspedes | `/fall-house.html` |
 | `winter-house.html` | Guia da Winter House · Casa 3 Suítes · 325 m² · 8 hóspedes | `/winter-house.html` |
 | `garden.html` | Guia do Apartamento Garden · ≈ 60 m² · 1 quarto | `/garden.html` |
-| `terraco.html` | Guia do Apartamento Cobertura (Terraço) · ≈ 60 m² · 1 quarto | `/terraco.html` |
+| `terraco.html` | Guia do Apartamento Cobertura · ≈ 60 m² · 1 quarto | `/terraco.html` |
 | `clube.html` | Página do Club House — serviços, amenidades e estrutura do clube | `/clube.html` |
 
 ---
@@ -66,10 +64,10 @@ As páginas de tipologia (fall-house, winter-house, garden, terraco) seguem semp
 3. Orientações Gerais → check-in, checkout, emergência, pet  [compartilhado]
 4. Guia da Casa       → equipamentos da unidade (tabs por cômodo) [específico]
 5. Conforto & Tec.    → climatização, lareira, piso aquecido, Wi-Fi [compartilhado]
-6. Gastronomia        → chef em casa, café da manhã [compartilhado — restaurante/bar/coffee no Club House]
+6. Gastronomia        → chef em casa, café da manhã [compartilhado]
 7. Concierge          → housekeeping, babysitter, personal, car wash etc. [compartilhado]
 8. Segurança & Acesso → monitoramento, controle eletrônico, perimetral [compartilhado]
-9. Barra flutuante    → check-out 12:00 + botão WhatsApp concierge
+9. Barra flutuante    → check-out + botão WhatsApp concierge
 ```
 
 > **Nota:** O acesso ao Club House (piscinas, sauna, spa, academia etc.) é detalhado em `clube.html`, não nas páginas de tipologia.
@@ -84,16 +82,16 @@ O projeto **não usa nenhum framework ou build step**. É HTML/CSS/JS puro.
 | Biblioteca | Versão | Para quê |
 |---|---|---|
 | **GSAP** | 3.12.5 | Animações do hero (timeline de entrada) |
-| **GSAP ScrollTrigger** | 3.12.5 | Linha de scroll shrink no hero · visibilidade da barra flutuante |
-| **Lucide Icons** | latest | Ícones em todo o site (via `<i data-lucide="nome">`) |
-| **Google Fonts** | — | Raleway + Cormorant Garamond |
+| **GSAP ScrollTrigger** | 3.12.5 | Linha de scroll shrink no hero |
+| **Lucide Icons** | bundled | Ícones em todo o site (via `<i data-lucide="nome">`) |
+| **Google Fonts** | — | Raleway · Cormorant Garamond · Roboto |
 
 ### Fontes locais
 | Fonte | Pesos | Formato |
 |---|---|---|
 | **Roobert** | 300 · 400 · 500 · 600 | `.otf` em `assets/fonts/` |
 
-Roobert é a fonte brand do Own Time. Cormorant Garamond é usada nos títulos de seção.
+Roobert é a fonte brand do Own Time. Cormorant Garamond é usada nos títulos do hub e heroes. Roboto é usada na tagline e nos descritores de tipologia.
 
 ### Sem dependências de runtime
 - Sem React, Vue, Angular
@@ -112,7 +110,7 @@ html-completo/
 ├── fall-house.html         ← Página Fall House
 ├── winter-house.html       ← Página Winter House
 ├── garden.html             ← Página Garden
-├── terraco.html            ← Página Terraço
+├── terraco.html            ← Página Cobertura
 ├── clube.html              ← Página Club House
 │
 ├── assets/
@@ -127,20 +125,22 @@ html-completo/
 │   │   ├── gastronomy.css      ← Seção Gastronomia
 │   │   ├── concierge.css       ← Seção Concierge
 │   │   ├── seguranca-acesso.css← Seção Segurança & Acesso
+│   │   ├── sugestao.css        ← Sheet de sugestões
 │   │   ├── search.css          ← Barra de busca
 │   │   └── floating-action.css ← Barra flutuante inferior
 │   │
 │   ├── js/
-│   │   ├── data-hub.js         ← Conteúdo da página de entrada (v13)
-│   │   ├── data-common.js      ← Todo conteúdo compartilhado entre tipologias (v4)
-│   │   ├── data-fall-house.js  ← Conteúdo específico da Fall House (v6)
-│   │   ├── data-winter-house.js← Conteúdo específico da Winter House (v6)
-│   │   ├── data-garden.js      ← Conteúdo específico do Garden (v6)
-│   │   ├── data-terraco.js     ← Conteúdo específico do Terraço (v6)
+│   │   ├── data-hub.js         ← Conteúdo da página de entrada
+│   │   ├── data-common.js      ← Todo conteúdo compartilhado entre tipologias
+│   │   ├── data-fall-house.js  ← Conteúdo específico da Fall House
+│   │   ├── data-winter-house.js← Conteúdo específico da Winter House
+│   │   ├── data-garden.js      ← Conteúdo específico do Garden
+│   │   ├── data-terraco.js     ← Conteúdo específico do Terraço
 │   │   ├── render-common.js    ← Funções que constroem o HTML das seções compartilhadas
 │   │   ├── render-guia.js      ← Função que constrói o Guia da Casa
-│   │   ├── main-hub.js         ← Inicialização da index.html (v22)
-│   │   ├── main-tipologia.js   ← Inicialização das páginas de tipologia (v8)
+│   │   ├── sugestao.js         ← Sistema de sugestões (sheet + envio Google Sheets)
+│   │   ├── main-hub.js         ← Inicialização da index.html
+│   │   ├── main-tipologia.js   ← Inicialização das páginas de tipologia
 │   │   ├── main-clube.js       ← Inicialização da clube.html
 │   │   └── components/
 │   │       ├── bottom-sheet.js ← Componente autônomo (sem deps externas)
@@ -149,7 +149,7 @@ html-completo/
 │   │       └── search.js       ← Busca no guia
 │   │
 │   ├── fonts/                  ← Roobert (4 pesos em .otf)
-│   └── images/                 ← Fotos das tipologias
+│   └── images/                 ← Fotos das tipologias e backgrounds
 │
 ├── firebase.json               ← Configuração de deploy e cache
 ├── .firebaserc                 ← Alias do projeto Firebase (target: v2)
@@ -166,45 +166,35 @@ O site usa uma **separação clara entre dados e renderização**. Nenhum texto 
 ### Dois tipos de data files
 
 **`data-common.js`** — exporta o objeto `COMMON` com todo conteúdo que aparece igual em todas as tipologias:
-- `orientacoesGerais` — check-in, checkout, emergência, pet (nesta ordem)
+- `orientacoesGerais` — check-in, checkout, emergência, pet
 - `facilities` — climatização, lareira, piso aquecido, Wi-Fi
 - `amenities` — piscinas, saunas, fitness center, spa (seção do Club House)
-- `gastronomy` — **somente** chef em casa e café da manhã (exclusivo das tipologias)
-- `gastronomiaClube` — restaurante, coffee shop, bar (exclusivo do Club House — renderizado por `main-clube.js`)
-- `concierge` — time de anfitriões, housekeeping, babysitter, personal trainer, pet care, car wash, private shopper
-- `clube` — empório, kids, teens, playground, pulseira, golf carts, carregadores, sauna-clube, spa-clube
+- `gastronomy` — chef em casa e café da manhã (exclusivo das tipologias)
+- `gastronomiaClube` — restaurante, coffee shop, bar (exclusivo do Club House)
+- `concierge` — housekeeping, babysitter, personal trainer, pet care, car wash, private shopper
+- `clube` — empório, kids, teens, playground, pulseira, golf carts, carregadores
 - `segurancaAcesso` — monitoramento, controle eletrônico, segurança perimetral
+- `telefonesUteis` — emergência, saúde, Ownerinc, gastronomia, mercados
 - `brand` — nome, localização, número do concierge, horário de check-out
 
 **`data-{tipologia}.js`** — exporta o objeto `TIPOLOGIA` com o conteúdo exclusivo de cada unidade:
 - `hero` — label, título, subtítulo, imagem
 - `stats` — área, suítes, hóspedes, vagas
 - `description` — frase descritiva
-- `housekeepingDay` — dia da semana da limpeza inclusa (`'Segunda-feira'` para casas, `'Terça-feira'` para apartamentos)
+- `housekeepingDay` — dia da semana da limpeza inclusa
 - `guia` — array de categorias, cada uma com itens (ícone, id, título, body)
-- `cozinha` — array de equipamentos da cozinha/área gourmet (renderizados em Conforto & Tecnologia)
+- `cozinha` — equipamentos da cozinha/área gourmet
 
 ### Dia de housekeeping por tipologia
 
 | Tipologia | `housekeepingDay` |
 |---|---|
 | Fall House · Winter House | `'Segunda-feira'` |
-| Garden · Terraço | `'Terça-feira'` |
-
-Antes dos renders, `main-tipologia.js` injeta esse valor no campo `hours` do item `housekeeping` em `COMMON.concierge`, exibindo o dia correto como subtítulo no bottom sheet.
-
-### Diferenças por tipologia no Conforto & Tecnologia
-
-`renderFacilities(COMMON, TIPOLOGIA)` aceita a tipologia como segundo parâmetro opcional. Quando presente, os itens de `TIPOLOGIA.cozinha` são incluídos no grid junto com os itens compartilhados de `COMMON.facilities`.
-
-**Fall House:** `cozinha` inclui `sala-banho` (SPA Jacuzzi) como primeiro item, além dos demais eletrodomésticos.
-**Garden:** suíte inclui banheira hidro jacuzzi (renderizada via `render-guia.js`, aba Suíte).
-**Terraço:** tem aba "Mini Spa Terrace" no guia com jacuzzi exclusiva no terraço privativo.
+| Garden · Cobertura | `'Terça-feira'` |
 
 ### Como um item do guia é estruturado
 
 ```js
-// Exemplo em data-fall-house.js
 {
   id: 'geladeira',
   icon: 'refrigerator',   // nome do ícone Lucide
@@ -223,24 +213,30 @@ DOMContentLoaded (tipologias)
         ├── renderHero(TIPOLOGIA)
         ├── renderTipologiaFeatures(TIPOLOGIA)
         ├── renderOrientacoesGerais(COMMON)
-        ├── renderGuia(TIPOLOGIA)               ← tabs específicas da unidade
-        ├── renderFacilities(COMMON, TIPOLOGIA) ← facilities + cozinha da tipologia
-        ├── renderGastronomy(COMMON)            ← chef em casa + café da manhã
+        ├── renderGuia(TIPOLOGIA)
+        ├── renderFacilities(COMMON, TIPOLOGIA)
+        ├── renderGastronomy(COMMON)
         ├── renderConcierge(COMMON)
         ├── renderSegurancaAcesso(COMMON)
+        ├── renderSugestaoSheet(TIPOLOGIA.hero.headline)
         └── renderFloatingAction(COMMON)
 
 DOMContentLoaded (clube.html)
   └── main-clube.js
         ├── renderClubeHero()
-        ├── renderClubeAmenities()    ← piscinas, sauna, spa, fitness
-        ├── renderClubeGastronomy()   ← restaurante, coffee shop, bar (COMMON.gastronomiaClube)
-        └── renderClubeServicos()     ← kids, teens, transporte etc. (COMMON.clube)
-```
+        ├── renderClubeOrientacoes()
+        ├── renderClubeAmenities()
+        ├── renderClubeGastronomy()
+        ├── renderClubeServicos()
+        └── renderSugestaoSheet('Club House')
 
-Cada função de render:
-1. Gera o HTML da seção e injeta no elemento com o `id` correspondente
-2. Para cada item clicável, cria um bottom sheet no `<body>` com o conteúdo detalhado
+DOMContentLoaded (index.html)
+  └── main-hub.js
+        ├── renderTipologiaGrid()   ← hub com lista + badge soft opening
+        ├── renderHorariosSheet()
+        ├── renderSoftOpeningSheet()
+        └── renderWifiSheet()
+```
 
 ---
 
@@ -254,7 +250,6 @@ O componente central de interação do site. Funciona como um painel que desliza
 - Qualquer elemento com `class="bs-trigger"` e `data-bs-target="sheet-{id}"` abre o painel
 - O painel correspondente tem `id="sheet-{id}"` e `class="bottom-sheet"`
 - O overlay escuro é criado automaticamente pelo `initBottomSheets()`
-- O overlay usa `pointer-events: none` quando inativo — garante clicabilidade de todos os elementos da página em qualquer resolução
 
 **Formas de fechar:**
 - Clicar no botão X no header do sheet
@@ -262,29 +257,15 @@ O componente central de interação do site. Funciona como um painel que desliza
 - Pressionar `ESC`
 - Swipe para baixo (touch devices)
 
-**Sem dependências externas** — vanilla JS puro, sem jQuery ou GSAP.
-
 ---
 
-## Sistema de Animações
+## Sistema de Sugestões
 
-**Arquivo:** `assets/js/components/animations.js`
+**Arquivo:** `assets/js/sugestao.js`
 
-### Hero (GSAP timeline)
-Sequência de entrada no carregamento da página:
-1. Label (`opacity 0 → 1`, `y: 12 → 0`)
-2. Headline (`opacity 0 → 1`, `y: 40 → 0`)
-3. Subtítulo (`opacity 0 → 1`, `y: 16 → 0`)
-4. Texto intro (`opacity 0 → 1`, `y: 14 → 0`)
-5. Footer do hero (`opacity 0 → 1`, `y: 12 → 0`)
+Presente em todas as páginas de tipologia e no Club House. O hóspede pode selecionar uma categoria (Imóvel / Serviços), adicionar foto opcional e enviar uma sugestão que vai para o Google Sheets via Apps Script.
 
-A linha de scroll do hero encolhe em `scaleX` conforme o usuário rola a página (ScrollTrigger, `scrub: true`).
-
-### Seções abaixo do fold (IntersectionObserver)
-Elementos com `class="js-reveal"` entram com `opacity 0 → 1` + `translateY(24px → 0)` conforme ficam visíveis. Fallback de 3 segundos garante visibilidade mesmo se o observer falhar.
-
-### Acessibilidade
-Todas as animações são desativadas automaticamente quando `prefers-reduced-motion: reduce` está ativo.
+O script de recebimento está em `../sugestao-apps-script.js` na raiz do repositório.
 
 ---
 
@@ -303,54 +284,9 @@ Todas as animações são desativadas automaticamente quando `prefers-reduced-mo
 ### Tipografia
 | Token | Fonte | Uso |
 |---|---|---|
-| `--font-display` | Cormorant Garamond, Raleway, Georgia | Títulos de seção (`section-heading`) |
+| `--font-display` | Cormorant Garamond, Raleway, Georgia | Títulos do hub e heroes |
 | `--font-body` | Roobert, system-ui | Todo o resto |
-
-### Classes de seção
-| Classe | Background | Texto |
-|---|---|---|
-| `.section-dark` | `#0A0A0A` | branco |
-| `.section-dark-alt` | `#111111` | branco |
-| `.section-light` | `#F7F5F2` | preto |
-
----
-
-## Como adicionar ou editar conteúdo
-
-### Editar conteúdo compartilhado (vale para todas as tipologias)
-Abra `assets/js/data-common.js` e edite o array correspondente.
-
-**Dados operacionais pendentes em `data-common.js` e `data-hub.js`:**
-
-Consulte `PENDENCIAS.md` na raiz do repositório para a lista atualizada de placeholders e itens em soft opening.
-
-Principais pendências ativas:
-- Wi-Fi: `[nome da rede]` e `[senha]` (em `data-hub.js` e `data-common.js → facilities`)
-- WhatsApp da recepção: `[xxxxxxxx]` (ramal já definido: **9**)
-- Link anfitriões: `[link]` em babysitter e transporte interno
-- Taxa de limpeza pet: `[valor]`
-- Link cardápio do bar: `[LINK PARA CARDÁPIO]`
-- Valor housekeeping adicional: `Valor X`
-- Fogo de Chão: localização da lenha, custo e contato
-- TV e AR Central: `body: ''` em todas as tipologias
-
-**Índices dos arrays após refatoração:**
-
-`facilities`: `[0]` climatização · `[1]` lareira · `[2]` piso aquecido · `[3]` conectividade
-
-> ⚠️ O item `hidromassagem` foi removido de `facilities` — cada tipologia tem sua própria entrada de jacuzzi/spa no guia específico da unidade.
-
-`clube`: `[0]` empório · `[1]` kids · `[2]` teens · `[3]` playground · `[4]` pulseira · `[5]` golf-carts · `[6]` carregadores · `[7]` sauna-clube · `[8]` spa-clube
-
-> ⚠️ `piscinas-clube` e `academia-clube` foram removidos do array `clube` — as piscinas e academia já constam em `amenities` com texto e horário completos.
-
-### Editar conteúdo de uma tipologia específica
-Abra o arquivo `assets/js/data-{tipologia}.js` correspondente e localize o item pelo `id`.
-
-Itens com `body: ''` exibem automaticamente "Instruções em breve." para o usuário — não é necessário remover o item, apenas preencher o body quando o conteúdo estiver pronto.
-
-### Adicionar um ícone
-O site usa a biblioteca Lucide Icons. O valor do campo `icon` deve ser o nome do ícone em kebab-case conforme o catálogo em https://lucide.dev/icons
+| — | Roboto | Tagline da home e descritores de tipologia |
 
 ---
 
@@ -367,34 +303,35 @@ firebase deploy --only hosting:v2
 | Tipo de arquivo | Cache |
 |---|---|
 | JS e CSS | `max-age=31536000, immutable` (1 ano) |
-| Imagens (webp, png, jpg, jpeg, svg, gif) | `max-age=31536000, immutable` (1 ano) |
+| Imagens (webp, png, jpg, jpeg) | `max-age=31536000, immutable` (1 ano) |
 | HTML | `no-cache` (sempre revalidado) |
 
 Para forçar atualização de JS ou CSS sem limpar o cache dos usuários, incremente o query param de versão nas tags `<script>` e `<link>`:
 ```html
-<script src="assets/js/data-common.js?v=4"></script>
+<script src="assets/js/data-common.js?v=73"></script>
 <!--                                     ^^^ incrementar aqui -->
 ```
 
-### Versões atuais dos arquivos (referência)
+### Versões atuais dos arquivos
 | Arquivo | Versão |
 |---|---|
-| `main.css` | v8 |
-| `hub.css` | v19 |
-| `bottom-sheet.css` (index) | v5 |
-| `bottom-sheet.css` (tipologias/clube) | v7 |
+| `main.css` | v9 |
+| `hub.css` | v52 |
+| `bottom-sheet.css` (index) | v6 |
+| `bottom-sheet.css` (tipologias/clube) | v11 |
 | `guia.css` | v5 |
 | `hero.css` | v5 |
-| `data-hub.js` | v21 |
-| `data-common.js` | v35 |
-| `data-fall-house.js` | v14 |
-| `data-winter-house.js` | v12 |
-| `data-garden.js` | v11 |
-| `data-terraco.js` | v12 |
-| `main-hub.js` | v36 |
-| `main-tipologia.js` | v12 |
-| `main-clube.js` | v7 |
-| `render-common.js` | v17 |
+| `data-hub.js` | v26 |
+| `data-common.js` | v73 |
+| `data-fall-house.js` | v25 |
+| `data-winter-house.js` | v25 |
+| `data-garden.js` | v25 |
+| `data-terraco.js` | v25 |
+| `main-hub.js` | v44 |
+| `main-tipologia.js` | v16 |
+| `main-clube.js` | v9 |
+| `render-common.js` | v27 |
+| `sugestao.js` | v8 |
 
 ---
 
@@ -402,7 +339,6 @@ Para forçar atualização de JS ou CSS sem limpar o cache dos usuários, increm
 
 - `aria-hidden`, `role="dialog"`, `aria-modal`, `aria-labelledby` em todos os bottom sheets
 - `aria-label` em todos os botões sem texto visível
-- Focus automático no botão de fechar ao abrir um sheet (focus trap básico)
 - Tecla `ESC` fecha o sheet ativo
 - `prefers-reduced-motion` desativa todas as animações CSS e JS
 - `:focus-visible` com outline dourado em todos os elementos interativos

@@ -19,6 +19,8 @@ const TIPOLOGIA = {
 
   housekeepingDay: 'Segunda-feira',
 
+  facilityExcludes: ['jacuzzi'],
+
   facilityOverrides: {
     climatizacao: {
       tabs: [
@@ -53,9 +55,8 @@ const TIPOLOGIA = {
   ],
 
   cozinha: [
-    { id: 'sala-banho', icon: 'droplets', title: 'Sala de Banho · SPA Jacuzzi', body: '<ul class="bs-steps"><li><strong>Antes de Usar:</strong> Certifique-se de que o nível da água cubra completamente os jatos antes de acionar o sistema de hidromassagem e aquecimento.</li><li><strong>Bem-Estar:</strong> Para um aproveitamento seguro e revitalizante, sugerimos sessões de 20 a 30 minutos.</li><li><strong>Preservação:</strong> Para garantir a pureza da água, não é permitido o consumo de alimentos e bebidas no interior do equipamento. Utilize exclusivamente sais e espumas homologados para spas.</li></ul>' },
+    { id: 'sala-banho', icon: 'droplets', title: 'Sala de Banho · SPA Jacuzzi', body: '<ul class="bs-steps"><li><strong>Soft Opening:</strong> A Sala de Banho · SPA Jacuzzi estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>' },
     { id: 'forno-pizza',    icon: 'pizza',           title: 'Forno de Pizza',      body: '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Forno de Pizza estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>' },
-    { id: 'churrasqueira',  icon: 'beef',            title: 'Churrasqueira',       body: '<ul class="bs-steps"><li><strong>Tradição e Lazer:</strong> Aproveite o espaço gourmet para celebrar bons momentos e preparar o seu churrasco com total comodidade.</li><li><strong>Acendimento Seguro:</strong> Utilize apenas carvão apropriado e acendedores sólidos ou em gel. Caso a estrutura conte com sistema de exaustão, certifique-se de acioná-lo antes de acender o fogo.</li><li><strong>Cuidados Essenciais:</strong> Para a sua segurança, é estritamente proibido o uso de álcool líquido ou fluidos altamente inflamáveis. Ao finalizar, deixe as brasas apagarem naturalmente e nunca jogue água diretamente para evitar danos à estrutura.</li></ul>' },
     { id: 'adega',          icon: 'wine',            title: 'Adega Climatizada',   body: '<ul class="bs-steps"><li><strong>Temperatura Ideal:</strong> Mantenha seus rótulos preservados nas condições perfeitas. O equipamento opera de forma silenciosa e com controle térmico estável para proteger a integridade e as notas de cada vinho.</li><li><strong>Experiência e Curadoria:</strong> O espaço ideal para acomodar a sua coleção pessoal ou as seleções especiais sugeridas pelo sommelier do Club, Cristiano Ribeiro, prontas para o seu momento de degustação.</li><li><strong>Uso Adequado:</strong> Organize as garrafas com cuidado nas prateleiras e certifique-se de sempre fechar a porta até o final para manter a vedação e a eficiência do sistema de refrigeração.</li></ul>' },
     { id: 'geladeira',      icon: 'refrigerator',    title: 'Geladeira',           body: '<span class="bs-model-tag">Frost Free 500L · Brastemp</span><ul class="bs-steps"><li><strong>Temperatura:</strong> Ajuste pelo painel externo sem precisar abrir a porta.</li><li><strong>Sons Normais:</strong> Estalos ou sons parecidos com ar esvaziando são completamente normais — é a expansão do gás de refrigeração.</li></ul>' },
     { id: 'microondas',     icon: 'microwave',       title: 'Micro-ondas',         body: '<span class="bs-model-tag">Glass Cook 25L · Tramontina</span><ul class="bs-steps"><li><strong>+30s:</strong> Aperte <em>Início</em> para 30s em potência máxima. Repita para adicionar mais tempo.</li><li><strong>Auto Menu:</strong> Gire o botão principal para selecionar programas prontos (pipoca, carnes etc.) e pressione <em>Início</em>.</li><li><strong>Atenção:</strong> É proibido colocar qualquer material metálico no interior.</li></ul>' },

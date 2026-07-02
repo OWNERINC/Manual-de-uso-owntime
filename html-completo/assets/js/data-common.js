@@ -90,13 +90,13 @@ const COMMON = {
       id:   'jacuzzi',
       icon: 'bath',
       title: 'Jacuzzi',
-      body:  '<p class="bs-model-tag">Antes de utilizar</p><ul class="bs-steps"><li>Certifique-se de que o nível da água esteja acima dos jatos antes de acionar a hidromassagem ou o aquecimento.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Recomendação</p><ul class="bs-steps"><li>Para um aproveitamento seguro e confortável, sugerimos sessões de, no máximo, 30 minutos.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>Não consuma alimentos ou bebidas no interior da banheira.</li><li>Utilize apenas sais e espumas próprios para banheiras de hidromassagem.</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> A Jacuzzi estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     },
     {
       id:   'churrasqueira',
       icon: 'flame',
       title: 'Churrasqueira',
-      body:  '<ul class="bs-steps"><li>A churrasqueira está à disposição para que você reúna família e amigos e aproveite bons momentos durante a sua estadia.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como utilizar</p><ul class="bs-steps"><li>Utilize apenas carvão apropriado e acendedores sólidos ou em gel.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>Não utilize álcool líquido ou outros líquidos inflamáveis para acender o fogo.</li><li>Ao finalizar o uso, deixe as brasas apagarem naturalmente.</li><li>Não jogue água diretamente na churrasqueira, evitando danos à estrutura.</li></ul>'
+      body:  '<ul class="bs-steps"><li>A churrasqueira está à disposição para que você reúna família e amigos e aproveite bons momentos durante a sua estadia.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como utilizar</p><ul class="bs-steps"><li>Utilize apenas carvão apropriado e acendedores sólidos ou em gel.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>Não utilize álcool líquido ou outros líquidos inflamáveis para acender o fogo.</li><li>Ao finalizar o uso, deixe as brasas apagarem naturalmente.</li><li>Não jogue água diretamente na churrasqueira, evitando danos à estrutura.</li></ul><p class="bs-danger"><strong>Perigo</strong>Mantenha a tampa aberta após o uso até o resfriamento completo. Fechar o equipamento ainda quente apresenta risco de incêndio.</p>'
     }
   ],
 
@@ -112,8 +112,8 @@ const COMMON = {
       id:    'sauna',
       icon:  'wind',
       title: 'Saunas',
-      hours: '8h às 22h',
-      note:  '<ul class="bs-steps"><li>As saunas estão disponíveis diariamente para seu momento de relaxamento.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Entrada com bebidas, itens de vidro, ou caixas de som.</li><li>Captação de imagens (Fotos e Vídeos), protegendo a privacidade de todos.</li><li>Bebidas alcoólicas</li><li>Fumar</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
+      hours: '',
+      note:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> As Saunas estarão disponíveis em breve. Durante esta fase inicial, encontram-se temporariamente indisponíveis. Agradecemos sua compreensão.</li></ul>'
     },
     {
       id:    'fitness',
@@ -126,8 +126,8 @@ const COMMON = {
       id:    'spa',
       icon:  'leaf',
       title: 'Spa Pocahy',
-      hours: '10h às 19h · Segunda a Sábado',
-      note:  '<ul class="bs-steps"><li>Massagens terapêuticas e relaxantes, tratamentos faciais, rituais corporais e terapias holísticas para um momento de cuidado e bem-estar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Agendamentos</p><ul class="bs-steps"><li>Recomendamos realizar sua reserva com antecedência, especialmente em períodos de maior movimento.</li><li>Cancelamentos devem ser informados com, no mínimo, 5 horas de antecedência.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Faixa etária</p><ul class="bs-steps"><li>O spa é destinado a hóspedes a partir de 16 anos. Tratamentos infantis estão disponíveis em modalidades específicas, sempre com acompanhamento de um responsável.</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Segurança:</strong> O ambiente é monitorado por câmeras de segurança (CFTV).</li></ul><div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1.25rem"><a href="https://wa.me/5554984111140?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20os%20tratamentos%20do%20Spa%20do%20Owntime!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Conheça os tratamentos</a><a href="https://wa.me/5554984111140?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20servi%C3%A7o%20no%20Spa%20do%20Owntime!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1px solid var(--color-accent);border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="calendar-check"></i> Agendar</a></div>'
+      hours: '',
+      note:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Spa Pocahy estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     }
   ],
 
@@ -137,22 +137,22 @@ const COMMON = {
       icon:  'utensils',
       logo:  'assets/images/tempo logo.webp',
       title: 'Restaurante',
-      hours: '12h às 22h · com o último pedido às 21h30',
-      body:  '<ul class="bs-steps"><li><strong>Localização:</strong> No andar térreo do Club House.</li><li><strong>Ambientes:</strong> Desfrute do serviço à la carte no conforto do nosso salão interno ou no charme da área externa.</li><li><strong>Restrições Alimentares:</strong> Nosso cardápio foi planejado para diferentes paladares. Nossa equipe está à disposição para detalhar ingredientes e adaptar pratos conforme as suas necessidades.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul><a href="https://wa.me/5554999588947?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20o%20card%C3%A1pio%20do%20restaurante!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</a>'
+      hours: '',
+      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Restaurante estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     },
     {
       id:    'coffee-shop',
       icon:  'coffee',
       title: 'Coffee Shop',
-      hours: '8h às 20h',
-      body:  '<p class="bs-model-tag">O que você encontra</p><ul class="bs-steps"><li>Cafés especiais, chás, lanches leves e confeitaria artesanal para aproveitar uma pausa a qualquer hora do dia.</li></ul><ul class="bs-steps" style="margin-top:0.75rem"><li><strong>Segurança:</strong> O ambiente é monitorado por câmeras de segurança (CFTV).</li></ul><a href="https://wa.me/5554999588947?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20o%20card%C3%A1pio%20do%20Coffee%20Shop!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</a>'
+      hours: '',
+      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Coffee Shop estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     },
     {
       id:    'bar',
       icon:  'wine',
       title: 'Bar',
-      hours: '17h às 23h',
-      body:  '<p class="bs-model-tag">Drinks</p><ul class="bs-steps"><li>Clássicos, autorais e boas conversas costumam combinar. Escolha o seu favorito e aproveite.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Vinhos</p><ul class="bs-steps"><li>Nossa carta reúne rótulos nacionais e internacionais, com um olhar especial para os vinhos produzidos na Serra Gaúcha.</li></ul><a href="https://wa.me/5554999588947?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20o%20card%C3%A1pio%20do%20Bar!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</a>'
+      hours: '',
+      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Bar estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     }
   ],
 
@@ -204,7 +204,7 @@ const COMMON = {
     {
       id:    'cafe-da-manha',
       icon:  'salad',
-      title: 'Café da Manhã',
+      title: 'Cesta de Café da Manhã',
       hours: '7h às 11h',
       cardapio: [
         'Croissant amanteigado da serra (2 unidades)',
@@ -221,7 +221,7 @@ const COMMON = {
         'Suco de Laranja integral (500ml)',
         'Manteiga sem e com sal / Nata e Mel',
       ],
-      body:  '<ul class="bs-steps"><li>Comece o dia no seu ritmo com um café da manhã entregue diretamente na sua unidade.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Valor</p><ul class="bs-steps"><li>R$ 139,00 (serve até duas pessoas).</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como solicitar</p><ul class="bs-steps"><li>Os pedidos devem ser realizados até 15h para entrega no dia seguinte.</li><li>As entregas são realizadas diariamente, entre 7h e 11h.</li></ul><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-cafe-cardapio" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver itens da cesta</button><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
+      body:  '<ul class="bs-steps"><li>Comece o dia no seu ritmo com uma cesta de café da manhã entregue diretamente na sua unidade.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Valor</p><ul class="bs-steps"><li>R$ 139,00 (serve até duas pessoas).</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como solicitar</p><ul class="bs-steps"><li>Os pedidos devem ser realizados até 15h para entrega no dia seguinte.</li><li>As entregas são realizadas diariamente, entre 7h e 11h.</li></ul><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-cafe-cardapio" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver itens da cesta</button><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
     }
   ],
 

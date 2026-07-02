@@ -185,9 +185,10 @@ function renderClube(common) {
    ═══════════════════════════════════════════ */
 function renderFacilities(common, tipologia) {
   const overrides = (tipologia && tipologia.facilityOverrides) || {};
-  const facilityItems = common.facilities.map(item =>
-    overrides[item.id] ? { ...item, ...overrides[item.id] } : item
-  );
+  const excludes  = (tipologia && tipologia.facilityExcludes)  || [];
+  const facilityItems = common.facilities
+    .filter(item => !excludes.includes(item.id))
+    .map(item => overrides[item.id] ? { ...item, ...overrides[item.id] } : item);
   const cozinhaItems  = (tipologia && Array.isArray(tipologia.cozinha)) ? tipologia.cozinha : [];
 
   const facilityBtns = facilityItems.map(item =>
@@ -291,7 +292,7 @@ function renderGastronomy(common) {
         <span class="section-label">Gastronomia</span>
         <h2 class="section-heading">À mesa,<br><em>em casa.</em></h2>
         <span class="divider"></span>
-        <p class="section-sub">Sabores da Serra, do café da manhã à experiência privativa de um chef em casa.</p>
+        <p class="section-sub">Sabores da Serra, da cesta de café da manhã à experiência privativa de um chef em casa.</p>
       </header>
       <div class="guia-section__grid">${btns}</div>
     </div>

@@ -122,6 +122,26 @@
   color: rgba(255,255,255,0.95);
 }
 
+.bs-danger {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(220, 38, 38, 0.1);
+  border-left: 3px solid rgba(220, 38, 38, 0.75);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+}
+
+.bs-danger strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f87171;
+}
+
 /* ── Horário (ex: Gastronomia) ── */
 .bottom-sheet__hours {
   display: flex;

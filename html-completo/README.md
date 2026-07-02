@@ -343,3 +343,98 @@ Para forçar atualização de JS ou CSS sem limpar o cache dos usuários, increm
 - `prefers-reduced-motion` desativa todas as animações CSS e JS
 - `:focus-visible` com outline dourado em todos os elementos interativos
 - Touch targets mínimos de 44px em todos os botões interativos
+
+---
+
+## Textos Originais — Itens em Soft Opening (restaurar quando disponíveis)
+
+> Estes textos foram substituídos por "Soft Opening" temporariamente. Copie o conteúdo abaixo de volta para os respectivos arquivos para reativar cada serviço.
+
+---
+
+### Mini Spa Terrace Jacuzzi
+**Arquivo:** `assets/js/data-terraco.js` → `guia[id='mini-spa'] > items[id='spa-jacuzzi'] > body`
+
+```
+'<ul class="bs-steps"><li><strong>Exclusividade da Cobertura:</strong> Localizado na sua sacada, o Mini Spa oferece uma experiência de relaxamento premium ao ar livre, o cenário perfeito para apreciar a vista e o clima típico da serra.</li><li><strong>Acionamento e Bem-Estar:</strong> Verifique se a água cobre completamente os jatos antes de ligar o sistema de hidromassagem e aquecimento. Para um aproveitamento seguro e revitalizante, sugerimos sessões de 20 a 30 minutos.</li><li><strong>Preservação e Cuidado:</strong> Para garantir a pureza da água e o pleno funcionamento do sistema, não é permitido o consumo de alimentos e bebidas no interior do equipamento. Utilize exclusivamente sais e espumas homologados para spas.</li></ul>'
+```
+
+---
+
+### Jacuzzi Compartilhada (Garden e Winter House)
+**Arquivo:** `assets/js/data-common.js` → `facilities[id='jacuzzi'] > body`
+
+```
+'<p class="bs-model-tag">Antes de utilizar</p><ul class="bs-steps"><li>Certifique-se de que o nível da água esteja acima dos jatos antes de acionar a hidromassagem ou o aquecimento.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Recomendação</p><ul class="bs-steps"><li>Para um aproveitamento seguro e confortável, sugerimos sessões de, no máximo, 30 minutos.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>Não consuma alimentos ou bebidas no interior da banheira.</li><li>Utilize apenas sais e espumas próprios para banheiras de hidromassagem.</li></ul>'
+```
+
+---
+
+### Sala de Banho · SPA Jacuzzi (Fall House)
+**Arquivo:** `assets/js/data-fall-house.js` → `cozinha[id='sala-banho'] > body`
+> Já estava em soft opening antes desta rodada. Não há texto anterior para restaurar.
+
+---
+
+### Restaurante
+**Arquivo:** `assets/js/data-common.js` → `gastronomiaClube[id='restaurante']`
+
+```js
+// hours original:
+'12h às 22h · com o último pedido às 21h30'
+
+// body original:
+'<ul class="bs-steps"><li><strong>Localização:</strong> No andar térreo do Club House.</li><li><strong>Ambientes:</strong> Desfrute do serviço à la carte no conforto do nosso salão interno ou no charme da área externa.</li><li><strong>Restrições Alimentares:</strong> Nosso cardápio foi planejado para diferentes paladares. Nossa equipe está à disposição para detalhar ingredientes e adaptar pratos conforme as suas necessidades.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul><a href="https://wa.me/5554999588947?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20o%20card%C3%A1pio%20do%20restaurante!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</a>'
+```
+
+---
+
+### Coffee Shop
+**Arquivo:** `assets/js/data-common.js` → `gastronomiaClube[id='coffee-shop']`
+
+```js
+// hours original:
+'8h às 20h'
+
+// body original:
+'<p class="bs-model-tag">O que você encontra</p><ul class="bs-steps"><li>Cafés especiais, chás, lanches leves e confeitaria artesanal para aproveitar uma pausa a qualquer hora do dia.</li></ul><ul class="bs-steps" style="margin-top:0.75rem"><li><strong>Segurança:</strong> O ambiente é monitorado por câmeras de segurança (CFTV).</li></ul><a href="https://wa.me/5554999588947?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20o%20card%C3%A1pio%20do%20Coffee%20Shop!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</a>'
+```
+
+---
+
+### Bar
+**Arquivo:** `assets/js/data-common.js` → `gastronomiaClube[id='bar']`
+
+```js
+// hours original:
+'17h às 23h'
+
+// body original:
+'<p class="bs-model-tag">Drinks</p><ul class="bs-steps"><li>Clássicos, autorais e boas conversas costumam combinar. Escolha o seu favorito e aproveite.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Vinhos</p><ul class="bs-steps"><li>Nossa carta reúne rótulos nacionais e internacionais, com um olhar especial para os vinhos produzidos na Serra Gaúcha.</li></ul><a href="https://wa.me/5554999588947?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20o%20card%C3%A1pio%20do%20Bar!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</a>'
+```
+
+---
+
+### Saunas
+**Arquivo:** `assets/js/data-common.js` → `amenities[id='sauna']`
+
+```js
+// hours original:
+'8h às 22h'
+
+// note original:
+'<ul class="bs-steps"><li>As saunas estão disponíveis diariamente para seu momento de relaxamento.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Entrada com bebidas, itens de vidro, ou caixas de som.</li><li>Captação de imagens (Fotos e Vídeos), protegendo a privacidade de todos.</li><li>Bebidas alcoólicas</li><li>Fumar</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
+```
+
+---
+
+### Spa Pocahy
+**Arquivo:** `assets/js/data-common.js` → `amenities[id='spa']`
+
+```js
+// hours original:
+'10h às 19h · Segunda a Sábado'
+
+// note original:
+'<ul class="bs-steps"><li>Massagens terapêuticas e relaxantes, tratamentos faciais, rituais corporais e terapias holísticas para um momento de cuidado e bem-estar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Agendamentos</p><ul class="bs-steps"><li>Recomendamos realizar sua reserva com antecedência, especialmente em períodos de maior movimento.</li><li>Cancelamentos devem ser informados com, no mínimo, 5 horas de antecedência.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Faixa etária</p><ul class="bs-steps"><li>O spa é destinado a hóspedes a partir de 16 anos. Tratamentos infantis estão disponíveis em modalidades específicas, sempre com acompanhamento de um responsável.</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Segurança:</strong> O ambiente é monitorado por câmeras de segurança (CFTV).</li></ul><div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1.25rem"><a href="https://wa.me/5554984111140?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20os%20tratamentos%20do%20Spa%20do%20Owntime!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Conheça os tratamentos</a><a href="https://wa.me/5554984111140?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20servi%C3%A7o%20no%20Spa%20do%20Owntime!" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1px solid var(--color-accent);border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="calendar-check"></i> Agendar</a></div>'
+```

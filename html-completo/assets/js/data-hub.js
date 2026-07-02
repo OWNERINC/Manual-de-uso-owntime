@@ -49,7 +49,7 @@ const HUB = {
     {
       section: 'Gastronomia',
       items: [
-        { title: 'Café da Manhã', hours: '7h às 11h' },
+        { title: 'Cesta de Café da Manhã', hours: '7h às 11h' },
         { title: 'Coffee Shop',   hours: 'Indisponível no soft opening' },
         { title: 'Restaurante',   hours: 'Indisponível no soft opening' },
         { title: 'Bar',           hours: 'Indisponível no soft opening' },
@@ -60,8 +60,8 @@ const HUB = {
       items: [
         { title: 'Fitness Center', hours: '24 horas' },
         { title: 'Piscinas',       hours: '8h às 22h' },
-        { title: 'Saunas',         hours: '8h às 22h' },
-        { title: 'Spa',            hours: '10h às 19h · Seg a Sáb' },
+        { title: 'Saunas',         hours: 'Indisponível no soft opening' },
+        { title: 'Spa Pocahy',     hours: 'Indisponível no soft opening' },
       ]
     },
     {

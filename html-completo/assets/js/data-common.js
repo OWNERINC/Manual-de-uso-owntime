@@ -125,9 +125,9 @@ const COMMON = {
     {
       id:    'spa',
       icon:  'leaf',
-      title: 'Spa Pocahy',
+      title: 'Spa',
       hours: '',
-      note:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Spa Pocahy estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      note:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Spa estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     }
   ],
 

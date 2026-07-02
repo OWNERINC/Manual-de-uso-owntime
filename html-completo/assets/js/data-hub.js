@@ -61,7 +61,7 @@ const HUB = {
         { title: 'Fitness Center', hours: '24 horas' },
         { title: 'Piscinas',       hours: '8h às 22h' },
         { title: 'Saunas',         hours: 'Indisponível no soft opening' },
-        { title: 'Spa Pocahy',     hours: 'Indisponível no soft opening' },
+        { title: 'Spa',     hours: 'Indisponível no soft opening' },
       ]
     },
     {

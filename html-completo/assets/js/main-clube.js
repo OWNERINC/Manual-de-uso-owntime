@@ -106,7 +106,7 @@ function renderClubeGastronomy() {
   const container = document.getElementById('guia-container');
   if (!container) return;
 
-  const items = COMMON.gastronomiaClube;
+  const items = COMMON.gastronomiaClube.filter(i => !i.hidden);
 
   const sectionEl = document.createElement('section');
   sectionEl.className = 'guia-section section-dark';

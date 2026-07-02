@@ -133,11 +133,12 @@ const COMMON = {
 
   gastronomiaClube: [
     {
-      id:    'restaurante',
-      icon:  'utensils',
-      logo:  'assets/images/tempo logo.webp',
-      title: 'Restaurante',
-      hours: '',
+      id:     'restaurante',
+      icon:   'utensils',
+      logo:   'assets/images/tempo logo.webp',
+      title:  'Restaurante',
+      hours:  '',
+      hidden: true,
       body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Restaurante estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     },
     {

@@ -18,7 +18,7 @@ O hub de entrada tem variações de design em branches Git separadas, todas a pa
 
 ### `design/hub-clear` — layout atual
 
-- Fundo: `profundidade.webp` com `rgba(0,0,0,0.80)` de overlay
+- Fundo: `bg home.webp` com `rgba(0,0,0,0.80)` de overlay
 - Tela única com scroll interno (`overflow-y: auto` no container)
 - Logo + tagline + botões Wi-Fi/Horários no topo
 - Lista vertical de 5 tipologias: nome em Cormorant Garamond italic + descritor em Roboto cinza
@@ -169,8 +169,8 @@ O site usa uma **separação clara entre dados e renderização**. Nenhum texto 
 - `orientacoesGerais` — check-in, checkout, emergência, pet
 - `facilities` — climatização, lareira, piso aquecido, Wi-Fi
 - `amenities` — piscinas, saunas, fitness center, spa (seção do Club House)
-- `gastronomy` — chef em casa e café da manhã (exclusivo das tipologias)
-- `gastronomiaClube` — restaurante, coffee shop, bar (exclusivo do Club House)
+- `gastronomy` — chef em casa e cesta de café da manhã (exclusivo das tipologias)
+- `gastronomiaClube` — restaurante, coffee shop, bar (exclusivo do Club House); itens com `hidden: true` são filtrados do grid
 - `concierge` — housekeeping, babysitter, personal trainer, pet care, car wash, private shopper
 - `clube` — empório, kids, teens, playground, pulseira, golf carts, carregadores
 - `segurancaAcesso` — monitoramento, controle eletrônico, segurança perimetral
@@ -182,6 +182,8 @@ O site usa uma **separação clara entre dados e renderização**. Nenhum texto 
 - `stats` — área, suítes, hóspedes, vagas
 - `description` — frase descritiva
 - `housekeepingDay` — dia da semana da limpeza inclusa
+- `facilityExcludes` — array de IDs a remover de `COMMON.facilities` (ex.: `['jacuzzi']` na Fall House e Cobertura)
+- `facilityOverrides` — objeto `{ [id]: { ...campos } }` para sobrescrever campos de um item compartilhado
 - `guia` — array de categorias, cada uma com itens (ícone, id, título, body)
 - `cozinha` — equipamentos da cozinha/área gourmet
 
@@ -316,21 +318,21 @@ Para forçar atualização de JS ou CSS sem limpar o cache dos usuários, increm
 | Arquivo | Versão |
 |---|---|
 | `main.css` | v9 |
-| `hub.css` | v52 |
+| `hub.css` | v53 |
 | `bottom-sheet.css` (index) | v6 |
 | `bottom-sheet.css` (tipologias/clube) | v11 |
 | `guia.css` | v5 |
 | `hero.css` | v5 |
-| `data-hub.js` | v26 |
-| `data-common.js` | v73 |
-| `data-fall-house.js` | v25 |
-| `data-winter-house.js` | v25 |
-| `data-garden.js` | v25 |
-| `data-terraco.js` | v25 |
+| `data-hub.js` | v28 |
+| `data-common.js` | v80 |
+| `data-fall-house.js` | v34 |
+| `data-winter-house.js` | v26 |
+| `data-garden.js` | v28 |
+| `data-terraco.js` | v31 |
 | `main-hub.js` | v44 |
 | `main-tipologia.js` | v16 |
-| `main-clube.js` | v9 |
-| `render-common.js` | v27 |
+| `main-clube.js` | v10 |
+| `render-common.js` | v29 |
 | `sugestao.js` | v8 |
 
 ---
@@ -378,6 +380,7 @@ Para forçar atualização de JS ou CSS sem limpar o cache dos usuários, increm
 
 ### Restaurante
 **Arquivo:** `assets/js/data-common.js` → `gastronomiaClube[id='restaurante']`
+> Para reativar o botão no clube, remova também o campo `hidden: true` do item.
 
 ```js
 // hours original:
@@ -428,7 +431,7 @@ Para forçar atualização de JS ou CSS sem limpar o cache dos usuários, increm
 
 ---
 
-### Spa Pocahy
+### Spa (ex-Spa Pocahy — título renomeado para "Spa")
 **Arquivo:** `assets/js/data-common.js` → `amenities[id='spa']`
 
 ```js

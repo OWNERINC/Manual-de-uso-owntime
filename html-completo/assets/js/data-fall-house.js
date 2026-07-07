@@ -66,6 +66,12 @@ const TIPOLOGIA = {
     { id: 'lava-seca',      icon: 'washing-machine', title: 'Lava e Seca',         body: '<ul class="bs-steps"><li><strong>Capacidade Ideal:</strong> Suporta até 11kg para ciclos exclusivos de lavagem e 7kg se for utilizar a função contínua de secagem.</li><li><strong>Preparo:</strong> Insira as roupas e adicione os produtos de limpeza (sabão e amaciante) nos compartimentos indicados na gaveta frontal.</li><li><strong>Ciclo Simples:</strong> Gire o seletor central para escolher o programa que melhor atende às suas peças e pressione o botão "Início/Pausa" para começar.</li></ul>' },
     { id: 'fogao',          icon: 'cooking-pot',     title: 'Fogão + Depurador',   body: '<ul class="bs-steps"><li><strong>Uso do Cooktop:</strong> Pressione e gire o manípulo correspondente à boca que deseja utilizar para o acendimento automático. Ajuste a intensidade da chama conforme a necessidade do preparo.</li><li><strong>Controle da Coifa:</strong> Acesse o painel para acionar a iluminação de apoio e ajustar a velocidade de exaustão. O sistema Silent mantém o ambiente purificado com o mínimo de ruído.</li><li><strong>Dica de Conforto:</strong> Ligue a coifa instantes antes de começar a cozinhar e mantenha-a funcionando por mais alguns minutos após o término para garantir a renovação completa do ar.</li></ul>' },
     { id: 'filtro-agua',    icon: 'filter',          title: 'Filtro de Água',      body: '<span class="bs-model-tag">Purificador Facilite · Consul</span><ul class="bs-steps"><li><strong>Gelada ou Natural:</strong> Pressione o botão correspondente no painel.</li><li><strong>Copo:</strong> Segure o botão pressionado e solte quando terminar.</li><li><strong>Jarra:</strong> Aperte até ouvir o "clique" — a água sairá sozinha. Aperte novamente para parar o fluxo.</li><li><strong>Mista:</strong> Pressione "Gelada" e "Natural" ao mesmo tempo.</li></ul>' }
+  ],
+
+  servicosAdicionais: [
+    { title: 'Arrumação Complementar',        price: 'R$ 300,00', desc: 'Turno extra de organização e arrumação interna (escopo idêntico à manutenção). Agendamento até as 15h do dia anterior.' },
+    { title: 'Lavagem de Louça Extra',        price: 'R$ 95,00',  desc: 'Serviço gourmet para higienização e organização de grandes volumes de louça (solicitado quando exceder 50% dos utensílios da unidade).' },
+    { title: 'Renovação Integral de Enxoval', price: 'R$ 240,00', desc: 'Substituição completa de roupas de cama e banho das 4 suítes ocupadas, independente do cronograma regular.' },
   ]
 
 }

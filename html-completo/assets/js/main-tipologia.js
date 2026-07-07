@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSegurancaAcesso(COMMON);
   renderFloatingAction(COMMON);
   renderSugestaoSheet(TIPOLOGIA.hero.headline);
+  renderServicosAdicionaisSheet(TIPOLOGIA);
   initSearch();
 
   // 2. Ícones após todo DOM estar pronto
@@ -44,6 +45,48 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   try { initFloatingVisibility(); } catch (e) { console.warn('FloatingVisibility:', e); }
 });
+
+function renderServicosAdicionaisSheet(tipologia) {
+  if (!Array.isArray(tipologia.servicosAdicionais)) return;
+
+  const itens = tipologia.servicosAdicionais.map(s => `
+    <div style="padding:1rem 0;border-bottom:1px solid var(--color-border)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:0.5rem;margin-bottom:0.35rem">
+        <span style="font-family:var(--font-body);font-size:0.85rem;font-weight:500;color:var(--color-text)">${s.title}</span>
+        <span style="font-family:var(--font-body);font-size:0.85rem;font-weight:600;color:var(--color-accent-lt);white-space:nowrap">${s.price}</span>
+      </div>
+      <p style="font-family:var(--font-body);font-size:0.8rem;line-height:1.55;color:var(--color-muted)">${s.desc}</p>
+    </div>
+  `).join('');
+
+  const sheet = document.createElement('div');
+  sheet.className = 'bottom-sheet';
+  sheet.id = 'sheet-servicos-adicionais';
+  sheet.setAttribute('role', 'dialog');
+  sheet.setAttribute('aria-modal', 'true');
+  sheet.setAttribute('aria-hidden', 'true');
+  sheet.setAttribute('aria-labelledby', 'sheet-servicos-adicionais-title');
+  sheet.innerHTML = `
+    <div class="bottom-sheet__inner">
+      <header class="bottom-sheet__header">
+        <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="plus-circle"></i></div>
+        <h3 class="bottom-sheet__title" id="sheet-servicos-adicionais-title">Serviços Pay Per Use</h3>
+        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
+      </header>
+      <div class="bottom-sheet__body">
+        <div style="margin-bottom:1rem">
+          <p style="font-family:var(--font-body);font-size:0.8rem;line-height:1.55;color:var(--color-muted)">Serviços opcionais cobrados à parte. Para solicitar, entre em contato com o time de anfitriões com antecedência.</p>
+        </div>
+        ${itens}
+        <a href="https://wa.me/5554999588947?text=Olá%2C%20gostaria%20de%20contratar%20um%20serviço%20adicional%20de%20housekeeping." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar pelo WhatsApp</a>
+      </div>
+      <div class="bottom-sheet__footer">
+        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(sheet);
+}
 
 function initSectionNav() {
   const SECTIONS = [

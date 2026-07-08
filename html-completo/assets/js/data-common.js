@@ -106,7 +106,7 @@ const COMMON = {
       icon:  'waves',
       title: 'Piscina',
       hours: '8h às 22h',
-      note:  '<ul class="bs-steps"><li>Com água mantida entre 30° e 36°C, a piscina conta com três profundidades: · Prainha 17cm · Infantil 44cm · Adulto 120cm</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como aproveitar melhor</p><ul class="bs-steps"><li>Utilize exclusivamente roupas de banho.</li><li>Faça uso da ducha antes de entrar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Caixas de som</li><li>Alimentos e bebidas</li><li>Recipientes de vidro</li><li>Abertura ou fechamento das janelas</li><li>Bebidas alcoólicas</li><li>Fumar</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Supervisão e Cuidado:</strong> Para garantir o bem-estar e a tranquilidade coletiva, é fundamental que as crianças até 12 anos permaneçam sob a supervisão constante de um adulto responsável.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
+      note:  '<ul class="bs-steps"><li>Com água mantida entre 30° e 36°C, a piscina conta com três profundidades: · Prainha 17cm · Infantil 44cm · Adulto 120cm</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como aproveitar melhor</p><ul class="bs-steps"><li>Utilize exclusivamente roupas de banho.</li><li>Faça uso da ducha antes de entrar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Caixas de som</li><li>Alimentos e bebidas</li><li>Recipientes de vidro</li><li>Abertura ou fechamento das janelas</li><li>Bebidas alcoólicas</li><li>Fumar</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Supervisão e Cuidado:</strong> Para garantir o bem-estar e a tranquilidade coletiva, é fundamental que as crianças até 12 anos permaneçam sob a supervisão constante de um adulto responsável.</li></ul>'
     },
     {
       id:    'sauna',
@@ -120,7 +120,7 @@ const COMMON = {
       icon:  'dumbbell',
       title: 'Fitness Center',
       hours: '24 horas',
-      note:  '<ul class="bs-steps"><li>A sala conta com aparelhos de musculação de ponta, fornecidos por Technogym.</li><li><strong>Personal Trainer:</strong> Pode ser solicitado com o Time de Anfitriões.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
+      note:  '<ul class="bs-steps"><li>A sala conta com aparelhos de musculação de ponta, fornecidos por Technogym.</li><li><strong>Personal Trainer:</strong> Pode ser solicitado com o Time de Anfitriões.</li></ul>'
     },
     {
       id:    'spa',
@@ -289,21 +289,21 @@ const COMMON = {
       icon: 'baby',
       title: 'Kids',
       hours: '9h às 21h',
-      body:  '<ul class="bs-steps"><li>Um espaço pensado para que as crianças brinquem com liberdade, criatividade e segurança, aproveitando momentos longe das telas.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>As crianças devem permanecer acompanhadas por um adulto responsável durante todo o período de permanência no espaço.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Programação</p><ul class="bs-steps"><li>A programação de atividades para crianças será disponibilizada em uma próxima etapa da operação e em períodos especiais ao longo do ano.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Não é permitido</p><ul class="bs-steps"><li>Consumir bebidas alcoólicas.</li><li>Fumar.</li><li>Utilizar caixas de som.</li></ul><ul class="bs-steps" style="margin-top:0.5rem"><li><strong>Segurança:</strong> O ambiente é monitorado por câmeras de segurança (CFTV).</li></ul>'
+      body:  '<ul class="bs-steps"><li>Um espaço pensado para que as crianças brinquem com liberdade, criatividade e segurança, aproveitando momentos longe das telas.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>As crianças devem permanecer acompanhadas por um adulto responsável durante todo o período de permanência no espaço.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Programação</p><ul class="bs-steps"><li>A programação de atividades para crianças será disponibilizada em uma próxima etapa da operação e em períodos especiais ao longo do ano.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Não é permitido</p><ul class="bs-steps"><li>Consumir bebidas alcoólicas.</li><li>Fumar.</li><li>Utilizar caixas de som.</li></ul>'
     },
     {
       id:   'teens',
       icon: 'users',
       title: 'Teens',
       hours: '9h às 21h',
-      body:  '<ul class="bs-steps"><li>Um espaço pensado para que os jovens aproveitem momentos de lazer, convivência e diversão.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">O que você encontra</p><ul class="bs-steps"><li>Jogos de tabuleiro</li><li>Pebolim</li><li>Sinuca</li><li>Videogames</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Acesso</p><ul class="bs-steps"><li>O acesso é livre para os hóspedes, com o cartão da unidade.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Não é permitido</p><ul class="bs-steps"><li>Consumir bebidas alcoólicas.</li><li>Fumar.</li><li>Utilizar caixas de som.</li></ul><ul class="bs-steps" style="margin-top:0.5rem"><li><strong>Segurança:</strong> O ambiente é monitorado por câmeras de segurança (CFTV).</li></ul>'
+      body:  '<ul class="bs-steps"><li>Um espaço pensado para que os jovens aproveitem momentos de lazer, convivência e diversão.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">O que você encontra</p><ul class="bs-steps"><li>Jogos de tabuleiro</li><li>Pebolim</li><li>Sinuca</li><li>Videogames</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Acesso</p><ul class="bs-steps"><li>O acesso é livre para os hóspedes, com o cartão da unidade.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Não é permitido</p><ul class="bs-steps"><li>Consumir bebidas alcoólicas.</li><li>Fumar.</li><li>Utilizar caixas de som.</li></ul>'
     },
     {
       id:   'playground',
       icon: 'trees',
       title: 'Playground Externo',
       hours: '9h às 21h',
-      body:  '<ul class="bs-steps"><li>Um espaço ao ar livre para que as crianças possam brincar com segurança e aproveitar momentos em família.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>As crianças devem permanecer acompanhadas por um adulto responsável durante todo o período de permanência.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Não é permitido</p><ul class="bs-steps"><li>Consumir bebidas alcoólicas.</li><li>Fumar.</li></ul><ul class="bs-steps" style="margin-top:0.5rem"><li><strong>Segurança:</strong> O ambiente é monitorado por câmeras de segurança (CFTV).</li></ul>'
+      body:  '<ul class="bs-steps"><li>Um espaço ao ar livre para que as crianças possam brincar com segurança e aproveitar momentos em família.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>As crianças devem permanecer acompanhadas por um adulto responsável durante todo o período de permanência.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Não é permitido</p><ul class="bs-steps"><li>Consumir bebidas alcoólicas.</li><li>Fumar.</li></ul>'
     },
     {
       id:   'pulseira',

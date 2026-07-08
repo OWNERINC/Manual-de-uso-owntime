@@ -25,7 +25,7 @@ const COMMON = {
       icon:     'key',
       title:    'Check-in & Segurança',
       subtitle: '',
-      body:     '<ul class="bs-steps"><li><strong>Acesso Controlado:</strong> O ingresso ao empreendimento é realizado por reconhecimento facial.</li></ul><p style="font-size:0.8rem;opacity:0.55;letter-spacing:0.06em;text-transform:uppercase;margin:1.25rem 0 0.6rem">Como chegar</p><div style="display:flex;flex-direction:column;gap:0.5rem"><a href="https://share.google/nXyQHV9wrfuFeu4M3" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;border:1px solid var(--color-border);border-radius:8px;text-decoration:none;color:var(--color-text);font-family:var(--font-body);font-size:0.85rem;font-weight:500;-webkit-tap-highlight-color:transparent"><span>R. Ricardo Sturmhoffel, 271</span><span style="font-size:0.65rem;letter-spacing:0.1em;color:var(--color-accent-lt);text-transform:uppercase;flex-shrink:0">Mapa ↗</span></a><a href="https://share.google/nXyQHV9wrfuFeu4M3" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;border:1px solid var(--color-border);border-radius:8px;text-decoration:none;color:var(--color-text);font-family:var(--font-body);font-size:0.85rem;font-weight:500;-webkit-tap-highlight-color:transparent"><span>R. João XXIII, 222</span><span style="font-size:0.65rem;letter-spacing:0.1em;color:var(--color-accent-lt);text-transform:uppercase;flex-shrink:0">Mapa ↗</span></a></div>'
+      body:     '<ul class="bs-steps"><li><strong>Acesso Controlado:</strong> O ingresso ao empreendimento é realizado diretamente na guarita.</li></ul><p style="font-size:0.8rem;opacity:0.55;letter-spacing:0.06em;text-transform:uppercase;margin:1.25rem 0 0.6rem">Como chegar</p><div style="display:flex;flex-direction:column;gap:0.5rem"><a href="https://share.google/nXyQHV9wrfuFeu4M3" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;border:1px solid var(--color-border);border-radius:8px;text-decoration:none;color:var(--color-text);font-family:var(--font-body);font-size:0.85rem;font-weight:500;-webkit-tap-highlight-color:transparent"><span>R. João XXIII, 222</span><span style="font-size:0.65rem;letter-spacing:0.1em;color:var(--color-accent-lt);text-transform:uppercase;flex-shrink:0">Mapa ↗</span></a></div>'
     },
     {
       id:       'checkout',
@@ -106,7 +106,7 @@ const COMMON = {
       icon:  'waves',
       title: 'Piscina',
       hours: '8h às 22h',
-      note:  '<ul class="bs-steps"><li>Com água mantida entre 30° e 36°C, a piscina conta com três profundidades: · Prainha 17cm · Infantil 44cm · Adulto 120cm</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como aproveitar melhor</p><ul class="bs-steps"><li>Utilize exclusivamente roupas de banho.</li><li>Faça uso da ducha antes de entrar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Caixas de som</li><li>Alimentos e bebidas</li><li>Recipientes de vidro</li><li>Abertura ou fechamento das janelas</li><li>Bebidas alcoólicas</li><li>Fumar</li><li>Caixas de música</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Supervisão e Cuidado:</strong> Para garantir o bem-estar e a tranquilidade coletiva, é fundamental que as crianças até 12 anos permaneçam sob a supervisão constante de um adulto responsável.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
+      note:  '<ul class="bs-steps"><li>Com água mantida entre 30° e 36°C, a piscina conta com três profundidades: · Prainha 17cm · Infantil 44cm · Adulto 120cm</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como aproveitar melhor</p><ul class="bs-steps"><li>Utilize exclusivamente roupas de banho.</li><li>Faça uso da ducha antes de entrar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Caixas de som</li><li>Alimentos e bebidas</li><li>Recipientes de vidro</li><li>Abertura ou fechamento das janelas</li><li>Bebidas alcoólicas</li><li>Fumar</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Supervisão e Cuidado:</strong> Para garantir o bem-estar e a tranquilidade coletiva, é fundamental que as crianças até 12 anos permaneçam sob a supervisão constante de um adulto responsável.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
     },
     {
       id:    'sauna',
@@ -120,7 +120,7 @@ const COMMON = {
       icon:  'dumbbell',
       title: 'Fitness Center',
       hours: '24 horas',
-      note:  '<ul class="bs-steps"><li>A sala conta com aparelhos de musculação de ponta, fornecidos por Technogym.</li><li><strong>Personal Trainer:</strong> Indisponível em período de soft opening.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
+      note:  '<ul class="bs-steps"><li>A sala conta com aparelhos de musculação de ponta, fornecidos por Technogym.</li><li><strong>Personal Trainer:</strong> Pode ser solicitado com o Time de Anfitriões.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul>'
     },
     {
       id:    'spa',
@@ -250,7 +250,7 @@ const COMMON = {
       id:    'personal',
       icon:  'activity',
       title: 'Personal Trainer',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O serviço de Personal Trainer estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      body:  '<ul class="bs-steps"><li>O serviço de personal trainer pode ser solicitado com nosso time de anfitriões.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
     },
     {
       id:    'pet-care',
@@ -326,6 +326,7 @@ const COMMON = {
       id:    'monitoramento',
       icon:  'shield',
       title: 'Monitoramento 24 Horas',
+      hidden: true,
       body:  '<ul class="bs-steps"><li><strong>Atendimento:</strong> Portaria e recepção à sua disposição 24 horas por dia.</li><li><strong>Monitoramento:</strong> As áreas comuns são protegidas por um sistema de CFTV equipado com 132 câmeras em pontos estratégicos.</li><li><strong>Vigilância:</strong> Equipe de segurança especializada realizando o controle contínuo do ambiente.</li></ul>'
     },
     {

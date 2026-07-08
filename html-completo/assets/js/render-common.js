@@ -403,7 +403,7 @@ function renderFloatingAction(common) {
    renderSegurancaAcesso
    ═══════════════════════════════════════════ */
 function renderSegurancaAcesso(common) {
-  const items = common.segurancaAcesso;
+  const items = common.segurancaAcesso.filter(i => !i.hidden);
   const btns = items.map(item =>
     _guiaItemBtn(`sheet-seg-${item.id}`, item.icon, item.title)
   ).join('');

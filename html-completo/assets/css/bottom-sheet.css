@@ -36,10 +36,12 @@
   will-change: transform;
   display: flex;
   flex-direction: column;
+  pointer-events: none;
 }
 
 .bottom-sheet.is-open {
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* ── Drag handle (visual only) ── */

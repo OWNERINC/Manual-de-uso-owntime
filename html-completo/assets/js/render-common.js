@@ -299,42 +299,40 @@ function renderGastronomy(common) {
   `;
 
   items.forEach(item => {
-    const bodyHtml = `
-      ${item.hours ? `<span class="bottom-sheet__hours">${item.hours}</span>` : ''}
-      ${_bodyHtml(item.body)}
-    `;
-    _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, bodyHtml, item.logo || null);
-  });
+    let sheetBody;
+    if (item.tabs) {
+      const btnsHtml = item.tabs.map((t, i) =>
+        `<button class="bs-tab-btn${i === 0 ? ' is-active' : ''}" data-tab="gastro-${item.id}-${t.id}">${t.title}</button>`
+      ).join('');
+      const panelsHtml = item.tabs.map((t, i) =>
+        `<div class="bs-tab-panel${i === 0 ? ' is-active' : ''}" id="gastro-${item.id}-${t.id}">${t.body}</div>`
+      ).join('');
+      sheetBody = `<div class="bs-tab-group"><div class="bs-tab-btns">${btnsHtml}</div>${panelsHtml}</div>`;
+    } else {
+      sheetBody = `
+        ${item.hours ? `<span class="bottom-sheet__hours">${item.hours}</span>` : ''}
+        ${_bodyHtml(item.body)}
+      `;
+    }
+    _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, sheetBody, item.logo || null);
 
-  const cafe = items.find(i => i.id === 'cafe-da-manha');
-  if (cafe && cafe.cardapio) {
-    const itensHtml = cafe.cardapio.map(i => `<li>${i}</li>`).join('');
-    const sheet = document.createElement('div');
-    sheet.className = 'bottom-sheet bottom-sheet--light';
-    sheet.id = 'sheet-cafe-cardapio';
-    sheet.setAttribute('role', 'dialog');
-    sheet.setAttribute('aria-modal', 'true');
-    sheet.setAttribute('aria-hidden', 'true');
-    sheet.innerHTML = `
-      <div class="bottom-sheet__inner">
-        <header class="bottom-sheet__header">
-          <div class="bottom-sheet__header-icon" aria-hidden="true">
-            <i data-lucide="scroll-text"></i>
-          </div>
-          <h3 class="bottom-sheet__title">Itens da Cesta</h3>
-          <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
-        </header>
-        <div class="bottom-sheet__body">
-          <ul class="bs-steps">${itensHtml}</ul>
-          <a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a>
-        </div>
-        <div class="bottom-sheet__footer">
-          <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(sheet);
-  }
+    if (item.tabs) {
+      const sheet = document.getElementById(`sheet-gastro-${item.id}`);
+      sheet.addEventListener('click', e => {
+        const btn = e.target.closest('.bs-tab-btn');
+        if (!btn) return;
+        const targetId = btn.dataset.tab;
+        sheet.querySelectorAll('.bs-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+        sheet.querySelectorAll('.bs-tab-panel').forEach(p => p.classList.toggle('is-active', p.id === targetId));
+      });
+
+      item.tabs.forEach(t => {
+        if (!t.pdf) return;
+        const pdfBody = `<div style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border)"><iframe src="${t.pdf}" style="width:100%;height:65vh;border:none;display:block" title="Cardápio ${t.title}"></iframe></div><a href="${t.pdf}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:0.75rem;padding:0.75rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.8rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="external-link"></i> Abrir em nova aba</a>`;
+        _appendSheet(`sheet-gastro-${item.id}-pdf-${t.id}`, 'scroll-text', `Cardápio · ${t.title}`, pdfBody);
+      });
+    }
+  });
 }
 
 /* ═══════════════════════════════════════════

@@ -205,24 +205,21 @@ const COMMON = {
     {
       id:    'cafe-da-manha',
       icon:  'salad',
-      title: 'Cesta de Café da Manhã',
-      hours: '7h às 11h',
-      cardapio: [
-        'Croissant amanteigado da serra (2 unidades)',
-        'Pão Integral fatiado',
-        'Bolo do dia ou Cuca artesanal',
-        'Mini pão de queijo (4 unidades)',
-        'Mini Seleção de Frios (Salame Italiano e Copa)',
-        'Mini Seleção de Queijos',
-        'Iogurte Natural (2 unidades)',
-        'Mix Granola, nuts e frutas secas',
-        'Geleia Caseira',
-        'Frutas da Estação fatiadas',
-        'Sachê Drip Coffee (2 unidades)',
-        'Suco de Laranja integral (500ml)',
-        'Manteiga sem e com sal / Nata e Mel',
-      ],
-      body:  '<ul class="bs-steps"><li>Comece o dia no seu ritmo com uma cesta de café da manhã entregue diretamente na sua unidade.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Valor</p><ul class="bs-steps"><li>R$ 139,00 (serve até duas pessoas).</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como solicitar</p><ul class="bs-steps"><li>Os pedidos devem ser realizados até 15h para entrega no dia seguinte.</li><li>As entregas são realizadas diariamente, entre 7h e 11h.</li></ul><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-cafe-cardapio" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver itens da cesta</button><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
+      title: 'Café da Manhã',
+      tabs: [
+        {
+          id:    'em-casa',
+          title: 'Café em Casa',
+          pdf:   'assets/cardapios/cafe-em-casa.pdf',
+          body:  '<ul class="bs-steps"><li>Comece o dia no seu ritmo com uma cesta de café da manhã entregue diretamente na sua casa.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como solicitar</p><ul class="bs-steps"><li>Os pedidos devem ser realizados até 15h para entrega no dia seguinte.</li><li>As entregas são realizadas diariamente, entre 7h e 22h.</li></ul><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-gastro-cafe-da-manha-pdf-em-casa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
+        },
+        {
+          id:    'a-la-carte',
+          title: 'Café à la Carte',
+          pdf:   'assets/cardapios/cafe-a-la-carte.pdf',
+          body:  '<ul class="bs-steps"><li>Seleção premium de pães, bolos, charcutarias, queijos, frutas, grãos, iogurtes e outras especialidades servidas à mesa.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como solicitar</p><ul class="bs-steps"><li>Para agendar o horário, entre em contato com o Time de Anfitriões.</li></ul><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-gastro-cafe-da-manha-pdf-a-la-carte" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
+        }
+      ]
     }
   ],
 

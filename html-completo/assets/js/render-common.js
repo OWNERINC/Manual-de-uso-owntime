@@ -519,7 +519,8 @@ function renderCardapiosSheet() {
     const sheet = document.createElement('div');
     sheet.className = 'bottom-sheet';
     sheet.id = id;
-    sheet.style.maxHeight = '94dvh';
+    sheet.style.height = '94dvh';
+  sheet.style.maxHeight = '94dvh';
     sheet.setAttribute('role', 'dialog');
     sheet.setAttribute('aria-modal', 'true');
     sheet.setAttribute('aria-hidden', 'true');
@@ -553,6 +554,7 @@ function renderSpaCardapioSheet() {
   const sheet = document.createElement('div');
   sheet.className = 'bottom-sheet';
   sheet.id = 'sheet-cardapio-spa';
+  sheet.style.height = '94dvh';
   sheet.style.maxHeight = '94dvh';
   sheet.setAttribute('role', 'dialog');
   sheet.setAttribute('aria-modal', 'true');
@@ -613,6 +615,7 @@ function renderCafeBarCardapioSheet() {
   const sheet = document.createElement('div');
   sheet.className = 'bottom-sheet';
   sheet.id = 'sheet-cardapio-cafe-bar';
+  sheet.style.height = '94dvh';
   sheet.style.maxHeight = '94dvh';
   sheet.setAttribute('role', 'dialog');
   sheet.setAttribute('aria-modal', 'true');
@@ -673,6 +676,7 @@ function renderRestauranteCardapioSheet() {
   const sheet = document.createElement('div');
   sheet.className = 'bottom-sheet';
   sheet.id = 'sheet-cardapio-restaurante';
+  sheet.style.height = '94dvh';
   sheet.style.maxHeight = '94dvh';
   sheet.setAttribute('role', 'dialog');
   sheet.setAttribute('aria-modal', 'true');

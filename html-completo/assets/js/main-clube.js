@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof renderSugestaoSheet === 'function') renderSugestaoSheet('Club House');
   renderRestauranteCardapioSheet();
   renderCafeBarCardapioSheet();
+  renderSpaCardapioSheet();
 
   try { lucide.createIcons(); } catch (e) { console.warn('Lucide:', e); }
 

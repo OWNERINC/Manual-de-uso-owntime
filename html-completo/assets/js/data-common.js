@@ -127,7 +127,7 @@ const COMMON = {
       icon:  'leaf',
       title: 'Spa',
       hours: '',
-      note:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Spa estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      note:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Spa estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-spa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver menu do Spa</button>'
     }
   ],
 

@@ -152,7 +152,7 @@ const COMMON = {
       icon:  'coffee',
       title: 'Bar & Coffee Shop',
       hours: '',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Bar e o Coffee Shop estarão disponíveis em breve. Durante esta fase inicial, encontram-se temporariamente indisponíveis. Agradecemos sua compreensão.</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Bar e o Coffee Shop estarão disponíveis em breve. Durante esta fase inicial, encontram-se temporariamente indisponíveis. Agradecemos sua compreensão.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-cafe-bar" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button>'
     }
   ],
 

@@ -148,18 +148,11 @@ const COMMON = {
       body:  '<ul class="bs-steps"><li><strong>Localização:</strong> No andar térreo do Club House.</li><li><strong>Ambientes:</strong> Desfrute do serviço à la carte no conforto do nosso salão interno ou no charme da área externa.</li><li><strong>Restrições Alimentares:</strong> Nosso cardápio foi planejado para diferentes paladares. Nossa equipe está à disposição para detalhar ingredientes e adaptar pratos conforme as suas necessidades.</li></ul>'
     },
     {
-      id:    'coffee-shop',
+      id:    'bar-coffee',
       icon:  'coffee',
-      title: 'Coffee Shop',
+      title: 'Bar & Coffee Shop',
       hours: '',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Coffee Shop estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
-    },
-    {
-      id:    'bar',
-      icon:  'wine',
-      title: 'Bar',
-      hours: '',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Bar estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Bar e o Coffee Shop estarão disponíveis em breve. Durante esta fase inicial, encontram-se temporariamente indisponíveis. Agradecemos sua compreensão.</li></ul>'
     }
   ],
 

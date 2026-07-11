@@ -48,65 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
   try { initFloatingVisibility(); } catch (e) { console.warn('FloatingVisibility:', e); }
 });
 
-function renderRestauranteCardapioSheet() {
-  const pages = ['pagina-1','pagina-2','pagina-3','pagina-4','pagina-5','pagina-6','pagina-7','pagina-9','pagina-10'];
-  const total = pages.length;
-  let current = 0;
-
-  const sheet = document.createElement('div');
-  sheet.className = 'bottom-sheet';
-  sheet.id = 'sheet-cardapio-restaurante';
-  sheet.style.maxHeight = '94dvh';
-  sheet.setAttribute('role', 'dialog');
-  sheet.setAttribute('aria-modal', 'true');
-  sheet.setAttribute('aria-hidden', 'true');
-  sheet.setAttribute('aria-labelledby', 'sheet-cardapio-restaurante-title');
-  sheet.innerHTML = `
-    <div class="bottom-sheet__inner">
-      <header class="bottom-sheet__header">
-        <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="scroll-text"></i></div>
-        <h3 class="bottom-sheet__title" id="sheet-cardapio-restaurante-title">Cardápio</h3>
-        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
-      </header>
-      <div class="bottom-sheet__body" style="padding:0;overflow-y:auto">
-        <img id="cardapio-rest-img" src="assets/cardapios/restaurante/pagina-1.webp" alt="Cardápio página 1" style="width:100%;display:block">
-      </div>
-      <div class="bottom-sheet__footer" style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem">
-        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
-        <div style="display:flex;align-items:center;gap:0.75rem">
-          <button id="cardapio-rest-prev" aria-label="Página anterior" style="display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;font-size:1rem;-webkit-tap-highlight-color:transparent">←</button>
-          <span id="cardapio-rest-counter" style="font-family:var(--font-body);font-size:0.78rem;color:var(--color-muted);min-width:3.5rem;text-align:center">1 / ${total}</span>
-          <button id="cardapio-rest-next" aria-label="Próxima página" style="display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;font-size:1rem;-webkit-tap-highlight-color:transparent">→</button>
-        </div>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(sheet);
-
-  const img     = sheet.querySelector('#cardapio-rest-img');
-  const counter = sheet.querySelector('#cardapio-rest-counter');
-  const prev    = sheet.querySelector('#cardapio-rest-prev');
-  const next    = sheet.querySelector('#cardapio-rest-next');
-  const body    = sheet.querySelector('.bottom-sheet__body');
-
-  function update() {
-    img.src = `assets/cardapios/restaurante/${pages[current]}.webp`;
-    img.alt = `Cardápio ${pages[current].replace('-', ' ')}`;
-    counter.textContent = `${current + 1} / ${total}`;
-    prev.disabled = current === 0;
-    next.disabled = current === total - 1;
-    body.scrollTop = 0;
-  }
-
-  prev.addEventListener('click', () => { if (current > 0)          { current--; update(); } });
-  next.addEventListener('click', () => { if (current < total - 1)  { current++; update(); } });
-
-  // Reinicia para página 1 ao fechar
-  sheet.addEventListener('transitionend', () => {
-    if (!sheet.classList.contains('is-open')) { current = 0; update(); }
-  });
-}
-
 function renderCardapiosSheet() {
   [
     { id: 'sheet-cardapio-ala-carte', title: 'Cardápio À la Carte', file: 'assets/cardapios/cafe-a-la-carte.pdf' },

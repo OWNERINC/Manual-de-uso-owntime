@@ -513,7 +513,7 @@ function renderTelefonesUteis(common) {
 function renderRestauranteCardapioSheet() {
   if (document.getElementById('sheet-cardapio-restaurante')) return;
 
-  const pages = ['pagina-1','pagina-2','pagina-3','pagina-4','pagina-5','pagina-6','pagina-7','pagina-9','pagina-10'];
+  const pages = ['pagina-2','pagina-4','pagina-6','pagina-7','pagina-9'];
   const total = pages.length;
   let current = 0;
 

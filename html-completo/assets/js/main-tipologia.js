@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFloatingAction(COMMON);
   renderSugestaoSheet(TIPOLOGIA.hero.headline);
   renderServicosAdicionaisSheet(TIPOLOGIA);
+  renderCardapiosSheet();
   initSearch();
 
   // 2. Ícones após todo DOM estar pronto
@@ -45,6 +46,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   try { initFloatingVisibility(); } catch (e) { console.warn('FloatingVisibility:', e); }
 });
+
+function renderCardapiosSheet() {
+  [
+    { id: 'sheet-cardapio-ala-carte', title: 'Cardápio À la Carte', file: 'assets/cardapios/cafe-a-la-carte.pdf' },
+    { id: 'sheet-cardapio-em-casa',   title: 'Café em Casa',         file: 'assets/cardapios/cafe-em-casa.pdf'   }
+  ].forEach(({ id, title, file }) => {
+    const sheet = document.createElement('div');
+    sheet.className = 'bottom-sheet';
+    sheet.id = id;
+    sheet.style.maxHeight = '94dvh';
+    sheet.setAttribute('role', 'dialog');
+    sheet.setAttribute('aria-modal', 'true');
+    sheet.setAttribute('aria-hidden', 'true');
+    sheet.setAttribute('aria-labelledby', `${id}-title`);
+    sheet.innerHTML = `
+      <div class="bottom-sheet__inner">
+        <header class="bottom-sheet__header">
+          <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="scroll-text"></i></div>
+          <h3 class="bottom-sheet__title" id="${id}-title">${title}</h3>
+          <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
+        </header>
+        <div class="bottom-sheet__body" style="padding:0;overflow:hidden;display:flex;flex-direction:column">
+          <iframe src="${file}" style="flex:1;border:none;min-height:0;display:block;width:100%" title="${title}"></iframe>
+        </div>
+        <div class="bottom-sheet__footer">
+          <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(sheet);
+  });
+}
 
 function renderServicosAdicionaisSheet(tipologia) {
   if (!Array.isArray(tipologia.servicosAdicionais)) return;

@@ -133,6 +133,13 @@ const COMMON = {
 
   gastronomiaClube: [
     {
+      id:    'cafe-manha',
+      icon:  'sunrise',
+      title: 'Café da Manhã',
+      hours: '7h às 10h30',
+      body:  '<ul class="bs-steps"><li><strong>Local:</strong> Servido no Restaurante do Club House e disponível também na opção em casa.</li></ul><div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem"><button class="bs-trigger" data-bs-target="sheet-cardapio-ala-carte" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Cardápio À la Carte</button><button class="bs-trigger" data-bs-target="sheet-cardapio-em-casa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-text);border-radius:8px;border:1px solid var(--color-border);font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="home"></i> Café em Casa</button></div>'
+    },
+    {
       id:    'restaurante',
       icon:  'utensils',
       logo:  'assets/images/tempo logo.webp',

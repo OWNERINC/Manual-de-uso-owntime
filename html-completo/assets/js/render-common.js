@@ -532,8 +532,8 @@ function renderCardapiosSheet() {
           <h3 class="bottom-sheet__title" id="${id}-title">${title}</h3>
           <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
         </header>
-        <div class="bottom-sheet__body" style="padding:0;overflow:hidden;display:flex;flex-direction:column">
-          <iframe src="${file}" style="flex:1;border:none;min-height:0;display:block;width:100%" title="${title}"></iframe>
+        <div class="bottom-sheet__body" style="padding:0;overflow-y:auto;-webkit-overflow-scrolling:touch">
+          <iframe src="${file}" style="width:100%;height:300dvh;border:none;display:block" title="${title}"></iframe>
         </div>
         <div class="bottom-sheet__footer">
           <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>

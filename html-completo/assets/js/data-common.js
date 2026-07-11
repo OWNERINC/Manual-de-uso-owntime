@@ -133,13 +133,12 @@ const COMMON = {
 
   gastronomiaClube: [
     {
-      id:     'restaurante',
-      icon:   'utensils',
-      logo:   'assets/images/tempo logo.webp',
-      title:  'Restaurante',
-      hours:  '',
-      hidden: true,
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Restaurante estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      id:    'restaurante',
+      icon:  'utensils',
+      logo:  'assets/images/tempo logo.webp',
+      title: 'Restaurante',
+      hours: '12h às 22h · último pedido às 21h30',
+      body:  '<ul class="bs-steps"><li><strong>Localização:</strong> No andar térreo do Club House.</li><li><strong>Ambientes:</strong> Desfrute do serviço à la carte no conforto do nosso salão interno ou no charme da área externa.</li><li><strong>Restrições Alimentares:</strong> Nosso cardápio foi planejado para diferentes paladares. Nossa equipe está à disposição para detalhar ingredientes e adaptar pratos conforme as suas necessidades.</li><li><strong>Segurança:</strong> Ambiente monitorado continuamente por câmeras de segurança (CFTV).</li></ul><a href="assets/cardapios/cafe-a-la-carte.pdf" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</a>'
     },
     {
       id:    'coffee-shop',

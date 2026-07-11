@@ -193,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderClubeGastronomy();
   renderClubeServicos();
   if (typeof renderSugestaoSheet === 'function') renderSugestaoSheet('Club House');
+  renderCardapiosSheet();
   renderRestauranteCardapioSheet();
   renderCafeBarCardapioSheet();
   renderSpaCardapioSheet();

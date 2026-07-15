@@ -630,7 +630,8 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ### Sala de Banho · SPA Jacuzzi *(Fall House)*
 
-- **Orientações:** A nossa equipe está à disposição para encher a sua sala de banho spa jacuzzi (todos os dias das 8h às 20h) e passar in loco as devidas orientações de uso. Faça contato agora com o time de anfitriões.
+- **Apresentação:** Para a sua comodidade e relaxamento, a jacuzzi da sua sala de banho está pronta para uso sob solicitação.
+- **Funcionamento:** A nossa equipe está à disposição para encher a sua sala de banho spa jacuzzi (todos os dias das 8h às 20h) e passar in loco as devidas orientações de uso. Faça contato agora com o time de anfitriões.
 - **Nota (Aviso):**
   - O tempo de espera para encher é de 2h.
   - Não é permitido o uso de sais de banho e nenhum tipo de óleo ou bolhas.

@@ -14,6 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     COMMON.orientacoesGerais = [...COMMON.orientacoesGerais, ...TIPOLOGIA.extraOrientacoes];
   }
 
+  if (TIPOLOGIA.orientacoesOverrides) {
+    COMMON.orientacoesGerais = COMMON.orientacoesGerais.map(item =>
+      TIPOLOGIA.orientacoesOverrides[item.id] ? { ...item, ...TIPOLOGIA.orientacoesOverrides[item.id] } : item
+    );
+  }
+
   // 1. Render — ordem importa (top → bottom da página)
   renderHero(TIPOLOGIA);
   renderTipologiaFeatures(TIPOLOGIA);

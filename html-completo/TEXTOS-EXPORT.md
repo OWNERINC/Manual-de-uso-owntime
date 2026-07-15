@@ -124,7 +124,7 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ---
 
-### Espaço Pet
+### Espaço Pet *(Apartamentos)*
 
 *Subtítulo: Orientações Gerais*
 
@@ -137,6 +137,30 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
   - O acesso de animais às áreas compartilhadas do Club House não é permitido.
   - O proprietário é responsável pela higiene e limpeza dos resíduos do animal nas áreas comuns.
   - Mantenha seu pet sob controle durante toda a estadia, evitando situações que possam causar desconforto aos demais proprietários e hóspedes.
+
+---
+
+### Espaço Pet *(Casas)*
+
+*Subtítulo: Orientações Gerais*
+
+- **Boas-vindas:** Seu pet é parte da família e muito bem-vindo! Para garantir o conforto de todos, conheça as regras e taxas da nossa política pet.
+- **Taxas e Facilidades:**
+  - **Valor da Diária:** A hospedagem do seu pet tem o custo de R$ 85,00 por dia (por animal), com o pagamento realizado diretamente no seu check-out.
+  - **Kit Pet Incluso:** Este valor contempla o empréstimo de caminha e cobertor, além de 1 tapete higiênico e 2 saquinhos de limpeza.
+- **Preservação e Enxoval:**
+  - **Uso Exclusivo:** Solicitamos que utilize exclusivamente os itens fornecidos no Kit Pet para o uso do seu animal.
+  - **Enxoval da Casa:** É expressamente proibido utilizar as toalhas de banho, panos de prato ou toalhas de piso da casa para limpar ou secar o pet e o chão.
+  - **Em Caso de Acidentes:** Se ocorrer qualquer imprevisto com sujeira ou resíduos na unidade, entre em contato imediatamente com a recepção para receber o auxílio adequado.
+- **Regras de Convivência:**
+  - **Áreas Comuns:** Mantenha seu pet sempre com guia ou coleira ao circular pelas áreas de convivência. O proprietário é integralmente responsável pela higiene e coleta imediata dos resíduos do animal.
+  - **Club House:** O acesso de animais de estimação às áreas compartilhadas do Club House não é permitido.
+  - **Restaurante:** Por normas rígidas da Vigilância Sanitária, é estritamente proibida a entrada e permanência de pets nas dependências do restaurante.
+  - **Harmonia da Estadia:** Certifique-se de manter o pet sob controle para garantir o conforto, o silêncio e o bem-estar de todos os hóspedes e proprietários.
+- **Serviços e Praticidade (Nota):**
+  - **Parceiros Externos:** Caso precise de serviços especiais como banho, hotelzinho ou pet walker, nosso time de anfitriões está à disposição para fornecer contatos de parceiros locais de confiança desde já.
+
+---
 
 ---
 

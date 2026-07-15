@@ -129,7 +129,7 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 *Subtítulo: Orientações Gerais*
 
 - **Boas-vindas:** Seu pet é parte da família e muito bem-vindo! Nossa convenção permite até `[número máximo]` pets de porte `[inserir porte]` por unidade.
-- **Taxas:** Aplica-se uma diária de R$ 85,00 por animal, além de uma taxa de limpeza de `[valor]` referente à higienização especial da unidade após o uso.
+- **Taxas:** Aplica-se diárias de R$ 85,00 por animal, além de uma taxa de limpeza de `[valor]` referente à higienização especial da unidade após o uso.
 - **Comodidades:** Solicite caminhas, comedouros e tapetes higiênicos com 7 dias de antecedência no pré-check-in.
 - **Serviços Sob Demanda:** Pet walker, banho e tosa disponíveis. Entre em contato com nosso time de anfitriões: `[link]`
 

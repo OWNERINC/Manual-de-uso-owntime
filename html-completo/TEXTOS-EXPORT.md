@@ -601,9 +601,10 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ### Sala de Banho · SPA Jacuzzi *(Fall House)*
 
-- **Antes de Usar:** Certifique-se de que o nível da água cubra completamente os jatos antes de acionar o sistema de hidromassagem e aquecimento.
-- **Bem-Estar:** Sessões de 20 a 30 minutos.
-- **Preservação:** Para garantir a pureza da água, não é permitido o consumo de alimentos e bebidas no interior do equipamento. Utilize exclusivamente sais e espumas homologados para spas.
+- **Soft Opening:** A Sala de Banho · SPA Jacuzzi estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.
+- **Orientações:** A nossa equipe está à disposição para encher a sua sala de banho spa jacuzzi (todos os dias das 8h às 20h) e passar in loco as devidas orientações de uso. Faça contato agora com o time de anfitriões.
+  *O tempo de espera para encher é de 2h.
+  **Não é permitido o uso de sais de banho e nenhum tipo de óleo ou bolhas.
 
 ---
 

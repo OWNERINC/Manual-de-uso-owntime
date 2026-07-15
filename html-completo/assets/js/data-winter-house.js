@@ -33,6 +33,9 @@ const TIPOLOGIA = {
           body: '<ul class="bs-steps"><li><strong>Tecnologia:</strong> O ambiente conta com piso radiante, aquecido por água a gás natural. A temperatura é predeterminada de forma automática e inteligente.</li><li><strong>Consumo (Serviço sob Demanda):</strong> O uso do piso aquecido opera na modalidade serviço sob demanda, com medição realizada proporcionalmente ao período da sua estadia.</li><li><strong>Aviso de Soft Open:</strong> Durante esta fase inicial, o sistema de piso aquecido poderá estar temporariamente inoperante.</li></ul>'
         }
       ]
+    },
+    jacuzzi: {
+      body: '<ul class="bs-steps"><li><strong>Soft Opening:</strong> A Jacuzzi estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     }
   },
 

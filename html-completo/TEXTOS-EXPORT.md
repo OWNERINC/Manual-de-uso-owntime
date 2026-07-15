@@ -128,10 +128,15 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 *Subtítulo: Orientações Gerais*
 
-- **Boas-vindas:** Seu pet é parte da família e muito bem-vindo! Nossa convenção permite até `[número máximo]` pets de porte `[inserir porte]` por unidade.
+- **Boas-vindas:** Seu pet é parte da família e muito bem-vindo! Para garantir o conforto de todos, conheça as regras e taxas da nossa política pet.
 - **Taxas:** Aplica-se diárias de R$ 85,00 por animal, além de uma taxa de limpeza de `[valor]` referente à higienização especial da unidade após o uso.
 - **Comodidades:** Solicite caminhas, comedouros e tapetes higiênicos com 7 dias de antecedência no pré-check-in.
 - **Serviços Sob Demanda:** Pet walker, banho e tosa disponíveis. Entre em contato com nosso time de anfitriões: `[link]`
+- **Recomendações (Avisos):**
+  - Mantenha seu pet sempre com guia ou coleira nas áreas comuns do empreendimento.
+  - O acesso de animais às áreas compartilhadas do Club House não é permitido.
+  - O proprietário é responsável pela higiene e limpeza dos resíduos do animal nas áreas comuns.
+  - Mantenha seu pet sob controle durante toda a estadia, evitando situações que possam causar desconforto aos demais proprietários e hóspedes.
 
 ---
 

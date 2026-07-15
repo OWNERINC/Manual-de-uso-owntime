@@ -610,6 +610,18 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 - **Nota (Aviso):**
   - O tempo de espera para encher é de 2h.
   - Não é permitido o uso de sais de banho e nenhum tipo de óleo ou bolhas.
+- **Atenção (Aviso):** Para a sua segurança e a preservação do equipamento, é expressamente proibido o consumo de bebidas, comidas ou o uso de aparelhos eletrônicos dentro da jacuzzi.
+
+---
+
+### Jacuzzi *(Winter House)*
+
+- **Apresentação:** O refúgio perfeito após um dia de imersão na serra. Integrada à atmosfera acolhedora da casa de 3 suítes, a jacuzzi foi projetada para entregar uma experiência de relaxamento absoluto e privacidade. Seja para um momento de pausa ou para aproveitar o conforto térmico em contraste com o clima, este é o espaço definitivo para desacelerar com exclusividade.
+- **Detalhes da Experiência:**
+  - **Imersão e Bem-Estar:** Sistema de hidromassagem pensado para o alívio de tensões e descanso completo do corpo e da mente.
+  - **Climatização Ideal:** Água mantida na temperatura perfeita, criando um ambiente sempre convidativo, independentemente da estação do ano.
+  - **Design Integrado:** Estética contemporânea e sofisticada, alinhada à arquitetura da casa para manter a fluidez entre o momento de spa e a convivência.
+- **Atenção (Aviso):** Para a sua segurança e a preservação do equipamento, é expressamente proibido o consumo de bebidas, comidas ou o uso de aparelhos eletrônicos dentro da jacuzzi.
 
 ---
 

@@ -127,33 +127,32 @@ const COMMON = {
       icon:  'leaf',
       title: 'Spa',
       hours: '',
-      note:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Spa estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      note:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Spa estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-spa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver menu do Spa</button>'
     }
   ],
 
   gastronomiaClube: [
     {
-      id:     'restaurante',
-      icon:   'utensils',
-      logo:   'assets/images/tempo logo.webp',
-      title:  'Restaurante',
-      hours:  '',
-      hidden: true,
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Restaurante estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      id:    'cafe-manha',
+      icon:  'sunrise',
+      title: 'Café da Manhã',
+      hours: '7h às 10h30',
+      body:  '<ul class="bs-steps"><li><strong>Local:</strong> Servido no Restaurante do Club House e disponível também na opção em casa.</li></ul><div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem"><button class="bs-trigger" data-bs-target="sheet-cardapio-ala-carte" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Cardápio À la Carte</button><button class="bs-trigger" data-bs-target="sheet-cardapio-em-casa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-text);border-radius:8px;border:1px solid var(--color-border);font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="home"></i> Café em Casa</button></div>'
     },
     {
-      id:    'coffee-shop',
+      id:    'restaurante',
+      icon:  'utensils',
+      logo:  'assets/images/tempo logo.webp',
+      title: 'Restaurante',
+      hours: '12h às 22h · último pedido às 21h30',
+      body:  '<ul class="bs-steps"><li><strong>Localização:</strong> No andar térreo do Club House.</li><li><strong>Ambientes:</strong> Desfrute do serviço à la carte no conforto do nosso salão interno ou no charme da área externa.</li><li><strong>Restrições Alimentares:</strong> Nosso cardápio foi planejado para diferentes paladares. Nossa equipe está à disposição para detalhar ingredientes e adaptar pratos conforme as suas necessidades.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-restaurante" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button>'
+    },
+    {
+      id:    'bar-coffee',
       icon:  'coffee',
-      title: 'Coffee Shop',
+      title: 'Bar & Coffee Shop',
       hours: '',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Coffee Shop estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
-    },
-    {
-      id:    'bar',
-      icon:  'wine',
-      title: 'Bar',
-      hours: '',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Bar estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Bar e o Coffee Shop estarão disponíveis em breve. Durante esta fase inicial, encontram-se temporariamente indisponíveis. Agradecemos sua compreensão.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-cafe-bar" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button>'
     }
   ],
 

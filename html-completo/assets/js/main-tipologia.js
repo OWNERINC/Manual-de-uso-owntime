@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFloatingAction(COMMON);
   renderSugestaoSheet(TIPOLOGIA.hero.headline);
   renderServicosAdicionaisSheet(TIPOLOGIA);
+  renderRestauranteCardapioSheet();
+  renderCardapiosSheet();
   initSearch();
 
   // 2. Ícones após todo DOM estar pronto
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   try { initFloatingVisibility(); } catch (e) { console.warn('FloatingVisibility:', e); }
 });
+
 
 function renderServicosAdicionaisSheet(tipologia) {
   if (!Array.isArray(tipologia.servicosAdicionais)) return;

@@ -49,10 +49,9 @@ const HUB = {
     {
       section: 'Gastronomia',
       items: [
-        { title: 'Cesta de Café da Manhã', hours: '7h às 11h' },
-        { title: 'Coffee Shop',   hours: 'Indisponível no soft opening' },
-        { title: 'Restaurante',   hours: 'Indisponível no soft opening' },
-        { title: 'Bar',           hours: 'Indisponível no soft opening' },
+        { title: 'Café da Manhã',     hours: '7h às 11h' },
+        { title: 'Restaurante',       hours: 'Almoço 12h às 15h · Jantar 19h às 22h30' },
+        { title: 'Bar & Coffee Shop', hours: '11h às 22h30' },
       ]
     },
     {
@@ -60,15 +59,16 @@ const HUB = {
       items: [
         { title: 'Fitness Center', hours: '24 horas' },
         { title: 'Piscinas',       hours: '8h às 22h' },
-        { title: 'Saunas',         hours: 'Indisponível no soft opening' },
-        { title: 'Spa',     hours: 'Indisponível no soft opening' },
+        { title: 'Saunas',         hours: 'Em breve durante o soft opening' },
+        { title: 'Spa',            hours: 'Agendamento com 24h de antecedência' },
       ]
     },
     {
       section: 'Serviços',
       items: [
-        { title: 'Kids & Teens',       hours: '9h às 21h' },
-        { title: 'Playground',         hours: '9h às 21h' },
+        { title: 'Kids',               hours: '9h às 21h' },
+        { title: 'Teens',              hours: '9h às 21h' },
+        { title: 'Playground Externo', hours: '9h às 21h' },
         { title: 'Transporte Interno', hours: '7h às 23h' },
       ]
     }

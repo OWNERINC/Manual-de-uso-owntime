@@ -136,11 +136,36 @@ function renderClubeGastronomy() {
   container.appendChild(sectionEl);
 
   items.forEach(item => {
-    const bodyHtml = [
-      item.hours ? `<span class="bottom-sheet__hours">${item.hours}</span>` : '',
-      _bodyHtml(item.body)
-    ].filter(Boolean).join('');
+    let bodyHtml;
+    if (item.tabs) {
+      const btnsHtml = item.tabs.map((tab, i) =>
+        `<button class="bs-tab-btn${i === 0 ? ' is-active' : ''}" data-tab="clube-gastro-${item.id}-${tab.id}">${tab.title}</button>`
+      ).join('');
+      const panelsHtml = item.tabs.map((tab, i) =>
+        `<div class="bs-tab-panel${i === 0 ? ' is-active' : ''}" id="clube-gastro-${item.id}-${tab.id}">${tab.body}</div>`
+      ).join('');
+      bodyHtml = [
+        item.hours ? `<span class="bottom-sheet__hours">${item.hours}</span>` : '',
+        `<div class="bs-tab-group"><div class="bs-tab-btns">${btnsHtml}</div>${panelsHtml}</div>`
+      ].filter(Boolean).join('');
+    } else {
+      bodyHtml = [
+        item.hours ? `<span class="bottom-sheet__hours">${item.hours}</span>` : '',
+        _bodyHtml(item.body)
+      ].filter(Boolean).join('');
+    }
     _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, bodyHtml, item.logo || null);
+
+    const sheet = document.getElementById(`sheet-gastro-${item.id}`);
+    if (sheet && item.tabs) {
+      sheet.querySelectorAll('.bs-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.dataset.tab;
+          sheet.querySelectorAll('.bs-tab-btn').forEach(b => b.classList.toggle('is-active', b === btn));
+          sheet.querySelectorAll('.bs-tab-panel').forEach(panel => panel.classList.toggle('is-active', panel.id === targetId));
+        });
+      });
+    }
   });
 }
 

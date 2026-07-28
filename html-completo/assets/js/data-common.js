@@ -112,8 +112,19 @@ const COMMON = {
       id:    'sauna',
       icon:  'wind',
       title: 'Saunas',
-      hours: '',
-      note:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> As Saunas estarão disponíveis em breve. Durante esta fase inicial, encontram-se temporariamente indisponíveis. Agradecemos sua compreensão.</li></ul>'
+      hours: '8h às 22h',
+      tabs: [
+        {
+          id: 'seca',
+          title: 'Sauna Seca',
+          body: '<ul class="bs-steps"><li>Um ambiente projetado para a sua descompressão e cuidado pessoal. Nossa sauna seca encontra-se à sua inteira disposição para momentos de puro relaxamento.</li><li>Para garantir que a sua experiência seja impecável, solicitamos a gentileza de contatar a nossa equipe de recepção antes do uso. Caso o sistema precise ser ativado, o ambiente levará aproximadamente 40 minutos para atingir a temperatura térmica ideal para o seu conforto.</li><li>Visando a sua saúde e o seu bem-estar absoluto, recomendamos que a permanência contínua neste espaço não exceda o período de 20 minutos.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
+        },
+        {
+          id: 'umida',
+          title: 'Sauna Úmida',
+          body: '<ul class="bs-steps"><li>Um espaço dedicado à purificação e à tranquilidade, ideal para desacelerar o corpo e a mente. A sauna úmida está pronta para o seu uso.</li><li>Para assegurar a atmosfera e a saturação de vapor perfeitas, pedimos que comunique a nossa recepção sobre o seu desejo de utilizá-la previamente. Se o acionamento for necessário, o processo de aquecimento demandará cerca de 1 hora para alcançar a climatização adequada.</li><li>Pensando na sua vitalidade e segurança térmica, aconselhamos que as sessões de relaxamento neste ambiente sejam de, no máximo, 20 minutos contínuos.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
+        }
+      ]
     },
     {
       id:    'fitness',
@@ -126,8 +137,8 @@ const COMMON = {
       id:    'spa',
       icon:  'leaf',
       title: 'Spa',
-      hours: 'Agendamento com 24h de antecedência',
-      note:  '<ul class="bs-steps"><li>O Spa está disponível mediante agendamento prévio com 24 horas de antecedência.</li><li>Consulte o menu para conhecer os tratamentos disponíveis e fale com a recepção para realizar sua reserva.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-spa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver menu do Spa</button>'
+      hours: 'Agendamento com 6h de antecedência',
+      note:  '<ul class="bs-steps"><li>Um convite para desacelerar, cuidar do corpo e renovar a mente.</li><li>O Spa está disponível mediante agendamento prévio com 6 horas de antecedência.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-spa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button>'
     }
   ],
 
@@ -263,13 +274,14 @@ const COMMON = {
       id:    'pet-care',
       icon:  'scissors',
       title: 'Pet Care',
+      hidden: true,
       body:  '<p class="bs-model-tag">Em breve</p><ul class="bs-steps"><li>Estamos preparando o serviço de Pet Care para que seu pet também receba cuidados durante a sua estadia.</li><li>Durante o período de Soft Opening, esse serviço ainda não está disponível.</li></ul>'
     },
     {
       id:    'car-wash',
       icon:  'droplets',
       title: 'Car Wash',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O serviço de Car Wash estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      body:  '<ul class="bs-steps"><li>Para garantir que o seu momento de descanso não seja interrompido por logísticas e preocupações externas, oferecemos uma curadoria de parceiros de extrema confiança para a estética e lavagem do seu veículo.</li><li>Buscando a sua máxima comodidade, as empresas credenciadas pela nossa equipe realizam a coleta e a posterior devolução do seu automóvel diretamente aqui no Own Time.</li><li>Caso deseje agendar este serviço, solicitamos a gentileza de contatar a recepção. Cuidaremos de toda a intermediação para que você não precise sair do seu conforto.</li></ul>'
     },
     {
       id:    'shopper',

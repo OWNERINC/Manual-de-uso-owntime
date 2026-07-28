@@ -34,6 +34,9 @@ const TIPOLOGIA = {
         }
       ]
     },
+    churrasqueira: {
+      body: '<ul class="bs-steps"><li>A churrasqueira está à disposição para que você reúna família e amigos e aproveite bons momentos durante a sua estadia.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como utilizar</p><ul class="bs-steps"><li>Utilize apenas carvão apropriado e acendedores sólidos ou em gel.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>Não utilize álcool líquido ou outros líquidos inflamáveis para acender o fogo.</li><li>Ao finalizar o uso, deixe as brasas apagarem naturalmente.</li><li>Não jogue água diretamente na churrasqueira, evitando danos à estrutura.</li></ul>'
+    },
     jacuzzi: {
       body: '<ul class="bs-steps"><li>O refúgio perfeito após um dia de imersão na serra. Integrada à atmosfera acolhedora da casa de 3 suítes, a jacuzzi foi projetada para entregar uma experiência de relaxamento absoluto e privacidade. Seja para um momento de pausa ou para aproveitar o conforto térmico em contraste com o clima, este é o espaço definitivo para desacelerar com exclusividade.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Detalhes da Experiência</p><ul class="bs-steps"><li><strong>Imersão e Bem-Estar:</strong> Sistema de hidromassagem pensado para o alívio de tensões e descanso completo do corpo e da mente.</li><li><strong>Climatização Ideal:</strong> Água mantida na temperatura perfeita, criando um ambiente sempre convidativo, independentemente da estação do ano.</li><li><strong>Design Integrado:</strong> Estética contemporânea e sofisticada, alinhada à arquitetura da casa para manter a fluidez entre o momento de spa e a convivência.</li></ul><p class="bs-danger"><strong>Atenção</strong>Para a sua segurança e a preservação do equipamento, é expressamente proibido o consumo de bebidas, comidas ou o uso de aparelhos eletrônicos dentro da jacuzzi.</p>'
     }

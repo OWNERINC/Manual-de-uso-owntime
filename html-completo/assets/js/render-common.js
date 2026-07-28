@@ -18,6 +18,12 @@ function waUrl(number) {
 function _appendSheet(id, icon, title, bodyHtml, logoSrc) {
   const titleId = id + '-title';
   const body = bodyHtml || '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
+  const searchableText = `${title} ${body}`;
+  const stayHours = [
+    /check[\s-]?in/i.test(searchableText) ? 'Check-in a partir das 16h' : '',
+    /check[\s-]?out/i.test(searchableText) ? 'Check-out até às 10h' : ''
+  ].filter(Boolean).join(' · ');
+  const stayHoursHtml = stayHours ? `<span class="bottom-sheet__hours">${stayHours}</span>` : '';
   const titleHtml = logoSrc
     ? `<span>${title}</span><img src="${logoSrc}" style="height:22px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9;flex-shrink:0" alt="" loading="lazy">`
     : title;
@@ -40,7 +46,7 @@ function _appendSheet(id, icon, title, bodyHtml, logoSrc) {
           <i data-lucide="x"></i>
         </button>
       </header>
-      <div class="bottom-sheet__body">${body}</div>
+      <div class="bottom-sheet__body">${stayHoursHtml}${body}</div>
       <div class="bottom-sheet__footer">
         <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
       </div>
@@ -339,7 +345,7 @@ function renderGastronomy(common) {
    renderConcierge
    ═══════════════════════════════════════════ */
 function renderConcierge(common) {
-  const items = common.concierge;
+  const items = common.concierge.filter(item => !item.hidden);
 
   const btns = items.map(item => _guiaItemBtn(`sheet-concierge-${item.id}`, item.icon, item.title)).join('');
 
@@ -548,7 +554,7 @@ function renderCardapiosSheet() {
 function renderSpaCardapioSheet() {
   if (document.getElementById('sheet-cardapio-spa')) return;
 
-  const pages = ['pagina-1','pagina-2','pagina-3','pagina-4','pagina-5','pagina-6','pagina-7'];
+  const pages = ['pagina-1','pagina-2','pagina-3','pagina-4','pagina-5','pagina-6','pagina-7','pagina-8','pagina-9'];
   const total = pages.length;
   let current = 0;
 

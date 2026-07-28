@@ -94,11 +94,27 @@ function renderClubeAmenities() {
           ? a.note
           : a.note.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join(''))
       : '';
+    const contentHtml = a.tabs
+      ? `<div class="bs-tab-group">
+          <div class="bs-tab-btns">${a.tabs.map((tab, i) => `<button class="bs-tab-btn${i === 0 ? ' is-active' : ''}" data-tab="amenity-${a.id}-${tab.id}">${tab.title}</button>`).join('')}</div>
+          ${a.tabs.map((tab, i) => `<div class="bs-tab-panel${i === 0 ? ' is-active' : ''}" id="amenity-${a.id}-${tab.id}">${tab.body}</div>`).join('')}
+        </div>`
+      : noteHtml;
     const bodyHtml = [
       a.hours ? `<span class="bottom-sheet__hours">${a.hours}</span>` : '',
-      noteHtml
+      contentHtml
     ].filter(Boolean).join('');
     _appendSheet(`sheet-amenity-${a.id}`, a.icon, a.title, bodyHtml);
+
+    if (a.tabs) {
+      const sheet = document.getElementById(`sheet-amenity-${a.id}`);
+      sheet.addEventListener('click', event => {
+        const btn = event.target.closest('.bs-tab-btn');
+        if (!btn) return;
+        sheet.querySelectorAll('.bs-tab-btn').forEach(item => item.classList.toggle('is-active', item === btn));
+        sheet.querySelectorAll('.bs-tab-panel').forEach(panel => panel.classList.toggle('is-active', panel.id === btn.dataset.tab));
+      });
+    }
   });
 }
 

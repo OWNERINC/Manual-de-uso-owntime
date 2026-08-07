@@ -80,7 +80,7 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 
 | Ícone | ID | Título | Horário | Status |
 |---|---|---|---|---|
-| `waves` | `piscinas` | Piscinas | 08h00 às 22h00 | ✅ |
+| `waves` | `piscinas` | Piscinas | 09h30 às 22h00 | ✅ |
 | `wind` | `sauna` | Sauna | 16h00 às 21h00 | ⚠️ confirmar horário |
 | `dumbbell` | `fitness` | Fitness Center | 24 horas | ✅ |
 | `leaf` | `spa` | Spa | 10h00 às 20h00 · Último atend. 19h00 | ✅ |

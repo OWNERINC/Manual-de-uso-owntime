@@ -79,7 +79,7 @@
 
 | Item | Horário | Status |
 |------|---------|--------|
-| Piscinas | 08h00 às 22h00 | ✅ Texto completo |
+| Piscinas | 09h30 às 22h00 | ✅ Texto completo |
 | Sauna | 16h00 às 21h00 | ✅ Texto completo |
 | Fitness Center | 24 horas | ✅ Texto completo |
 | Spa | 10h00 às 20h00 | ✅ Texto completo |

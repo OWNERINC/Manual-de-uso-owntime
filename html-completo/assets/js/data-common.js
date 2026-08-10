@@ -70,7 +70,7 @@ const COMMON = {
         {
           id: 'piso',
           title: 'Piso Aquecido',
-          body: '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O sistema de piso aquecido está temporariamente inoperante nesta fase inicial. Agradecemos sua compreensão.</li></ul>'
+          body: '<ul class="bs-steps"><li><strong>Piso aquecido:</strong> O sistema funciona durante a estadia do proprietário e regula automaticamente a temperatura para manter um nível médio de conforto.</li></ul>'
         }
       ]
     },
@@ -90,7 +90,7 @@ const COMMON = {
       id:   'jacuzzi',
       icon: 'bath',
       title: 'Jacuzzi',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> A Jacuzzi estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      body:  '<p class="bs-model-tag">Disponível</p><ul class="bs-steps"><li><strong>Disponibilidade:</strong> As Jacuzzis estão disponíveis de acordo com a tipologia da casa.</li><li><strong>Tempo de uso:</strong> Recomenda-se limitar cada sessão a aproximadamente 15 minutos.</li><li><strong>Cuidados:</strong> Não utilize telefones nem consuma alimentos ou bebidas na Jacuzzi. Use somente sais e produtos próprios para Jacuzzi ou banheira.</li></ul>'
     },
     {
       id:   'churrasqueira',
@@ -112,19 +112,8 @@ const COMMON = {
       id:    'sauna',
       icon:  'wind',
       title: 'Saunas',
-      hours: '8h às 22h',
-      tabs: [
-        {
-          id: 'seca',
-          title: 'Sauna Seca',
-          body: '<ul class="bs-steps"><li>Um ambiente projetado para a sua descompressão e cuidado pessoal. Nossa sauna seca encontra-se à sua inteira disposição para momentos de puro relaxamento.</li><li>Para garantir que a sua experiência seja impecável, solicitamos a gentileza de contatar a nossa equipe de recepção antes do uso. Caso o sistema precise ser ativado, o ambiente levará aproximadamente 40 minutos para atingir a temperatura térmica ideal para o seu conforto.</li><li>Visando a sua saúde e o seu bem-estar absoluto, recomendamos que a permanência contínua neste espaço não exceda o período de 20 minutos.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
-        },
-        {
-          id: 'umida',
-          title: 'Sauna Úmida',
-          body: '<ul class="bs-steps"><li>Um espaço dedicado à purificação e à tranquilidade, ideal para desacelerar o corpo e a mente. A sauna úmida está pronta para o seu uso.</li><li>Para assegurar a atmosfera e a saturação de vapor perfeitas, pedimos que comunique a nossa recepção sobre o seu desejo de utilizá-la previamente. Se o acionamento for necessário, o processo de aquecimento demandará cerca de 1 hora para alcançar a climatização adequada.</li><li>Pensando na sua vitalidade e segurança térmica, aconselhamos que as sessões de relaxamento neste ambiente sejam de, no máximo, 20 minutos contínuos.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
-        }
-      ]
+      hours: '9h30 às 22h',
+      note:  '<p class="bs-model-tag">Orientações de uso</p><ul class="bs-steps"><li><strong>Disponibilidade:</strong> As saunas úmida e seca estão disponíveis durante o mesmo horário de funcionamento das piscinas.</li><li><strong>Tempo de uso:</strong> Recomenda-se permanecer por até 15 a 20 minutos por sessão.</li><li><strong>Cuidados:</strong> Tome uma ducha antes de entrar, use uma toalha para sentar e hidrate-se após o uso. Não consuma álcool, alimentos ou bebidas no ambiente. Não adicione óleos, essências ou outros produtos aos equipamentos sem autorização. Se sentir tontura, fraqueza, falta de ar ou qualquer mal-estar, saia imediatamente.</li></ul>'
     },
     {
       id:    'fitness',
@@ -221,7 +210,7 @@ const COMMON = {
       icon:  'chef-hat',
       title: 'Chef em Casa',
       hours: 'Agendamento mínimo de 48h via recepção, WhatsApp ou Concierge',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O serviço de Chef em Casa está temporariamente indisponível nesta fase inicial. Agradecemos sua compreensão.</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Chef em Casa:</strong> Para consultar a disponibilidade e as condições do serviço, entre em contato com a recepção pelo WhatsApp.</li></ul>'
     },
     {
       id:    'cafe-da-manha',
@@ -274,20 +263,13 @@ const COMMON = {
       id:    'pet-care',
       icon:  'scissors',
       title: 'Pet Care',
-      hidden: true,
-      body:  '<p class="bs-model-tag">Em breve</p><ul class="bs-steps"><li>Estamos preparando o serviço de Pet Care para que seu pet também receba cuidados durante a sua estadia.</li><li>Durante o período de Soft Opening, esse serviço ainda não está disponível.</li></ul>'
+      body:  '<p class="bs-model-tag">Disponível</p><ul class="bs-steps"><li><strong>Como solicitar:</strong> O serviço de Pet Care pode ser solicitado pelo WhatsApp da recepção, com antecedência mínima de 24 horas.</li></ul>'
     },
     {
       id:    'car-wash',
       icon:  'droplets',
       title: 'Car Wash',
       body:  '<ul class="bs-steps"><li>Para garantir que o seu momento de descanso não seja interrompido por logísticas e preocupações externas, oferecemos uma curadoria de parceiros de extrema confiança para a estética e lavagem do seu veículo.</li><li>Buscando a sua máxima comodidade, as empresas credenciadas pela nossa equipe realizam a coleta e a posterior devolução do seu automóvel diretamente aqui no Own Time.</li><li>Caso deseje agendar este serviço, solicitamos a gentileza de contatar a recepção. Cuidaremos de toda a intermediação para que você não precise sair do seu conforto.</li></ul>'
-    },
-    {
-      id:    'shopper',
-      icon:  'shopping-bag',
-      title: 'Private Shopper',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O serviço de Private Shopper estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     },
   ],
 
@@ -301,7 +283,7 @@ const COMMON = {
       id:   'emporio',
       icon: 'store',
       title: 'Empório',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> Já estamos com um Empório em Soft Opening aberto e com itens disponíveis para compra.</li><li><strong>Localização:</strong> Ele fica localizado no térreo, ao lado do bar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Pagamento e Lançamento</p><ul class="bs-steps"><li>Neste momento, o funcionamento do pagamento self service está indisponível.</li><li>Por isso, solicitamos que passe na recepção para que o time de anfitriões anote o seu consumo e lance para pagamento posterior no seu check-out ou, se necessário, ele será enviado posteriormente junto aos seus demais consumos na sua taxa de condomínio.</li></ul><div class="bs-notice" style="background:rgba(255,255,255,0.09);border-left-color:rgba(255,255,255,0.18)"><strong>Em breve</strong><ul><li>Estamos fazendo ainda melhorias no mix e na qualidade de produtos e em breve teremos um Empório completo ao seu dispor.</li></ul></div>'
+      body:  '<p class="bs-model-tag">Disponível</p><ul class="bs-steps"><li><strong>Localização:</strong> O Empório fica no térreo, ao lado do bar.</li><li><strong>Pagamento:</strong> As compras devem ser pagas no caixa da recepção.</li></ul>'
     },
     {
       id:   'kids',

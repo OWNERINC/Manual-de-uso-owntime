@@ -81,7 +81,7 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 | Ícone | ID | Título | Horário | Status |
 |---|---|---|---|---|
 | `waves` | `piscinas` | Piscinas | 09h30 às 22h00 | ✅ |
-| `wind` | `sauna` | Sauna | 16h00 às 21h00 | ⚠️ confirmar horário |
+| `wind` | `sauna` | Sauna | 09h30 às 22h00 | ✅ |
 | `dumbbell` | `fitness` | Fitness Center | 24 horas | ✅ |
 | `leaf` | `spa` | Spa | 10h00 às 20h00 · Último atend. 19h00 | ✅ |
 
@@ -132,7 +132,6 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 | `activity` | `personal` | Personal Trainer | ✅ |
 | `scissors` | `pet-care` | Pet Care | ✅ |
 | `droplets` | `car-wash` | Car Wash | ✅ |
-| `shopping-bag` | `shopper` | Private Shopper | ✅ |
 
 ---
 
@@ -410,7 +409,7 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 | Ramal de emergência | `[xx]` | Confirmar ramal da recepção |
 | WhatsApp emergência | `[xxxxxxxx]` | Confirmar número |
 | WhatsApp concierge | `+5554999999999` | Substituir pelo número real (2 arquivos) |
-| Horário Sauna | 16h00 às 21h00 | Confirmar se é definitivo |
+| Horário Sauna | 09h30 às 22h00 | Confirmado |
 | Horário Restaurante | 12h00 às 22h00 | Confirmar se é definitivo |
 | Horário Coffee Shop | 08h00 às 20h00 | Confirmar se é definitivo |
 | Horário Bar | 17h00 às 23h00 | Confirmar se é definitivo |

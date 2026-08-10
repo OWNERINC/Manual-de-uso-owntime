@@ -12,22 +12,7 @@
 
 ### Hero · Intro
 
-**Badge Soft Opening:** `Soft Opening · 01–31/Jul`
-*(Toque abre sheet explicativa — ver seção "Soft Opening Sheet" abaixo)*
-
 **Tagline:** Sua casa com serviços de hotel — este é o Guia de Uso digital do Own Time Home Club. Tudo o que você precisa na palma da mão.
-
----
-
-### Sheet · Soft Opening
-
-**Título:** Bem-vindo ao nosso soft opening.
-
-**Corpo:**
-- Soft Opening · 01 a 31 de julho de 2025.
-- Liberamos seu acesso ao Guia Digital do Own Time Home Club para que você conheça o ambiente em primeira mão.
-- O Own Time é uma nova geração de hospitalidade residencial: **sua casa com serviços de hotel**. Durante o soft opening, alguns serviços estão em fase de ajuste e podem evoluir. Sua experiência e feedback são fundamentais para essa construção.
-- Qualquer dúvida ou sugestão, fale diretamente com nosso time de anfitriões na recepção do Club House.
 
 ---
 
@@ -274,10 +259,11 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ### Saunas
 
-*Horário: 16h00 às 21h00*
+*Horário: 09h30 às 22h00*
 
-- Se desejar utilizá-la fora do período, nossa equipe está à disposição para acioná-la. Solicite via recepção ou WhatsApp com `[tempo]` de antecedência.
-- Não é permitida a entrada com bebidas, itens de vidro ou equipamentos de som pessoais. A captação de imagens é expressamente proibida no local.
+- **Disponibilidade:** As saunas úmida e seca estão disponíveis durante o mesmo horário de funcionamento das piscinas.
+- **Tempo de uso:** Recomenda-se permanecer por até 15 a 20 minutos por sessão.
+- **Cuidados:** Tome uma ducha antes de entrar, use uma toalha para sentar e hidrate-se após o uso. Não consuma álcool, alimentos ou bebidas no ambiente. Não adicione óleos, essências ou outros produtos aos equipamentos sem autorização. Se sentir tontura, fraqueza, falta de ar ou qualquer mal-estar, saia imediatamente.
 
 ---
 
@@ -336,7 +322,7 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 *Horário: Agendamento mínimo de 48h via recepção, WhatsApp ou Concierge*
 
-- **Soft Opening:** O serviço de Chef em Casa está temporariamente indisponível nesta fase inicial. Agradecemos sua compreensão.
+- **Chef em Casa:** Para consultar a disponibilidade e as condições do serviço, entre em contato com a recepção pelo WhatsApp.
 
 ---
 
@@ -371,7 +357,7 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ### Babysitter
 
-- **Soft Opening:** O serviço de Babysitter estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível.
+- **Babysitter:** O serviço pode ser solicitado pelo WhatsApp da recepção, com antecedência mínima de 24 horas.
 
 ---
 
@@ -394,13 +380,6 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 - **Serviço Completo:** Lavagem e higienização completa do seu veículo enquanto você relaxa e aproveita a estadia.
 - **Agendamento:** Solicite na recepção ou pelo WhatsApp do concierge. `[LINK]`
-
----
-
-### Private Shopper
-
-- **Curadoria Personalizada:** Assessoria exclusiva de compras e presentes especiais.
-- **Seleção Exclusiva:** Produtos locais, vinhos, artesanato e itens selecionados com carinho especialmente para você. `[LINK]`
 
 ---
 
@@ -452,7 +431,7 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ### Empório
 
-- **Soft Opening:** O Empório estará disponível em breve. Durante esta fase inicial, o serviço encontra-se temporariamente indisponível.
+- **Disponível:** O Empório fica no térreo, ao lado do bar. As compras devem ser pagas no caixa da recepção.
 
 ---
 
@@ -484,9 +463,9 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ### Acesso via Pulseira
 
-- **Fase de Soft Opening:** As pulseiras de acesso estão temporariamente indisponíveis neste período inicial.
-- **Abertura Ágil:** Aproxime a sua pulseira da fechadura eletrônica para destravar a porta.
-- **Segurança Integrada:** O acessório é de uso pessoal e intransferível. Em caso de perda, informe a recepção imediatamente.
+- **Acesso por pulseira:** O acesso à unidade e às áreas do Club é realizado integralmente por meio da pulseira.
+- **Abertura ágil:** Aproxime a pulseira da fechadura eletrônica para destravar a porta.
+- **Segurança integrada:** A pulseira é de uso pessoal e intransferível. Em caso de perda, informe imediatamente a recepção para bloqueio e emissão de uma nova via.
 
 ---
 
@@ -585,7 +564,7 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ### Telefone
 
-- **Soft Opening:** O serviço de telefonia estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível.
+- **Recepção:** Para falar com a recepção pelo telefone interno, disque "9".
 
 ---
 

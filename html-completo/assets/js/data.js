@@ -137,12 +137,6 @@ const OWNTIME = {
       title: 'Car Wash',
       body:  'Lavagem e higienização completa do veículo enquanto você aproveita a estadia. Agendamento na recepção ou pelo WhatsApp do concierge.'
     },
-    {
-      id:    'shopper',
-      icon:  'shopping-bag',
-      title: 'Private Shopper',
-      body:  'Curadoria de compras e presentes especiais com assessoria personalizada. Produtos locais, vinhos, artesanato e itens selecionados especialmente para você.'
-    }
   ]
 
 }

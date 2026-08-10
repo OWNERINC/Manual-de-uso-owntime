@@ -62,7 +62,6 @@ Confirmar quando cada um estará disponível para atualizar o conteúdo.
 | **Personal Trainer** | Concierge |
 | **Pet Care** | Concierge |
 | **Car Wash** | Concierge |
-| **Private Shopper** | Concierge |
 | **Empório** | Club House |
 | **Programação Kids** | Club House → Kids |
 | **Coffee Shop** | Horários da Home |

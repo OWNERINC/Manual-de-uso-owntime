@@ -55,7 +55,7 @@ const TIPOLOGIA = {
         { id: 'iluminacao', icon: 'lightbulb',   title: 'Iluminação',            body: '<ul class="bs-steps"><li>O projeto de iluminação foi pensado para proporcionar conforto, eficiência e baixo consumo de energia.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Uso consciente</p><ul class="bs-steps"><li>Sempre que possível, apague as luzes dos ambientes que não estiver utilizando.</li><li>Assim, você contribui para o uso responsável de energia durante a sua estadia.</li></ul>' },
         { id: 'tv',         icon: 'tv',          title: 'TV',                    body: '<ul class="bs-steps"><li>Acesse seus serviços de streaming favoritos diretamente pela TV durante a sua estadia.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Privacidade</p><ul class="bs-steps"><li>Você não precisa se preocupar em sair das suas contas antes do check-out. O sistema realiza a desconexão automática de todos os aplicativos ao final da estadia.</li></ul>' },
         { id: 'ventilacao', icon: 'fan',         title: 'Ventilação / Exaustão', body: '<ul class="bs-steps"><li><strong>Operação 100% Automática:</strong> O acionamento e o desligamento são inteligentes e autônomos. Nenhuma ação ou ajuste manual é necessário da sua parte.</li><li><strong>Renovação Contínua:</strong> O ar circula e se renova de forma constante, assegurando um ambiente sempre fresco e agradável durante toda a sua estadia.</li></ul>' },
-        { id: 'telefone',   icon: 'phone',       title: 'Telefone',              body: '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O serviço de telefonia interno está indisponível para outras ligações além da recepção.</li><li>Para ligar para a recepção, disque <strong>"9"</strong>.</li></ul>' },
+        { id: 'telefone',   icon: 'phone',       title: 'Telefone',              body: '<ul class="bs-steps"><li><strong>Recepção:</strong> Para falar com a recepção pelo telefone interno, disque <strong>"9"</strong>.</li></ul>' },
         { id: 'carregadores', icon: 'plug', title: 'Carregadores Elétricos', body: '<ul class="bs-steps"><li>Sua unidade conta com um carregador exclusivo para veículos elétricos.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como utilizar</p><ul class="bs-steps"><li>Estacione na vaga destinada à recarga e conecte o cabo ao veículo para iniciar o carregamento.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Cobrança</p><ul class="bs-steps"><li>A liberação da recarga é realizada por meio da tag de acesso do empreendimento. O consumo será lançado juntamente com os demais serviços utilizados durante a estadia.</li></ul>' }
       ]
     },
@@ -63,7 +63,7 @@ const TIPOLOGIA = {
       id: 'mini-spa',
       label: 'Mini Spa Terrace',
       items: [
-        { id: 'spa-jacuzzi', icon: 'sparkles', title: 'Mini Spa Terrace Jacuzzi', body: '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O Mini Spa Terrace Jacuzzi estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>' }
+        { id: 'spa-jacuzzi', icon: 'sparkles', title: 'Mini Spa Terrace Jacuzzi', body: '<p class="bs-model-tag">Disponível</p><ul class="bs-steps"><li><strong>Disponibilidade:</strong> O Mini Spa Terrace Jacuzzi está disponível conforme a tipologia da casa.</li><li><strong>Tempo de uso:</strong> Recomenda-se limitar cada sessão a aproximadamente 15 minutos.</li><li><strong>Cuidados:</strong> Não utilize telefones nem consuma alimentos ou bebidas. Use somente sais e produtos próprios para Jacuzzi ou banheira.</li></ul>' }
       ]
     }
   ],
@@ -86,4 +86,3 @@ const TIPOLOGIA = {
   ]
 
 }
-

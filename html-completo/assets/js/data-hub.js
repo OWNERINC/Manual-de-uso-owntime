@@ -6,11 +6,6 @@
 
 const HUB = {
 
-  softOpening: {
-    active: true,
-    label:  'Soft Opening'
-  },
-
   wifi: {
     ssid:     'hospedes',
     password: 'owntime2026'
@@ -59,7 +54,7 @@ const HUB = {
       items: [
         { title: 'Fitness Center', hours: '24 horas' },
         { title: 'Piscinas',       hours: '9h30 às 22h' },
-        { title: 'Saunas',         hours: 'Em breve durante o soft opening' },
+        { title: 'Saunas',         hours: '9h30 às 22h' },
         { title: 'Spa',            hours: 'Agendamento com 24h de antecedência' },
       ]
     },

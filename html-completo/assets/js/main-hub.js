@@ -56,12 +56,6 @@ function renderTipologiaGrid() {
           ${listItems}
         </nav>
 
-        ${HUB.softOpening?.active ? `
-        <div class="hub__cl-badge-row">
-          <button class="hub__soft-opening-badge bs-trigger" data-bs-target="sheet-soft-opening">
-            ${HUB.softOpening.label}
-          </button>
-        </div>` : ''}
       </div>
     </div>
   `;
@@ -98,33 +92,6 @@ function renderHorariosSheet(horarios) {
         <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
       </header>
       <div class="bottom-sheet__body"><div class="hours-list">${groups}</div></div>
-      <div class="bottom-sheet__footer"><button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button></div>
-    </div>
-  `;
-  document.body.appendChild(sheet);
-}
-
-function renderSoftOpeningSheet() {
-  const sheet = document.createElement('div');
-  sheet.className = 'bottom-sheet';
-  sheet.id = 'sheet-soft-opening';
-  sheet.setAttribute('role', 'dialog');
-  sheet.setAttribute('aria-modal', 'true');
-  sheet.setAttribute('aria-hidden', 'true');
-  sheet.setAttribute('aria-labelledby', 'sheet-soft-opening-title');
-  sheet.innerHTML = `
-    <div class="bottom-sheet__inner">
-      <header class="bottom-sheet__header">
-        <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="sparkles"></i></div>
-        <h3 class="bottom-sheet__title" id="sheet-soft-opening-title">Bem-vindo ao nosso soft opening.</h3>
-        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
-      </header>
-      <div class="bottom-sheet__body">
-        <p><strong>Soft Opening · 01 a 31 de julho de 2026.</strong></p>
-        <p>Liberamos seu acesso ao Guia Digital do Own Time Home Club para que você conheça o ambiente em primeira mão.</p>
-        <p>O Own Time é uma nova geração de hospitalidade residencial: <strong>sua casa com serviços de hotel</strong>. Durante o soft opening, alguns serviços estão em fase de ajuste e podem evoluir. Sua experiência e feedback são fundamentais para essa construção.</p>
-        <p>Qualquer dúvida ou sugestão, fale diretamente com nosso time de anfitriões na recepção do Club House.</p>
-      </div>
       <div class="bottom-sheet__footer"><button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button></div>
     </div>
   `;
@@ -175,7 +142,6 @@ function renderWifiSheet() {
 document.addEventListener('DOMContentLoaded', () => {
   renderTipologiaGrid();
   renderHorariosSheet(HUB.horarios);
-  renderSoftOpeningSheet();
   renderWifiSheet();
   lucide.createIcons();
   initBottomSheets();

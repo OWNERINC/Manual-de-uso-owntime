@@ -23,8 +23,7 @@ O hub de entrada tem variações de design em branches Git separadas, todas a pa
 - Logo + tagline + botões Wi-Fi/Horários no topo
 - Lista vertical de 5 tipologias: nome em Cormorant Garamond italic + descritor em Roboto cinza
 - Clicar em qualquer tipologia navega diretamente para a página correspondente
-- Badge "Soft Opening" abaixo da lista, centralizada
-- Scroll hint removido — a badge incentiva o scroll natural
+- Scroll hint removido — a navegação mantém o scroll natural
 
 Arquivos modificados nesta branch: `assets/css/hub.css` · `assets/js/main-hub.js`
 
@@ -171,7 +170,7 @@ O site usa uma **separação clara entre dados e renderização**. Nenhum texto 
 - `amenities` — piscinas, saunas, fitness center, spa (seção do Club House)
 - `gastronomy` — chef em casa e cesta de café da manhã (exclusivo das tipologias)
 - `gastronomiaClube` — restaurante, coffee shop, bar (exclusivo do Club House); itens com `hidden: true` são filtrados do grid
-- `concierge` — housekeeping, babysitter, personal trainer, pet care, car wash, private shopper
+- `concierge` — housekeeping, babysitter, personal trainer, pet care, car wash
 - `clube` — empório, kids, teens, playground, pulseira, golf carts, carregadores
 - `segurancaAcesso` — monitoramento, controle eletrônico, segurança perimetral
 - `telefonesUteis` — emergência, saúde, Ownerinc, gastronomia, mercados
@@ -234,9 +233,8 @@ DOMContentLoaded (clube.html)
 
 DOMContentLoaded (index.html)
   └── main-hub.js
-        ├── renderTipologiaGrid()   ← hub com lista + badge soft opening
+        ├── renderTipologiaGrid()   ← hub com lista
         ├── renderHorariosSheet()
-        ├── renderSoftOpeningSheet()
         └── renderWifiSheet()
 ```
 

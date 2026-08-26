@@ -155,14 +155,6 @@ body {
   stroke-width: 1.5;
 }
 
-/* ─── Badge abaixo da lista ──────────────── */
-.hub__cl-badge-row {
-  display: flex;
-  justify-content: center;
-  padding-top: clamp(1.5rem, 4dvh, 2.5rem);
-  width: 100%;
-}
-
 /* ─── Hint de scroll ─────────────────────── */
 .hub__cl-scroll-hint {
   flex-shrink: 0;
@@ -339,46 +331,6 @@ body {
   outline: none;
 }
 
-/* ─── Soft Opening badge ─────────────────── */
-.hub__soft-opening-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  height: 44px;
-  padding: 0 0.85rem;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 100px;
-  font-family: var(--font-body);
-  font-size: 0.52rem;
-  font-weight: 400;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.82);
-  background: linear-gradient(
-    105deg,
-    rgba(255,255,255,0.03) 0%,
-    rgba(255,255,255,0.1) 50%,
-    rgba(255,255,255,0.03) 100%
-  );
-  background-size: 200% auto;
-  cursor: pointer;
-  animation: hubGoldShimmer 3.5s linear infinite;
-}
-
-.hub__soft-opening-badge:hover,
-.hub__soft-opening-badge:focus-visible {
-  border-color: rgba(255,255,255,0.65);
-  outline: none;
-}
-
-.hub__soft-opening-badge [data-lucide] {
-  width: 11px;
-  height: 11px;
-  color: rgba(255,255,255,0.82);
-  flex-shrink: 0;
-}
-
 /* ─── Sheet: horários ───────────────────── */
 .hours-list {
   display: flex;
@@ -431,15 +383,8 @@ body {
   text-align: right;
 }
 
-/* ─── Animações ─────────────────────────── */
-@keyframes hubGoldShimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position:  200% center; }
-}
-
 /* ─── Reduced motion ────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .hub__soft-opening-badge { animation: none; }
   .hub__cl-scroll-hint     { animation: none; }
 }
 

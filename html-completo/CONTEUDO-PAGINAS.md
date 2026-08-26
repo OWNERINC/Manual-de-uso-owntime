@@ -288,9 +288,6 @@ Serviços de Pet Walker e Banho & Tosa disponíveis para os companheiros de quat
 ### Car Wash
 Lavagem e higienização completa do veículo enquanto você aproveita a estadia. Agendamento na recepção ou pelo WhatsApp do concierge.
 
-### Private Shopper
-Curadoria de compras e presentes especiais com assessoria personalizada. Produtos locais, vinhos, artesanato e itens selecionados especialmente para você.
-
 **Rodapé:** Todos os serviços pay per use são cobrados à parte e sujeitos à disponibilidade. Para agendamentos e valores, entre em contato com o seu time de anfitriões.
 
 ---

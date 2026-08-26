@@ -70,7 +70,7 @@ const COMMON = {
         {
           id: 'piso',
           title: 'Piso Aquecido',
-          body: '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O sistema de piso aquecido está temporariamente inoperante nesta fase inicial. Agradecemos sua compreensão.</li></ul>'
+          body: '<ul class="bs-steps"><li><strong>Piso aquecido:</strong> O sistema funciona durante a estadia do proprietário e regula automaticamente a temperatura para manter um nível médio de conforto.</li></ul>'
         }
       ]
     },
@@ -90,7 +90,7 @@ const COMMON = {
       id:   'jacuzzi',
       icon: 'bath',
       title: 'Jacuzzi',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> A Jacuzzi estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
+      body:  '<p class="bs-model-tag">Disponível</p><ul class="bs-steps"><li><strong>Disponibilidade:</strong> As Jacuzzis estão disponíveis de acordo com a tipologia da casa.</li><li><strong>Tempo de uso:</strong> Recomenda-se limitar cada sessão a aproximadamente 15 minutos.</li><li><strong>Cuidados:</strong> Não utilize telefones nem consuma alimentos ou bebidas na Jacuzzi. Use somente sais e produtos próprios para Jacuzzi ou banheira.</li></ul>'
     },
     {
       id:   'churrasqueira',
@@ -105,26 +105,15 @@ const COMMON = {
       id:    'piscinas',
       icon:  'waves',
       title: 'Piscina',
-      hours: '8h às 22h',
+      hours: '9h30 às 22h',
       note:  '<ul class="bs-steps"><li>Com água mantida entre 30° e 36°C, a piscina conta com três profundidades: · Prainha 17cm · Infantil 44cm · Adulto 120cm</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como aproveitar melhor</p><ul class="bs-steps"><li>Utilize exclusivamente roupas de banho.</li><li>Faça uso da ducha antes de entrar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Proibido</p><ul class="bs-steps"><li>Caixas de som</li><li>Alimentos e bebidas</li><li>Recipientes de vidro</li><li>Abertura ou fechamento das janelas</li><li>Bebidas alcoólicas</li><li>Fumar</li></ul><ul class="bs-steps" style="margin-top:1rem"><li><strong>Supervisão e Cuidado:</strong> Para garantir o bem-estar e a tranquilidade coletiva, é fundamental que as crianças até 12 anos permaneçam sob a supervisão constante de um adulto responsável.</li></ul>'
     },
     {
       id:    'sauna',
       icon:  'wind',
       title: 'Saunas',
-      hours: '8h às 22h',
-      tabs: [
-        {
-          id: 'seca',
-          title: 'Sauna Seca',
-          body: '<ul class="bs-steps"><li>Um ambiente projetado para a sua descompressão e cuidado pessoal. Nossa sauna seca encontra-se à sua inteira disposição para momentos de puro relaxamento.</li><li>Para garantir que a sua experiência seja impecável, solicitamos a gentileza de contatar a nossa equipe de recepção antes do uso. Caso o sistema precise ser ativado, o ambiente levará aproximadamente 40 minutos para atingir a temperatura térmica ideal para o seu conforto.</li><li>Visando a sua saúde e o seu bem-estar absoluto, recomendamos que a permanência contínua neste espaço não exceda o período de 20 minutos.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
-        },
-        {
-          id: 'umida',
-          title: 'Sauna Úmida',
-          body: '<ul class="bs-steps"><li>Um espaço dedicado à purificação e à tranquilidade, ideal para desacelerar o corpo e a mente. A sauna úmida está pronta para o seu uso.</li><li>Para assegurar a atmosfera e a saturação de vapor perfeitas, pedimos que comunique a nossa recepção sobre o seu desejo de utilizá-la previamente. Se o acionamento for necessário, o processo de aquecimento demandará cerca de 1 hora para alcançar a climatização adequada.</li><li>Pensando na sua vitalidade e segurança térmica, aconselhamos que as sessões de relaxamento neste ambiente sejam de, no máximo, 20 minutos contínuos.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
-        }
-      ]
+      hours: '9h30 às 22h',
+      note:  '<p class="bs-model-tag">Orientações de uso</p><ul class="bs-steps"><li><strong>Disponibilidade:</strong> As saunas úmida e seca estão disponíveis durante o mesmo horário de funcionamento das piscinas.</li><li><strong>Tempo de uso:</strong> Recomenda-se permanecer por até 15 a 20 minutos por sessão.</li><li><strong>Cuidados:</strong> Tome uma ducha antes de entrar, use uma toalha para sentar e hidrate-se após o uso. Não consuma álcool, alimentos ou bebidas no ambiente. Não adicione óleos, essências ou outros produtos aos equipamentos sem autorização. Se sentir tontura, fraqueza, falta de ar ou qualquer mal-estar, saia imediatamente.</li></ul>'
     },
     {
       id:    'fitness',
@@ -138,7 +127,7 @@ const COMMON = {
       icon:  'leaf',
       title: 'Spa',
       hours: 'Agendamento com 6h de antecedência',
-      note:  '<ul class="bs-steps"><li>Um convite para desacelerar, cuidar do corpo e renovar a mente.</li><li>O Spa está disponível mediante agendamento prévio com 6 horas de antecedência.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-spa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button>'
+      note:  '<ul class="bs-steps"><li>Um convite para desacelerar, cuidar do corpo e renovar a mente.</li><li>O Spa está disponível mediante agendamento prévio com 6 horas de antecedência.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-spa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button><p style="margin:0.75rem 0 0;text-align:center;font-size:0.72rem;line-height:1.4;opacity:0.72">Proprietários Owntime têm 50% de desconto.</p>'
     }
   ],
 
@@ -152,12 +141,12 @@ const COMMON = {
         {
           id: 'a-la-carte',
           title: 'Café À la carte',
-          body: '<p class="bs-model-tag">Localização</p><ul class="bs-steps"><li>Restaurante do Club House.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Valores</p><ul class="bs-steps"><li><strong>Adultos:</strong> R$ 89,00 por pessoa</li><li><strong>Crianças de 6 a 12 anos:</strong> R$ 44,50 por pessoa</li><li><strong>Crianças de 0 a 5 anos:</strong> cortesia</li></ul><div class="bs-notice" style="background:rgba(255,255,255,0.09);border-left-color:rgba(255,255,255,0.18)"><strong>Importante</strong><ul><li>Consulte nosso time de anfitriões para conhecer os descontos progressivos disponíveis para cafés da manhã pagos antecipadamente, conforme a quantidade adquirida.</li></ul></div><div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem"><button class="bs-trigger" data-bs-target="sheet-cardapio-ala-carte" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
+           body: '<p class="bs-model-tag">Localização</p><ul class="bs-steps"><li>Restaurante do Club House.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Valores</p><ul class="bs-steps"><li><strong>Adultos:</strong> R$ 89,00 por pessoa</li><li><strong>Crianças de 6 a 12 anos:</strong> R$ 44,50 por pessoa</li><li><strong>Crianças de 0 a 5 anos:</strong> cortesia</li></ul><div class="bs-notice" style="background:rgba(255,255,255,0.09);border-left-color:rgba(255,255,255,0.18)"><strong>Importante</strong><ul><li>Consulte nosso time de anfitriões para conhecer os descontos progressivos disponíveis para cafés da manhã pagos antecipadamente, conforme a quantidade adquirida.</li></ul></div><div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem"><button class="bs-trigger" data-bs-target="sheet-cardapio-ala-carte" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><p style="margin:0.75rem 0 0;text-align:center;font-size:0.72rem;line-height:1.4;opacity:0.72">Proprietários Owntime têm 50% de desconto.</p><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
         },
         {
           id: 'em-casa',
           title: 'Café em casa',
-          body: '<ul class="bs-steps"><li><strong>Local:</strong> Disponível também na opção em casa, para você aproveitar a manhã no conforto da sua unidade.</li><li>Consulte o cardápio para conhecer as opções disponíveis para essa experiência.</li></ul><div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem"><button class="bs-trigger" data-bs-target="sheet-cardapio-em-casa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
+           body: '<ul class="bs-steps"><li><strong>Local:</strong> Disponível também na opção em casa, para você aproveitar a manhã no conforto da sua unidade.</li><li>Consulte o cardápio para conhecer as opções disponíveis para essa experiência.</li></ul><div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem"><button class="bs-trigger" data-bs-target="sheet-cardapio-em-casa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><p style="margin:0.75rem 0 0;text-align:center;font-size:0.72rem;line-height:1.4;opacity:0.72">Proprietários Owntime têm 50% de desconto.</p><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
         }
       ]
     },
@@ -167,14 +156,14 @@ const COMMON = {
       logo:  'assets/images/tempo logo.webp',
       title: 'Restaurante',
       hours: 'Almoço 12h às 15h · Jantar 19h às 22h30',
-      body:  '<ul class="bs-steps"><li><strong>Localização:</strong> No andar térreo do Club House.</li><li><strong>Ambientes:</strong> Desfrute do serviço à la carte no conforto do nosso salão interno ou no charme da área externa.</li><li><strong>Restrições Alimentares:</strong> Nosso cardápio foi planejado para diferentes paladares. Nossa equipe está à disposição para detalhar ingredientes e adaptar pratos conforme as suas necessidades.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-restaurante" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button>'
+       body:  '<ul class="bs-steps"><li><strong>Localização:</strong> No andar térreo do Club House.</li><li><strong>Ambientes:</strong> Desfrute do serviço à la carte no conforto do nosso salão interno ou no charme da área externa.</li><li><strong>Restrições Alimentares:</strong> Nosso cardápio foi planejado para diferentes paladares. Nossa equipe está à disposição para detalhar ingredientes e adaptar pratos conforme as suas necessidades.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-restaurante" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button><p style="margin:0.75rem 0 0;text-align:center;font-size:0.72rem;line-height:1.4;opacity:0.72">Proprietários Owntime têm 50% de desconto.</p>'
     },
     {
       id:    'bar-coffee',
       icon:  'coffee',
       title: 'Bar & Coffee Shop',
       hours: '11h às 22h30',
-      body:  '<ul class="bs-steps"><li><strong>Localização:</strong> No Club House.</li><li>Consulte o cardápio para conhecer as opções disponíveis do Bar & Coffee Shop ao longo do dia.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-cafe-bar" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button>'
+       body:  '<ul class="bs-steps"><li><strong>Localização:</strong> No Club House.</li><li>Consulte o cardápio para conhecer as opções disponíveis do Bar & Coffee Shop ao longo do dia.</li></ul><button class="bs-trigger" data-bs-target="sheet-cardapio-cafe-bar" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;border:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver cardápio</button><p style="margin:0.75rem 0 0;text-align:center;font-size:0.72rem;line-height:1.4;opacity:0.72">Proprietários Owntime têm 50% de desconto.</p>'
     }
   ],
 
@@ -221,7 +210,7 @@ const COMMON = {
       icon:  'chef-hat',
       title: 'Chef em Casa',
       hours: 'Agendamento mínimo de 48h via recepção, WhatsApp ou Concierge',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O serviço de Chef em Casa está temporariamente indisponível nesta fase inicial. Agradecemos sua compreensão.</li></ul>'
+      body:  '<ul class="bs-steps"><li><strong>Chef em Casa:</strong> Para consultar a disponibilidade e as condições do serviço, entre em contato com a recepção pelo WhatsApp.</li></ul>'
     },
     {
       id:    'cafe-da-manha',
@@ -232,13 +221,13 @@ const COMMON = {
           id:    'em-casa',
           title: 'Café em casa',
           pdf:   'assets/cardapios/cafe-em-casa.pdf',
-          body:  '<ul class="bs-steps"><li>Comece o dia no seu ritmo com uma cesta de café da manhã entregue diretamente na sua casa.</li><li>Consulte o cardápio para conhecer as opções disponíveis para essa experiência.</li></ul><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-gastro-cafe-da-manha-pdf-em-casa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
+           body:  '<ul class="bs-steps"><li>Comece o dia no seu ritmo com uma cesta de café da manhã entregue diretamente na sua casa.</li><li>Consulte o cardápio para conhecer as opções disponíveis para essa experiência.</li></ul><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-gastro-cafe-da-manha-pdf-em-casa" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><p style="margin:0.75rem 0 0;text-align:center;font-size:0.72rem;line-height:1.4;opacity:0.72">Proprietários Owntime têm 50% de desconto.</p><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
         },
         {
           id:    'a-la-carte',
           title: 'Café À la carte',
           pdf:   'assets/cardapios/cafe-a-la-carte.pdf',
-          body:  '<p class="bs-model-tag">Localização</p><ul class="bs-steps"><li>Restaurante do Club House.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Valores</p><ul class="bs-steps"><li><strong>Adultos:</strong> R$ 89,00 por pessoa</li><li><strong>Crianças de 6 a 12 anos:</strong> R$ 44,50 por pessoa</li><li><strong>Crianças de 0 a 5 anos:</strong> cortesia</li></ul><div class="bs-notice" style="background:rgba(255,255,255,0.09);border-left-color:rgba(255,255,255,0.18)"><strong>Importante</strong><ul><li>Consulte nosso time de anfitriões para conhecer os descontos progressivos disponíveis para cafés da manhã pagos antecipadamente, conforme a quantidade adquirida.</li></ul></div><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-gastro-cafe-da-manha-pdf-a-la-carte" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
+           body:  '<p class="bs-model-tag">Localização</p><ul class="bs-steps"><li>Restaurante do Club House.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Valores</p><ul class="bs-steps"><li><strong>Adultos:</strong> R$ 89,00 por pessoa</li><li><strong>Crianças de 6 a 12 anos:</strong> R$ 44,50 por pessoa</li><li><strong>Crianças de 0 a 5 anos:</strong> cortesia</li></ul><div class="bs-notice" style="background:rgba(255,255,255,0.09);border-left-color:rgba(255,255,255,0.18)"><strong>Importante</strong><ul><li>Consulte nosso time de anfitriões para conhecer os descontos progressivos disponíveis para cafés da manhã pagos antecipadamente, conforme a quantidade adquirida.</li></ul></div><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-gastro-cafe-da-manha-pdf-a-la-carte" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><p style="margin:0.75rem 0 0;text-align:center;font-size:0.72rem;line-height:1.4;opacity:0.72">Proprietários Owntime têm 50% de desconto.</p><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
         }
       ]
     }
@@ -274,20 +263,13 @@ const COMMON = {
       id:    'pet-care',
       icon:  'scissors',
       title: 'Pet Care',
-      hidden: true,
-      body:  '<p class="bs-model-tag">Em breve</p><ul class="bs-steps"><li>Estamos preparando o serviço de Pet Care para que seu pet também receba cuidados durante a sua estadia.</li><li>Durante o período de Soft Opening, esse serviço ainda não está disponível.</li></ul>'
+      body:  '<p class="bs-model-tag">Disponível</p><ul class="bs-steps"><li><strong>Como solicitar:</strong> O serviço de Pet Care pode ser solicitado pelo WhatsApp da recepção, com antecedência mínima de 24 horas.</li></ul>'
     },
     {
       id:    'car-wash',
       icon:  'droplets',
       title: 'Car Wash',
       body:  '<ul class="bs-steps"><li>Para garantir que o seu momento de descanso não seja interrompido por logísticas e preocupações externas, oferecemos uma curadoria de parceiros de extrema confiança para a estética e lavagem do seu veículo.</li><li>Buscando a sua máxima comodidade, as empresas credenciadas pela nossa equipe realizam a coleta e a posterior devolução do seu automóvel diretamente aqui no Own Time.</li><li>Caso deseje agendar este serviço, solicitamos a gentileza de contatar a recepção. Cuidaremos de toda a intermediação para que você não precise sair do seu conforto.</li></ul>'
-    },
-    {
-      id:    'shopper',
-      icon:  'shopping-bag',
-      title: 'Private Shopper',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> O serviço de Private Shopper estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível. Agradecemos sua compreensão.</li></ul>'
     },
   ],
 
@@ -301,7 +283,7 @@ const COMMON = {
       id:   'emporio',
       icon: 'store',
       title: 'Empório',
-      body:  '<ul class="bs-steps"><li><strong>Soft Opening:</strong> Já estamos com um Empório em Soft Opening aberto e com itens disponíveis para compra.</li><li><strong>Localização:</strong> Ele fica localizado no térreo, ao lado do bar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Pagamento e Lançamento</p><ul class="bs-steps"><li>Neste momento, o funcionamento do pagamento self service está indisponível.</li><li>Por isso, solicitamos que passe na recepção para que o time de anfitriões anote o seu consumo e lance para pagamento posterior no seu check-out ou, se necessário, ele será enviado posteriormente junto aos seus demais consumos na sua taxa de condomínio.</li></ul><div class="bs-notice" style="background:rgba(255,255,255,0.09);border-left-color:rgba(255,255,255,0.18)"><strong>Em breve</strong><ul><li>Estamos fazendo ainda melhorias no mix e na qualidade de produtos e em breve teremos um Empório completo ao seu dispor.</li></ul></div>'
+      body:  '<p class="bs-model-tag">Disponível</p><ul class="bs-steps"><li><strong>Localização:</strong> O Empório fica no térreo, ao lado do bar.</li><li><strong>Pagamento:</strong> As compras devem ser pagas no caixa da recepção.</li></ul>'
     },
     {
       id:   'kids',

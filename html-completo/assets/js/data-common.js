@@ -32,7 +32,7 @@ const COMMON = {
       icon:     'clock',
       title:    'Check-out',
       subtitle: 'Check-in: 16h · Check-out: 10h',
-      body:     '<ul class="bs-steps"><li>Ao final da sua estadia, siga estas orientações para concluir o check-out.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como funciona</p><ul class="bs-steps"><li>Antes de deixar o empreendimento, dirija-se à recepção do Club House para devolver os cartões de acesso e concluir o check-out.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Consumos extras</p><ul class="bs-steps"><li>O extrato de eventuais consumos é enviado por WhatsApp antes da saída. Caso identifique alguma divergência, entre em contato com a recepção antes da finalização da cobrança.</li><li>Na ausência de questionamentos, os valores serão debitados na forma de pagamento informada como garantia no momento do check-in.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>Confira se todos os seus pertences foram retirados da unidade antes da saída.</li><li>Objetos esquecidos permanecem armazenados em segurança por até 6 meses.</li><li>Caso precise localizar algum pertence, entre em contato com a recepção.</li></ul>'
+      body:     '<ul class="bs-steps"><li>Ao final da sua estadia, siga estas orientações para concluir o check-out.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como funciona</p><ul class="bs-steps"><li>Antes de deixar o empreendimento, dirija-se à recepção do Club House para devolver as pulseiras de acesso e concluir o check-out.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Consumos extras</p><ul class="bs-steps"><li>O extrato de eventuais consumos é enviado por WhatsApp antes da saída. Caso identifique alguma divergência, entre em contato com a recepção antes da finalização da cobrança.</li><li>Na ausência de questionamentos, os valores serão debitados na forma de pagamento informada como garantia no momento do check-in.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>Confira se todos os seus pertences foram retirados da unidade antes da saída.</li><li>Objetos esquecidos permanecem armazenados em segurança por até 6 meses.</li><li>Caso precise localizar algum pertence, entre em contato com a recepção.</li></ul>'
     },
     {
       id:       'emergencia',
@@ -210,7 +210,7 @@ const COMMON = {
       icon:  'chef-hat',
       title: 'Chef em Casa',
       hours: 'Agendamento mínimo de 48h via recepção, WhatsApp ou Concierge',
-      body:  '<ul class="bs-steps"><li><strong>Chef em Casa:</strong> Para consultar a disponibilidade e as condições do serviço, entre em contato com a recepção pelo WhatsApp.</li></ul>'
+      body:  '<ul class="bs-steps"><li>As opções do serviço Chef em Casa ainda estão sendo elaboradas pelos nossos chefs. Em breve, estarão disponíveis.</li><li>Para mais informações, entre em contato com a recepção pelo WhatsApp.</li></ul>'
     },
     {
       id:    'cafe-da-manha',
@@ -225,9 +225,9 @@ const COMMON = {
         },
         {
           id:    'a-la-carte',
-          title: 'Café À la carte',
+          title: 'Buffet',
           pdf:   'assets/cardapios/cafe-a-la-carte.pdf',
-           body:  '<p class="bs-model-tag">Localização</p><ul class="bs-steps"><li>Restaurante do Club House.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Valores</p><ul class="bs-steps"><li><strong>Adultos:</strong> R$ 89,00 por pessoa</li><li><strong>Crianças de 6 a 12 anos:</strong> R$ 44,50 por pessoa</li><li><strong>Crianças de 0 a 5 anos:</strong> cortesia</li></ul><div class="bs-notice" style="background:rgba(255,255,255,0.09);border-left-color:rgba(255,255,255,0.18)"><strong>Importante</strong><ul><li>Consulte nosso time de anfitriões para conhecer os descontos progressivos disponíveis para cafés da manhã pagos antecipadamente, conforme a quantidade adquirida.</li></ul></div><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-gastro-cafe-da-manha-pdf-a-la-carte" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><p style="margin:0.75rem 0 0;text-align:center;font-size:0.72rem;line-height:1.4;opacity:0.72">Proprietários Owntime têm 50% de desconto.</p><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
+          body:  '<p class="bs-model-tag">Experiência</p><ul class="bs-steps"><li>O café da manhã é servido em formato buffet completo e também conta com opções à la carte.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Localização</p><ul class="bs-steps"><li>Restaurante do Club House.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Valores</p><ul class="bs-steps"><li><strong>Adultos:</strong> R$ 89,00 por pessoa</li><li><strong>Crianças de 6 a 12 anos:</strong> R$ 44,50 por pessoa</li><li><strong>Crianças de 0 a 5 anos:</strong> cortesia</li></ul><div class="bs-notice" style="background:rgba(255,255,255,0.09);border-left-color:rgba(255,255,255,0.18)"><strong>Importante</strong><ul><li>Consulte nosso time de anfitriões para conhecer os descontos progressivos disponíveis para cafés da manhã pagos antecipadamente, conforme a quantidade adquirida.</li></ul></div><div style="margin-top:1.25rem;display:flex;flex-direction:column;gap:0.75rem"><button class="bs-trigger" data-bs-target="sheet-gastro-cafe-da-manha-pdf-a-la-carte" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;cursor:pointer;-webkit-tap-highlight-color:transparent"><i data-lucide="scroll-text"></i> Ver Cardápio</button><p style="margin:0.75rem 0 0;text-align:center;font-size:0.72rem;line-height:1.4;opacity:0.72">Proprietários Owntime têm 50% de desconto.</p><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar na Recepção</a></div>'
         }
       ]
     }
@@ -297,7 +297,7 @@ const COMMON = {
       icon: 'users',
       title: 'Teens',
       hours: '9h às 21h',
-      body:  '<ul class="bs-steps"><li>Um espaço pensado para que os jovens aproveitem momentos de lazer, convivência e diversão.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">O que você encontra</p><ul class="bs-steps"><li>Jogos de tabuleiro</li><li>Pebolim</li><li>Sinuca</li><li>Videogames</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Acesso</p><ul class="bs-steps"><li>O acesso é livre para os hóspedes, com o cartão da unidade.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Não é permitido</p><ul class="bs-steps"><li>Consumir bebidas alcoólicas.</li><li>Fumar.</li><li>Utilizar caixas de som.</li></ul>'
+      body:  '<ul class="bs-steps"><li>Um espaço pensado para que os jovens aproveitem momentos de lazer, convivência e diversão.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">O que você encontra</p><ul class="bs-steps"><li>Jogos de tabuleiro</li><li>Pebolim</li><li>Sinuca</li><li>Videogames</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Acesso</p><ul class="bs-steps"><li>O acesso é livre para os hóspedes, com a pulseira da unidade.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Não é permitido</p><ul class="bs-steps"><li>Consumir bebidas alcoólicas.</li><li>Fumar.</li><li>Utilizar caixas de som.</li></ul>'
     },
     {
       id:   'playground',
@@ -309,15 +309,15 @@ const COMMON = {
     {
       id:   'pulseira',
       icon: 'credit-card',
-      title: 'Cartão de acesso',
-      body:  '<p class="bs-model-tag">Como utilizar</p><ul class="bs-steps"><li>O cartão permite o acesso à sua unidade e às áreas autorizadas do empreendimento. Sempre que houver uma fechadura eletrônica, basta aproximá-lo do leitor para liberar a entrada.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Cuidados</p><ul class="bs-steps"><li>Mantenha o cartão em local seguro e evite dobrá-lo ou aproximá-lo de aparelhos celulares e fechos magnéticos, preservando seu funcionamento durante toda a estadia.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>Os cartões são entregues pelo Time de Anfitriões no momento do check-in e devem ser devolvidos ao final da estadia.</li><li>Em caso de perda ou extravio, haverá cobrança da taxa de reposição.</li></ul>'
+       title: 'Pulseira de Acesso',
+       body:  '<p class="bs-model-tag">Como utilizar</p><ul class="bs-steps"><li>A pulseira permite o acesso à sua unidade e às áreas autorizadas do empreendimento. Sempre que houver uma fechadura eletrônica, basta aproximá-la do leitor para liberar a entrada.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Cuidados</p><ul class="bs-steps"><li>Mantenha a pulseira em local seguro e evite danificá-la, preservando seu funcionamento durante toda a estadia.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>As pulseiras são entregues pelo Time de Anfitriões no momento do check-in e devem ser devolvidas ao final da estadia.</li><li>Em caso de perda ou extravio, haverá cobrança da taxa de reposição.</li></ul>'
     },
     {
       id:   'golf-carts',
       icon: 'car-front',
-      title: 'Transporte Interno',
+      title: 'Carrinho de Transporte',
       hours: '7h às 23h',
-      body:  '<ul class="bs-steps"><li>Nossa frota está à disposição para facilitar o deslocamento por toda a extensão do empreendimento com mais conforto e praticidade.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Como solicitar</p><ul class="bs-steps"><li>Acione a recepção sempre que precisar de apoio com locomoção interna ou transporte de itens.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
+      body:  '<ul class="bs-steps"><li>O carrinho de transporte pode ser solicitado à recepção e realiza o deslocamento de hóspedes até suas unidades ou o Club House.</li><li>Também está disponível para auxiliar na entrada e na saída do condomínio.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
     },
 
   ],
@@ -333,8 +333,8 @@ const COMMON = {
     {
       id:    'controle-acesso',
       icon:  'credit-card',
-      title: 'Cartão de Acesso',
-      body:  '<p class="bs-model-tag">Como utilizar</p><ul class="bs-steps"><li>O cartão permite o acesso à sua unidade e às áreas autorizadas do empreendimento. Sempre que houver uma fechadura eletrônica, basta aproximá-lo do leitor para liberar a entrada.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Cuidados</p><ul class="bs-steps"><li>Mantenha o cartão em local seguro e evite dobrá-lo ou aproximá-lo de aparelhos celulares e fechos magnéticos, preservando seu funcionamento durante toda a estadia.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>Os cartões são entregues pelo Time de Anfitriões no momento do check-in e devem ser devolvidos ao final da estadia.</li><li>Em caso de perda ou extravio, haverá cobrança da taxa de reposição.</li></ul>'
+       title: 'Pulseira de Acesso',
+       body:  '<p class="bs-model-tag">Como utilizar</p><ul class="bs-steps"><li>A pulseira permite o acesso à sua unidade e às áreas autorizadas do empreendimento. Sempre que houver uma fechadura eletrônica, basta aproximá-la do leitor para liberar a entrada.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Cuidados</p><ul class="bs-steps"><li>Mantenha a pulseira em local seguro e evite danificá-la, preservando seu funcionamento durante toda a estadia.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Importante</p><ul class="bs-steps"><li>As pulseiras são entregues pelo Time de Anfitriões no momento do check-in e devem ser devolvidas ao final da estadia.</li><li>Em caso de perda ou extravio, haverá cobrança da taxa de reposição.</li></ul>'
     },
     {
       id:    'seguranca-perimetral',

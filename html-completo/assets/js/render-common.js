@@ -311,7 +311,7 @@ function renderGastronomy(common) {
         `<button class="bs-tab-btn${i === 0 ? ' is-active' : ''}" data-tab="gastro-${item.id}-${t.id}">${t.title}</button>`
       ).join('');
       const panelsHtml = item.tabs.map((t, i) =>
-        `<div class="bs-tab-panel${i === 0 ? ' is-active' : ''}" id="gastro-${item.id}-${t.id}">${t.body}</div>`
+        `<div class="bs-tab-panel${i === 0 ? ' is-active' : ''}" id="gastro-${item.id}-${t.id}">${t.hours ? `<span class="bottom-sheet__hours">${t.hours}</span>` : ''}${t.body}</div>`
       ).join('');
       sheetBody = `<div class="bs-tab-group"><div class="bs-tab-btns">${btnsHtml}</div>${panelsHtml}</div>`;
     } else {

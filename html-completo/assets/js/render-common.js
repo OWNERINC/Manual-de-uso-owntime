@@ -15,7 +15,7 @@ function waUrl(number) {
 }
 
 /* ── Helper: cria e appenda um bottom sheet ao body ── */
-function _appendSheet(id, icon, title, bodyHtml, logoSrc) {
+function _appendSheet(id, icon, title, bodyHtml, logoSrc, discount) {
   const titleId = id + '-title';
   const body = bodyHtml || '<p class="bottom-sheet__placeholder">Instruções em breve.</p>';
   const searchableText = `${title} ${body}`;
@@ -27,7 +27,8 @@ function _appendSheet(id, icon, title, bodyHtml, logoSrc) {
   const titleHtml = logoSrc
     ? `<span>${title}</span><img src="${logoSrc}" style="height:22px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9;flex-shrink:0" alt="" loading="lazy">`
     : title;
-  const titleStyle = logoSrc ? ' style="display:flex;align-items:center;gap:0.75rem"' : '';
+  const titleStyle = logoSrc ? ' style="display:flex;align-items:center;flex-wrap:wrap;gap:0.75rem"' : '';
+  const headingHtml = `<h3 class="bottom-sheet__title" id="${titleId}"${titleStyle}>${titleHtml}</h3>`;
   const sheet = document.createElement('div');
   sheet.className = 'bottom-sheet';
   sheet.id = id;
@@ -41,7 +42,7 @@ function _appendSheet(id, icon, title, bodyHtml, logoSrc) {
         <div class="bottom-sheet__header-icon" aria-hidden="true">
           <i data-lucide="${icon}"></i>
         </div>
-        <h3 class="bottom-sheet__title" id="${titleId}"${titleStyle}>${titleHtml}</h3>
+        ${discount ? `<div class="bottom-sheet__heading">${headingHtml}<p class="bottom-sheet__discount">${discount}</p></div>` : headingHtml}
         <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar">
           <i data-lucide="x"></i>
         </button>
@@ -320,7 +321,7 @@ function renderGastronomy(common) {
         ${_bodyHtml(item.body)}
       `;
     }
-    _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, sheetBody, item.logo || null);
+    _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, sheetBody, item.logo || null, item.discount);
 
     if (item.tabs) {
       const sheet = document.getElementById(`sheet-gastro-${item.id}`);

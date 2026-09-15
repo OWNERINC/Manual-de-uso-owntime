@@ -170,7 +170,7 @@ function renderClubeGastronomy() {
         _bodyHtml(item.body)
       ].filter(Boolean).join('');
     }
-    _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, bodyHtml, item.logo || null);
+    _appendSheet(`sheet-gastro-${item.id}`, item.icon, item.title, bodyHtml, item.logo || null, item.discount);
 
     const sheet = document.getElementById(`sheet-gastro-${item.id}`);
     if (sheet && item.tabs) {

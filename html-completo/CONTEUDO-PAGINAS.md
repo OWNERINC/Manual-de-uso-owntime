@@ -176,7 +176,10 @@ Mista: Pressione "Gelada" e "Natural" ao mesmo tempo.
 **"O clube, ao seu alcance."**
 
 ### Empório
-Espaço de conveniência interna com seleção de produtos premium e itens essenciais para a sua estadia. Instruções detalhadas de funcionamento e catálogo em breve.
+**Disponível**
+- **Localização:** O Empório fica no térreo, ao lado do bar.
+- **Funcionamento:** O atendimento é self-service.
+- **Pagamento:** O pagamento é feito diretamente no Empório por cartão de crédito, cartão de débito ou Pix.
 
 ### Kids
 Funcionamento: 09h00 às 21h00

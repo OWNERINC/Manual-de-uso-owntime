@@ -113,23 +113,6 @@ Em breve durante o soft opening
 [preencher]
 ```
 
-### 7. Empório
-
-**Arquivo:** `assets/js/data-common.js`
-**ID:** `clube > emporio`
-
-**Texto atual:**
-
-```html
-<ul class="bs-steps"><li><strong>Soft Opening:</strong> Já estamos com um Empório em Soft Opening aberto e com itens disponíveis para compra.</li><li><strong>Localização:</strong> Ele fica localizado no térreo, ao lado do bar.</li></ul><p class="bs-model-tag" style="margin-top:1.25rem">Pagamento e Lançamento</p><ul class="bs-steps"><li>Neste momento, o funcionamento do pagamento self service está indisponível.</li><li>Por isso, solicitamos que passe na recepção para que o time de anfitriões anote o seu consumo e lance para pagamento posterior no seu check-out ou, se necessário, ele será enviado posteriormente junto aos seus demais consumos na sua taxa de condomínio.</li></ul><div class="bs-notice" style="background:rgba(255,255,255,0.09);border-left-color:rgba(255,255,255,0.18)"><strong>Em breve</strong><ul><li>Estamos fazendo ainda melhorias no mix e na qualidade de produtos e em breve teremos um Empório completo ao seu dispor.</li></ul></div>
-```
-
-**Nova redação:**
-
-```text
-[preencher]
-```
-
 ### 8. Telefone — Winter House
 
 **Arquivo:** `assets/js/data-winter-house.js`
@@ -316,7 +299,6 @@ O Own Time é uma nova geração de hospitalidade residencial: sua casa com serv
 ```text
 Soft Opening: O serviço de Chef em Casa está temporariamente indisponível nesta fase inicial. Agradecemos sua compreensão.
 Soft Opening: O serviço de Babysitter estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível.
-Soft Opening: O Empório estará disponível em breve. Durante esta fase inicial, o serviço encontra-se temporariamente indisponível.
 Fase de Soft Opening: As pulseiras de acesso estão temporariamente indisponíveis neste período inicial.
 Soft Opening: O serviço de telefonia estará disponível em breve. Durante esta fase inicial, encontra-se temporariamente indisponível.
 ```

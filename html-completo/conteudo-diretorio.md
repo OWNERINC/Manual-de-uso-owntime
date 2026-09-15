@@ -115,7 +115,7 @@
 
 | Item | Status |
 |------|--------|
-| Empório | ⬜ Texto pendente |
+| Empório | ✅ Disponível, self-service, com pagamento direto por crédito, débito ou Pix |
 | Kids | ✅ Texto completo |
 | Teens | ✅ Texto completo |
 | Playground Externo | ⬜ Texto pendente |

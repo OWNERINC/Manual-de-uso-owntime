@@ -431,7 +431,10 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ### Empório
 
-- **Disponível:** O Empório fica no térreo, ao lado do bar. As compras devem ser pagas no caixa da recepção.
+**Disponível**
+- **Localização:** O Empório fica no térreo, ao lado do bar.
+- **Funcionamento:** O atendimento é self-service.
+- **Pagamento:** O pagamento é feito diretamente no Empório por cartão de crédito, cartão de débito ou Pix.
 
 ---
 

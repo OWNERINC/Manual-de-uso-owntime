@@ -87,7 +87,7 @@ function renderServicosAdicionaisSheet(tipologia) {
           <p style="font-family:var(--font-body);font-size:0.8rem;line-height:1.55;color:var(--color-muted)">Serviços opcionais cobrados à parte. Para solicitar, entre em contato com o time de anfitriões com antecedência.</p>
         </div>
         ${itens}
-        <a href="https://wa.me/5554999588947?text=Olá%2C%20gostaria%20de%20contratar%20um%20serviço%20adicional%20de%20housekeeping." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar pelo WhatsApp</a>
+        <a href="https://wa.me/555434210620?text=Olá%2C%20gostaria%20de%20contratar%20um%20serviço%20adicional%20de%20housekeeping." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Solicitar pelo WhatsApp</a>
       </div>
       <div class="bottom-sheet__footer">
         <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>

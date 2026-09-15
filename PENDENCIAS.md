@@ -1,5 +1,5 @@
 # Informações Pendentes — Guia Digital Own Time Home Club
-Atualizado em: 2026-07-01
+Atualizado em: 2026-09-15
 
 ---
 
@@ -22,8 +22,9 @@ Atualizado em: 2026-07-01
 | Item | Informação inserida | Quando |
 |---|---|---|
 | Ramal da Recepção | Ramal 9 | — |
-| WhatsApp da Recepção | +5554999588947 | — |
-| Time de Anfitriões (contato) | WhatsApp +5554999588947 | Jun/26 |
+| WhatsApp da Recepção | +55 54 3421-0620 | Set/26 |
+| Time de Anfitriões (contato) | Ligação e WhatsApp +55 54 3421-0620 | Set/26 |
+| Empório | Disponível, self-service, com pagamento direto por cartão de crédito, cartão de débito ou Pix | Set/26 |
 | Central de Férias Ownerinc | WhatsApp +5551989220209 | Jul/26 |
 | Delivery — Endereço | Rua João XXIII, 222, Gramado - RS | — |
 | Lareira — Instruções de acendimento | Passo a passo inserido (4 etapas + alertas) | Jun/26 |
@@ -62,7 +63,6 @@ Confirmar quando cada um estará disponível para atualizar o conteúdo.
 | **Personal Trainer** | Concierge |
 | **Pet Care** | Concierge |
 | **Car Wash** | Concierge |
-| **Empório** | Club House |
 | **Programação Kids** | Club House → Kids |
 | **Coffee Shop** | Horários da Home |
 | **Restaurante** | Horários da Home |

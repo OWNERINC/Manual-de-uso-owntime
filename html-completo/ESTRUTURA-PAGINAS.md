@@ -89,7 +89,7 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 
 | Ícone | ID | Título | Status |
 |---|---|---|---|
-| `store` | `emporio` | Empório | ⚠️ corpo existe, catálogo pendente |
+| `store` | `emporio` | Empório | ✅ disponível, self-service, pagamento direto por crédito, débito ou Pix |
 | `baby` | `kids` | Kids | ✅ 09h–21h |
 | `users` | `teens` | Teens | ✅ 09h–21h |
 | `trees` | `playground` | Playground Externo | ❌ |
@@ -368,7 +368,6 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 | Climatização (COMMON) | 5 passos de instrução do fabricante | `data-common.js` → `facilities[0].body` |
 | Lareira (COMMON) | 4 passos de acendimento do fabricante | `data-common.js` → `facilities[1].body` |
 | Conectividade (COMMON) | Nome da rede, login, senha do Wi-Fi | `data-common.js` → `facilities[3].body` |
-| Empório (COMMON) | Catálogo e horário de funcionamento | `data-common.js` → `clube[0].body` |
 | Em Caso de Emergência | Ramal `[xx]` e WhatsApp `[xxxxxxxx]` | `data-common.js` → `orientacoesGerais[1].body` |
 | WhatsApp concierge | Substituir `+5554999999999` pelo número real | `data-common.js` → `brand.concierge.whatsapp` |
 | Botão "Ler mais" (hub) | Substituir `+5554999999999` pelo número real | `data-hub.js` → `intro.ctaWhatsapp` |

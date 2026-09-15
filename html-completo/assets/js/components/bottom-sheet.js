@@ -40,6 +40,7 @@ function initBottomSheets() {
       closeSheet(currentOpenSheet);
     }
 
+    sheet.dispatchEvent(new Event('bs:open'));
     sheet.classList.add('is-open');
     sheet.setAttribute('aria-hidden', 'false');
     overlay.classList.add('is-active');

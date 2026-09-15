@@ -449,6 +449,56 @@ html.sheet-open {
   display: block;
 }
 
+/* ─── Cardápios: branco apenas na área das páginas ─── */
+.bottom-sheet--cardapio {
+  height: 94dvh;
+  max-height: 94dvh;
+}
+
+.bottom-sheet--cardapio .bottom-sheet__body {
+  padding: 0;
+  background: #fff;
+}
+
+.bottom-sheet--cardapio .bottom-sheet__body img {
+  display: block;
+  width: 100%;
+  background: #fff;
+}
+
+.bottom-sheet--cardapio .bottom-sheet__footer,
+.cardapio-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cardapio-nav button {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cardapio-nav button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.cardapio-counter {
+  min-width: 3rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
 /* ─── Variante fundo branco (ex: cardápio café) ─── */
 .bottom-sheet--light {
   background: #fff;

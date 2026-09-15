@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verificação dos cardápios</title>
+<h1>Verificação dos cardápios</h1>
+<p>Abra esta página pelo servidor local. O teste usa os visualizadores reais, sem dependências.</p>
+<pre id="result" role="status">Executando…</pre>
+<iframe id="preview" title="Guia em teste" width="100%" height="844"></iframe>
+<script>
+const result = document.getElementById('result');
+const preview = document.getElementById('preview');
+const menus = [
+  ['sheet-cardapio-ala-carte', 'cafe-ala-carte', 2],
+  ['sheet-cardapio-em-casa', 'cafe-em-casa', 1],
+  ['sheet-cardapio-restaurante', 'restaurante', 8],
+  ['sheet-cardapio-cafe-bar', 'cafe-bar', 9],
+  ['sheet-cardapio-spa', 'spa', 9]
+];
+function check(condition, message) {
+  if (!condition) throw new Error(message);
+}
+function loadPage(slug) {
+  return new Promise(resolve => {
+    preview.onload = () => resolve(preview.contentDocument);
+    preview.src = `../${slug}.html`;
+  });
+}
+async function checkMenu(doc, id, folder, total) {
+  const trigger = doc.querySelector(`[data-bs-target="${id}"]`);
+  check(trigger, `${id}: botão de abertura`);
+  trigger.click();
+  const sheet = doc.getElementById(id);
+  check(sheet.classList.contains('is-open'), `${id}: abertura`);
+  const body = sheet.querySelector('.bottom-sheet__body');
+  const img = body.querySelector('img');
+  const prev = sheet.querySelector('.cardapio-prev');
+  const next = sheet.querySelector('.cardapio-next');
+  check(doc.defaultView.getComputedStyle(body).backgroundColor === 'rgb(255, 255, 255)', `${id}: fundo branco`);
+  check(doc.defaultView.getComputedStyle(img).backgroundColor === 'rgb(255, 255, 255)', `${id}: imagem sobre branco`);
+  check(!sheet.querySelector('iframe'), `${id}: sem PDF antigo`);
+  if (total === 1) check(!prev && !next, `${id}: sem navegação desnecessária`);
+  for (let page = 1; page <= total; page++) {
+    await img.decode();
+    check(img.naturalWidth > 0, `${id}: imagem ${page} carregada`);
+    check(new URL(img.src).pathname.endsWith(`/cardapios/${folder}/pagina-${page}.webp`), `${id}: ordem ${page}`);
+    check(new URL(img.src).searchParams.has('v'), `${id}: revisão de cache`);
+    if (total > 1) {
+      check(sheet.querySelector('.cardapio-counter').textContent === `${page} / ${total}`, `${id}: contador ${page}`);
+      check(prev.disabled === (page === 1) && next.disabled === (page === total), `${id}: limites ${page}`);
+      if (page < total) {
+        body.scrollTop = 100;
+        next.click();
+        check(body.scrollTop === 0, `${id}: rolagem reiniciada`);
+      }
+    }
+  }
+  if (total > 1) {
+    next.click();
+    check(next.disabled, `${id}: última página`);
+    for (let page = total; page > 1; page--) prev.click();
+    check(prev.disabled && img.src.includes('/pagina-1.webp?'), `${id}: retorno à primeira página`);
+    next.click();
+  }
+  sheet.querySelector('.bs-close').click();
+  trigger.click();
+  await img.decode();
+  check(img.src.includes('/pagina-1.webp?') && body.scrollTop === 0, `${id}: reinício ao reabrir`);
+  sheet.querySelector('.bs-close').click();
+}
+(async () => {
+  let doc = await loadPage('clube');
+  for (const menu of menus) await checkMenu(doc, ...menu);
+  for (const slug of ['fall-house', 'winter-house', 'garden', 'terraco']) {
+    doc = await loadPage(slug);
+    check(!doc.querySelector('.bottom-sheet iframe'), `${slug}: sem visualizador PDF antigo`);
+    for (const menu of menus.slice(0, 2)) await checkMenu(doc, ...menu);
+  }
+  result.textContent = 'PASS: 29 páginas; fundo branco; setas, limites, contador e reinício; cafés unificados nas quatro unidades.';
+  result.dataset.status = 'passed';
+})().catch(error => {
+  result.textContent = `FAIL: ${error.message}`;
+  result.dataset.status = 'failed';
+  console.error(error);
+});
+</script>
+</html>

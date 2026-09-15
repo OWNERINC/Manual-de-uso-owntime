@@ -333,11 +333,6 @@ function renderGastronomy(common) {
         sheet.querySelectorAll('.bs-tab-panel').forEach(p => p.classList.toggle('is-active', p.id === targetId));
       });
 
-      item.tabs.forEach(t => {
-        if (!t.pdf) return;
-        const pdfBody = `<div style="border-radius:8px;overflow:hidden;border:1px solid var(--color-border)"><iframe src="${t.pdf}" style="width:100%;height:65vh;border:none;display:block" title="Cardápio ${t.title}"></iframe></div><a href="${t.pdf}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:0.75rem;padding:0.75rem 1rem;background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.8rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="external-link"></i> Abrir em nova aba</a>`;
-        _appendSheet(`sheet-gastro-${item.id}-pdf-${t.id}`, 'scroll-text', `Cardápio · ${t.title}`, pdfBody);
-      });
     }
   });
 }
@@ -512,225 +507,62 @@ function renderTelefonesUteis(common) {
   });
 }
 
-/* ═══════════════════════════════════════════
-   renderRestauranteCardapioSheet
-   Viewer de páginas do cardápio do restaurante.
-   Chamado por main-tipologia.js e main-clube.js.
-   ═══════════════════════════════════════════ */
+/* ── Cardápios compartilhados entre Club House e unidades ── */
 function renderCardapiosSheet() {
-  [
-    { id: 'sheet-cardapio-ala-carte', title: 'Cardápio À la Carte', folder: 'cafe-ala-carte' },
-    { id: 'sheet-cardapio-em-casa',   title: 'Café em Casa',         folder: 'cafe-em-casa'   }
-  ].forEach(({ id, title, folder }) => {
-    if (document.getElementById(id)) return;
-
-    const sheet = document.createElement('div');
-    sheet.className = 'bottom-sheet';
-    sheet.id = id;
-    sheet.style.height = '94dvh';
-    sheet.style.maxHeight = '94dvh';
-    sheet.setAttribute('role', 'dialog');
-    sheet.setAttribute('aria-modal', 'true');
-    sheet.setAttribute('aria-hidden', 'true');
-    sheet.setAttribute('aria-labelledby', `${id}-title`);
-    sheet.innerHTML = `
-      <div class="bottom-sheet__inner">
-        <header class="bottom-sheet__header">
-          <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="scroll-text"></i></div>
-          <h3 class="bottom-sheet__title" id="${id}-title">${title}</h3>
-          <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
-        </header>
-        <div class="bottom-sheet__body" style="padding:0;overflow-y:auto">
-          <img src="assets/cardapios/${folder}/pagina-1.webp" alt="${title}" style="width:100%;display:block">
-        </div>
-        <div class="bottom-sheet__footer">
-          <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(sheet);
-  });
+  renderCardapioSheet('sheet-cardapio-ala-carte', 'Cardápio À la Carte', 'cafe-ala-carte', 2);
+  renderCardapioSheet('sheet-cardapio-em-casa', 'Café em Casa', 'cafe-em-casa', 1);
 }
 
 function renderSpaCardapioSheet() {
-  if (document.getElementById('sheet-cardapio-spa')) return;
-
-  const pages = ['pagina-1','pagina-2','pagina-3','pagina-4','pagina-5','pagina-6','pagina-7','pagina-8','pagina-9'];
-  const total = pages.length;
-  let current = 0;
-
-  const sheet = document.createElement('div');
-  sheet.className = 'bottom-sheet';
-  sheet.id = 'sheet-cardapio-spa';
-  sheet.style.height = '94dvh';
-  sheet.style.maxHeight = '94dvh';
-  sheet.setAttribute('role', 'dialog');
-  sheet.setAttribute('aria-modal', 'true');
-  sheet.setAttribute('aria-hidden', 'true');
-  sheet.setAttribute('aria-labelledby', 'sheet-cardapio-spa-title');
-  sheet.innerHTML = `
-    <div class="bottom-sheet__inner">
-      <header class="bottom-sheet__header">
-        <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="scroll-text"></i></div>
-        <h3 class="bottom-sheet__title" id="sheet-cardapio-spa-title">Menu do Spa</h3>
-        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
-      </header>
-      <div class="bottom-sheet__body" style="padding:0;overflow-y:auto">
-        <img id="cardapio-spa-img" src="assets/cardapios/spa/pagina-1.webp" alt="Menu do Spa página 1" style="width:100%;display:block">
-      </div>
-      <div class="bottom-sheet__footer" style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem">
-        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
-        <div style="display:flex;align-items:center;gap:0.75rem">
-          <button id="cardapio-spa-prev" aria-label="Página anterior" style="display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;font-size:1rem;-webkit-tap-highlight-color:transparent">←</button>
-          <span id="cardapio-spa-counter" style="font-family:var(--font-body);font-size:0.78rem;color:var(--color-muted);min-width:3.5rem;text-align:center">1 / ${total}</span>
-          <button id="cardapio-spa-next" aria-label="Próxima página" style="display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;font-size:1rem;-webkit-tap-highlight-color:transparent">→</button>
-        </div>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(sheet);
-
-  const img     = sheet.querySelector('#cardapio-spa-img');
-  const counter = sheet.querySelector('#cardapio-spa-counter');
-  const prev    = sheet.querySelector('#cardapio-spa-prev');
-  const next    = sheet.querySelector('#cardapio-spa-next');
-  const body    = sheet.querySelector('.bottom-sheet__body');
-
-  function update() {
-    img.src = `assets/cardapios/spa/${pages[current]}.webp`;
-    img.alt = `Menu do Spa ${pages[current].replace('-', ' ')}`;
-    counter.textContent = `${current + 1} / ${total}`;
-    prev.disabled = current === 0;
-    next.disabled = current === total - 1;
-    body.scrollTop = 0;
-  }
-
-  prev.addEventListener('click', () => { if (current > 0)         { current--; update(); } });
-  next.addEventListener('click', () => { if (current < total - 1) { current++; update(); } });
-
-  sheet.addEventListener('transitionend', () => {
-    if (!sheet.classList.contains('is-open')) { current = 0; update(); }
-  });
+  renderCardapioSheet('sheet-cardapio-spa', 'Menu do Spa', 'spa', 9);
 }
 
 function renderCafeBarCardapioSheet() {
-  if (document.getElementById('sheet-cardapio-cafe-bar')) return;
-
-  const pages = ['pagina-1','pagina-2','pagina-3','pagina-4','pagina-5','pagina-6','pagina-7'];
-  const total = pages.length;
-  let current = 0;
-
-  const sheet = document.createElement('div');
-  sheet.className = 'bottom-sheet';
-  sheet.id = 'sheet-cardapio-cafe-bar';
-  sheet.style.height = '94dvh';
-  sheet.style.maxHeight = '94dvh';
-  sheet.setAttribute('role', 'dialog');
-  sheet.setAttribute('aria-modal', 'true');
-  sheet.setAttribute('aria-hidden', 'true');
-  sheet.setAttribute('aria-labelledby', 'sheet-cardapio-cafe-bar-title');
-  sheet.innerHTML = `
-    <div class="bottom-sheet__inner">
-      <header class="bottom-sheet__header">
-        <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="scroll-text"></i></div>
-        <h3 class="bottom-sheet__title" id="sheet-cardapio-cafe-bar-title">Cardápio</h3>
-        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
-      </header>
-      <div class="bottom-sheet__body" style="padding:0;overflow-y:auto">
-        <img id="cardapio-cafebar-img" src="assets/cardapios/cafe-bar/pagina-1.webp" alt="Cardápio página 1" style="width:100%;display:block">
-      </div>
-      <div class="bottom-sheet__footer" style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem">
-        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
-        <div style="display:flex;align-items:center;gap:0.75rem">
-          <button id="cardapio-cafebar-prev" aria-label="Página anterior" style="display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;font-size:1rem;-webkit-tap-highlight-color:transparent">←</button>
-          <span id="cardapio-cafebar-counter" style="font-family:var(--font-body);font-size:0.78rem;color:var(--color-muted);min-width:3.5rem;text-align:center">1 / ${total}</span>
-          <button id="cardapio-cafebar-next" aria-label="Próxima página" style="display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;font-size:1rem;-webkit-tap-highlight-color:transparent">→</button>
-        </div>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(sheet);
-
-  const img     = sheet.querySelector('#cardapio-cafebar-img');
-  const counter = sheet.querySelector('#cardapio-cafebar-counter');
-  const prev    = sheet.querySelector('#cardapio-cafebar-prev');
-  const next    = sheet.querySelector('#cardapio-cafebar-next');
-  const body    = sheet.querySelector('.bottom-sheet__body');
-
-  function update() {
-    img.src = `assets/cardapios/cafe-bar/${pages[current]}.webp`;
-    img.alt = `Cardápio ${pages[current].replace('-', ' ')}`;
-    counter.textContent = `${current + 1} / ${total}`;
-    prev.disabled = current === 0;
-    next.disabled = current === total - 1;
-    body.scrollTop = 0;
-  }
-
-  prev.addEventListener('click', () => { if (current > 0)         { current--; update(); } });
-  next.addEventListener('click', () => { if (current < total - 1) { current++; update(); } });
-
-  sheet.addEventListener('transitionend', () => {
-    if (!sheet.classList.contains('is-open')) { current = 0; update(); }
-  });
+  renderCardapioSheet('sheet-cardapio-cafe-bar', 'Cardápio', 'cafe-bar', 9);
 }
 
 function renderRestauranteCardapioSheet() {
-  if (document.getElementById('sheet-cardapio-restaurante')) return;
+  renderCardapioSheet('sheet-cardapio-restaurante', 'Cardápio', 'restaurante', 8);
+}
 
-  const pages = ['pagina-2','pagina-4','pagina-6','pagina-7','pagina-9'];
-  const total = pages.length;
-  let current = 0;
+function renderCardapioSheet(id, title, folder, total) {
+  if (document.getElementById(id)) return;
 
-  const sheet = document.createElement('div');
-  sheet.className = 'bottom-sheet';
-  sheet.id = 'sheet-cardapio-restaurante';
-  sheet.style.height = '94dvh';
-  sheet.style.maxHeight = '94dvh';
-  sheet.setAttribute('role', 'dialog');
-  sheet.setAttribute('aria-modal', 'true');
-  sheet.setAttribute('aria-hidden', 'true');
-  sheet.setAttribute('aria-labelledby', 'sheet-cardapio-restaurante-title');
-  sheet.innerHTML = `
-    <div class="bottom-sheet__inner">
-      <header class="bottom-sheet__header">
-        <div class="bottom-sheet__header-icon" aria-hidden="true"><i data-lucide="scroll-text"></i></div>
-        <h3 class="bottom-sheet__title" id="sheet-cardapio-restaurante-title">Cardápio</h3>
-        <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
-      </header>
-      <div class="bottom-sheet__body" style="padding:0;overflow-y:auto">
-        <img id="cardapio-rest-img" src="assets/cardapios/restaurante/pagina-1.webp" alt="Cardápio página 1" style="width:100%;display:block">
-      </div>
-      <div class="bottom-sheet__footer" style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem">
-        <button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button>
-        <div style="display:flex;align-items:center;gap:0.75rem">
-          <button id="cardapio-rest-prev" aria-label="Página anterior" style="display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;font-size:1rem;-webkit-tap-highlight-color:transparent">←</button>
-          <span id="cardapio-rest-counter" style="font-family:var(--font-body);font-size:0.78rem;color:var(--color-muted);min-width:3.5rem;text-align:center">1 / ${total}</span>
-          <button id="cardapio-rest-next" aria-label="Próxima página" style="display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;font-size:1rem;-webkit-tap-highlight-color:transparent">→</button>
-        </div>
-      </div>
+  // A revisão também invalida o cache das imagens substituídas nos mesmos caminhos.
+  const imageUrl = page => `assets/cardapios/${folder}/pagina-${page}.webp?v=20260915`;
+  _appendSheet(id, 'scroll-text', title, `<img src="${imageUrl(1)}" alt="${title} · página 1">`);
+  const sheet = document.getElementById(id);
+  sheet.classList.add('bottom-sheet--cardapio');
+  const img = sheet.querySelector('.bottom-sheet__body img');
+  const body = sheet.querySelector('.bottom-sheet__body');
+  if (total === 1) {
+    sheet.addEventListener('bs:open', () => { body.scrollTop = 0; });
+    return;
+  }
+
+  sheet.querySelector('.bottom-sheet__footer').insertAdjacentHTML('beforeend', `
+    <div class="cardapio-nav" role="group" aria-label="Páginas do cardápio">
+      <button type="button" class="cardapio-prev" aria-label="Página anterior" disabled>←</button>
+      <span class="cardapio-counter" aria-live="polite" aria-atomic="true">1 / ${total}</span>
+      <button type="button" class="cardapio-next" aria-label="Próxima página">→</button>
     </div>
-  `;
-  document.body.appendChild(sheet);
+  `);
 
-  const img     = sheet.querySelector('#cardapio-rest-img');
-  const counter = sheet.querySelector('#cardapio-rest-counter');
-  const prev    = sheet.querySelector('#cardapio-rest-prev');
-  const next    = sheet.querySelector('#cardapio-rest-next');
-  const body    = sheet.querySelector('.bottom-sheet__body');
+  const counter = sheet.querySelector('.cardapio-counter');
+  const prev = sheet.querySelector('.cardapio-prev');
+  const next = sheet.querySelector('.cardapio-next');
+  let current = 1;
 
   function update() {
-    img.src = `assets/cardapios/restaurante/${pages[current]}.webp`;
-    img.alt = `Cardápio ${pages[current].replace('-', ' ')}`;
-    counter.textContent = `${current + 1} / ${total}`;
-    prev.disabled = current === 0;
-    next.disabled = current === total - 1;
+    img.src = imageUrl(current);
+    img.alt = `${title} · página ${current}`;
+    counter.textContent = `${current} / ${total}`;
+    prev.disabled = current === 1;
+    next.disabled = current === total;
     body.scrollTop = 0;
   }
 
-  prev.addEventListener('click', () => { if (current > 0)         { current--; update(); } });
-  next.addEventListener('click', () => { if (current < total - 1) { current++; update(); } });
-
-  sheet.addEventListener('transitionend', () => {
-    if (!sheet.classList.contains('is-open')) { current = 0; update(); }
-  });
+  prev.addEventListener('click', () => { if (current > 1) { current--; update(); } });
+  next.addEventListener('click', () => { if (current < total) { current++; update(); } });
+  sheet.addEventListener('bs:open', () => { current = 1; update(); });
 }

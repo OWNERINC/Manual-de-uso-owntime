@@ -321,8 +321,8 @@ const COMMON = {
       id:   'golf-carts',
       icon: 'car-front',
       title: 'Carrinho de Transporte',
-      hours: '7h às 23h',
-      body:  '<ul class="bs-steps"><li>O carrinho de transporte pode ser solicitado à recepção e realiza o deslocamento de hóspedes até suas unidades ou o Club House.</li><li>Também está disponível para auxiliar na entrada e na saída do condomínio.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
+      hours: '24 horas',
+      body:  '<ul class="bs-steps"><li>Para sua comodidade, o carrinho pode ser solicitado à recepção a qualquer hora do dia.</li><li>O serviço realiza deslocamentos entre as unidades, o Club House e a saída da Rua Ricardo Sturmhoffel, tanto para levar quanto para buscar hóspedes.</li></ul><a href="https://wa.me/5554999588947" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;padding:0.85rem 1rem;background:var(--color-accent);color:#fff;border-radius:8px;text-decoration:none;font-family:var(--font-body);font-size:0.85rem;font-weight:500;letter-spacing:0.02em;-webkit-tap-highlight-color:transparent"><i data-lucide="message-circle"></i> Falar com a Recepção</a>'
     },
 
   ],

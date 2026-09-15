@@ -64,7 +64,7 @@ const HUB = {
         { title: 'Kids',               hours: '9h às 21h' },
         { title: 'Teens',              hours: '9h às 21h' },
         { title: 'Playground Externo', hours: '9h às 21h' },
-        { title: 'Transporte Interno', hours: '7h às 23h' },
+        { title: 'Transporte Interno', hours: '24 horas' },
       ]
     }
   ],

@@ -29,7 +29,7 @@ Atualizado em: 2026-09-15
 | Delivery — Endereço | Rua João XXIII, 222, Gramado - RS | — |
 | Lareira — Instruções de acendimento | Passo a passo inserido (4 etapas + alertas) | Jun/26 |
 | Spa Pocahy — Links e horário | wa.me/5554984111140 · 10h–19h · Seg–Sáb | — |
-| Café da Manhã — Cardápio e preço | Lista completa + R$139 | Jun/26 |
+| Café da Manhã — Cardápio e preço | Cardápio à la carte atualizado + R$ 179 | Out/26 |
 | Check-in — Links do mapa | R. Ricardo Sturmhoffel 271 + R. João XXIII 222 | Jul/26 |
 | Gastronomia — Restaurantes (Almoço) | Di Pietro · Vale Quanto Pesa · Serra Grill | Jul/26 |
 | Gastronomia — Restaurantes (Jantar) | Pastasciutta · Catherine · Casa Muttoni | Jul/26 |

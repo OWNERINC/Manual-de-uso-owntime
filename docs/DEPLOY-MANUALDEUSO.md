@@ -39,6 +39,7 @@ node html-completo/tests/wifi.cjs
 node html-completo/tests/unit-areas.cjs
 node html-completo/tests/material-loans.cjs
 node html-completo/tests/discount.cjs
+node html-completo/tests/restaurant-menu.cjs
 python scripts/cache_bust_static_assets.py --root html-completo --check
 git diff --check
 ```

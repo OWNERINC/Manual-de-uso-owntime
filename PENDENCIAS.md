@@ -1,5 +1,5 @@
 # Informações Pendentes — Guia Digital Own Time Home Club
-Atualizado em: 2026-11-16
+Atualizado em: 2026-11-23
 
 ---
 
@@ -21,6 +21,7 @@ Atualizado em: 2026-11-16
 
 | Item | Informação inserida | Quando |
 |---|---|---|
+| Restaurante — Almoço, Jantar e Menu Kids | 8 WebPs atualizados; resolução original de 341 × 625 px mantida conforme autorização | Nov/26 |
 | Áreas Garden e Cobertura | Garden: 57 m² · Cobertura: 65 m² | Nov/26 |
 | Ramal da Recepção | Ramal 9 | — |
 | WhatsApp da Recepção | +55 54 3421-0620 | Set/26 |

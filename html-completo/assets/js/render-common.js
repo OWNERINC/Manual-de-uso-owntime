@@ -529,7 +529,8 @@ function renderCardapioSheet(id, title, folder, total) {
   if (document.getElementById(id)) return;
 
   // A revisão também invalida o cache das imagens substituídas nos mesmos caminhos.
-  const imageUrl = page => `assets/cardapios/${folder}/pagina-${page}.webp?v=20261116`;
+  const revision = folder === 'restaurante' ? '20261123' : '20261116';
+  const imageUrl = page => `assets/cardapios/${folder}/pagina-${page}.webp?v=${revision}`;
   _appendSheet(id, 'scroll-text', title, `<img src="${imageUrl(1)}" alt="${title} · página 1">`);
   const sheet = document.getElementById(id);
   sheet.classList.add('bottom-sheet--cardapio');

@@ -44,7 +44,8 @@ async function checkMenu(doc, id, folder, total) {
     await img.decode();
     check(img.naturalWidth > 0, `${id}: imagem ${page} carregada`);
     check(new URL(img.src).pathname.endsWith(`/cardapios/${folder}/pagina-${page}.webp`), `${id}: ordem ${page}`);
-    check(new URL(img.src).searchParams.has('v'), `${id}: revisão de cache`);
+    check(new URL(img.src).searchParams.get('v') === '20261116', `${id}: revisão de cache atualizada`);
+    if (folder !== 'spa') check(img.naturalWidth >= 1440, `${id}: resolução legível da página ${page}`);
     if (total > 1) {
       check(sheet.querySelector('.cardapio-counter').textContent === `${page} / ${total}`, `${id}: contador ${page}`);
       check(prev.disabled === (page === 1) && next.disabled === (page === total), `${id}: limites ${page}`);

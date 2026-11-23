@@ -7,8 +7,8 @@
 const HUB = {
 
   wifi: {
-    ssid:     'hospedes',
-    password: 'owntime2026'
+    ssid: 'OwnHospedes',
+    instructions: '<div class="wifi-guide"><p class="wifi-intro">Na tela de login, selecione <strong class="wifi-option">Sou hóspede</strong> e preencha os dados conforme sua acomodação.</p><div class="wifi-access"><h4 class="wifi-access__title"><i data-lucide="house" aria-hidden="true"></i>Casas</h4><p class="wifi-access__rule"><strong>Login:</strong> número 0 + número da casa.</p><p class="wifi-example"><span class="wifi-example__label">Exemplo · Casa 13</span><strong class="wifi-example__value">013</strong></p></div><div class="wifi-access"><h4 class="wifi-access__title"><i data-lucide="building-2" aria-hidden="true"></i>Apartamentos</h4><p class="wifi-access__rule"><strong>Login:</strong> número do apartamento com hífen antes da letra.</p><p class="wifi-example"><span class="wifi-example__label">Exemplo · Apartamento 101A</span><strong class="wifi-example__value">101-A</strong></p></div><div class="wifi-password"><i data-lucide="key-round" aria-hidden="true"></i><div><span class="wifi-password__label">Senha · Para casas e apartamentos</span><strong class="wifi-password__value">Último sobrenome</strong></div></div><p class="wifi-help">Confira atentamente os dados informados. Em caso de dificuldade, entre em contato com o Time de Anfitriões.</p></div>'
   },
 
   hero: {
@@ -104,7 +104,7 @@ const HUB = {
       href:      './garden.html',
       name:      'Garden',
       subtitle:  'Apartamento',
-      area:      '≈ 60 m²',
+      area:      '57 m²',
       capacidade:'Até 4 hóspedes',
       vagas:     '1 vaga',
       image:     'assets/images/apto-garden.webp'
@@ -114,7 +114,7 @@ const HUB = {
       href:      './terraco.html',
       name:      'Cobertura',
       subtitle:  'Apartamento',
-      area:      '≈ 60 m²',
+      area:      '65 m²',
       capacidade:'Até 4 hóspedes',
       vagas:     '1 vaga',
       image:     'assets/images/apto-cobertura.webp'

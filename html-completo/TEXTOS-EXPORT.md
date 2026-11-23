@@ -62,7 +62,7 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 **Subtítulo:** Seu apartamento garden em Gramado. Use este guia para encontrar tudo que você precisa durante a estadia.
 **Descrição (features):** Apartamento garden de alto padrão com acesso direto ao jardim e hidro jacuzzi exclusivo.
-**Stats:** ≈ 60 m² · 1 Suíte · 1 Vaga
+**Stats:** 57 m² · 1 Suíte · 1 Vaga
 
 ---
 
@@ -70,7 +70,7 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 **Subtítulo:** Seu apartamento cobertura em Gramado. Use este guia para encontrar tudo que você precisa durante a estadia.
 **Descrição (features):** Apartamento cobertura de alto padrão com mini spa terrace jacuzzi exclusivo no terraço privativo.
-**Stats:** ≈ 60 m² · 1 Suíte · 1 Vaga
+**Stats:** 65 m² · 1 Suíte · 1 Vaga
 
 ---
 
@@ -237,7 +237,11 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 
 ### Conectividade
 
-- **Como Conectar:** Rede: `[nome da rede]` · Senha: `[senha]`
+- **Como Conectar:** Selecione a rede **OwnHospedes** e a opção **Sou hóspede** na tela de login.
+- **Casas:** Login com o número 0 + número da casa. Exemplo: Casa 13 → **013**.
+- **Apartamentos:** Login com o número do apartamento e hífen antes da letra. Exemplo: Apartamento 101A → **101-A**.
+- **Senha para ambos:** Último sobrenome.
+- **Antes de entrar:** Confira atentamente os dados informados. Em caso de dificuldade, entre em contato com o Time de Anfitriões.
 - **Alta Performance:** Nossa infraestrutura de alta performance garante velocidade e estabilidade em 100% do complexo, seja no conforto da sua unidade ou nas áreas comuns do Club.
 - **Multi-dispositivos:** Ideal para múltiplos dispositivos, streaming e videoconferências, sem interrupções.
 
@@ -798,7 +802,7 @@ Desfrute de piscinas aquecidas, spa, fitness center e uma curadoria de serviços
 | 7 | Concierge · Acesso Convidados | Taxa por visitante, limite por unidade, idade de cortesia |
 | 8 | Piscinas | Horário e temperatura da água |
 | 9 | Climatização AC | Temperatura recomendada e variação entre tipologias |
-| 10 | Conectividade | Nome da rede Wi-Fi e senha |
+| 10 | Conectividade | ✓ OwnHospedes; “Sou hóspede”; casas: `0` + número (ex.: `013`); apartamentos: hífen antes da letra (ex.: `101-A`); senha: último sobrenome |
 | 11 | Apps Script · Planilha | Inserir coluna "Categoria" na posição B manualmente + redeploy do script |
 | 12 | TV | Conteúdo do sheet ainda não definido |
 | 13 | AR Central Apartamentos | Conteúdo do sheet ainda não definido |

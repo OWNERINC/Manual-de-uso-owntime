@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -18,7 +19,7 @@ RELEASE = f"20260915T180000Z_{COMMIT[:12]}"
 class DeployReceiptTests(unittest.TestCase):
     def run_tool(self, root: Path, *arguments: str, expected: int = 0) -> dict[str, object]:
         result = subprocess.run(
-            ["python3", str(SCRIPT), "--root", str(root), *arguments],
+            [sys.executable, str(SCRIPT), "--root", str(root), *arguments],
             check=False,
             text=True,
             capture_output=True,

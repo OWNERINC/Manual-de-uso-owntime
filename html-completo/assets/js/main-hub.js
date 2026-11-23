@@ -99,7 +99,7 @@ function renderHorariosSheet(horarios) {
 }
 
 function renderWifiSheet() {
-  const { ssid, password } = HUB.wifi;
+  const { ssid, instructions } = HUB.wifi;
   const sheet = document.createElement('div');
   sheet.className = 'bottom-sheet';
   sheet.id = 'sheet-wifi';
@@ -115,23 +115,15 @@ function renderWifiSheet() {
         <button class="bottom-sheet__close-btn bs-close" aria-label="Fechar"><i data-lucide="x"></i></button>
       </header>
       <div class="bottom-sheet__body">
-        <p style="font-size:0.9rem;line-height:1.6;opacity:0.75;margin-bottom:1.5rem">A cobertura de rede se estende a todo empreendimento, garantindo que você nunca fique sem acesso.</p>
-        <div style="display:flex;flex-direction:column;gap:0.5rem">
-          <div style="display:flex;align-items:center;padding:0.75rem 1rem;border:1px solid var(--color-border);border-radius:8px;color:var(--color-text)">
-            <span>
-              <span style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-lt);display:block;margin-bottom:0.15rem">Rede</span>
-              <span style="font-family:var(--font-body);font-size:0.9rem">${ssid}</span>
-            </span>
+        <div class="wifi-network">
+          <i data-lucide="wifi" aria-hidden="true"></i>
+          <div>
+            <span class="wifi-network__label">Nome da rede Wi-Fi</span>
+            <strong class="wifi-network__name">${ssid}</strong>
           </div>
-          <button onclick="navigator.clipboard.writeText('${password}').then(()=>{this.querySelector('b').textContent='Copiado ✓';setTimeout(()=>{this.querySelector('b').textContent='Copiar'},2000)})"
-            style="display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;border:1px solid var(--color-border);border-radius:8px;background:transparent;color:var(--color-text);cursor:pointer;width:100%;-webkit-tap-highlight-color:transparent;text-align:left">
-            <span>
-              <span style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-lt);display:block;margin-bottom:0.15rem">Senha</span>
-              <span style="font-family:var(--font-body);font-size:0.9rem">${password}</span>
-            </span>
-            <b style="font-size:0.62rem;letter-spacing:0.1em;color:var(--color-accent-lt);text-transform:uppercase;font-weight:400;flex-shrink:0;margin-left:1rem">Copiar</b>
-          </button>
         </div>
+        ${instructions}
+        <p class="wifi-coverage">A cobertura de rede se estende a todo empreendimento, garantindo que você nunca fique sem acesso.</p>
       </div>
       <div class="bottom-sheet__footer"><button class="bottom-sheet__back bs-close" aria-label="Fechar">← Voltar</button></div>
     </div>

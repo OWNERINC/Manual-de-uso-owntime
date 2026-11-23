@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verificação do Wi-Fi</title>
+<h1>Verificação do Wi-Fi</h1>
+<p>Teste dos painéis reais da página inicial e das quatro tipologias.</p>
+<pre id="result" role="status">Executando…</pre>
+<iframe id="preview" title="Guia em teste" width="390" height="844"></iframe>
+<script>
+const result = document.getElementById('result');
+const preview = document.getElementById('preview');
+function check(condition, message) {
+  if (!condition) throw new Error(message);
+}
+function loadPage(slug) {
+  return new Promise(resolve => {
+    preview.onload = () => resolve(preview.contentDocument);
+    preview.src = `../${slug}.html`;
+  });
+}
+(async () => {
+  const cases = [320, 390].flatMap(width =>
+    ['index', 'fall-house', 'winter-house', 'garden', 'terraco'].map(slug => ({ slug, width }))
+  );
+  for (const { slug, width } of cases) {
+    preview.width = width;
+    result.textContent = `Verificando ${slug} em ${width}px…`;
+    const doc = await loadPage(slug);
+    const id = slug === 'index' ? 'sheet-wifi' : 'sheet-facility-conectividade';
+    const trigger = doc.querySelector(`[data-bs-target="${id}"]`);
+    check(trigger, `${slug}: botão de abertura`);
+    trigger.click();
+    const sheet = doc.getElementById(id);
+    check(sheet.classList.contains('is-open'), `${slug}: painel aberto`);
+    check(sheet.getAttribute('aria-hidden') === 'false', `${slug}: painel acessível`);
+    const text = sheet.textContent;
+    for (const value of ['OwnHospedes', 'Sou hóspede', 'número 0 + número da casa', 'Casa 13', '013', 'hífen antes da letra', 'Apartamento 101A', '101-A', 'Último sobrenome']) {
+      check(text.includes(value), `${slug}: ${value}`);
+    }
+    check(sheet.querySelector('.wifi-network'), `${slug}: rede em destaque`);
+    check(sheet.querySelectorAll('.wifi-access').length === 2, `${slug}: blocos por acomodação`);
+    check(sheet.querySelectorAll('.wifi-example__value').length === 2, `${slug}: exemplos em destaque`);
+    check(sheet.querySelectorAll('.wifi-password').length === 1, `${slug}: senha compartilhada`);
+    check(text.includes('Para casas e apartamentos'), `${slug}: senha para ambos`);
+    for (const example of sheet.querySelectorAll('.wifi-example__value')) {
+      check(parseFloat(doc.defaultView.getComputedStyle(example).fontSize) >= 28, `${slug}: código legível`);
+    }
+    check(parseFloat(doc.defaultView.getComputedStyle(sheet.querySelector('.wifi-network__name')).fontSize) >= 24, `${slug}: rede legível`);
+    check(!text.includes('owntime2026'), `${slug}: sem senha fixa antiga`);
+    check(!sheet.querySelector('[onclick]'), `${slug}: sem copiador de senha fixa`);
+    check(sheet.scrollWidth <= sheet.clientWidth, `${slug}: sem transbordamento horizontal`);
+    for (const block of sheet.querySelectorAll('.wifi-network, .wifi-access, .wifi-password')) {
+      check(block.scrollWidth <= block.clientWidth, `${slug}: bloco cabe em ${width}px`);
+    }
+    sheet.querySelector('.bs-close').click();
+    check(!sheet.classList.contains('is-open'), `${slug}: fechamento`);
+  }
+  result.textContent = 'PASS: Wi-Fi na página inicial e nas quatro tipologias, em 320 e 390px; destaques, códigos legíveis, senha compartilhada, abertura, fechamento e ausência de transbordamento.';
+  result.dataset.status = 'passed';
+})().catch(error => {
+  result.textContent = `FAIL: ${error.message}`;
+  result.dataset.status = 'failed';
+  console.error(error);
+});
+</script>
+</html>

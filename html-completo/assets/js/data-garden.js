@@ -9,7 +9,7 @@ const TIPOLOGIA = {
   },
 
   stats: [
-    { value: '≈ 60 m²', label: 'Área Total' },
+    { value: '57 m²', label: 'Área Total' },
     { value: '1',        label: 'Suíte' },
     { value: '1',        label: 'Vaga' }
   ],

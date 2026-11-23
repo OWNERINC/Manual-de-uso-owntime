@@ -64,7 +64,7 @@ const facilities = [
   { title: 'Climatização', body: '<ul class="bs-steps"><li><strong>Conforto Personalizado:</strong> A sua unidade possui um sistema de climatização inteligente e individualizado, permitindo que você ajuste a temperatura de cada ambiente de forma independente.</li><li><strong>Eficiência Térmica:</strong> Para garantir o máximo desempenho do equipamento e manter o clima perfeito na sua casa, recomendamos manter portas e janelas fechadas durante o uso.</li><li><strong>Controle e Ajustes:</strong> Configure o ambiente ideal de forma simples seguindo as instruções: [Instruções operacionais do fabricante — a serem inseridas].</li></ul>' },
   { title: 'Lareira', body: '<ul class="bs-steps"><li><strong>Conforto e Tradição:</strong> Com alta eficiência térmica e câmara fechada, sua lareira foi projetada para aquecer os dias na Serra Gaúcha. É o cenário perfeito para o ritual de fogo aceso e bons vinhos, que traduz a essência da experiência Own Time.</li><li><strong>Acendimento e Uso:</strong> Utilize exclusivamente a lenha fornecida e recomendada pela nossa operação. Para ligar e ajustar a chama, siga os passos: [Instruções operacionais do fabricante — a serem inseridas].</li><li><strong>Segurança Contínua:</strong> Nunca utilize líquidos inflamáveis para o acendimento. Durante o uso, o vidro frontal atinge altíssimas temperaturas, portanto, evite tocá-lo e mantenha as crianças sempre sob rigorosa supervisão no ambiente.</li></ul>' },
   { title: 'Hidromassagem', body: '<ul class="bs-steps"><li><strong>Bem-Estar e Preparo:</strong> Projetada para ser o seu espaço de desaceleração. Antes de acionar a hidromassagem, certifique-se de que o nível da água cubra completamente os jatos, garantindo a eficiência perfeita do sistema.</li><li><strong>Cuidados Essenciais:</strong> Para proteger o equipamento e evitar obstruções, não utilize óleos, produtos espumantes ou sais não recomendados. Após o uso, lembre-se de desligar o motor e manter a tampa fechada para conservar a temperatura da água.</li><li><strong>Instruções e Suporte:</strong> O passo a passo completo de funcionamento pode ser acessado pelo QR Code disponível junto à banheira. Caso precise de auxílio ou identifique qualquer irregularidade, contate a recepção para suporte imediato da nossa equipe de manutenção.</li></ul>' },
-  { title: 'Conectividade (Wi-Fi)', body: '<ul class="bs-steps"><li><strong>Acesso Rápido:</strong> Conecte-se facilmente à nossa rede utilizando as credenciais: Rede: [nome da rede] | Login: [login] | Senha: [senha]. Para maior comodidade, utilize este [LINK] para logar direto.</li><li><strong>Alta Performance:</strong> Nossa infraestrutura de internet foi dimensionada para garantir velocidade e estabilidade. A rede suporta múltiplos dispositivos simultâneos com excelência, sendo ideal para streaming, videoconferências e navegação fluida.</li><li><strong>Cobertura Total:</strong> Mantenha-se online sem interrupções durante toda a sua estadia. O sinal de alta qualidade está disponível tanto no conforto e privacidade do seu apartamento quanto em todas as áreas comuns do Club.</li></ul>' },
+  { title: 'Conectividade (Wi-Fi)', body: '<ul class="bs-steps"><li><strong>Como conectar:</strong> Selecione a rede OwnHospedes. Na tela de login, selecione Sou hóspede.</li><li><strong>Casas:</strong> Login com o número 0 + número da casa. Exemplo: Casa 13 → 013.</li><li><strong>Apartamentos:</strong> Login com o número do apartamento e hífen antes da letra. Exemplo: Apartamento 101A → 101-A.</li><li><strong>Senha para ambos:</strong> Último sobrenome.</li><li><strong>Antes de entrar:</strong> Confira atentamente os dados informados. Em caso de dificuldade, entre em contato com o Time de Anfitriões.</li><li><strong>Alta Performance:</strong> Nossa infraestrutura de internet foi dimensionada para garantir velocidade e estabilidade. A rede suporta múltiplos dispositivos simultâneos com excelência, sendo ideal para streaming, videoconferências e navegação fluida.</li><li><strong>Cobertura Total:</strong> Mantenha-se online sem interrupções durante toda a sua estadia. O sinal de alta qualidade está disponível tanto no conforto e privacidade do seu apartamento quanto em todas as áreas comuns do Club.</li></ul>' },
 ];
 
 for (const item of facilities) {
@@ -251,7 +251,7 @@ const tipologias = [
     ]
   },
   {
-    nome: 'GARDEN — Apartamento Garden · ≈ 60 m²',
+    nome: 'GARDEN — Apartamento Garden · 57 m²',
     guia: [
       {
         label: 'Geral',
@@ -292,7 +292,7 @@ const tipologias = [
     ]
   },
   {
-    nome: 'TERRAÇO — Apartamento Cobertura · ≈ 60 m²',
+    nome: 'TERRAÇO — Apartamento Cobertura · 65 m²',
     guia: [
       {
         label: 'Geral',

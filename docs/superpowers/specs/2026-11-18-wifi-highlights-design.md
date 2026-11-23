@@ -1,7 +1,7 @@
 # Destaques visuais do Wi-Fi
 
 Data: 2026-11-18  
-Status: direção aprovada; especificação aguardando revisão do usuário.
+Status: direção e especificação aprovadas pelo usuário; implementado e validado localmente.
 
 ## Objetivo e escopo
 
@@ -36,7 +36,7 @@ Não inventar endereço do portal, QR code ou conexão automática.
    contém ícone, título, regra de login e exemplo. `013` e `101-A` ganham peso,
    tamanho e contraste. O exemplo não deve parecer outro cartão dentro do bloco.
 4. **Senha:** destaque próprio, compartilhado pelos dois tipos de acomodação,
-   com ícone de cadeado, “Último sobrenome” e indicação explícita de que vale
+   com ícone de chave, “Último sobrenome” e indicação explícita de que vale
    para casas e apartamentos. Substitui a repetição da senha em cada bloco.
 5. **Suporte:** texto secundário e orientações finais abaixo da informação
    essencial. Preservar o botão atual de contato das unidades.

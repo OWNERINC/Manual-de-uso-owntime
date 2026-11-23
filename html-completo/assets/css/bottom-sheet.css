@@ -216,6 +216,180 @@
   margin-bottom: 0;
 }
 
+/* ── Wi-Fi: rede, login por acomodação e senha compartilhada ── */
+.wifi-network {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  min-width: 0;
+  padding: 1.125rem 1rem;
+  margin-bottom: 1.25rem;
+  border-top: 2px solid var(--color-gold);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.wifi-network > svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex-shrink: 0;
+  color: var(--color-gold);
+  stroke-width: 1.5;
+}
+
+.wifi-network > div {
+  min-width: 0;
+}
+
+.wifi-network__label,
+.wifi-network .wifi-network__name {
+  display: block;
+}
+
+.wifi-network__label {
+  margin-bottom: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-gold);
+}
+
+.wifi-network .wifi-network__name {
+  font-family: var(--font-body);
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+.wifi-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wifi-guide .wifi-intro {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.wifi-intro .wifi-option {
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+
+.wifi-access {
+  min-width: 0;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.wifi-access__title {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0 0 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.wifi-access__title > svg,
+.wifi-password > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: var(--color-gold);
+  stroke-width: 1.5;
+}
+
+.wifi-access .wifi-access__rule {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.wifi-access .wifi-example {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.375rem 1rem;
+  margin: 0.875rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.wifi-example__label {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.wifi-example .wifi-example__value {
+  font-family: var(--font-body);
+  font-size: 2rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--color-gold);
+}
+
+.wifi-password {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-left: 2px solid var(--color-accent-lt);
+  border-radius: var(--radius);
+  background: rgba(61, 90, 62, 0.24);
+}
+
+.wifi-password > div {
+  min-width: 0;
+}
+
+.wifi-password__label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.wifi-password .wifi-password__value {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.wifi-guide .wifi-help,
+.bottom-sheet__body .wifi-coverage {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.bottom-sheet__body .wifi-coverage {
+  margin-top: 1rem;
+}
+
 /* ── Horário (ex: Gastronomia) ── */
 .bottom-sheet__hours {
   display: flex;

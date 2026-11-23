@@ -71,7 +71,7 @@
 | Climatização | ✅ Texto completo (instrução do fabricante pendente) |
 | Lareira | ✅ Texto completo (instrução do fabricante pendente) |
 | Hidromassagem | ✅ Texto completo |
-| Conectividade / Wi-Fi | ✅ Texto completo (credenciais pendentes) |
+| Conectividade / Wi-Fi | ✅ OwnHospedes; “Sou hóspede”; casas: `0` + número (ex.: `013`); apartamentos: hífen antes da letra (ex.: `101-A`); senha: último sobrenome |
 
 ---
 

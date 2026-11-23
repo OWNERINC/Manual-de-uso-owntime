@@ -37,8 +37,8 @@
 |---|---|---|---|---|---|---|
 | `fall-house` | Fall House | Casa 4 Suítes | 448 m² | Até 10 hóspedes | 2 vagas | `casa 4 suites.png` |
 | `winter-house` | Winter House | Casa 3 Suítes | 325 m² | Até 8 hóspedes | 2 vagas | `casa 3 suites.png` |
-| `garden` | Garden | Apartamento | ≈ 60 m² | Para pequenos núcleos | 1 vaga | `apto garden.jpeg` |
-| `terraco` | Cobertura | Apartamento | ≈ 60 m² | Para pequenos núcleos | 1 vaga | `apto cobertura.png` |
+| `garden` | Garden | Apartamento | 57 m² | Para pequenos núcleos | 1 vaga | `apto garden.jpeg` |
+| `terraco` | Cobertura | Apartamento | 65 m² | Para pequenos núcleos | 1 vaga | `apto cobertura.png` |
 
 ---
 
@@ -106,7 +106,7 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 | `thermometer` | `climatizacao` | Climatização | ⚠️ corpo existe, 5 passos do fabricante pendentes |
 | `flame` | `lareira` | Lareira | ⚠️ corpo existe, 4 passos de acendimento pendentes |
 | `droplets` | `hidromassagem` | Hidromassagem | ✅ |
-| `wifi` | `conectividade` | Conectividade | ⚠️ nome da rede, login e senha Wi-Fi pendentes |
+| `wifi` | `conectividade` | Conectividade | ✅ OwnHospedes; acesso por acomodação e último sobrenome |
 
 ---
 
@@ -247,7 +247,7 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 
 ## GARDEN · garden.html · Apartamento Garden
 
-**Stats:** ≈ 60 m² · 1 Quarto · 1 Vaga
+**Stats:** 57 m² · 1 Quarto · 1 Vaga
 **Descrição:** Apartamento garden de alto padrão com acesso direto ao jardim e hidro jacuzzi exclusivo.
 **Destaques exclusivos:** Banheira Hidro Jacuzzi no quarto · AR Central · Fogão Indução · Depurador de Ar (coifa)
 **Diferenças vs. casas:** Sem Churrasqueira, sem Lava e Seca, sem Filtro d'Água, sem Segundo Andar. Ícone de ventilação é `fan` (não `wind`).
@@ -294,7 +294,7 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 
 ## TERRAÇO · terraco.html · Apartamento Cobertura
 
-**Stats:** ≈ 60 m² · 1 Quarto · 1 Vaga
+**Stats:** 65 m² · 1 Quarto · 1 Vaga
 **Descrição:** Apartamento cobertura de alto padrão com mini spa terrace jacuzzi exclusivo no terraço privativo.
 **Destaques exclusivos:** Mini Spa Terrace Jacuzzi (no terraço) · AR Central · Fogão Indução · Depurador de Ar
 **Diferenças vs. Garden:** Sem seção `quartos` com Hidro Jacuzzi. Tem seção `mini-spa` com Jacuzzi no terraço.
@@ -367,7 +367,6 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 |---|---|---|
 | Climatização (COMMON) | 5 passos de instrução do fabricante | `data-common.js` → `facilities[0].body` |
 | Lareira (COMMON) | 4 passos de acendimento do fabricante | `data-common.js` → `facilities[1].body` |
-| Conectividade (COMMON) | Nome da rede, login, senha do Wi-Fi | `data-common.js` → `facilities[3].body` |
 | Em Caso de Emergência | Ramal `[xx]` e WhatsApp `[xxxxxxxx]` | `data-common.js` → `orientacoesGerais[1].body` |
 | WhatsApp concierge | Substituir `+5554999999999` pelo número real | `data-common.js` → `brand.concierge.whatsapp` |
 | Botão "Ler mais" (hub) | Substituir `+5554999999999` pelo número real | `data-hub.js` → `intro.ctaWhatsapp` |
@@ -413,4 +412,4 @@ Renderizadas a partir de `data-common.js` em todas as páginas de tipologia, sem
 | Horário Coffee Shop | 08h00 às 20h00 | Confirmar se é definitivo |
 | Horário Bar | 17h00 às 23h00 | Confirmar se é definitivo |
 | Horário Check-out | 12h00 | Confirmar se é definitivo |
-| Rede Wi-Fi | `[nome da rede]` / `[login]` / `[senha]` | Fornecer credenciais reais |
+| Rede Wi-Fi | `OwnHospedes`; “Sou hóspede”; casas: `0` + número (ex.: `013`); apartamentos: hífen antes da letra (ex.: `101-A`); senha: último sobrenome | Confirmado no material da operação |

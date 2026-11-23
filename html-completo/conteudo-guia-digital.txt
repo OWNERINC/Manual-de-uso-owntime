@@ -64,7 +64,11 @@ COMODIDADES DA UNIDADE
   • Instruções e Suporte: O passo a passo completo de funcionamento pode ser acessado pelo QR Code disponível junto à banheira. Caso precise de auxílio ou identifique qualquer irregularidade, contate a recepção para suporte imediato da nossa equipe de manutenção.
 
 ▶ Conectividade (Wi-Fi)
-• Acesso Rápido: Conecte-se facilmente à nossa rede utilizando as credenciais: Rede: [nome da rede] | Login: [login] | Senha: [senha]. Para maior comodidade, utilize este [LINK] para logar direto.
+• Como conectar: Selecione a rede OwnHospedes. Na tela de login, selecione Sou hóspede.
+  • Casas: Login com o número 0 + número da casa. Exemplo: Casa 13 → 013.
+  • Apartamentos: Login com o número do apartamento e hífen antes da letra. Exemplo: Apartamento 101A → 101-A.
+  • Senha para ambos: Último sobrenome.
+  • Antes de entrar: Confira atentamente os dados informados. Em caso de dificuldade, entre em contato com o Time de Anfitriões.
   • Alta Performance: Nossa infraestrutura de internet foi dimensionada para garantir velocidade e estabilidade. A rede suporta múltiplos dispositivos simultâneos com excelência, sendo ideal para streaming, videoconferências e navegação fluida.
   • Cobertura Total: Mantenha-se online sem interrupções durante toda a sua estadia. O sinal de alta qualidade está disponível tanto no conforto e privacidade do seu apartamento quanto em todas as áreas comuns do Club.
 
@@ -419,7 +423,7 @@ WINTER HOUSE — Casa 3 Suítes · 325 m² · Até 8 hóspedes
     • Jarra: Aperte até ouvir o "clique" — a água sairá sozinha.
 
 
-GARDEN — Apartamento Garden · ≈ 60 m²
+GARDEN — Apartamento Garden · 57 m²
 ────────────────────────────────────────────────────────────
 
   [ Aba: Geral ]
@@ -511,7 +515,7 @@ GARDEN — Apartamento Garden · ≈ 60 m²
     • Cuidados e Higiene: Não é permitido o consumo de alimentos e bebidas no interior da banheira. Utilize apenas sais e produtos específicos para hidromassagem.
 
 
-TERRAÇO — Apartamento Cobertura · ≈ 60 m²
+TERRAÇO — Apartamento Cobertura · 65 m²
 ────────────────────────────────────────────────────────────
 
   [ Aba: Geral ]

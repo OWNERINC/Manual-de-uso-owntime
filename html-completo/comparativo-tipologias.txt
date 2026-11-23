@@ -80,7 +80,7 @@ APARTAMENTOS — GARDEN vs TERRAÇO
 ════════════════════════════════════════════════════════════
 
 ────────────────────────────────────────────────────────────
-GARDEN — Apartamento Garden · ≈ 60 m²
+GARDEN — Apartamento Garden · 57 m²
 ────────────────────────────────────────────────────────────
 
 ✔ TEM (exclusivo — Terraço NÃO tem):
@@ -109,7 +109,7 @@ GARDEN — Apartamento Garden · ≈ 60 m²
 
 
 ────────────────────────────────────────────────────────────
-TERRAÇO — Apartamento Cobertura · ≈ 60 m²
+TERRAÇO — Apartamento Cobertura · 65 m²
 ────────────────────────────────────────────────────────────
 
 ✔ TEM (exclusivo — Garden NÃO tem):

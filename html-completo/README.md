@@ -47,8 +47,8 @@ Ao clicar em qualquer item, abre um **bottom sheet** (painel deslizante) com as 
 | `index.html` | Hub de entrada — apresenta o clube e redireciona para a tipologia | `/` |
 | `fall-house.html` | Guia da Fall House · Casa 4 Suítes · 448 m² · 10 hóspedes | `/fall-house.html` |
 | `winter-house.html` | Guia da Winter House · Casa 3 Suítes · 325 m² · 8 hóspedes | `/winter-house.html` |
-| `garden.html` | Guia do Apartamento Garden · ≈ 60 m² · 1 quarto | `/garden.html` |
-| `terraco.html` | Guia do Apartamento Cobertura · ≈ 60 m² · 1 quarto | `/terraco.html` |
+| `garden.html` | Guia do Apartamento Garden · 57 m² · 1 quarto | `/garden.html` |
+| `terraco.html` | Guia do Apartamento Cobertura · 65 m² · 1 quarto | `/terraco.html` |
 | `clube.html` | Página do Club House — serviços, amenidades e estrutura do clube | `/clube.html` |
 
 ---

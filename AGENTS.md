@@ -20,6 +20,9 @@ Own Time Home Club digital owner guide built with static HTML/Firebase. Version 
 ## Commands
 
 - v2 deploy from `html-completo/`: `firebase deploy --only hosting:v2` only with approval.
+- The official domain `https://manualdeuso.owntime.com.br` is served by the OWNERINC VPS, not Firebase Hosting v2. A Firebase deploy does not update this domain.
+- For the official domain, follow `docs/DEPLOY-MANUALDEUSO.md`. Production tracks `design/hub-clear` in `OWNERINC/Manual-de-uso-owntime`.
+- When the user asks to deploy the official manual, use that production flow. Treat Firebase v2 as a separate destination and name it explicitly.
 
 ## Verification
 

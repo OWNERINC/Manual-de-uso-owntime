@@ -1,5 +1,5 @@
 # Informações Pendentes — Guia Digital Own Time Home Club
-Atualizado em: 2026-09-15
+Atualizado em: 2026-11-16
 
 ---
 
@@ -21,6 +21,7 @@ Atualizado em: 2026-09-15
 
 | Item | Informação inserida | Quando |
 |---|---|---|
+| Áreas Garden e Cobertura | Garden: 57 m² · Cobertura: 65 m² | Nov/26 |
 | Ramal da Recepção | Ramal 9 | — |
 | WhatsApp da Recepção | +55 54 3421-0620 | Set/26 |
 | Time de Anfitriões (contato) | Ligação e WhatsApp +55 54 3421-0620 | Set/26 |
@@ -39,7 +40,7 @@ Atualizado em: 2026-09-15
 | Espaço Pet — Taxa de limpeza | Substituído por "consulte a recepção" | Jul/26 |
 | Housekeeping — Valor serviço adicional | Substituído por "consulte a recepção" | Jul/26 |
 | Visitantes Club House (taxa/limite/cortesia) | Substituído por "consulte a recepção" | Jul/26 |
-| Wi-Fi SSID e senha | `hospedes` / `owntime2026` inseridos | Jul/26 |
+| Wi-Fi — rede e acesso por acomodação | `OwnHospedes` → “Sou hóspede”; casas: `0` + número da casa (ex.: `013`); apartamentos: hífen antes da letra (ex.: `101-A`); senha: último sobrenome | Nov/26 |
 | AR Central (Garden + Cobertura) | Instruções completas inseridas | Jul/26 |
 | Mercados & Farmácias — tabs | Mercados / Farmácias separados em abas | Jul/26 |
 | Forno de Pizza (Fall House) | Sinalizado como Soft Opening | Jul/26 |

@@ -40,9 +40,9 @@ Descubra o equilíbrio perfeito entre o conforto de casa, a beleza da natureza e
 
 **Winter House** — Casa 3 Suítes · 325 m² · Até 8 hóspedes → winter-house.html
 
-**Garden** — Apartamento · ≈ 60 m² · Para pequenos núcleos → garden.html
+**Garden** — Apartamento · 57 m² · Para pequenos núcleos → garden.html
 
-**Cobertura** — Apartamento · ≈ 60 m² · Para pequenos núcleos → terraco.html
+**Cobertura** — Apartamento · 65 m² · Para pequenos núcleos → terraco.html
 
 ---
 ---
@@ -234,7 +234,13 @@ Caso identifique qualquer irregularidade no funcionamento, entre em contato com 
 ### Conectividade
 Wi-Fi
 
-Rede: [nome da rede] · Login: [login] · Senha: [senha]
+Rede: **OwnHospedes**. Na tela de login, selecione **Sou hóspede**.
+
+- **Casas:** login com o número 0 + número da casa. Exemplo: Casa 13 → **013**.
+- **Apartamentos:** login com o número do apartamento e hífen antes da letra. Exemplo: Apartamento 101A → **101-A**.
+- **Senha para ambos:** último sobrenome.
+
+Antes de entrar, confira atentamente os dados informados. Em caso de dificuldade, entre em contato com o Time de Anfitriões.
 
 A conexão de internet de alta velocidade está disponível em toda a unidade e nas áreas comuns do empreendimento. A rede foi dimensionada para suportar múltiplos dispositivos simultâneos, incluindo streaming, videoconferências e navegação.
 
@@ -478,7 +484,7 @@ Check-out **12:00** · Botão **Concierge** → WhatsApp
 
 ## Stats
 
-- **≈ 60 m²** — Área Total
+- **57 m²** — Área Total
 - **1** — Quarto
 - **1** — Vaga
 
@@ -618,7 +624,7 @@ Check-out **12:00** · Botão **Concierge** → WhatsApp
 
 ## Stats
 
-- **≈ 60 m²** — Área Total
+- **65 m²** — Área Total
 - **1** — Quarto
 - **1** — Vaga
 
@@ -748,7 +754,7 @@ Check-out **12:00** · Botão **Concierge** → WhatsApp
 
 | Item | Fall House | Winter House | Garden | Terraço |
 |---|---|---|---|---|
-| Área | 448 m² | 325 m² | ≈ 60 m² | ≈ 60 m² |
+| Área | 448 m² | 325 m² | 57 m² | 65 m² |
 | Dormitórios | 4 Suítes | 3 Suítes | 1 Quarto | 1 Quarto |
 | Hóspedes | 10 | 8 | pequenos núcleos | pequenos núcleos |
 | Vagas | 2 | 2 | 1 | 1 |
